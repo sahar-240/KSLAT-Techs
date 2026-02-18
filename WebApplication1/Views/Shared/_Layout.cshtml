@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Natural History Museum</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    Natural History Museum
+                </a>
+                <ul class="nav-links">
+                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a asp-controller="Tours" asp-action="Index">TOURS</a></li>
+                    <li><a asp-controller="Home" asp-action="Visit">VISIT</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Natural History Museum</h4>
+                        <p>Inspiring curiosity about the natural world</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-controller="Tours" asp-action="Index">Tours</a></li>
+                            <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
+                            <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>Email: info@nhm.ac.uk</p>
+                        <p>Phone: +44 20 7942 5000</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Natural History Museum. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>
