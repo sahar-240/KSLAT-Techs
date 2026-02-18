@@ -6128,11 +6128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\amine\\OneDrive\\Bureau\\project\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\amine\\OneDrive\\Bureau\\project\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\amine\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\amine\\OneDrive\\Bureau\\project\\KSLAT-Techs\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
