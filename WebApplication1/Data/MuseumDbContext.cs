@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using WebApplication1.Models;
 
 namespace WebApplication1.Data
@@ -12,6 +11,15 @@ namespace WebApplication1.Data
 
         public DbSet<OpeningHour> OpeningHours { get; set; }
         public DbSet<FAQ> FAQs { get; set; }
-        // Add other DbSets as needed
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Configure default value for CreatedAt
+            modelBuilder.Entity<FAQ>()
+                .Property(f => f.CreatedAt)
+                .HasDefaultValueSql("GETDATE()");
+        }
     }
 }

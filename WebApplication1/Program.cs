@@ -1,13 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
-using Microsoft.EntityFrameworkCore.SqlServer; // Add this using directive
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Database Connection
+// Add DbContext with SQL Server
 builder.Services.AddDbContext<MuseumDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -21,9 +20,10 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // This serves files from wwwroot
+app.UseStaticFiles();
 
 app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

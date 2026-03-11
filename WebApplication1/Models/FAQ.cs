@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
@@ -21,6 +22,7 @@ namespace WebApplication1.Models
 
         public bool IsActive { get; set; } = true;
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

@@ -3,52 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\amine\\source\\repos\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{032B3D5E-8AD3-47F4-B6F2-0EF6CECA1F81}|Solution Items{032B3D5E-8AD3-47F4-B6F2-0EF6CECA1F81}|C:\\Users\\amine\\source\\repos\\WebApplication1\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{032B3D5E-8AD3-47F4-B6F2-0EF6CECA1F81}|Solution Items{032B3D5E-8AD3-47F4-B6F2-0EF6CECA1F81}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\openinghour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\openinghour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\data\\museumdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\data\\museumdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\migrations\\20260311141205_adddefaultcreatedat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\migrations\\20260311141205_adddefaultcreatedat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\data\\museumdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\data\\museumdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\faq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\faq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\faq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\faq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A7818C0F-CEBA-4401-9E45-BD1BE35508A8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\openinghour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\openinghour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\models\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\webapplication1\\webapplication1\\migrations\\20260311135631_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\migrations\\20260311135631_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,88 +82,157 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAADwv0IAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T14:54:18.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T14:50:25.126Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAAAI0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T14:35:23.987Z",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAiwF0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-11T14:36:04.351Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20260311141205_AddDefaultCreatedAt.cs",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Migrations\\20260311141205_AddDefaultCreatedAt.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Migrations\\20260311141205_AddDefaultCreatedAt.cs",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Migrations\\20260311141205_AddDefaultCreatedAt.cs",
+              "RelativeToolTip": "WebApplication1\\Migrations\\20260311141205_AddDefaultCreatedAt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T14:12:05.289Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "WebApplication1\\appsettings.json",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-11T13:51:58.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:47:56.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-11T13:46:25.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-18T14:50:25.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20260311135631_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Migrations\\20260311135631_InitialCreate.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Migrations\\20260311135631_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Migrations\\20260311135631_InitialCreate.cs",
+              "RelativeToolTip": "WebApplication1\\Migrations\\20260311135631_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:56:32.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MuseumDbContext.cs",
               "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Data\\MuseumDbContext.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Data\\MuseumDbContext.cs",
               "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Data\\MuseumDbContext.cs",
               "RelativeToolTip": "WebApplication1\\Data\\MuseumDbContext.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAswBAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T14:24:15.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T14:24:15.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "FAQ.cs",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\FAQ.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\FAQ.cs",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\FAQ.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\FAQ.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T14:21:59.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "OpeningHour.cs",
               "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\OpeningHour.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\OpeningHour.cs",
               "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\OpeningHour.cs",
               "RelativeToolTip": "WebApplication1\\Models\\OpeningHour.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAIBQwBYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T14:21:20.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T14:21:20.082Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwCAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T14:19:18.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "HomeViewModel.cs",
               "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\HomeViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\HomeViewModel.cs",
@@ -147,12 +240,11 @@
               "RelativeToolTip": "WebApplication1\\Models\\HomeViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T14:20:25.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T14:20:25.376Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
@@ -160,12 +252,35 @@
               "RelativeToolTip": "WebApplication1\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T14:15:40.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T14:15:40.021Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwDgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-18T14:54:18.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAIEAAAAAAAAAAIBJwI0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-18T14:35:23.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ErrorViewModel.cs",
@@ -173,38 +288,11 @@
               "RelativeToolTip": "WebApplication1\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T14:39:35.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T14:39:35.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FAQ.cs",
-              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\FAQ.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\FAQ.cs",
-              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Models\\FAQ.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\FAQ.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAADwvxkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T14:21:59.484Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T14:19:18.06Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\site.js",
@@ -212,21 +300,19 @@
               "RelativeToolTip": "WebApplication1\\wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-18T14:14:57.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T14:14:57.857Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\amine\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\css\\site.css",
               "RelativeToolTip": "WebApplication1\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAP0BAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAPoBAAAAAAAAAIBJwAsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-02-18T14:09:28.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T14:09:28.464Z"
             }
           ]
         }
