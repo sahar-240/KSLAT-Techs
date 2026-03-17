@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,9 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Add DbContext with SQL Server
-builder.Services.AddDbContext<MuseumDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Front-end only data provider (no SQL)
+builder.Services.AddSingleton<IMuseumData, InMemoryMuseumData>();
 
 var app = builder.Build();
 
