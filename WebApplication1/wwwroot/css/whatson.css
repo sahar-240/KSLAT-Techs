@@ -1,0 +1,344 @@
+﻿/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* ============================================
+   HERO BANNER
+   ============================================ */
+
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d4c5a9 0%, #c9b89a 100%);
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.banner-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2b6c51;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.banner-subtitle {
+    font-size: 1rem;
+    color: #f0f0f0;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+
+/* ============================================
+   UPCOMING SECTION
+   ============================================ */
+
+.upcoming-section {
+    background: #fff;
+    padding: 48px 20px;
+    text-align: center;
+}
+
+.upcoming-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.upcoming-card {
+    background: #1a1a1a;
+    width: 280px;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(43, 108, 81, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+    .upcoming-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(43, 108, 81, 0.25);
+    }
+
+    .upcoming-card img {
+        width: 100%;
+        height: 65%;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(15%);
+    }
+
+.card-content {
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.85) 0%, rgba(26, 26, 26, 1) 100%);
+    padding: 16px;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-badge {
+    display: inline-block;
+    background: #00a857;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    align-self: flex-start;
+}
+
+.card-text {
+    text-align: left;
+}
+
+.card-label {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-text h3 {
+    color: #a8d68f;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* ============================================
+   EVENTS SECTION
+   ============================================ */
+
+.events-section {
+    background: #e5ede5;
+    padding: 48px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2b6c51;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 36px;
+}
+
+.grid-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.event-item,
+.tour-item {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(43, 108, 81, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .event-item:hover,
+    .tour-item:hover {
+        transform: translateY(-4px);
+    }
+
+.event-image,
+.tour-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.event-info,
+.tour-info {
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 1) 100%);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.event-label,
+.tour-label {
+    color: #999;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.event-info h4,
+.tour-info h4 {
+    color: #7dd89d;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   BROWSE CARD
+   ============================================ */
+
+.browse-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(43, 108, 81, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    border: 2px solid #2b6c51;
+    transition: all 0.3s ease;
+}
+
+    .browse-card:hover {
+        background: #f5f9f5;
+        box-shadow: 0 6px 16px rgba(43, 108, 81, 0.15);
+    }
+
+.browse-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #2b6c51;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+}
+
+.browse-arrow {
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.browse-card:hover .browse-arrow {
+    transform: translateX(4px);
+}
+
+/* ============================================
+   TOURS SECTION
+   ============================================ */
+
+.tours-section {
+    background: #e5ede5;
+    padding: 48px 20px;
+    margin-top: 8px;
+    border-top: 2px solid #d0d0d0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .banner-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .upcoming-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upcoming-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .browse-card {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 1.6rem;
+    }
+
+    .upcoming-card {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+}

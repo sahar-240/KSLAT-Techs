@@ -61,6 +61,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\css\whatson.css
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\js\site.js
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\lib\jquery\LICENSE.txt
@@ -123,3 +124,4 @@ C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\lib\bo
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\favicon.ico
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\css\site.css
+C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\wwwroot\css\whatson.css
