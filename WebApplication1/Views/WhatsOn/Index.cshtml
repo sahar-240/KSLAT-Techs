@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "What's On";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/whatson.css" />
+
+<!-- Hero Banner -->
+<section class="hero-banner">
+    <img src="~/images/banner-tapestry.jpg" alt="Gallery Tapestry Collection" class="banner-image" />
+    <div class="banner-overlay">
+        <h1 class="banner-title">WHAT'S ON</h1>
+        <p class="banner-subtitle">VIEW OUR TOURS & EVENTS</p>
+    </div>
+</section>
+
+<!-- Upcoming Exhibitions & Tours -->
+<section class="upcoming-section">
+    <div class="upcoming-container">
+        <!-- Exhibition Card -->
+        <div class="upcoming-card exhibition-card">
+            <img src="~/images/daniel-solander.jpg" alt="Daniel Solander Exhibition" />
+            <div class="card-content">
+                <span class="card-badge">UPCOMING</span>
+                <div class="card-text">
+                    <span class="card-label">EXHIBITION</span>
+                    <h3>DANIEL SOLANDER</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour Card -->
+        <div class="upcoming-card tour-card">
+            <img src="~/images/identity-desire.jpg" alt="Identity in Desire Tour" />
+            <div class="card-content">
+                <span class="card-badge">UPCOMING</span>
+                <div class="card-text">
+                    <span class="card-label">TOUR</span>
+                    <h3>IDENTITY IN DESIRE</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section class="events-section">
+    <h2 class="section-title">EVENTS</h2>
+    <div class="grid-container">
+        <div class="event-item">
+            <img src="~/images/iris-van-herpen.jpg" alt="Iris van Herpen Exhibition" class="event-image" />
+            <div class="event-info">
+                <span class="event-label">EXHIBITION</span>
+                <h4>IRIS VAN HERPEN</h4>
+            </div>
+        </div>
+
+        <div class="browse-card">
+            <a href="/events" class="browse-link">
+                <span class="browse-text">BROWSE ALL</span>
+                <span class="browse-arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Tours Section -->
+<section class="tours-section">
+    <h2 class="section-title">TOURS</h2>
+    <div class="grid-container">
+        <div class="tour-item">
+            <img src="~/images/architecture-greece.jpg" alt="Architecture Greece Tour" class="tour-image" />
+            <div class="tour-info">
+                <span class="tour-label">TOUR</span>
+                <h4>ARCHITECTURE: GREECE</h4>
+            </div>
+        </div>
+
+        <div class="browse-card">
+            <a href="/tours" class="browse-link">
+                <span class="browse-text">BROWSE ALL</span>
+                <span class="browse-arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
