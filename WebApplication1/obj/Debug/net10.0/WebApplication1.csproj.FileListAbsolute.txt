@@ -946,3 +946,4 @@ C:\Users\tanzi\source\repos\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\refint
 C:\Users\tanzi\source\repos\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.pdb
 C:\Users\tanzi\source\repos\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.genruntimeconfig.cache
 C:\Users\tanzi\source\repos\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
+C:\Users\tanzi\source\repos\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\wktvx2islf-{0}-hzzoefk0ty-hzzoefk0ty.gz

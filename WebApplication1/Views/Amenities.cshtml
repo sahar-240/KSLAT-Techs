@@ -1,6 +1,4 @@
-﻿@page
-@model WebApplication1.Views.AmenitiesModel
-@{
+﻿@{
     ViewData["Title"] = "Amenities";
 }
 
@@ -23,15 +21,15 @@
                         <img src="~/images/logo.png" alt="Natural Gallery Logo">
                         </div>
                         <nav class="nav-menu">
-                            <a href="#" class="nav-link">VISIT US</a>
-                            <a href="#" class="nav-link">WHAT'S ON</a>
-                            <a href="#amenities-page" class="nav-link active">AMENITIES</a>
-                            <a href="#" class="nav-link">MEMBERSHIP</a>
+                            <a href="/" class="nav-link">VISIT US</a>
+                            <a href="/" class="nav-link">WHAT'S ON</a>
+                            <a href="@Url.Action("Index", "Amenities")" class="nav-link active">AMENITIES</a>
+                            <a href="/" class="nav-link">MEMBERSHIP</a>
                         </nav>
                         <div class="header-actions">
-                            <button class="privacy-btn" onclick="showPrivacyPolicy()">
+                            <a href="@Url.Action("Privacy", "Amenities")" class="privacy-btn" title="Privacy Policy">
                                 <i class="fas fa-file-pdf"></i>
-                            </button>
+                            </a>
                             <button class="search-btn">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -96,7 +94,9 @@
                                         <section class="membership-section">
                                             <div class="membership-content">
                                                 <h2 class="membership-title">BECOME A MEMBER TO RECEIVE SPECIAL DISCOUNTS</h2>
-                                                <button class="membership-btn" onclick="window.location.href='@Url.Action("Membership", "Amenities")'">JOIN</button>
+                                                <form method="post" action="@Url.Action("JoinMembership", "Amenities")">
+                                                    <button type="submit" class="membership-btn">JOIN</button>
+                                                </form>
                                             </div>
                                             <div class="membership-image">
                                                 <img src="~/images/membership-image.jpg" alt="Membership Benefits">
@@ -133,9 +133,9 @@
                                                         <img src="~/images/footer-logo.png" alt="Natural Gallery Logo">
                                                         </div>
                                                         <div class="footer-links">
-                                                            <a href="#" class="footer-link">ABOUT US</a>
-                                                            <a href="#" class="footer-link">CONTACT</a>
-                                                            <a href="#privacy-page" class="footer-link" onclick="showPrivacyPolicy()">PRIVACY POLICY</a>
+                                                            <a href="/" class="footer-link">ABOUT US</a>
+                                                            <a href="/" class="footer-link">CONTACT</a>
+                                                            <a href="@Url.Action("Privacy", "Amenities")" class="footer-link">PRIVACY POLICY</a>
                                                         </div>
                                                         <div class="footer-contact">
                                                             <p>📍 The Fairylands, London W6 8LP</p>
@@ -154,15 +154,15 @@
                                                             <img src="~/images/logo.png" alt="Natural Gallery Logo">
                                                             </div>
                                                             <nav class="nav-menu">
-                                                                <a href="#" class="nav-link">VISIT US</a>
-                                                                <a href="#" class="nav-link">WHAT'S ON</a>
-                                                                <a href="#amenities-page" class="nav-link" onclick="showAmenitiesPage()">AMENITIES</a>
-                                                                <a href="#" class="nav-link">MEMBERSHIP</a>
+                                                                <a href="/" class="nav-link">VISIT US</a>
+                                                                <a href="/" class="nav-link">WHAT'S ON</a>
+                                                                <a href="@Url.Action("Index", "Amenities")" class="nav-link">AMENITIES</a>
+                                                                <a href="/" class="nav-link">MEMBERSHIP</a>
                                                             </nav>
                                                             <div class="header-actions">
-                                                                <button class="back-btn" onclick="showAmenitiesPage()">
+                                                                <a href="@Url.Action("Index", "Amenities")" class="back-btn" title="Back to Amenities">
                                                                     <i class="fas fa-arrow-left"></i>
-                                                                </button>
+                                                                </a>
                                                                 <button class="search-btn">
                                                                     <i class="fas fa-search"></i>
                                                                 </button>
@@ -258,7 +258,7 @@
                                                             </div>
 
                                                             <!-- Accept Button -->
-                                                            <button class="accept-btn" onclick="showAmenitiesPage()">ACCEPT</button>
+                                                            <a href="@Url.Action("Index", "Amenities")" class="accept-btn">ACCEPT</a>
                                                         </section>
 
                                                         <!-- Footer -->
@@ -268,15 +268,15 @@
                                                                     <img src="~/images/footer-logo.png" alt="Natural Gallery Logo">
                                                                     </div>
                                                                     <div class="footer-links">
-                                                                        <a href="#" class="footer-link">ABOUT US</a>
+                                                                        <a href="/" class="footer-link">ABOUT US</a>
                                                                         <span class="footer-divider">|</span>
-                                                                        <a href="#" class="footer-link">CONTACT</a>
+                                                                        <a href="/" class="footer-link">CONTACT</a>
                                                                         <span class="footer-divider">|</span>
-                                                                        <a href="#" class="footer-link">HELP</a>
+                                                                        <a href="/" class="footer-link">HELP</a>
                                                                         <span class="footer-divider">|</span>
-                                                                        <a href="#" class="footer-link">BLOG & FAQS</a>
+                                                                        <a href="/" class="footer-link">BLOG & FAQS</a>
                                                                         <span class="footer-divider">|</span>
-                                                                        <a href="#" class="footer-link">PRIVACY POLICY</a>
+                                                                        <a href="@Url.Action("Privacy", "Amenities")" class="footer-link">PRIVACY POLICY</a>
                                                                     </div>
                                                                     <div class="footer-contact">
                                                                         <p>📍 The Fairylands, London W6 8LP</p>
@@ -300,6 +300,14 @@
                                                                 document.getElementById('privacy-page').style.display = 'block';
                                                                 window.scrollTo(0, 0);
                                                             }
+
+                                                            // Show privacy policy if coming from Privacy action
+                                                            document.addEventListener('DOMContentLoaded', function() {
+                                                                const url = window.location.pathname;
+                                                                if (url.includes('Privacy')) {
+                                                                    showPrivacyPolicy();
+                                                                }
+                                                            });
                                                     </script>
                                                 </body>
                                             </html>
