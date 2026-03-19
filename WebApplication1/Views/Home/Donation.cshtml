@@ -1,0 +1,272 @@
+﻿@model WebApplication1.Models.DonationViewModel
+@using WebApplication1.Models
+@{
+    ViewData["Title"] = "Make a Donation";
+}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>DONATE</h1>
+        <p>Make a difference in preserving our natural heritage</p>
+    </div>
+</section>
+
+<!-- Donation Impact Section -->
+<section class="donation-impact">
+    <div class="container">
+        <h2>YOUR IMPACT</h2>
+        <p class="impact-intro">The Natural Gallery relies on support from a wide range of sources. Your donation helps the gallery share its art with the world.</p>
+        <div class="impact-grid">
+            <div class="impact-item">
+                <h3>£25</h3>
+                <p>Supports one school visit for a child</p>
+            </div>
+            <div class="impact-item">
+                <h3>£50</h3>
+                <p>Helps preserve and conserve artifacts</p>
+            </div>
+            <div class="impact-item">
+                <h3>£100</h3>
+                <p>Supports educational programs</p>
+            </div>
+            <div class="impact-item">
+                <h3>£250+</h3>
+                <p>Funds cutting-edge research initiatives</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Donation Section -->
+<section class="quick-donation">
+    <div class="container">
+        <h2>SELECT AN AMOUNT</h2>
+        <div class="quick-amounts">
+            <button type="button" class="amount-btn" onclick="setAmount(5)">£5</button>
+            <button type="button" class="amount-btn" onclick="setAmount(10)">£10</button>
+            <button type="button" class="amount-btn" onclick="setAmount(20)">£20</button>
+            <button type="button" class="amount-btn" onclick="setAmount(50)">£50</button>
+            <button type="button" class="amount-btn other-amount" onclick="showCustomAmount()">Other</button>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Form Section -->
+<section class="donation-form-section">
+    <div class="container">
+        <div class="form-wrapper">
+            <h2>MAKE YOUR DONATION</h2>
+            <form id="donation-form-page" method="post" action="@Url.Action("ProcessDonation", "Home")">
+                
+                <!-- CSRF Token -->
+                @Html.AntiForgeryToken()
+
+                <!-- Donation Amount -->
+                <div class="form-group">
+                    <label for="donation-amount">Donation Amount (£)</label>
+                    <input type="number" id="donation-amount" name="amount" min="1" step="0.01" required>
+                </div>
+
+                <!-- Donor Information -->
+                <h3>YOUR INFORMATION</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <select id="title" name="title">
+                            <option value="">Select</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Prof">Prof</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select a country</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Billing Address -->
+                <h3>BILLING ADDRESS</h3>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City & Country</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postcode">Postcode</label>
+                        <input type="text" id="postcode" name="postcode" required>
+                    </div>
+                </div>
+
+                <!-- Gift Aid -->
+                <div class="form-group gift-aid">
+                    <label>
+                        <input type="checkbox" id="gift-aid" name="giftAid"> I'd like to make this donation Gift Aid eligible
+                    </label>
+                    <p class="gift-aid-info">
+                        If you are a UK taxpayer, the museum can reclaim the tax you have paid on this donation, adding 25% to its value at no extra cost to you.
+                    </p>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Leave a comment about your donation..."></textarea>
+                </div>
+
+                <!-- Anonymous Donation -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="anonymous" name="isAnonymous"> Make this donation anonymous
+                    </label>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="newsletter" name="subscribeNewsletter" checked> I'd like to receive the Natural Gallery newsletter
+                    </label>
+                </div>
+
+                <!-- Payment Method -->
+                <h3>PAYMENT METHOD</h3>
+                
+                <div class="payment-methods">
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="card" checked> Credit/Debit Card
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="paypal"> PayPal
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="bank"> Bank Transfer
+                    </label>
+                </div>
+
+                <!-- Card Details (shown conditionally) -->
+                <div id="card-details" class="card-details">
+                    <div class="form-group">
+                        <label for="cardholder-name">Cardholder Name</label>
+                        <input type="text" id="cardholder-name" name="cardholderName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" name="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="terms" name="acceptTerms" required>
+                        I agree to the terms and conditions
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-large">CONFIRM PAYMENT</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="donation-faq">
+    <div class="container">
+        <h2>FREQUENTLY ASKED QUESTIONS</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Is my donation secure?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we use industry-standard encryption to protect your personal and payment information. All transactions are processed securely.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Can I make a recurring donation?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can set up a monthly recurring donation. Contact our development team at development@museum.com for assistance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Will I receive a receipt?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, a receipt will be sent to your email address immediately after your donation is processed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>What is Gift Aid?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Gift Aid allows the museum to reclaim the tax you have paid on your donation, increasing its value by 25% at no extra cost to you. You must be a UK taxpayer to be eligible.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Can I make an anonymous donation?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can choose to make your donation anonymous. We will still need your contact information for processing and sending a receipt, but your name will not be publicly listed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

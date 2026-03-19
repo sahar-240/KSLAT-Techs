@@ -14,10 +14,11 @@
                 Natural History Museum
             </a>
             <ul class="nav-links">
-                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a asp-controller="Home" asp-action="Visit">VISIT</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">CONTACT</a></li>
+                <li><a asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">HOME</a></li>
+                <li><a href="@Url.Action("Index", "Home")#about">ABOUT</a></li>
+                <li><a asp-controller="Home" asp-action="Visit" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Visit" ? "active" : "")">VISIT</a></li>
+                <li><a asp-controller="Home" asp-action="WhatsOn" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "WhatsOn" ? "active" : "")">WHAT'S ON</a></li>
+                <li><a asp-controller="Home" asp-action="Contact" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Contact" ? "active" : "")">CONTACT</a></li>
             </ul>
         </div>
     </nav>
@@ -38,14 +39,17 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Home" asp-action="Support">Support Us</a></li>
+                        <li><a asp-controller="Home" asp-action="Donation">Donate</a></li>
                         <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="Home" asp-action="WhatsOn">What's On</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@nhm.ac.uk</p>
-                    <p>Phone: +44 20 7942 5000</p>
+                    <p>Email: <a href="mailto:info@nhm.ac.uk">info@nhm.ac.uk</a></p>
+                    <p>Phone: <a href="tel:+442079425000">+44 20 7942 5000</a></p>
+                    <p>Address: Cromwell Road<br>London SW7 5BD<br>United Kingdom</p>
                 </div>
             </div>
             <div class="footer-bottom">
