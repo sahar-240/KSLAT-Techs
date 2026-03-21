@@ -243,3 +243,49 @@ function submitDonationForm(donationData, isFullForm) {
             }
         });
 }
+function toggleSearch() {
+    const searchBar = document.getElementById('search-bar');
+    if (searchBar) {
+        if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+            searchBar.style.display = 'block';
+            document.getElementById('search-input').focus();
+        } else {
+            searchBar.style.display = 'none';
+        }
+    }
+}
+
+function closeSearch() {
+    const searchBar = document.getElementById('search-bar');
+    if (searchBar) {
+        searchBar.style.display = 'none';
+    }
+}
+
+function performSearch() {
+    const query = document.getElementById('search-input').value.trim();
+    if (query) {
+        console.log('Searching for:', query);
+        // You can implement actual search functionality here
+        // For now, just log it
+    }
+}
+
+// Close search when pressing Escape
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closeSearch();
+    }
+});
+
+// Search on Enter key
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+});
