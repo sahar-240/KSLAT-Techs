@@ -5,21 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Natural History Museum</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Font Awesome for Search Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
+        <div class="navbar-content">
+            <!-- Logo -->
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                Natural History Museum
+                <span class="brand-icon">🏛️</span>
+                <span class="brand-text">Natural<br>Gallery</span>
             </a>
+
+            <!-- Nav Links -->
             <ul class="nav-links">
-                <li><a asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">HOME</a></li>
-                <li><a href="@Url.Action("Index", "Home")#about">ABOUT</a></li>
-                <li><a asp-controller="Home" asp-action="Visit" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Visit" ? "active" : "")">VISIT</a></li>
+                <li><a asp-controller="Home" asp-action="Visit" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Visit" ? "active" : "")">VISIT US</a></li>
                 <li><a asp-controller="Home" asp-action="WhatsOn" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "WhatsOn" ? "active" : "")">WHAT'S ON</a></li>
-                <li><a asp-controller="Home" asp-action="Contact" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Contact" ? "active" : "")">CONTACT</a></li>
+                <li><a href="#amenities" class="">AMENITIES</a></li>
+                <li><a asp-controller="Home" asp-action="Support" class="">MEMBERSHIP</a></li>
             </ul>
+
+            <!-- Search Icon -->
+            <button class="search-toggle" onclick="toggleSearch()" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div id="search-bar" class="search-bar" style="display: none;">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="SEARCH">
+                <button type="button" class="search-btn" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
