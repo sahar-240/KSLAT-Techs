@@ -292,6 +292,458 @@ a {
 }
 
 /* ============================================
+   TOURS LIST PAGE STYLES
+   ============================================ */
+
+.tours-notice {
+    background: #f5f5f5;
+    padding: 16px 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tours-list-section {
+    background: #fff;
+    padding: 40px 20px;
+}
+
+.tours-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tour-card-detailed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 48px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .tour-card-detailed.tour-light-bg {
+        background: #f0f5f0;
+    }
+
+.tour-card-left {
+    width: 100%;
+    overflow: hidden;
+}
+
+.tour-image-large {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 350px;
+}
+
+.tour-card-right {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #2b2b2b;
+    position: relative;
+}
+
+    .tour-card-right.tour-dark {
+        background: #2b2b2b;
+        color: #fff;
+    }
+
+.tour-card-detailed.tour-light-bg .tour-card-right {
+    background: #f0f5f0;
+    color: #333;
+}
+
+.tour-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #a8d68f;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.tour-title-light {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2b6c51;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.tour-meta {
+    font-size: 0.85rem;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.tour-meta-light {
+    font-size: 0.85rem;
+    color: #666;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.tour-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.tour-description-light {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.tour-details {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+    .tour-details li {
+        font-size: 0.85rem;
+        color: #999;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+    }
+
+.tour-details-light li {
+    font-size: 0.85rem;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.tour-book-btn {
+    display: inline-block;
+    background: #fff;
+    color: #2b2b2b;
+    padding: 12px 32px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+    .tour-book-btn:hover {
+        background: transparent;
+        color: #fff;
+    }
+
+.tour-book-btn-light {
+    display: inline-block;
+    background: transparent;
+    color: #2b6c51;
+    padding: 12px 32px;
+    border: 2px solid #2b6c51;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+    .tour-book-btn-light:hover {
+        background: #2b6c51;
+        color: #fff;
+    }
+
+.tour-star {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-size: 1.5rem;
+    color: #7dd89d;
+}
+
+.tour-star-light {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-size: 1.5rem;
+    color: #2b6c51;
+}
+
+/* ============================================
+   BOOKING PAGE STYLES
+   ============================================ */
+
+.booking-header {
+    background: #f9f9f9;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.back-button {
+    color: #2b6c51;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+    .back-button:hover {
+        color: #1a4a37;
+        text-decoration: underline;
+    }
+
+.booking-section {
+    background: #fff;
+    padding: 60px 20px;
+    min-height: 80vh;
+}
+
+.booking-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.booking-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #2b6c51;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+    .form-group label {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        transition: border 0.3s ease;
+    }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2b6c51;
+            box-shadow: 0 0 0 3px rgba(43, 108, 81, 0.1);
+        }
+
+.accessibility-notice {
+    background: #f5f5f5;
+    padding: 16px;
+    border-radius: 4px;
+    margin: 16px 0;
+}
+
+    .accessibility-notice p {
+        font-size: 0.85rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .accessibility-notice input[type="checkbox"] {
+        margin-right: 8px;
+    }
+
+    .accessibility-notice label {
+        font-size: 0.9rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+.pay-button {
+    background: #2b2b2b;
+    color: #fff;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+    .pay-button:hover {
+        background: #1a1a1a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+/* ============================================
+   TICKET PAGE STYLES
+   ============================================ */
+
+.ticket-section {
+    background: #f5f5f5;
+    padding: 60px 20px;
+    min-height: 80vh;
+}
+
+.ticket-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.ticket-box {
+    background: #2b2b2b;
+    border: 20px solid #2b2b2b;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-header {
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #2b2b2b;
+}
+
+.ticket-label {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.ticket-info {
+    padding: 30px;
+    background: #2b2b2b;
+}
+
+.ticket-row {
+    text-align: center;
+}
+
+.ticket-field-name {
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.ticket-number-section {
+    background: #2b2b2b;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.ticket-number-label {
+    color: #ccc;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.ticket-number {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+}
+
+.ticket-footer {
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    border-top: 2px solid #2b2b2b;
+}
+
+.ticket-message {
+    color: #2b6c51;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    margin: 4px 0;
+}
+
+.booking-summary {
+    background: #fff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .booking-summary h3 {
+        color: #2b6c51;
+        font-size: 1.3rem;
+        margin-bottom: 24px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.summary-value {
+    color: #666;
+}
+
+.return-link {
+    display: inline-block;
+    margin-top: 24px;
+    color: #2b6c51;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+    .return-link:hover {
+        text-decoration: underline;
+    }
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
@@ -327,6 +779,54 @@ a {
     .browse-card {
         min-height: 200px;
     }
+
+    .tour-card-detailed {
+        grid-template-columns: 1fr;
+        margin-bottom: 32px;
+    }
+
+    .tour-card-right {
+        padding: 24px;
+    }
+
+    .tour-title,
+    .tour-title-light {
+        font-size: 1.4rem;
+    }
+
+    .ticket-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .ticket-box {
+        border: 10px solid #2b2b2b;
+    }
+
+    .ticket-header {
+        padding: 20px;
+    }
+
+    .ticket-label {
+        font-size: 1.8rem;
+    }
+
+    .ticket-info,
+    .ticket-number-section {
+        padding: 20px;
+    }
+
+    .ticket-footer {
+        padding: 20px;
+    }
+
+    .booking-container {
+        max-width: 100%;
+    }
+
+    .booking-title {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -340,5 +840,36 @@ a {
 
     .section-title {
         font-size: 1.3rem;
+    }
+
+    .tour-card-detailed {
+        margin-bottom: 24px;
+    }
+
+    .tour-title,
+    .tour-title-light {
+        font-size: 1.2rem;
+    }
+
+    .tour-card-right {
+        padding: 16px;
+    }
+
+    .tour-description,
+    .tour-description-light {
+        font-size: 0.85rem;
+    }
+
+    .pay-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .ticket-label {
+        font-size: 1.4rem;
+    }
+
+    .ticket-number {
+        font-size: 1.2rem;
     }
 }
