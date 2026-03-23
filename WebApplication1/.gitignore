@@ -12,7 +12,6 @@
 .vs/
 
 # Build results
-bin/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -23,6 +22,9 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
+obj/
+Migrations/
+bin/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
