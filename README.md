@@ -40,10 +40,15 @@ Visitor Information:
         Location
         Accessibility
         FAQs 
-        
 
-Figma Design:
-<img width="1388" height="795" alt="image" src="https://github.com/user-attachments/assets/ffa7bd87-c713-4a41-b534-5dfc88811418" />
+Figma:
+<img width="1388" height="795" alt="image" src="https://github.com/user-attachments/assets/0fc2fc10-90ee-4677-ac3a-82e13eb58bf4" />
+
+
+
+
+
+
 
 
 
