@@ -566,7 +566,6 @@ C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\bundle\WebApplication1.styles.css
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css
-C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-cstad1b2fk-cstad1b2fk.gz
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\5e8deymhti-{0}-l9z783zosm-l9z783zosm.gz
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\u3m5yo2x8f-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\w3u7ibosd4-{0}-gr9089bura-gr9089bura.gz
@@ -643,3 +642,4 @@ C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.genruntimeconfig.cache
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-pqcphoz2qj-pqcphoz2qj.gz
