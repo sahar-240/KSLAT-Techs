@@ -11,32 +11,34 @@ Amine Bennacer
 
 
 Museum Tour Management website plan: 
--
+
 Search option: 
 - Browse available tours – date, theme, duration, language 
 - Featured recommendations 
-- Seasonal & special exhibition tours 
+- Seasonal & special exhibition tours
+  
 Booking and reservations: 
 - Real-time availability calendar 
 - Online ticket booking 
 - Group booking options 
 - Discount codes & promotions 
 - E-ticket  
-- Booking confirmation email & reminders 
+- Booking confirmation email & reminders
+  
 User Accounts:  
 - Create/login account 
 - View booking history 
 - Modify/cancel bookings 
 - Download invoices/receipts 
-- Save favourite tours 
+- Save favourite tours
+
 Tour/Events Details Pages: 
 - Descriptions 
 - Duration 
-- Meeting point 
 - Bookings
+
 Visitor Information: 
 - Opening hours 
-- Ticket pricing 
 - Location
 - Accessibility
 - FAQs 
