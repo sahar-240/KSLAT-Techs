@@ -21,7 +21,7 @@
             <!-- Nav Links -->
             <ul class="nav-links">
                 <li><a asp-controller="Home" asp-action="Visit" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Visit" ? "active" : "")">VISIT US</a></li>
-                <li><a asp-controller="Home" asp-action="WhatsOn" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "WhatsOn" ? "active" : "")">WHAT'S ON</a></li>
+                <li><a asp-controller="WhatsOn" asp-action="Index" class="@(ViewContext.RouteData.Values["Controller"]?.ToString() == "WhatsOn" ? "active" : "")">WHAT'S ON</a></li>
                 <li><a href="#amenities" class="">AMENITIES</a></li>
                 <li><a asp-controller="Home" asp-action="Support" class="">MEMBERSHIP</a></li>
             </ul>
@@ -62,7 +62,7 @@
                         <li><a asp-controller="Home" asp-action="Support">Support Us</a></li>
                         <li><a asp-controller="Home" asp-action="Donation">Donate</a></li>
                         <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
-                        <li><a asp-controller="Home" asp-action="WhatsOn">What's On</a></li>
+                        <li><a asp-controller="WhatsOn" asp-action="Index">What's On</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

@@ -9,11 +9,6 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult WhatsOn()
-        {
-            return View();
-        }
-
         public IActionResult Tours()
         {
             return View();
