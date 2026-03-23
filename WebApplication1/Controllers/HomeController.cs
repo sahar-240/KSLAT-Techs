@@ -53,14 +53,8 @@ namespace WebApplication1.Controllers
             {
                 try
                 {
-                    // Here you would typically:
-                    // 1. Save the donation to the database
-                    // 2. Process payment through a payment gateway (Stripe, PayPal, etc.)
-                    // 3. Send confirmation email
-
                     _logger.LogInformation($"Donation received: £{model.Amount} from {model.FirstName} {model.LastName}");
 
-                    // For now, just redirect to success page
                     TempData["SuccessMessage"] = $"Thank you for your donation of £{model.Amount}!";
                     return RedirectToAction("Success");
                 }
@@ -75,12 +69,6 @@ namespace WebApplication1.Controllers
         }
 
         public IActionResult Success()
-        {
-            return View();
-        }
-
-        // VISIT PAGE
-        public IActionResult Visit()
         {
             return View();
         }
@@ -105,11 +93,6 @@ namespace WebApplication1.Controllers
             {
                 try
                 {
-                    // Here you would typically:
-                    // 1. Save the contact form to database
-                    // 2. Send email to support team
-                    // 3. Send confirmation email to user
-
                     _logger.LogInformation($"Contact form received from {model.Name} ({model.Email})");
 
                     TempData["SuccessMessage"] = "Thank you for your message! We'll get back to you soon.";

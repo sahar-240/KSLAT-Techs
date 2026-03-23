@@ -1,45 +1,149 @@
 ﻿@{
     ViewData["Title"] = "What's On";
+    Layout = "_Layout";
 }
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>WHAT'S ON</h1>
-        <p>Discover our current exhibitions and events</p>
+<link rel="stylesheet" href="~/css/whatson.css" />
+
+<!-- Hero Banner -->
+<section class="hero-banner">
+    <img src="~/images/whats-on-banner.jpg" alt="What's On" class="banner-image" />
+    <div class="banner-overlay">
+        <h1 class="banner-title">WHAT'S ON</h1>
+        <p class="banner-subtitle">VIEW OUR TOURS & EVENTS</p>
     </div>
 </section>
 
-<!-- Placeholder Section -->
-<section class="whats-on-section">
-    <div class="container">
-        <h2>CURRENT EXHIBITIONS & EVENTS</h2>
-        <p style="text-align: center; color: #666; font-size: 1.1rem;">
-            This page is currently being updated with our latest exhibitions and events.
-        </p>
-        <p style="text-align: center; color: #666;">
-            Please check back soon for exciting content!
-        </p>
+<!-- Upcoming Section with Carousel -->
+<section class="upcoming-section">
+    <div class="upcoming-container">
+        <button class="nav-circle nav-left" onclick="scrollLeft()">‹</button>
+        
+        <div class="upcoming-cards-wrapper">
+            <!-- Exhibition Card -->
+            <div class="upcoming-card exhibition-card">
+                <img src="~/images/daniel-solander.jpg" alt="Daniel Solander Exhibition" class="card-image" />
+                <div class="card-overlay">
+                    <span class="card-badge">UPCOMING</span>
+                    <div class="card-text">
+                        <span class="card-label">EXHIBITION</span>
+                        <h3 class="card-title">DANIEL SOLANDER</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour Card -->
+            <div class="upcoming-card tour-card">
+                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: 100%; height: 100%;">
+                    <img src="~/images/identity-desire.jpg" alt="Identity in Desire Tour" class="card-image" />
+                    <div class="card-overlay">
+                        <span class="card-badge">UPCOMING</span>
+                        <div class="card-text">
+                            <span class="card-label">TOUR</span>
+                            <h3 class="card-title">IDENTITY IN DESIRE</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <button class="nav-circle nav-right" onclick="scrollRight()">›</button>
     </div>
 </section>
 
-<!-- Navigation Links Section -->
-<section class="navigation-section">
+<!-- Events Section -->
+<section class="events-section">
     <div class="container">
-        <h2>EXPLORE MORE</h2>
-        <div class="nav-links">
-            <a href="/WhatsOn/Tours" class="nav-card">
-                <h3>🎭 Tours</h3>
-                <p>Explore our guided museum tours</p>
+        <h2 class="section-title">EVENTS</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-container">
+            <div class="event-item">
+                <img src="~/images/iris-van-herpen.jpg" alt="Iris van Herpen Exhibition" class="event-image" />
+                <div class="event-overlay">
+                    <span class="event-label">EXHIBITION</span>
+                    <h4 class="event-title">IRIS VAN HERPEN</h4>
+                </div>
+            </div>
+
+            <div class="browse-card">
+                <a href="#events" class="browse-link">
+                    <span class="browse-text">BROWSE ALL</span>
+                    <span class="browse-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tours Section -->
+<section class="tours-section">
+    <div class="container">
+        <h2 class="section-title">TOURS</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-container">
+            <div class="tour-item">
+                <img src="~/images/architecture-greece.jpg" alt="Architecture: Greece Tour" class="tour-image" />
+                <div class="tour-overlay">
+                    <span class="tour-label">TOUR</span>
+                    <h4 class="tour-title">ARCHITECTURE: GREECE</h4>
+                </div>
+            </div>
+
+            <div class="browse-card">
+                <a href="/WhatsOn/Tours" class="browse-link">
+                    <span class="browse-text">BROWSE ALL</span>
+                    <span class="browse-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Explore More Section -->
+<section class="explore-more">
+    <div class="container">
+        <h2 class="explore-title">EXPLORE MORE</h2>
+        
+        <div class="explore-grid">
+            <!-- Tours Card -->
+            <a href="/WhatsOn/Tours" class="explore-card">
+                <div class="explore-icon">🎭</div>
+                <h3>TOURS</h3>
+                <p>EXPLORE OUR GUIDED MUSEUM TOURS</p>
             </a>
-            <a href="/WhatsOn/Booking" class="nav-card">
-                <h3>📅 Booking</h3>
-                <p>Reserve your visit today</p>
+
+            <!-- Booking Card -->
+            <a href="/WhatsOn/Booking" class="explore-card">
+                <div class="explore-icon">📅</div>
+                <h3>BOOKING</h3>
+                <p>RESERVE YOUR VISIT TODAY</p>
             </a>
-            <a href="/WhatsOn/Ticket" class="nav-card">
-                <h3>🎫 Tickets</h3>
-                <p>View ticket options and pricing</p>
+
+            <!-- Tickets Card -->
+            <a href="/WhatsOn/Ticket" class="explore-card">
+                <div class="explore-icon">🎫</div>
+                <h3>TICKETS</h3>
+                <p>VIEW TICKET OPTIONS AND PRICING</p>
             </a>
         </div>
     </div>
 </section>
+
+<script>
+    // Carousel functionality
+    function scrollLeft() {
+        const wrapper = document.querySelector('.upcoming-cards-wrapper');
+        if (wrapper) {
+            wrapper.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+    }
+
+    function scrollRight() {
+        const wrapper = document.querySelector('.upcoming-cards-wrapper');
+        if (wrapper) {
+            wrapper.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    }
+</script>

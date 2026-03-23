@@ -330,16 +330,55 @@ body {
     justify-content: center;
     text-align: center;
     color: var(--white);
+    background-attachment: fixed;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 350px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Buttons */
@@ -2669,4 +2708,16 @@ section {
     .tour-image-large {
         height: 250px;
     }
+}
+
+/* Fix for main content */
+main {
+    width: 100%;
+    clear: both;
+}
+
+/* Ensure sections display properly */
+section {
+    width: 100%;
+    display: block;
 }

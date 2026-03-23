@@ -18,12 +18,13 @@
                 <span class="brand-text">Natural<br>Gallery</span>
             </a>
 
+
             <!-- Nav Links -->
             <ul class="nav-links">
-                <li><a asp-controller="Home" asp-action="Visit" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Visit" ? "active" : "")">VISIT US</a></li>
+                <li><a asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" && ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")">VISIT US</a></li>
                 <li><a asp-controller="WhatsOn" asp-action="Index" class="@(ViewContext.RouteData.Values["Controller"]?.ToString() == "WhatsOn" ? "active" : "")">WHAT'S ON</a></li>
                 <li><a href="#amenities" class="">AMENITIES</a></li>
-                <li><a asp-controller="Home" asp-action="Support" class="">MEMBERSHIP</a></li>
+                <li><a asp-controller="Home" asp-action="Support" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Support" ? "active" : "")">MEMBERSHIP</a></li>
             </ul>
 
             <!-- Search Icon -->
