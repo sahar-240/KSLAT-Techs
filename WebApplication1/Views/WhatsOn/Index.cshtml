@@ -3,9 +3,10 @@
     Layout = "_Layout";
 }
 
-<link rel="stylesheet" href="~/css/whatson.css" />
+<!-- In _Layout.cshtml (main layout) -->
+<link rel="stylesheet" href="~/css/site.css" />
 
-<!-- Hero Banner -->
+<!-- Hero Banner with What's On Title -->
 <section class="hero-banner">
     <img src="~/images/banner-tapestry.jpg" alt="Gallery Tapestry Collection" class="banner-image" />
     <div class="banner-overlay">
@@ -14,53 +15,59 @@
     </div>
 </section>
 
-<!-- Upcoming Exhibitions & Tours -->
+<!-- Upcoming Section -->
 <section class="upcoming-section">
     <div class="upcoming-container">
+
+        <!-- Left Navigation Circle -->
+        <button class="nav-circle nav-left" onclick="scrollLeft()">&#10094;</button>
+
         <!-- Exhibition Card -->
         <div class="upcoming-card exhibition-card">
-            <img src="~/images/daniel-solander.jpg" alt="Daniel Solander Exhibition" />
-            <div class="card-content">
-                <span class="card-badge">UPCOMING</span>
-                <div class="card-text">
-                    <span class="card-label">EXHIBITION</span>
-                    <h3>DANIEL SOLANDER</h3>
-                </div>
+            <img src="~/images/daniel-solander.jpg" alt="Daniel Solander Exhibition" class="card-image" />
+            <div class="card-overlay">
+                <span class="card-label">UPCOMING</span>
+                <h3 class="card-title">EXHIBITION<br>DANIEL SOLANDER</h3>
             </div>
         </div>
 
         <!-- Tour Card -->
         <div class="upcoming-card tour-card">
-            <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: 100%; height: 100%; display: flex; flex-direction: column;">
-                <img src="~/images/identity-desire.jpg" alt="Identity in Desire Tour" />
-                <div class="card-content">
-                    <span class="card-badge">UPCOMING</span>
-                    <div class="card-text">
-                        <span class="card-label">TOUR</span>
-                        <h3>IDENTITY IN DESIRE</h3>
-                    </div>
+            <a href="/WhatsOn/Tours" class="card-link">
+                <img src="~/images/identity-desire.jpg" alt="Identity in Desire Tour" class="card-image" />
+                <div class="card-overlay">
+                    <span class="card-label">UPCOMING</span>
+                    <h3 class="card-title">TOUR<br>IDENTITY IN DESIRE</h3>
                 </div>
             </a>
         </div>
+
+        <!-- Right Navigation Circle -->
+        <button class="nav-circle nav-right" onclick="scrollRight()">&#10095;</button>
+
     </div>
 </section>
 
 <!-- Events Section -->
 <section class="events-section">
     <h2 class="section-title">EVENTS</h2>
-    <div class="grid-container">
+    <div class="section-divider"></div>
+
+    <div class="grid-2-container">
+        <!-- Event Item -->
         <div class="event-item">
             <img src="~/images/iris-van-herpen.jpg" alt="Iris van Herpen Exhibition" class="event-image" />
-            <div class="event-info">
-                <span class="event-label">EXHIBITION</span>
-                <h4>IRIS VAN HERPEN</h4>
+            <div class="event-overlay">
+                <span class="event-category">EXHIBITION</span>
+                <h4 class="event-title">IRIS VAN HERPEN</h4>
             </div>
         </div>
 
-        <div class="browse-card">
+        <!-- Browse All Card -->
+        <div class="browse-card events-browse">
             <a href="/WhatsOn/Events" class="browse-link">
-                <span class="browse-text">BROWSE ALL</span>
                 <span class="browse-arrow">→</span>
+                <span class="browse-text">BROWSE ALL</span>
             </a>
         </div>
     </div>
@@ -69,20 +76,36 @@
 <!-- Tours Section -->
 <section class="tours-section">
     <h2 class="section-title">TOURS</h2>
-    <div class="grid-container">
+    <div class="section-divider"></div>
+
+    <div class="grid-2-container">
+        <!-- Tour Item -->
         <div class="tour-item">
             <img src="~/images/architecture-greece.jpg" alt="Architecture Greece Tour" class="tour-image" />
-            <div class="tour-info">
-                <span class="tour-label">TOUR</span>
-                <h4>ARCHITECTURE: GREECE</h4>
+            <div class="tour-overlay">
+                <span class="tour-category">TOUR</span>
+                <h4 class="tour-title">ARCHITECTURE: GREECE</h4>
             </div>
         </div>
 
-        <div class="browse-card">
+        <!-- Browse All Card -->
+        <div class="browse-card tours-browse">
             <a href="/WhatsOn/Tours" class="browse-link">
-                <span class="browse-text">BROWSE ALL</span>
                 <span class="browse-arrow">→</span>
+                <span class="browse-text">BROWSE ALL</span>
             </a>
         </div>
     </div>
 </section>
+
+<script>
+    function scrollLeft() {
+        console.log('Scroll left');
+        // Add carousel functionality if needed
+    }
+
+    function scrollRight() {
+        console.log('Scroll right');
+        // Add carousel functionality if needed
+    }
+</script>
