@@ -1,0 +1,1033 @@
+﻿/* ============================================
+   EVENTS.CSS
+   Styles for: Events listing, individual event 
+   pages, booking form, and ticket page.
+   ============================================ */
+
+
+/* ------------------------------------------
+   EVENTS PAGE - HERO BANNER
+   ------------------------------------------ */
+.events-hero {
+    height: 320px;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/Picture30.png') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+/* White box that sits on top of the hero image */
+.events-hero-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 60px 150px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+    /* "EVENTS" title inside the white box */
+    .events-hero-box h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: #2d5f3f;
+        margin-bottom: 15px;
+    }
+
+    /* Subtitle text under the title */
+    .events-hero-box p {
+        font-size: 1.1rem;
+        color: #666;
+    }
+
+
+/* ------------------------------------------
+   EVENTS PAGE - FILTER BAR
+   The genre dropdown, favourites button, 
+   and sort dropdown row
+   ------------------------------------------ */
+.events-filter-bar {
+    background-color: white;
+    padding: 40px;
+    border-radius: 4px;
+    margin-bottom: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Each filter group (label + dropdown) */
+.events-filter-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+    /* "GENRE:" and "SORT:" labels */
+    .events-filter-group label {
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #666;
+        white-space: nowrap;
+    }
+
+/* The dropdown selects */
+.events-filter-dropdown {
+    padding: 10px 16px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    min-width: 150px;
+    /* Custom arrow icon */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    padding-right: 32px;
+}
+
+    .events-filter-dropdown:hover,
+    .events-filter-dropdown:focus {
+        border-color: #2d5f3f;
+        outline: none;
+    }
+
+/* Left filter group pushes right */
+.events-filter-group:first-child {
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+/* Right filter group pushes left */
+.events-filter-group:last-child {
+    flex: 1;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+/* Green "FAVOURITES" button */
+.events-btn-primary {
+    padding: 12px 28px;
+    background-color: #2d5f3f;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+    .events-btn-primary:hover {
+        background-color: #1f4628;
+    }
+
+    .events-btn-primary i {
+        margin-right: 8px;
+    }
+
+
+/* ------------------------------------------
+   EVENTS PAGE - CARD GRID
+   The 3-column grid of event cards
+   ------------------------------------------ */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 50px;
+    margin-bottom: 150px;
+}
+
+/* Each event card */
+.events-card {
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 6px solid #333;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+    /* Hover lift effect */
+    .events-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Border colours per event */
+    .events-card[data-event-id="1"] {
+        border-color: #B6827C;
+    }
+
+    .events-card[data-event-id="2"] {
+        border-color: #38ADC6;
+    }
+
+    .events-card[data-event-id="3"] {
+        border-color: #9EAEBE;
+    }
+
+    .events-card[data-event-id="4"] {
+        border-color: #8CB16C;
+    }
+
+    .events-card[data-event-id="5"] {
+        border-color: #D45D40;
+    }
+
+    .events-card[data-event-id="6"] {
+        border-color: #8C6A51;
+    }
+
+/* Card image area */
+.events-card-image {
+    width: 100%;
+    height: 300px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+}
+
+    .events-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* Card text content area */
+.events-card-content {
+    padding: 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title row (title + heart button) */
+.events-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+    .events-card-header h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+/* Title colours per event */
+.events-card[data-event-id="1"] h3 {
+    color: #B6827C;
+}
+
+.events-card[data-event-id="2"] h3 {
+    color: #38ADC6;
+}
+
+.events-card[data-event-id="3"] h3 {
+    color: #9EAEBE;
+}
+
+.events-card[data-event-id="4"] h3 {
+    color: #8CB16C;
+}
+
+.events-card[data-event-id="5"] h3 {
+    color: #D45D40;
+}
+
+.events-card[data-event-id="6"] h3 {
+    color: #8C6A51;
+}
+
+/* Heart/favourite button */
+.events-btn-heart {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+}
+
+    .events-btn-heart:hover {
+        color: #d45d40;
+    }
+
+    .events-btn-heart.active i {
+        color: #2d5f3f;
+    }
+
+/* Short description paragraph */
+.events-card-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+/* Date/time/location info block */
+.events-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.events-card-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Green labels like "DATES", "TIME", "LOCATION" */
+.events-card-info-label {
+    font-weight: 600;
+    color: #2d5f3f;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* Dark "BOOK" button on each card */
+.events-btn-book {
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+    .events-btn-book:hover {
+        background-color: #2d5f3f;
+    }
+
+/* Hidden class for filtering */
+.events-card.hidden {
+    display: none;
+}
+
+
+/* ------------------------------------------
+   INDIVIDUAL EVENT PAGE
+   The detail page for one event
+   ------------------------------------------ */
+.event-detail-card {
+    background-color: #f5f5f5;
+    max-width: 900px;
+    width: 100%;
+    margin: 40px auto;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Top section: image + vertical title */
+.event-detail-image-section {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    gap: 0;
+}
+
+/* Back arrow button */
+.event-detail-back {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: #000;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+    .event-detail-back:hover {
+        background-color: #333;
+        color: white;
+    }
+
+/* Main event image */
+.event-detail-image {
+    width: 100%;
+    height: 500px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    flex: 1;
+}
+
+    .event-detail-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* Vertical title box on the right side */
+.event-detail-title-box {
+    background-color: white;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.event-detail-title-wrapper {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 1;
+    text-align: center;
+}
+
+/* "EXHIBITION" label */
+.event-detail-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+/* Event name in colour */
+.event-detail-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+/* Coloured bottom section with dates and description */
+.event-detail-info {
+    padding: 45px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Date box on the left */
+.event-detail-date-box {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.event-detail-year {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.event-detail-date-row {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.event-detail-date-number {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 0.85;
+    flex: 1;
+    text-align: center;
+}
+
+.event-detail-date-divider {
+    width: 2px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0 15px;
+}
+
+.event-detail-date-labels {
+    display: flex;
+    gap: 0;
+}
+
+.event-detail-date-label {
+    flex: 1;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Right side: time, location, description */
+.event-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.event-detail-item {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.event-detail-item-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.event-detail-description {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+/* Footer row with heart + book button */
+.event-detail-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    margin-top: 15px;
+}
+
+.event-detail-heart {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 8px;
+}
+
+    .event-detail-heart:hover {
+        color: #e0e0e0;
+    }
+
+    .event-detail-heart.active {
+        color: #2d5f3f;
+    }
+
+.event-detail-book-btn {
+    padding: 12px 32px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .event-detail-book-btn:hover {
+        background-color: #2d5f3f;
+        color: white;
+    }
+
+
+/* ------------------------------------------
+   BOOKING PAGE
+   The form where users enter their details
+   ------------------------------------------ */
+.booking-container {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Each form row (label + input) */
+.booking-field {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+    /* Labels like "EVENT:", "DATE:", etc */
+    .booking-field label {
+        min-width: 90px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #333;
+        text-align: right;
+    }
+
+    /* Text inputs */
+    .booking-field input[type="text"],
+    .booking-field input[type="email"],
+    .booking-field input[type="tel"] {
+        flex: 1;
+        padding: 10px 14px;
+        border: 1px solid #333;
+        border-radius: 2px;
+        font-size: 0.9rem;
+        color: #333;
+        background-color: white;
+    }
+
+    .booking-field input:focus {
+        outline: none;
+        border-color: #2d5f3f;
+    }
+
+    /* Dropdown selects */
+    .booking-field select {
+        padding: 10px 14px;
+        border: 1px solid #333;
+        border-radius: 2px;
+        font-size: 0.9rem;
+        color: #333;
+        background-color: white;
+        cursor: pointer;
+    }
+
+/* Error message under inputs */
+.booking-error {
+    color: #d45d40;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: none;
+}
+
+    .booking-error.show {
+        display: block;
+    }
+
+/* Big "BOOK" submit button */
+.booking-submit {
+    padding: 16px 60px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+    margin-top: 10px;
+}
+
+    .booking-submit:hover {
+        background-color: #2d5f3f;
+    }
+
+
+/* ------------------------------------------
+   TICKET PAGE
+   The generated ticket after booking
+   ------------------------------------------ */
+
+/* Outer wrapper - this gets the SVG cutout shape */
+.ticket-outer {
+    width: 400px;
+    position: relative;
+}
+
+.ticket-clipped {
+    clip-path: url(#ticketClip);
+}
+
+/* Top green section of ticket */
+.ticket-top {
+    background-color: #2d5f3f;
+    padding: 50px 32px 35px;
+    position: relative;
+}
+
+/* Decorative dots pattern */
+.ticket-top-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.04;
+    background-image: radial-gradient(circle at 20% 30%, white 1px, transparent 1px), radial-gradient(circle at 80% 70%, white 1px, transparent 1px), radial-gradient(circle at 50% 50%, white 0.5px, transparent 0.5px);
+    background-size: 30px 30px, 40px 40px, 20px 20px;
+    pointer-events: none;
+}
+
+/* "NATURAL GALLERY" badge at top */
+.ticket-badge {
+    display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 6px 20px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 14px;
+}
+
+/* Event name on ticket */
+.ticket-event-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+/* "1 ticket" text */
+.ticket-qty {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
+.ticket-header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Date/time/admit/price grid */
+.ticket-details {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+}
+
+.ticket-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* "DATE", "TIME" etc labels */
+.ticket-detail-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ticket-detail-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+}
+
+/* Dashed tear line between top and bottom */
+.ticket-tear {
+    background-color: #2d5f3f;
+    height: 2px;
+    position: relative;
+}
+
+    .ticket-tear::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 24px;
+        right: 24px;
+        border-top: 2px dashed rgba(255, 255, 255, 0.3);
+    }
+
+/* Bottom stub section */
+.ticket-stub {
+    background-color: #2d5f3f;
+    padding: 28px 32px 32px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* "Natural Gallery" brand box in stub */
+.ticket-stub-brand {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    flex-shrink: 0;
+}
+
+.ticket-stub-brand-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2d5f3f;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* QR code area */
+.ticket-stub-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticket-qr {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .ticket-qr canvas,
+    .ticket-qr img {
+        display: block !important;
+    }
+
+/* Ticket code like "NG-4F8A-K2M7" */
+.ticket-code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+/* Confirmation box below ticket */
+.ticket-confirmation {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px 32px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.ticket-confirmation-icon {
+    width: 44px;
+    height: 44px;
+    background-color: #2d5f3f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.ticket-confirmation-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2d5f3f;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.ticket-confirmation-text {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 4px;
+}
+
+/* Page wrapper for centering ticket */
+.ticket-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 20px;
+}
+
+
+/* ------------------------------------------
+   RESPONSIVE - MOBILE STYLES
+   ------------------------------------------ */
+@media (max-width: 1400px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Filter bar stacks vertically */
+    .events-filter-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .events-filter-group {
+        width: 100%;
+        flex: none !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .events-filter-dropdown {
+        width: 100%;
+    }
+
+    /* Cards go single column */
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .events-card-image {
+        height: 220px;
+    }
+
+    .events-hero-box {
+        padding: 40px 60px;
+    }
+
+        .events-hero-box h1 {
+            font-size: 2.8rem;
+        }
+
+    /* Individual event page stacks */
+    .event-detail-image-section {
+        flex-direction: column;
+    }
+
+    .event-detail-title-wrapper {
+        writing-mode: horizontal-tb;
+        transform: none;
+        gap: 8px;
+    }
+
+    .event-detail-label {
+        font-size: 1rem;
+    }
+
+    .event-detail-title {
+        font-size: 1.8rem;
+    }
+
+    .event-detail-image {
+        height: 300px;
+    }
+
+    .event-detail-date-number {
+        font-size: 3rem;
+    }
+
+    .event-detail-info {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px;
+    }
+
+    /* Booking form */
+    .booking-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .booking-field label {
+            text-align: left;
+            min-width: auto;
+        }
+
+        .booking-field input,
+        .booking-field select {
+            width: 100%;
+        }
+
+    /* Ticket */
+    .ticket-outer {
+        width: 330px;
+    }
+
+    .ticket-top {
+        padding: 45px 24px 28px;
+    }
+
+    .ticket-event-name {
+        font-size: 1.2rem;
+    }
+
+    .ticket-stub {
+        padding: 22px 24px 26px;
+        gap: 14px;
+    }
+}
