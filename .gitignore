@@ -92,3 +92,6 @@ yarn-error.log*
 # wwwroot (if you want to exclude compiled assets)
 # Uncomment if needed:
 # wwwroot/lib/
+/WebApplication1/obj/Debug/net10.0/rpswa.dswa.cache.json
+/.gitignore
+/WebApplication1/obj/Debug/net10.0/rpswa.dswa.cache.json
