@@ -96,3 +96,6 @@ yarn-error.log*
 /WebApplication1/obj/Debug/net10.0/rpswa.dswa.cache.json
 /.gitignore
 /WebApplication1/obj/Debug/net10.0/rpswa.dswa.cache.json
+/WebApplication1/obj/Debug/net10.0/WebApplication1.AssemblyInfo.cs
+/WebApplication1/obj/Debug/net10.0/WebApplication1.AssemblyInfoInputs.cache
+/WebApplication1/obj/Debug/net10.0/WebApplication1.AssemblyInfo.cs
