@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Thierry Mugler";
+    Layout = "_Layout";
+}
+
+<!-- Link to events CSS -->
+<link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
+
+<div class="event-detail-card">
+    <!-- Image + vertical title -->
+    <div class="event-detail-image-section">
+        <a href="/WhatsOn/Events" class="event-detail-back" title="Return to Events">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="event-detail-image">
+            <img src="~/images/Picture13.png" alt="Thierry Mugler">
+            </div>
+            <div class="event-detail-title-box">
+                <div class="event-detail-title-wrapper">
+                    <span class="event-detail-label">EXHIBITION</span>
+                    <span class="event-detail-title" style="color: #8CB16C;">THIERRY MUGLER</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coloured info section -->
+        <div class="event-detail-info" style="background-color: #8CB16C;">
+            <div class="event-detail-date-box">
+                <div class="event-detail-year">2026</div>
+                <div class="event-detail-date-row">
+                    <div class="event-detail-date-number">22</div>
+                    <div class="event-detail-date-divider"></div>
+                    <div class="event-detail-date-number">04</div>
+                </div>
+                <div class="event-detail-date-labels">
+                    <div class="event-detail-date-label">JUN</div>
+                    <div class="event-detail-date-label">AUG</div>
+                </div>
+            </div>
+
+            <div class="event-detail-content">
+                <div class="event-detail-item">
+                    <span class="event-detail-item-label">TIME</span>
+                    <span>MON-FRI 11:00 AM - 7:00 PM</span>
+                </div>
+                <div class="event-detail-item">
+                    <span class="event-detail-item-label">LOCATION</span>
+                    <span>AUGUSTUS ROOM, FLOOR 3</span>
+                </div>
+                <div class="event-detail-description">
+                    French fashion designer Thierry Mugler is celebrated for bold futuristic design and nature-inspired silhouettes. His iconic collections feature sculptural animal-inspired forms and architectural innovation that challenge conventional fashion design. This exhibition brings together his most revolutionary pieces, demonstrating how fashion can transcend clothing to become wearable art.
+                </div>
+                <div class="event-detail-footer">
+                    <button class="event-detail-heart" onclick="toggleHeart(this)" title="Save to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <a href="/WhatsOn/EventBook?event=Thierry Mugler" class="event-detail-book-btn">BOOK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleHeart(element) {
+            var icon = element.querySelector('i');
+            element.classList.toggle('active');
+            icon.classList.toggle('far');
+            icon.classList.toggle('fas');
+        }
+    </script>
