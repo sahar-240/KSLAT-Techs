@@ -1,5 +1,4 @@
 ﻿@model WebApplication1.Models.HomeViewModel
-@using WebApplication1.Models
 @{
     ViewData["Title"] = "Home";
 }
@@ -19,244 +18,189 @@
         <div class="mission-content">
             <div class="mission-image">
                 <img src="~/images/mission.jpg" alt="Museum Mission">
-                </div>
-                <div class="mission-text">
-                    <p>To inspire curiosity and foster a deeper understanding of the natural world through engaging exhibits, educational programs, and groundbreaking research. We preserve precious specimens and artifacts for future generations while making science accessible to all.</p>
-                    <button class="btn btn-primary">LEARN MORE</button>
-                </div>
+            </div>
+            <div class="mission-text">
+                <p>To inspire curiosity and foster a deeper understanding of the natural world through engaging exhibits, educational programs, and groundbreaking research. We preserve precious specimens and artifacts for future generations while making science accessible to all.</p>
+                <button class="btn btn-primary">LEARN MORE</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Support Section -->
-    <section class="support">
-        <div class="container">
-            <h2>SUPPORT US</h2>
-            <div class="support-content">
-                <div class="support-text">
-                    <p>Your generous donations help us continue our mission to educate, inspire, and preserve our natural heritage. Every contribution makes a difference in supporting our exhibits, research, and educational programs.</p>
-                    <button class="btn btn-secondary" onclick="openDonationModal()">DONATE NOW</button>
-                </div>
-                <div class="support-image">
-                    <img src="~/images/support.jpg" alt="Support Museum">
-                    </div>
-                </div>
+<!-- Support Section -->
+<section class="support">
+    <div class="container">
+        <h2>SUPPORT US</h2>
+        <div class="support-content">
+            <div class="support-text">
+                <p>Your generous donations help us continue our mission to educate, inspire, and preserve our natural heritage. Every contribution makes a difference in supporting our exhibits, research, and educational programs.</p>
+                <button class="btn btn-secondary" onclick="openDonationModal()">DONATE NOW</button>
             </div>
-        </section>
-
-        <!-- Opening Hours Section -->
-        <section class="opening-hours">
-            <div class="container">
-                <h2>PLAN YOUR VISIT</h2>
-                <h3>OPENING HOURS</h3>
-                <div class="hours-list">
-                    @foreach (var hour in Model.OpeningHours)
-                    {
-                        <div class="hours-item">
-                            <span class="day">@hour.DayOfWeek</span>
-                            <span class="time">
-                                @if (hour.IsClosed)
-                                {
-                                    <text>CLOSED</text>
-                                }
-                                else
-                                {
-                                    <text>@hour.OpenTime?.ToString(@"hh\:mm") - @hour.CloseTime?.ToString(@"hh\:mm")</text>
-                                }
-                            </span>
-                        </div>
-                    }
-                </div>
+            <div class="support-image">
+                <img src="~/images/support.jpg" alt="Support Museum">
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- Become a Member Section (Updated Design) -->
-        <section class="membership">
-            <div class="membership-container">
-                <div class="membership-card-overlay">
-                    <div class="membership-overlay-content">
-                        <h2>BECOME A MEMBER</h2>
-                        <p class="membership-subtitle">DISCOUNTS</p>
-                        <p class="membership-feature">MEMBER ONLY COLLECTIONS</p>
-                        <p class="membership-feature">MODIFY & VIEW TICKETS</p>
-                        <p class="membership-feature">SIGN UP FOR FREE</p>
-                        <button class="btn btn-primary">SIGN UP</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Accessibility Section -->
-        <section class="accessibility">
-            <div class="container">
-                <h2>ACCESSIBILITY</h2>
-                <div class="accessibility-grid">
-                    <div class="accessibility-item">
-                        <h3>PHYSICAL</h3>
-                        <ul>
-                            <li>Step-free entrance</li>
-                            <li>Lift access to all floors</li>
-                            <li>Accessible toilets</li>
-                            <li>Wheelchair-friendly galleries</li>
-                            <li>Seating throughout exhibitions</li>
-                        </ul>
-                    </div>
-                    <div class="accessibility-item">
-                        <h3>SENSORY</h3>
-                        <ul>
-                            <li>Audio descriptions</li>
-                            <li>Captioned video exhibitions</li>
-                            <li>Large print guides</li>
-                            <li>Hearing loops at reception</li>
-                            <li>Quiet visiting hours*<br><span style="font-size: 0.9rem;">*Wed & Thur 12:00-18:00</span></li>
-                        </ul>
-                    </div>
-                    <div class="accessibility-item">
-                        <h3>ASSISTED</h3>
-                        <ul>
-                            <li>Free companion ticket</li>
-                            <li>Assistance animals welcome</li>
-                            <li>Adapted guided tours available*<br><span style="font-size: 0.9rem;">*Please contact us in advance</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="accessibility-note">+ IF YOU REQUIRE SPECIFIC ACCOMMODATIONS, PLEASE CONTACT US IN ADVANCE +</p>
-            </div>
-        </section>
-
-        <!-- Location Section -->
-        <section class="location">
-            <div class="container">
-                <h2>FIND US</h2>
-                <div class="location-content">
-                    <div class="map">
-                        @{
-                            string mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.3394505151307!2d-0.2361!3d51.5896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487618a8a4c4c4c4%3A0x8c4c4c4c4c4c4c4c!2sThe%20Natural%20Gallery%2C%20Hendon%2C%20London!5e0!3m2!1sen!2suk!4v1234567890";
-                            string directionsUrl = "https://www.google.com/maps/place/The+Burroughs,+Hendon+Way,+London+NW4+4BT/@51.5896,-0.2361,15z";
+<!-- Opening Hours Section -->
+<section class="opening-hours">
+    <div class="container">
+        <h2>PLAN YOUR VISIT</h2>
+        <h3>OPENING HOURS</h3>
+        <div class="hours-list">
+            @foreach (var hour in Model.OpeningHours)
+            {
+                <div class="hours-item">
+                    <span class="day">@hour.DayOfWeek</span>
+                    <span class="time">
+                        @if (hour.IsClosed)
+                        {
+                            <text>CLOSED</text>
                         }
-                        <iframe src="@mapUrl"
-                                style="width: 100%; height: 500px; border: none; border-radius: 0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                    </div>
-                    <div class="location_info">
-                        <h3>LOCATION</h3>
-                        <div class="address-box">
-                            <p>
-                                THE NATURAL GALLERY<br>
-                                THE BURROUGHS,<br>
-                                HENDON WAY,<br>
-                                LONDON NW4 4BT
-                            </p>
-                        </div>
-                        <a href="@directionsUrl"
-                           target="_blank"
-                           class="btn btn-primary btn-directions">
-                            GET DIRECTIONS
-                        </a>
-                    </div>
+                        else
+                        {
+                            <text>@hour.OpenTime?.ToString(@"hh\:mm") - @hour.CloseTime?.ToString(@"hh\:mm")</text>
+                        }
+                    </span>
                 </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Membership Section -->
+<section class="membership">
+    <div class="container">
+        <h2>BECOME A MEMBER</h2>
+        <div class="membership-grid">
+            <div class="membership-card">
+                <h3>INDIVIDUAL</h3>
+                <p class="price">$75/year</p>
+                <ul>
+                    <li>Unlimited free admission</li>
+                    <li>10% discount in museum shop</li>
+                    <li>Members-only events</li>
+                    <li>Quarterly newsletter</li>
+                </ul>
+                <button class="btn btn-primary">JOIN NOW</button>
             </div>
-        </section>
-
-
-
-        <!-- FAQ Section -->
-        <section class="faq">
-            <h2>FAQ</h2>
-            <div class="container">
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            DO I NEED TO BOOK IN ADVANCE?
-                        </div>
-                        <div class="faq-answer">
-                            <p>Bookings are only required for tours and limited access events. This is to prevent overcrowding and provide guides and staff with a workable group size. Visitors can enjoy the majority of the museum without a booking.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            CAN I BUY TICKETS AT ARRIVAL?
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes, tickets are available for purchase at our ticket desk during opening hours. However, we recommend booking online in advance to skip the queue and ensure entry, especially during peak times.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            ARE TICKETS REFUNDABLE?
-                        </div>
-                        <div class="faq-answer">
-                            <p>Tickets purchased online can be refunded up to 24 hours before your visit. For tickets purchased at the desk, please contact our customer service team for refund eligibility.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            IS THE MUSEUM SUITABLE FOR CHILDREN?
-                        </div>
-                        <div class="faq-answer">
-                            <p>The museum is suitable for visitors of all ages. Children are encouraged to explore the exhibits and participate in workshop events regularly hosted by the museum. Parents and carers are responsible for their child's safety and must accompany any children under the age of 13.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            WHAT ARE YOUR OPENING HOURS?
-                        </div>
-                        <div class="faq-answer">
-                            <p>See the schedule above for our complete opening hours. We are open daily from 10:00 AM to 5:50 PM (last entry at 5:00 PM). We are closed on 24, 25 and 26 December.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            WHERE IS THE MUSEUM LOCATED?
-                        </div>
-                        <div class="faq-answer">
-                            <p>Check the Visit page for directions. We are located at Cromwell Road, London SW7 5BD, United Kingdom. The nearest tube stations are South Kensington and Gloucester Road.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="membership-card featured">
+                <h3>DUAL</h3>
+                <p class="price">$120/year</p>
+                <ul>
+                    <li>All Individual benefits</li>
+                    <li>For you + one guest</li>
+                    <li>Priority booking</li>
+                    <li>Special exhibition previews</li>
+                </ul>
+                <button class="btn btn-primary">JOIN NOW</button>
             </div>
-        </section>
-
-        <!-- Donation Modal -->
-        <div id="donation-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeDonationModal()">&times;</span>
-                <h2>Make a Donation</h2>
-                <form id="donation-form" method="post">
-            
-                    <!-- CSRF Token -->
-                    @Html.AntiForgeryToken()
-
-                    <div class="form-group">
-                        <label for="donor-name">Name</label>
-                        <input type="text" id="donor-name" name="donorName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="donor-email">Email</label>
-                        <input type="email" id="donor-email" name="donorEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount">Amount (£)</label>
-                        <input type="number" id="amount" name="amount" min="1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message (Optional)</label>
-                        <textarea id="message" name="message" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" name="isAnonymous"> Make this donation anonymous
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">DONATE</button>
-                </form>
+            <div class="membership-card">
+                <h3>FAMILY</h3>
+                <p class="price">$150/year</p>
+                <ul>
+                    <li>All Dual benefits</li>
+                    <li>For 2 adults + up to 4 children</li>
+                    <li>Free guest passes</li>
+                    <li>Family programs access</li>
+                </ul>
+                <button class="btn btn-primary">JOIN NOW</button>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Accessibility Section -->
+<section class="accessibility">
+    <div class="container">
+        <h2>ACCESSIBILITY</h2>
+        <div class="accessibility-grid">
+            <div class="accessibility-item">
+                <h3>WHEELCHAIR ACCESS</h3>
+                <p>Full wheelchair accessibility throughout the museum with ramps and elevators</p>
+            </div>
+            <div class="accessibility-item">
+                <h3>ASSISTED LISTENING</h3>
+                <p>Assisted listening devices available at no charge from the information desk</p>
+            </div>
+            <div class="accessibility-item">
+                <h3>SENSORY FRIENDLY</h3>
+                <p>Sensory-friendly hours and quiet spaces available for visitors who need them</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Location Section -->
+<section class="location">
+    <div class="container">
+        <h2>FIND US</h2>
+        <div class="location-content">
+            <div class="map">
+                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1784%2C51.4958%2C-0.1754%2C51.4978&layer=mapnik"
+                        width="600"
+                        height="400"
+                        frameborder="0">
+                </iframe>
+            </div>
+            <div class="location-info">
+                <h3>LOCATION</h3>
+                <p>Cromwell Road<br>London SW7 5BD<br>United Kingdom</p>
+                <button class="btn btn-secondary">GET DIRECTIONS</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+    <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+            @foreach (var faq in Model.FAQs)
+            {
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        @faq.Question
+                    </div>
+                    <div class="faq-answer">
+                        <p>@faq.Answer</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Donation Modal -->
+<div id="donation-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeDonationModal()">&times;</span>
+        <h2>Make a Donation</h2>
+        <form id="donation-form">
+            <div class="form-group">
+                <label for="donor-name">Name</label>
+                <input type="text" id="donor-name" name="donorName" required>
+            </div>
+            <div class="form-group">
+                <label for="donor-email">Email</label>
+                <input type="email" id="donor-email" name="donorEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount ($)</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="isAnonymous"> Make this donation anonymous
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">DONATE</button>
+        </form>
+    </div>
+</div>
