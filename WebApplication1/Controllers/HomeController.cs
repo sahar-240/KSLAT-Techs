@@ -27,11 +27,91 @@ namespace WebApplication1.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Privacy() => View();
+        // SUPPORT PAGE
+        public IActionResult Support()
+        {
+            var model = new SupportViewModel
+            {
+                Title = "Support Us",
+                Description = "Help us preserve and share our natural heritage"
+            };
+            return View(model);
+        }
 
-        public IActionResult Visit() => View();
+        // DONATION PAGE
+        public IActionResult Donation()
+        {
+            var model = new DonationViewModel();
+            return View(model);
+        }
 
-        public IActionResult Contact() => View();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ProcessDonation(DonationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _logger.LogInformation($"Donation received: £{model.Amount} from {model.FirstName} {model.LastName}");
+
+                    TempData["SuccessMessage"] = $"Thank you for your donation of £{model.Amount}!";
+                    return RedirectToAction("Success");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error processing donation");
+                    ModelState.AddModelError("", "An error occurred processing your donation. Please try again.");
+                }
+            }
+
+            return View("Donation", model);
+        }
+
+        public IActionResult Success()
+        {
+            return View();
+        }
+
+        // WHAT'S ON PAGE
+        public IActionResult WhatsOn()
+        {
+            return View();
+        }
+
+        // CONTACT PAGE
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Contact(ContactViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _logger.LogInformation($"Contact form received from {model.Name} ({model.Email})");
+
+                    TempData["SuccessMessage"] = "Thank you for your message! We'll get back to you soon.";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error processing contact form");
+                    ModelState.AddModelError("", "An error occurred. Please try again.");
+                }
+            }
+
+            return View(model);
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Daniel Schuller";
+    Layout = "_Layout";
+}
+
+<!-- Link to events CSS -->
+<link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
+
+<div class="event-detail-card">
+    <!-- Image + vertical title -->
+    <div class="event-detail-image-section">
+        <a href="/WhatsOn/Events" class="event-detail-back" title="Return to Events">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="event-detail-image">
+            <img src="~/images/Picture9.png" alt="Daniel Schuller">
+            </div>
+            <div class="event-detail-title-box">
+                <div class="event-detail-title-wrapper">
+                    <span class="event-detail-label">EXHIBITION</span>
+                    <span class="event-detail-title" style="color: #9EAEBE;">DANIEL SCHULLER</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coloured info section -->
+        <div class="event-detail-info" style="background-color: #9EAEBE;">
+            <div class="event-detail-date-box">
+                <div class="event-detail-year">2026</div>
+                <div class="event-detail-date-row">
+                    <div class="event-detail-date-number">15</div>
+                    <div class="event-detail-date-divider"></div>
+                    <div class="event-detail-date-number">30</div>
+                </div>
+                <div class="event-detail-date-labels">
+                    <div class="event-detail-date-label">APR</div>
+                    <div class="event-detail-date-label">JUN</div>
+                </div>
+            </div>
+
+            <div class="event-detail-content">
+                <div class="event-detail-item">
+                    <span class="event-detail-item-label">TIME</span>
+                    <span>DAILY 10:00 AM - 5:00 PM</span>
+                </div>
+                <div class="event-detail-item">
+                    <span class="event-detail-item-label">LOCATION</span>
+                    <span>NAPOLEON WING, GROUND FLOOR</span>
+                </div>
+                <div class="event-detail-description">
+                    Born 1731, Swedish botanist Daniel Schuller was a student of Carl Linnaeus who spent decades cataloguing and naming over 1000 plant species. His detailed botanical drawings combine scientific precision with artistic observation of the natural world. This exhibition brings together his most significant works, showcasing the beauty and accuracy of 18th-century botanical illustration.
+                </div>
+                <div class="event-detail-footer">
+                    <button class="event-detail-heart" onclick="toggleHeart(this)" title="Save to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <a href="/WhatsOn/EventBook?event=Daniel Schuller" class="event-detail-book-btn">BOOK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleHeart(element) {
+            var icon = element.querySelector('i');
+            element.classList.toggle('active');
+            icon.classList.toggle('far');
+            icon.classList.toggle('fas');
+        }
+    </script>
