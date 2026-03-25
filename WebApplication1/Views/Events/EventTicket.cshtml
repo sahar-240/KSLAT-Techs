@@ -1,5 +1,125 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Your Ticket";
+    Layout = "_Layout";
 }
+
+<link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
+
+<!-- QR code library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- Hidden SVG that creates the ticket cutout shape -->
+<svg width="0" height="0" style="position: absolute;">
+    <defs>
+        <clipPath id="ticketClip" clipPathUnits="objectBoundingBox">
+            <path d="
+            M 0.035,0
+            L 0.14,0
+            A 0.035,0.022 0 0 0 0.21,0
+            L 0.79,0
+            A 0.035,0.022 0 0 0 0.86,0
+            L 0.965,0
+            Q 1,0 1,0.022
+            L 1,0.63
+            A 0.04,0.025 0 0 0 1,0.68
+            L 1,0.978
+            Q 1,1 0.965,1
+            L 0.035,1
+            Q 0,1 0,0.978
+            L 0,0.68
+            A 0.04,0.025 0 0 0 0,0.63
+            L 0,0.022
+            Q 0,0 0.035,0
+            Z
+            " />
+        </clipPath>
+    </defs>
+</svg>
+
+<div class="ticket-page-wrapper">
+
+    <!-- THE TICKET -->
+    <div class="ticket-outer">
+        <div class="ticket-clipped">
+            <!-- Top section: event info -->
+            <div class="ticket-top">
+                <div class="ticket-top-pattern"></div>
+                <div class="ticket-header">
+                    <div class="ticket-badge">NATURAL GALLERY</div>
+                    <h1 class="ticket-event-name" id="t-event-name"></h1>
+                    <p class="ticket-qty" id="t-qty"></p>
+                </div>
+                <div class="ticket-details">
+                    <div class="ticket-detail">
+                        <span class="ticket-detail-label">DATE</span>
+                        <span class="ticket-detail-value" id="t-date"></span>
+                    </div>
+                    <div class="ticket-detail">
+                        <span class="ticket-detail-label">TIME</span>
+                        <span class="ticket-detail-value" id="t-time"></span>
+                    </div>
+                    <div class="ticket-detail">
+                        <span class="ticket-detail-label">ADMIT</span>
+                        <span class="ticket-detail-value" id="t-admit"></span>
+                    </div>
+                    <div class="ticket-detail">
+                        <span class="ticket-detail-label">PRICE</span>
+                        <span class="ticket-detail-value">FREE ENTRY</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tear line -->
+            <div class="ticket-tear"></div>
+
+            <!-- Bottom stub: QR code -->
+            <div class="ticket-stub">
+                <div class="ticket-stub-brand">
+                    <span class="ticket-stub-brand-text">Natural<br>Gallery</span>
+                </div>
+                <div class="ticket-stub-right">
+                    <div class="ticket-qr" id="qr-code"></div>
+                    <span class="ticket-code" id="t-code"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFIRMATION MESSAGE -->
+    <div class="ticket-confirmation">
+        <div class="ticket-confirmation-icon"><i class="fas fa-check"></i></div>
+        <p class="ticket-confirmation-title">Booking Confirmed</p>
+        <p class="ticket-confirmation-text">A copy of this ticket has been emailed to you.</p>
+        <p class="ticket-confirmation-text">Members can view this ticket on their account.</p>
+        <a href="/WhatsOn/Events" class="events-btn-book" style="display: inline-block; margin-top: 10px; padding: 12px 30px; font-size: 0.8rem;">BACK TO EVENTS</a>
+    </div>
+
+</div>
+
+<script>
+    // Read booking details from URL
+    var params = new URLSearchParams(window.location.search);
+    var eventName = params.get('event') || 'Event';
+    var qty = params.get('qty') || '1';
+    var date = params.get('date') || '';
+    var time = params.get('time') || '';
+    var ticketCode = params.get('ticket') || 'NG-0000-0000-0000';
+
+    // Fill in the ticket
+    document.getElementById('t-event-name').textContent = eventName;
+    document.getElementById('t-qty').textContent = qty + (parseInt(qty) > 1 ? ' tickets' : ' ticket');
+    document.getElementById('t-date').textContent = date;
+    document.getElementById('t-time').textContent = time;
+    document.getElementById('t-admit').textContent = qty + (parseInt(qty) > 1 ? ' Guests' : ' Guest');
+    document.getElementById('t-code').textContent = ticketCode;
+
+    // Generate QR code
+    new QRCode(document.getElementById('qr-code'), {
+    text: ticketCode,
+    width: 100,
+    height: 100,
+    colorDark: '#2d5f3f',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+    });
+</script>
