@@ -469,21 +469,47 @@ a {
         color: #fff;
     }
 
-.tour-star {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    font-size: 1.5rem;
+.tour-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.tour-heart-btn,
+.tour-heart-btn-light {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    color: #666;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.tour-heart-btn {
     color: #7dd89d;
 }
 
-.tour-star-light {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    font-size: 1.5rem;
+    .tour-heart-btn:hover,
+    .tour-heart-btn.active {
+        color: #a8d68f;
+        transform: scale(1.2);
+    }
+
+.tour-heart-btn-light {
     color: #2b6c51;
 }
+
+    .tour-heart-btn-light:hover,
+    .tour-heart-btn-light.active {
+        color: #2b6c51;
+        transform: scale(1.2);
+    }
 
 /* ============================================
    BOOKING PAGE STYLES

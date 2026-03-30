@@ -566,7 +566,6 @@ C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\bundle\WebApplication1.styles.css
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css
-C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\5e8deymhti-{0}-l9z783zosm-l9z783zosm.gz
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\u3m5yo2x8f-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\w3u7ibosd4-{0}-gr9089bura-gr9089bura.gz
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\8yqr3kw3fy-{0}-t1cqhe9u97-t1cqhe9u97.gz
@@ -642,7 +641,6 @@ C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.genruntimeconfig.cache
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
 C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
-C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-05b24lkceu-05b24lkceu.gz
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\bin\Debug\net10.0\appsettings.json
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\bin\Debug\net10.0\WebApplication1.staticwebassets.runtime.json
@@ -948,3 +946,5 @@ C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-xjnfim5h6k-xjnfim5h6k.gz
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\67dtekes2q-{0}-3jcdgzm028-3jcdgzm028.gz
+C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-xjnfim5h6k-xjnfim5h6k.gz
+C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\5e8deymhti-{0}-1fbh7xo2au-1fbh7xo2au.gz
