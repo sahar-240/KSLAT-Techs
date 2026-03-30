@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Membership";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - Natural Gallery Museum</title>
+    <link rel="stylesheet" href="~/css/amenities-style.css">
+        <link rel="stylesheet" href="~/css/membership-style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        </head>
+        <body>
+            <!-- Membership Page -->
+            <div class="membership-page">
+                <!-- Header -->
+                <header class="membership-header">
+                    <div class="header-top">
+                        <div class="logo">
+                            <img src="~/images/logo.png" alt="Natural Gallery Logo">
+                            </div>
+                            <nav class="nav-menu">
+                                <a href="@Url.Action("Index", "Home")" class="nav-link">VISIT US</a>
+                                <a href="@Url.Action("Index", "Home")" class="nav-link">WHAT'S ON</a>
+                                <a href="@Url.Action("Amenities", "Amenities")" class="nav-link">AMENITIES</a>
+                                <a href="@Url.Action("Membership", "Amenities")" class="nav-link active">MEMBERSHIP</a>
+                            </nav>
+                            <div class="header-actions">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Hero Section -->
+                        <div class="membership-hero">
+                            <img src="~/images/membership-hero.jpg" alt="Membership Hero" class="hero-image">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">MEMBERSHIP</h1>
+                                </div>
+                            </div>
+                        </header>
+
+                        <!-- Main Content -->
+                        <main class="membership-main">
+                            <!-- Sign Up Section -->
+                            <section class="signup-section">
+                                <button class="signup-btn" onclick="window.location.href='@Url.Action("SignUp", "Amenities")'">
+                                    <span class="arrow">→</span>
+                                    <span class="text">SIGN UP</span>
+                                </button>
+                            </section>
+
+                            <!-- Benefits Introduction -->
+                            <section class="benefits-intro">
+                                <h2 class="intro-title">JOIN OUR MEMBERS SCHEME FOR FREE</h2>
+                                <p class="intro-text">RECEIVE EMAILS FOR OUR MEMBER ONLY EVENTS & DISCOUNTS</p>
+                            </section>
+
+                            <!-- Benefits Grid Section -->
+                            <section class="benefits-grid">
+                                <!-- Benefit 1 -->
+                                <div class="benefit-card benefit-1">
+                                    <div class="benefit-image">
+                                        <img src="~/images/benefit-portrait.jpg" alt="View and Modify Your Likes">
+                                        </div>
+                                        <div class="benefit-text">
+                                            <h3 class="benefit-title">BE ABLE TO VIEW & MODIFY YOUR LIKES</h3>
+                                        </div>
+                                    </div>
+
+                                    <!-- Benefit 2 -->
+                                    <div class="benefit-card benefit-2">
+                                        <div class="benefit-image">
+                                            <img src="~/images/benefit-eye.jpg" alt="View and Modify Your Tickets">
+                                            </div>
+                                            <div class="benefit-text">
+                                                <h3 class="benefit-title">BE ABLE TO VIEW & MODIFY YOUR TICKETS</h3>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <!-- Additional Benefits -->
+                                    <section class="additional-benefits">
+                                        <div class="benefit-item">
+                                            <h3>EXCLUSIVE ACCESS</h3>
+                                            <p>Get early access to new exhibitions and special events reserved for members only.</p>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <h3>SPECIAL DISCOUNTS</h3>
+                                            <p>Enjoy discounts on memberships renewals, gift shop purchases, and dining at our restaurants.</p>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <h3>MEMBER NEWSLETTER</h3>
+                                            <p>Stay updated with curated content, behind-the-scenes stories, and exclusive member highlights.</p>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <h3>PRIORITY SUPPORT</h3>
+                                            <p>Receive priority customer service and assistance with member-related inquiries.</p>
+                                        </div>
+                                    </section>
+                                </main>
+
+                                <!-- Footer -->
+                                <footer class="membership-footer">
+                                    <div class="footer-content">
+                                        <div class="footer-logo">
+                                            <img src="~/images/footer-logo.png" alt="Natural Gallery Logo">
+                                            </div>
+                                            <div class="footer-links">
+                                                <a href="@Url.Action("Index", "Home")" class="footer-link">ABOUT US</a>
+                                                <span class="footer-divider">|</span>
+                                                <a href="@Url.Action("Index", "Home")" class="footer-link">CONTACT</a>
+                                                <span class="footer-divider">|</span>
+                                                <a href="@Url.Action("Index", "Home")" class="footer-link">HELP</a>
+                                                <span class="footer-divider">|</span>
+                                                <a href="@Url.Action("Index", "Home")" class="footer-link">BLOG & FAQS</a>
+                                                <span class="footer-divider">|</span>
+                                                <a href="@Url.Action("Amenities", "Amenities")" class="footer-link" onclick="showPrivacyPolicy(); return false;">PRIVACY POLICY</a>
+                                            </div>
+                                            <div class="footer-contact">
+                                                <p>📍 The Fairylands, London W6 8LP</p>
+                                                <p>📞 +44 (0)20 8991 0200</p>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </div>
+
+                                <!-- JavaScript -->
+                                <script>
+                                        // Additional script for any membership page functionality
+                                </script>
+                            </body>
+                        </html>
