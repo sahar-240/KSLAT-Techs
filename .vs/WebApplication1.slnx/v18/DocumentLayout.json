@@ -3,10 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\shared\\membership.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\membership.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\signup\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\signup\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\amenities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\amenities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\wwwroot\\css\\amenities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\amenities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -23,10 +27,46 @@
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\wwwroot\\css\\amenities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\amenities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\wwwroot\\css\\whatson.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\whatson.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\wwwroot\\css\\events.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\events.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\membership\\membership.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\membership\\membership.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\wwwroot\\images\\picture11.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\images\\picture11.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\views\\amenties\\amenities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\amenties\\amenities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -35,6 +75,8 @@
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\amenitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\tanzi\\source\\repos\\kslat-techs\\webapplication1\\controllers\\signupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\signupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -145,6 +187,7 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 10,
               "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Home\\Index.cshtml",
@@ -196,6 +239,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Amenities.cshtml",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Amenities.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Amenities.cshtml",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Amenities.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Amenities.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-26T01:16:48.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "amenities.css",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\amenities.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\amenities.css",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\amenities.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\amenities.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-26T01:16:35.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WebApplication1.csproj",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
+              "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
+              "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
+              "ViewState": "AgIAAAkAAAAg4BacsIsjwBMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-17T13:46:09.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "amenities.css",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\amenities.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\amenities.css",
@@ -235,6 +315,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Membership.cshtml",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Shared\\Membership.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Membership.cshtml",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Shared\\Membership.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\Membership.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Title": "SignUp.cshtml",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\SignUp\\SignUp.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\SignUp\\SignUp.cshtml",
@@ -385,11 +471,19 @@
               "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAADEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-26T01:35:52.816Z",
               "WhenOpened": "2026-02-18T14:54:18.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SignUp.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\SignUp.cshtml.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\SignUp.cshtml.cs",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\SignUp.cshtml.cs",
+              "RelativeToolTip": "WebApplication1\\Views\\SignUp.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "DocumentIndex": 16,
               "Title": "WhatsOnController.cs",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Controllers\\WhatsOnController.cs",
@@ -398,6 +492,31 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\WhatsOnController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T01:16:51.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "whatson.css",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\whatson.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\whatson.css",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\whatson.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\whatson.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-25T15:51:03.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "events.css",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\events.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\events.css",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\events.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\events.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-25T15:51:01.809Z"
               "WhenOpened": "2026-03-30T16:19:39.161Z",
               "EditorCaption": ""
             },
@@ -453,6 +572,7 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
               "DocumentIndex": 21,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\site.css",
@@ -465,6 +585,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Picture11.png - PNG [884x720, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\images\\Picture11.png",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\images\\Picture11.png",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\images\\Picture11.png - PNG [884x720, 32 bit, PNG]",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\images\\Picture11.png - PNG [884x720, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-03-25T15:50:50.968Z",
+              "EditorCaption": " - PNG [884x720, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-18T14:50:25.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "DocumentIndex": 22,
               "Title": "Picture11.png - PNG [884x720, 32 bit, PNG]",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\images\\Picture11.png",
@@ -501,6 +646,15 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:47:56.099Z"
               "DocumentIndex": 24,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Controllers\\HomeController.cs",
@@ -513,6 +667,7 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 13,
               "DocumentIndex": 26,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\appsettings.json",
@@ -525,6 +680,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAD4vx4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T14:19:18.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-18T14:14:57.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "DocumentIndex": 27,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\amine\\AppData\\Local\\SourceServer\\a387e2b5820998bd08c5d7dacc8cb0b0299b6ce4550229562524168dff3441b2\\WebApplication1\\Program.cs",
@@ -537,6 +717,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-11T13:46:25.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "DocumentIndex": 28,
               "Title": "MuseumDbContext.cs",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Data\\MuseumDbContext.cs",
@@ -549,6 +742,7 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 19,
               "DocumentIndex": 29,
               "Title": "FAQ.cs",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Models\\FAQ.cs",
@@ -561,6 +755,7 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 22,
               "DocumentIndex": 31,
               "Title": "OpeningHour.cs",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Models\\OpeningHour.cs",
@@ -573,6 +768,7 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 23,
               "DocumentIndex": 32,
               "Title": "HomeViewModel.cs",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Models\\HomeViewModel.cs",
@@ -585,6 +781,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwDgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-18T14:54:18.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "DocumentIndex": 30,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\Models\\ErrorViewModel.cs",
