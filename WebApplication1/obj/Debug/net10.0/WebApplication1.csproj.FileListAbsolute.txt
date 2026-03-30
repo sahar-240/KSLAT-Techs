@@ -814,3 +814,4 @@ C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.dll
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\refint\WebApplication1.dll
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.pdb
+C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-quzt8k5t3q-quzt8k5t3q.gz
