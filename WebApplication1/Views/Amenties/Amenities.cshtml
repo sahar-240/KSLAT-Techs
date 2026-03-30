@@ -1,0 +1,314 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Amenities";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities - Natural Gallery Museum</title>
+    <link rel="stylesheet" href="~/css/amenties.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Main Amenities Page -->
+        <div id="amenities-page" class="page-container">
+            <!-- Header -->
+            <header class="amenities-header">
+                <div class="header-top">
+                    <div class="logo">
+                        <img src="~/images/logo.png" alt="Natural Gallery Logo">
+                        </div>
+                        <nav class="nav-menu">
+                            <a href="/" class="nav-link">VISIT US</a>
+                            <a href="/" class="nav-link">WHAT'S ON</a>
+                            <a href="@Url.Action("Index", "Amenities")" class="nav-link active">AMENITIES</a>
+                            <a href="/" class="nav-link">MEMBERSHIP</a>
+                        </nav>
+                        <div class="header-actions">
+                            <a href="@Url.Action("Privacy", "Amenities")" class="privacy-btn" title="Privacy Policy">
+                                <i class="fas fa-file-pdf"></i>
+                            </a>
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hero Section -->
+                    <div class="hero-section">
+                        <img src="~/images/hero-background.jpg" alt="Hero Background" class="hero-image">
+                            <div class="hero-overlay">
+                                <h1 class="hero-title">FOOD</h1>
+                                <h2 class="hero-subtitle">DRINKS</h2>
+                                <h3 class="hero-tertiary">FACILITIES</h3>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- Main Content -->
+                    <main class="amenities-main">
+                        <!-- Amenities Cards Section -->
+                        <section class="amenities-section">
+                            <div class="section-content">
+                                <!-- Card 1 -->
+                                <div class="amenity-card">
+                                    <img src="~/images/salad.jpg" alt="Fresh Salad" class="amenity-image">
+                                        <div class="card-content">
+                                            <h3 class="card-title">FRESH & FULL COURSE MEALS AT TOP RESTAURANTS</h3>
+                                            <p class="card-description">CHOOSE FROM A SELECTION OF SPECTACULAR DISHES SERVED BY WORLD-CLASS CHEFS</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div class="amenity-card">
+                                        <img src="~/images/restaurant.jpg" alt="Restaurant Interior" class="amenity-image">
+                                            <div class="card-content">
+                                                <h3 class="card-title">SAVOR EXOTIC FLAVORS FROM CHEFS WITH A PRESTIGIOUS PEDIGREE</h3>
+                                                <p class="card-description">DELECTABLE DISHES RANGING FROM SIMPLE HOME FAVORITES TO HAUTE CUISINE DELIGHTS</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card 3 -->
+                                        <div class="amenity-card">
+                                            <img src="~/images/pastries.jpg" alt="Pastries and Baked Goods" class="amenity-image">
+                                                <div class="card-content">
+                                                    <h3 class="card-title">ENJOY OUR BAKED GOODS, SANDWICHES, FRUITS AND DRINKS</h3>
+                                                    <p class="card-description">PERFECTLY PREPARED BREAKFAST AND BRUNCH OPTIONS</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 4 -->
+                                            <div class="amenity-card">
+                                                <img src="~/images/gourmet-dish.jpg" alt="Gourmet Dish" class="amenity-image">
+                                                    <div class="card-content">
+                                                        <h3 class="card-title">TAKE A BREAK AND ENJOY ONE OF OUR SPECIALTY MEALS AT THE RESTAURANTS</h3>
+                                                        <p class="card-description">EXQUISITE CUISINE PREPARED WITH PASSION AND PRECISION</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Membership Section -->
+                                        <section class="membership-section">
+                                            <div class="membership-content">
+                                                <h2 class="membership-title">BECOME A MEMBER TO RECEIVE SPECIAL DISCOUNTS</h2>
+                                                <form method="post" action="@Url.Action("JoinMembership", "Amenities")">
+                                                    <button type="submit" class="membership-btn">JOIN</button>
+                                                </form>
+                                            </div>
+                                            <div class="membership-image">
+                                                <img src="~/images/membership-image.jpg" alt="Membership Benefits">
+                                                </div>
+                                            </section>
+
+                                            <!-- Forest Play Space Section -->
+                                            <section class="forest-play-section">
+                                                <div class="forest-image">
+                                                    <img src="~/images/forest-play.jpg" alt="Forest Play Space">
+                                                    </div>
+                                                    <div class="forest-content">
+                                                        <h2 class="forest-title">THE FOREST PLAY SPACE</h2>
+                                                        <p class="forest-description">
+                                                            CHILDREN AGES 3-5 HAVE A DEDICATED SPACE WHERE THEY CAN EXPLORE AND LEARN THROUGH PLAY.
+                                                        </p>
+                                                        <p class="forest-highlight">
+                                                            IT OFFERS A VARIETY OF HANDS-ON ACTIVITIES DESIGNED TO ENCOURAGE CREATIVITY, CURIOSITY, AND ENGAGEMENT WITH THE NATURAL WORLD.
+                                                        </p>
+                                                        <p class="forest-note">
+                                                            AT THE NATURAL GALLERY WE BELIEVE IN FOSTERING CHILDREN'S CREATIVITY AND WONDER, WHICH IS WHY WE CREATED THIS BEAUTIFUL SPACE FOR OUR YOUNGEST GUESTS.
+                                                        </p>
+                                                        <p class="forest-additional">
+                                                            WE ENCOURAGE PARENTS TO STEP BY DURING YOUR VISIT TO TAKE A BREAK AND LET YOUR CHILDREN EXPLORE THEIR CURIOSITY.
+                                                        </p>
+                                                    </div>
+                                                </section>
+                                            </main>
+
+                                            <!-- Footer -->
+                                            <footer class="amenities-footer">
+                                                <div class="footer-content">
+                                                    <div class="footer-logo">
+                                                        <img src="~/images/footer-logo.png" alt="Natural Gallery Logo">
+                                                        </div>
+                                                        <div class="footer-links">
+                                                            <a href="/" class="footer-link">ABOUT US</a>
+                                                            <a href="/" class="footer-link">CONTACT</a>
+                                                            <a href="@Url.Action("Privacy", "Amenities")" class="footer-link">PRIVACY POLICY</a>
+                                                        </div>
+                                                        <div class="footer-contact">
+                                                            <p>📍 The Fairylands, London W6 8LP</p>
+                                                            <p>📞 +44 (0)20 8991 0200</p>
+                                                        </div>
+                                                    </div>
+                                                </footer>
+                                            </div>
+
+                                            <!-- Privacy Policy Page -->
+                                            <div id="privacy-page" class="page-container" style="display: none;">
+                                                <!-- Header -->
+                                                <header class="privacy-header">
+                                                    <div class="header-top">
+                                                        <div class="logo">
+                                                            <img src="~/images/logo.png" alt="Natural Gallery Logo">
+                                                            </div>
+                                                            <nav class="nav-menu">
+                                                                <a href="/" class="nav-link">VISIT US</a>
+                                                                <a href="/" class="nav-link">WHAT'S ON</a>
+                                                                <a href="@Url.Action("Index", "Amenities")" class="nav-link">AMENITIES</a>
+                                                                <a href="/" class="nav-link">MEMBERSHIP</a>
+                                                            </nav>
+                                                            <div class="header-actions">
+                                                                <a href="@Url.Action("Index", "Amenities")" class="back-btn" title="Back to Amenities">
+                                                                    <i class="fas fa-arrow-left"></i>
+                                                                </a>
+                                                                <button class="search-btn">
+                                                                    <i class="fas fa-search"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </header>
+
+                                                    <!-- Privacy Policy Content -->
+                                                    <main class="privacy-main">
+                                                        <section class="privacy-content">
+                                                            <h1 class="privacy-title">PRIVACY POLICY – NATURAL GALLERY MUSEUM</h1>
+
+                                                            <p class="privacy-intro">
+                                                                AT NATURAL GALLERY MUSEUM, WE RESPECT YOUR PRIVACY AND HANDLE YOUR PERSONAL DATA IN LINE WITH THE UNITED KINGDOM DATA PROTECTION ACT 2018, HOW WE COLLECT, USE, AND PROTECT YOUR INFORMATION WHEN YOU BECOME A MEMBER, VISIT OUR WEBSITE, DONATE, OR JOIN OUR MEMBERSHIP PROGRAMS.
+                                                            </p>
+
+                                                            <!-- Information We Collect -->
+                                                            <div class="privacy-section">
+                                                                <h2 class="section-title">INFORMATION WE COLLECT</h2>
+                                                                <p class="section-intro">WE MAY COLLECT:</p>
+                                                                <ul class="section-list">
+                                                                    <li>VISITOR DATA: NAMES, EMAIL ADDRESSES, PHONE NUMBERS</li>
+                                                                    <li>MEMBERSHIP DATA: PAYMENT INFORMATION, MEMBERSHIP DATES, PREFERENCES</li>
+                                                                    <li>WEBSITE USAGE: COOKIES, ANALYTICS, INTERACTION DATA</li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <!-- How We Use Your Data -->
+                                                            <div class="privacy-section">
+                                                                <h2 class="section-title">HOW WE USE YOUR DATA</h2>
+                                                                <ul class="section-list">
+                                                                    <li>MANAGE MEMBERSHIPS, RENEWALS, AND BENEFITS</li>
+                                                                    <li>SEND NEWSLETTERS AND EVENT UPDATES</li>
+                                                                    <li>SEND NEWSLETTERS, EVENT UPDATES, AND MEMBER OFFERS (OPT-IN ONLY)</li>
+                                                                    <li>IMPROVE WEBSITE EXPERIENCE AND VISITOR EXPERIENCES</li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <!-- Sharing & Security -->
+                                                            <div class="privacy-section">
+                                                                <h2 class="section-title">SHARING & SECURITY</h2>
+                                                                <p class="section-text">
+                                                                    WE DO NOT SELL YOUR DATA. WE MAY SHARE PERSONAL INFORMATION WITH TRUSTED SERVICE PROVIDERS FOR PAYMENT PROCESSING AND MARKETING PURPOSES. WE MAINTAIN STRICT DATA SECURITY PROTOCOLS TO PROTECT YOUR INFORMATION.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- Cookies -->
+                                                            <div class="privacy-section">
+                                                                <h2 class="section-title">COOKIES</h2>
+                                                                <p class="section-text">WE USE COOKIES TO ENHANCE YOUR EXPERIENCE AND PERSONAL CONTENT. YOU CAN MANAGE COOKIES IN YOUR BROWSER SETTINGS.</p>
+                                                                <ul class="section-list">
+                                                                    <li>NECESSARY COOKIES: ENABLE WEBSITE FUNCTIONALITY</li>
+                                                                    <li>ANALYTICS COOKIES: TRACK WEBSITE PERFORMANCE</li>
+                                                                    <li>MARKETING COOKIES: PERSONALIZE CONTENT AND ADS</li>
+                                                                    <li>ACCESS CORRECT OR REQUEST DELETION OF YOUR DATA</li>
+                                                                    <li>WITH DRAW CONSENT FOR MARKETING COMMUNICATIONS</li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <!-- Data Retention -->
+                                                            <div class="privacy-section">
+                                                                <h2 class="section-title">DATA RETENTION</h2>
+                                                                <p class="section-text">
+                                                                    WE KEEP PERSONAL DATA ONLY AS LONG AS NECESSARY TO PROVIDE SERVICES, MANAGE MEMBERSHIPS, AND MEET LEGAL OR BUSINESS OBLIGATIONS.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- Accessibility -->
+                                                            <div class="privacy-section">
+                                                                <h2 class="section-title">ACCESSIBILITY</h2>
+                                                                <p class="section-text">
+                                                                    NATURAL GALLERY MUSEUM IS COMMITTED TO MAKING OUR WEBSITE AND EXHIBITIONS ACCESSIBLE TO EVERYONE, INCLUDING PEOPLE WITH DISABILITIES. WE STRIVE TO MEET WCAG 2.1 AA STANDARDS FOR DIGITAL ACCESSIBILITY.
+                                                                </p>
+                                                                <p class="section-text">
+                                                                    OUR WEBSITE IS DESIGNED FOR EASY NAVIGATION WITH KEYBOARD-ONLY CONTROLS. IMAGES INCLUDE DESCRIPTIVE ALT TEXT, AND AUDIO/VIDEO CONTENT OFFERS CAPTIONS WHERE POSSIBLE.
+                                                                </p>
+                                                                <p class="section-text">
+                                                                    FOR ANY ACCESSIBILITY ISSUES OR QUESTIONS OR REQUESTS OF ALTERNATIVE FORMATS, PLEASE CONTACT US AT: EMAIL: INFO@NATURALGALLERY.CO.UK.
+                                                                </p>
+                                                                <p class="section-text">
+                                                                    WE WELCOME FEEDBACK AND CONTINUOUSLY WORK TO IMPROVE ACCESSIBILITY FOR ALL VISITORS.
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- Contact Us -->
+                                                            <div class="privacy-section">
+                                                                <h2 class="section-title">CONTACT US</h2>
+                                                                <p class="section-text">
+                                                                    FOR QUESTIONS OR DATA REQUESTS, CONTACT US VIA OUR WEBSITE OR AT:<br>
+                                                                    EMAIL: INFO@NATURALGALLERY.CO.UK<br>
+                                                                    ADDRESS: [MUSEUM ADDRESS]
+                                                                </p>
+                                                            </div>
+
+                                                            <!-- Accept Button -->
+                                                            <a href="@Url.Action("Index", "Amenities")" class="accept-btn">ACCEPT</a>
+                                                        </section>
+
+                                                        <!-- Footer -->
+                                                        <footer class="privacy-footer">
+                                                            <div class="footer-content">
+                                                                <div class="footer-logo">
+                                                                    <img src="~/images/footer-logo.png" alt="Natural Gallery Logo">
+                                                                    </div>
+                                                                    <div class="footer-links">
+                                                                        <a href="/" class="footer-link">ABOUT US</a>
+                                                                        <span class="footer-divider">|</span>
+                                                                        <a href="/" class="footer-link">CONTACT</a>
+                                                                        <span class="footer-divider">|</span>
+                                                                        <a href="/" class="footer-link">HELP</a>
+                                                                        <span class="footer-divider">|</span>
+                                                                        <a href="/" class="footer-link">BLOG & FAQS</a>
+                                                                        <span class="footer-divider">|</span>
+                                                                        <a href="@Url.Action("Privacy", "Amenities")" class="footer-link">PRIVACY POLICY</a>
+                                                                    </div>
+                                                                    <div class="footer-contact">
+                                                                        <p>📍 The Fairylands, London W6 8LP</p>
+                                                                        <p>📞 +44 (0)20 8991 0200</p>
+                                                                    </div>
+                                                                </div>
+                                                            </footer>
+                                                        </main>
+                                                    </div>
+
+                                                    <!-- JavaScript for Page Navigation -->
+                                                    <script>
+                                                            function showAmenitiesPage() {
+                                                                document.getElementById('amenities-page').style.display = 'block';
+                                                                document.getElementById('privacy-page').style.display = 'none';
+                                                                window.scrollTo(0, 0);
+                                                            }
+
+                                                            function showPrivacyPolicy() {
+                                                                document.getElementById('amenities-page').style.display = 'none';
+                                                                document.getElementById('privacy-page').style.display = 'block';
+                                                                window.scrollTo(0, 0);
+                                                            }
+
+                                                            // Show privacy policy if coming from Privacy action
+                                                            document.addEventListener('DOMContentLoaded', function() {
+                                                                const url = window.location.pathname;
+                                                                if (url.includes('Privacy')) {
+                                                                    showPrivacyPolicy();
+                                                                }
+                                                            });
+                                                    </script>
+                                                </body>
+                                            </html>
