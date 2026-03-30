@@ -5,20 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Natural History Museum</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Font Awesome for Search Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
+        <div class="navbar-content">
+            <!-- Logo -->
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                Natural History Museum
+                <span class="brand-icon">🏛️</span>
+                <span class="brand-text">Natural<br>Gallery</span>
             </a>
+
+
+            <!-- Nav Links -->
             <ul class="nav-links">
-                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a asp-controller="Home" asp-action="Visit">VISIT</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">CONTACT</a></li>
+                <li><a asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" && ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")">VISIT US</a></li>
+                <li><a asp-controller="WhatsOn" asp-action="Index" class="@(ViewContext.RouteData.Values["Controller"]?.ToString() == "WhatsOn" ? "active" : "")">WHAT'S ON</a></li>
+                <li><a href="#amenities" class="">AMENITIES</a></li>
+                <li><a asp-controller="Home" asp-action="Support" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Support" ? "active" : "")">MEMBERSHIP</a></li>
             </ul>
+
+            <!-- Search Icon -->
+            <button class="search-toggle" onclick="toggleSearch()" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div id="search-bar" class="search-bar" style="display: none;">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="SEARCH">
+                <button type="button" class="search-btn" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -38,14 +60,17 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Home" asp-action="Support">Support Us</a></li>
+                        <li><a asp-controller="Home" asp-action="Donation">Donate</a></li>
                         <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="WhatsOn" asp-action="Index">What's On</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@nhm.ac.uk</p>
-                    <p>Phone: +44 20 7942 5000</p>
+                    <p>Email: <a href="mailto:info@nhm.ac.uk">info@nhm.ac.uk</a></p>
+                    <p>Phone: <a href="tel:+442079425000">+44 20 7942 5000</a></p>
+                    <p>Address: Cromwell Road<br>London SW7 5BD<br>United Kingdom</p>
                 </div>
             </div>
             <div class="footer-bottom">
