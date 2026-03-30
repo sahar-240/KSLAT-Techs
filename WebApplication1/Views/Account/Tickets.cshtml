@@ -1,0 +1,100 @@
+﻿
+@{
+    Layout = null;
+    ViewData["Title"] = "Tickets";
+}
+
+<link rel="stylesheet" href="~/css/Login.css">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="~/images/natural-gallery-logo.png" alt="Natural Gallery">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="@Url.Action("Index", "Home")">VISIT US</a></li>
+                    <li><a href="@Url.Action("WhatsOn", "Home")">WHAT'S ON</a></li>
+                    <li><a href="@Url.Action("Amenities", "Home")">AMENITIES</a></li>
+                    <li><a href="@Url.Action("Account", "Account")">MEMBERSHIP</a></li>
+                    <li><a href="#" class="search-icon">🔍</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="tickets-container">
+            <!-- Header Section -->
+            <div class="tickets-header">
+                <h1 class="tickets-title">TICKETS</h1>
+            </div>
+
+            <!-- Tickets Items Section -->
+            <div class="tickets-items-container">
+                <div class="tickets-items">
+                    <!-- Tickets items will be displayed here -->
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @foreach (var ticket in Model)
+                        {
+                            <div class="ticket-item">
+                                <div class="ticket-header">
+                                    <h3>@ticket.Title</h3>
+                                    <span class="ticket-status @ticket.Status.ToLower()">@ticket.Status</span>
+                                </div>
+                                <p class="ticket-description">@ticket.Description</p>
+                                <div class="ticket-details">
+                                    <div class="detail-group">
+                                        <span class="detail-label">Date:</span>
+                                        <span class="detail-value">@ticket.Date</span>
+                                    </div>
+                                    <div class="detail-group">
+                                        <span class="detail-label">Quantity:</span>
+                                        <span class="detail-value">@ticket.Quantity</span>
+                                    </div>
+                                    <div class="detail-group">
+                                        <span class="detail-label">Price:</span>
+                                        <span class="detail-value">$@ticket.Price</span>
+                                    </div>
+                                </div>
+                                <div class="ticket-actions">
+                                    <button class="view-btn" data-id="@ticket.Id">View Details</button>
+                                    <button class="cancel-btn" data-id="@ticket.Id">Cancel Booking</button>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="no-tickets">
+                            <p>You don't have any bookings yet.</p>
+                            <a href="@Url.Action("WhatsOn", "Home")" class="book-btn">Browse Events</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="~/images/natural-gallery-logo-white.png" alt="Natural Gallery">
+                    </div>
+                    <div class="footer-content">
+                        <div class="footer-info">
+                            <span class="footer-text">The Branching Gardens 1234 567</span>
+                            <span class="footer-divider">|</span>
+                            <span class="footer-text">+1 (555) 890 0000</span>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="@Url.Action("Index", "Home")">HOME</a></li>
+                            <li><a href="@Url.Action("About", "Home")">ABOUT</a></li>
+                            <li><a href="@Url.Action("Contact", "Home")">HELP</a></li>
+                            <li><a href="@Url.Action("Privacy", "Home")">PRIVACY POLICY</a></li>
+                            <li><a href="@Url.Action("Terms", "Home")">TERMS & CONDITIONS</a></li>
+                        </ul>
+                        <p class="footer-copyright">Copyright © 2025 Natural Gallery</p>
+                    </div>
+                </div>
+            </footer>
