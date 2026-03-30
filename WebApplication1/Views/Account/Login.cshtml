@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/Login.css">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="~/images/natural-gallery-logo.png" alt="Natural Gallery">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="@Url.Action("Index", "Home")">VISIT US</a></li>
+                    <li><a href="@Url.Action("WhatsOn", "Home")">WHAT'S ON</a></li>
+                    <li><a href="@Url.Action("Amenities", "Home")">AMENITIES</a></li>
+                    <li><a href="@Url.Action("Account", "Account")">MEMBERSHIP</a></li>
+                    <li><a href="#" class="search-icon">🔍</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="login-container">
+            <!-- Login Header -->
+            <div class="login-header">
+                <h2 class="login-header-title">LOGIN</h2>
+            </div>
+
+            <!-- Login Form Section -->
+            <div class="login-form-section">
+                <div class="login-box">
+                    <h3 class="form-title">LOGIN</h3>
+            
+                    <form method="post" action="@Url.Action("Login", "Login")">
+                        <!-- Username Field -->
+                        <div class="form-group">
+                            <label for="username" class="form-label">USERNAME:</label>
+                            <input type="text"
+                                   id="username"
+                                   name="username"
+                                   class="form-input"
+                                   placeholder=""
+                                   required>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">PASSWORD:</label>
+                            <input type="password"
+                                   id="password"
+                                   name="password"
+                                   class="form-input"
+                                   placeholder=""
+                                   required>
+                        </div>
+
+                        <!-- Login Button -->
+                        <div class="form-group button-group">
+                            <button type="submit" class="login-btn">LOGIN</button>
+                        </div>
+                    </form>
+
+                    <!-- Register Link -->
+                    <div class="register-link">
+                        <p>Don't have an account? <a href="@Url.Action("Register", "Account")">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spacer -->
+            <div class="login-spacer"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="~/images/natural-gallery-logo-white.png" alt="Natural Gallery">
+                    </div>
+                    <div class="footer-content">
+                        <div class="footer-info">
+                            <span class="footer-text">The Branching Gardens 1234 567</span>
+                            <span class="footer-divider">|</span>
+                            <span class="footer-text">+1 (555) 890 0000</span>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="@Url.Action("Index", "Home")">HOME</a></li>
+                            <li><a href="@Url.Action("About", "Home")">ABOUT</a></li>
+                            <li><a href="@Url.Action("Contact", "Home")">HELP</a></li>
+                            <li><a href="@Url.Action("Privacy", "Home")">PRIVACY POLICY</a></li>
+                            <li><a href="@Url.Action("Terms", "Home")">TERMS & CONDITIONS</a></li>
+                        </ul>
+                        <p class="footer-copyright">Copyright © 2025 Natural Gallery</p>
+                    </div>
+                </div>
+            </footer>
