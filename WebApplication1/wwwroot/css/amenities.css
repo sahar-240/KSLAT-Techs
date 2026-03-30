@@ -1,0 +1,742 @@
+﻿/* ==================== GENERAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ==================== HEADER STYLES ==================== */
+.amenities-header,
+.privacy-header {
+    width: 100%;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #2c2c2c;
+    z-index: 100;
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
+    .logo img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+    }
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+    .nav-link:hover {
+        color: #4caf50;
+        border-bottom-color: #4caf50;
+    }
+
+    .nav-link.active {
+        color: #4caf50;
+        border-bottom-color: #4caf50;
+    }
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.privacy-btn,
+.search-btn,
+.back-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .privacy-btn:hover,
+    .search-btn:hover,
+    .back-btn:hover {
+        color: #4caf50;
+        transform: scale(1.1);
+    }
+
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 60px;
+}
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+}
+
+.hero-tertiary {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.amenities-main {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* ==================== AMENITIES SECTION ==================== */
+.amenities-section {
+    padding: 60px 40px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.amenity-card {
+    display: flex;
+    gap: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+    .amenity-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+.amenity-image {
+    width: 280px;
+    height: 220px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.card-description {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+/* ==================== MEMBERSHIP SECTION ==================== */
+.membership-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 350px;
+    background-color: #f0f0f0;
+}
+
+.membership-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+}
+
+.membership-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.membership-btn {
+    padding: 14px 45px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #388e3c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(56, 142, 60, 0.3);
+    text-transform: uppercase;
+}
+
+    .membership-btn:hover {
+        background-color: #2e7d32;
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(56, 142, 60, 0.4);
+    }
+
+    .membership-btn:active {
+        transform: scale(0.98);
+    }
+
+.membership-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .membership-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* ==================== FOREST PLAY SPACE SECTION ==================== */
+.forest-play-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+    background-color: #ffffff;
+}
+
+.forest-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .forest-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.forest-content {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.forest-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c5f2d;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.forest-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.forest-highlight {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.forest-note {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.forest-additional {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ==================== FOOTER ==================== */
+.amenities-footer,
+.privacy-footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    padding: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 40px;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+    .footer-link:hover {
+        color: #4caf50;
+    }
+
+.footer-divider {
+    color: #666;
+}
+
+.footer-contact {
+    text-align: right;
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+    .footer-contact p {
+        margin: 0;
+    }
+
+/* ==================== PRIVACY POLICY PAGE ==================== */
+.privacy-main {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 60px 40px;
+}
+
+.privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.privacy-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c5f2d;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.privacy-intro {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Privacy Sections */
+.privacy-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c5f2d;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4caf50;
+    padding-bottom: 10px;
+}
+
+.section-intro {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+    .section-list li {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 10px;
+        line-height: 1.7;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        position: relative;
+        padding-left: 20px;
+    }
+
+        .section-list li:before {
+            content: "•";
+            color: #4caf50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+.section-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+/* Accept Button */
+.accept-btn {
+    display: block;
+    margin: 50px auto;
+    padding: 16px 60px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #388e3c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(56, 142, 60, 0.3);
+    text-transform: uppercase;
+}
+
+    .accept-btn:hover {
+        background-color: #2e7d32;
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(56, 142, 60, 0.4);
+    }
+
+    .accept-btn:active {
+        transform: scale(0.98);
+    }
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+    .section-content {
+        grid-template-columns: 1fr;
+    }
+
+    .amenity-card {
+        flex-direction: row;
+    }
+
+    .forest-play-section,
+    .membership-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-contact {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 12px 20px;
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        font-size: 11px;
+    }
+
+    .hero-overlay {
+        padding-left: 30px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .hero-tertiary {
+        font-size: 32px;
+    }
+
+    .amenities-section {
+        padding: 40px 20px;
+    }
+
+    .section-content {
+        gap: 25px;
+    }
+
+    .amenity-card {
+        flex-direction: column;
+    }
+
+    .amenity-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .membership-content,
+    .forest-content {
+        padding: 40px 20px;
+    }
+
+    .membership-title,
+    .forest-title {
+        font-size: 24px;
+    }
+
+    .privacy-content {
+        padding: 0 20px;
+    }
+
+    .privacy-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .section-text,
+    .section-intro,
+    .section-list li {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        padding: 10px 15px;
+    }
+
+    .nav-menu {
+        gap: 10px;
+        font-size: 10px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .hero-overlay {
+        padding-left: 15px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 28px;
+    }
+
+    .hero-tertiary {
+        font-size: 22px;
+    }
+
+    .amenities-section {
+        padding: 30px 15px;
+    }
+
+    .section-content {
+        gap: 20px;
+    }
+
+    .amenity-image {
+        height: 200px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .card-description {
+        font-size: 12px;
+    }
+
+    .membership-btn,
+    .accept-btn {
+        padding: 12px 30px;
+        font-size: 12px;
+    }
+
+    .privacy-title {
+        font-size: 22px;
+    }
+
+    .forest-title,
+    .membership-title {
+        font-size: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo img {
+        height: 35px;
+    }
+
+    .footer-contact {
+        font-size: 11px;
+    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.text-center {
+    text-align: center;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}

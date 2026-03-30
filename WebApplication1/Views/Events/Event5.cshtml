@@ -1,5 +1,71 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Craft Mania";
+    Layout = "_Layout";
 }
+
+<!-- Link to events CSS -->
+<link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
+
+<div class="event-detail-card">
+    <!-- Image + vertical title -->
+    <div class="event-detail-image-section">
+        <a href="/WhatsOn/Events" class="event-detail-back" title="Return to Events">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="event-detail-image">
+            <img src="~/images/Picture14.png" alt="Craft Mania">
+            </div>
+            <div class="event-detail-title-box">
+                <div class="event-detail-title-wrapper">
+                    <!-- This one is a WORKSHOP not Exhibition -->
+                    <span class="event-detail-label">WORKSHOP</span>
+                    <span class="event-detail-title" style="color: #D45D40;">CRAFT MANIA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coloured info section -->
+        <div class="event-detail-info" style="background-color: #D45D40;">
+            <div class="event-detail-date-box">
+                <div class="event-detail-year">2026</div>
+                <div class="event-detail-date-row">
+                    <div class="event-detail-date-number">12</div>
+                    <div class="event-detail-date-divider"></div>
+                    <div class="event-detail-date-number">14</div>
+                </div>
+                <div class="event-detail-date-labels">
+                    <div class="event-detail-date-label">APR</div>
+                    <div class="event-detail-date-label">APR</div>
+                </div>
+            </div>
+
+            <div class="event-detail-content">
+                <div class="event-detail-item">
+                    <span class="event-detail-item-label">TIME</span>
+                    <span>MON-FRI 2:00 PM - 5:00 PM</span>
+                </div>
+                <div class="event-detail-item">
+                    <span class="event-detail-item-label">LOCATION</span>
+                    <span>VICTORIA PLAZA, 26 - FLOOR 2</span>
+                </div>
+                <div class="event-detail-description">
+                    A fun hands-on workshop where children learn to care for the planet through upcycled crafts and activities. Discover how simple eco-friendly actions can make a big difference for our environment. This interactive experience teaches sustainability through creativity, showing how small actions can have a meaningful impact.
+                </div>
+                <div class="event-detail-footer">
+                    <button class="event-detail-heart" onclick="toggleHeart(this)" title="Save to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <a href="/WhatsOn/EventBook?event=Craft Mania" class="event-detail-book-btn">BOOK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleHeart(element) {
+            var icon = element.querySelector('i');
+            element.classList.toggle('active');
+            icon.classList.toggle('far');
+            icon.classList.toggle('fas');
+        }
+    </script>
