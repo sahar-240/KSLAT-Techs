@@ -1,5 +1,305 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Events";
+    Layout = "_Layout";
 }
+
+<!-- Link to events CSS -->
+<link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
+
+<!-- HERO BANNER -->
+<section class="events-hero">
+    <div class="events-hero-box">
+        <h1>EVENTS</h1>
+        <p>Discover our current exhibitions and workshops</p>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section style="padding: 0 60px 150px 60px;">
+
+    <!-- FILTER BAR -->
+    <div class="events-filter-bar">
+        <div class="events-filter-group">
+            <label>GENRE:</label>
+            <select class="events-filter-dropdown" id="genre-filter" onchange="applyFilters()">
+                <option value="">ALL GENRES</option>
+                <option value="Fashion">FASHION</option>
+                <option value="Photography">PHOTOGRAPHY</option>
+                <option value="Paintings/Drawings">PAINTINGS/DRAWINGS</option>
+                <option value="Workshop">WORKSHOP</option>
+            </select>
+        </div>
+
+        <button class="events-btn-primary" onclick="goToFavorites()">
+            <i class="fas fa-heart"></i> FAVOURITES
+        </button>
+
+        <div class="events-filter-group">
+            <label>SORT:</label>
+            <select class="events-filter-dropdown" id="sort-filter" onchange="applyFilters()">
+                <option value="newest">NEWEST</option>
+                <option value="oldest">OLDEST</option>
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+                <option value="ending">ENDING</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- EVENTS GRID -->
+    <div class="events-grid" id="events-grid">
+
+        <!-- Event 1: Iris Van Herpen -->
+        <div class="events-card" data-event-id="1" data-genre="Fashion" data-title="Exhibition: Iris Van Herpen" data-sort-title="iris van herpen" data-start-date="20260416" data-end-date="20260531">
+            <div class="events-card-image">
+                <img src="~/images/Picture11.png" alt="Iris Van Herpen">
+                </div>
+                <div class="events-card-content">
+                    <div class="events-card-header">
+                        <h3>Exhibition: Iris Van Herpen</h3>
+                        <button class="events-btn-heart" onclick="toggleFavorite(event)" title="Save to favorites">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="events-card-description">Dutch fashion designer Iris Van Herpen merges couture with nature through biomimetic inspiration. Her work explores the intersection of organic forms and innovative technology.</p>
+                    <div class="events-card-info">
+                        <div class="events-card-info-group">
+                            <span class="events-card-info-label">📅 DATES</span>
+                            <span>16 Apr 2026 - 31 May 2026</span>
+                        </div>
+                        <div class="events-card-info-group">
+                            <span class="events-card-info-label">🕐 TIME</span>
+                            <span>Daily 10:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="events-card-info-group">
+                            <span class="events-card-info-label">📍 LOCATION</span>
+                            <span>Elizabeth Gallery, Floor 1</span>
+                        </div>
+                    </div>
+                    <a href="/WhatsOn/Event1" class="events-btn-book">BOOK</a>
+                </div>
+            </div>
+
+            <!-- Event 2: One Earth -->
+            <div class="events-card" data-event-id="2" data-genre="Photography" data-title="Exhibition: One Earth" data-sort-title="one earth" data-start-date="20260707" data-end-date="20260915">
+                <div class="events-card-image">
+                    <img src="~/images/Picture12.png" alt="One Earth">
+                    </div>
+                    <div class="events-card-content">
+                        <div class="events-card-header">
+                            <h3>Exhibition: One Earth</h3>
+                            <button class="events-btn-heart" onclick="toggleFavorite(event)" title="Save to favorites">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <p class="events-card-description">This photography exhibition documents the effects of global warming across the world's most vulnerable landscapes, capturing the impact of climate change on natural systems.</p>
+                        <div class="events-card-info">
+                            <div class="events-card-info-group">
+                                <span class="events-card-info-label">📅 DATES</span>
+                                <span>7 Jul 2026 - 15 Sep 2026</span>
+                            </div>
+                            <div class="events-card-info-group">
+                                <span class="events-card-info-label">🕐 TIME</span>
+                                <span>Daily 10:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="events-card-info-group">
+                                <span class="events-card-info-label">📍 LOCATION</span>
+                                <span>Churchill Wing, Floor 2</span>
+                            </div>
+                        </div>
+                        <a href="/WhatsOn/Event2" class="events-btn-book">BOOK</a>
+                    </div>
+                </div>
+
+                <!-- Event 3: Daniel Schuller -->
+                <div class="events-card" data-event-id="3" data-genre="Paintings/Drawings" data-title="Exhibition: Daniel Schuller" data-sort-title="daniel schuller" data-start-date="20260415" data-end-date="20260630">
+                    <div class="events-card-image">
+                        <img src="~/images/Picture9.png" alt="Daniel Schuller">
+                        </div>
+                        <div class="events-card-content">
+                            <div class="events-card-header">
+                                <h3>Exhibition: Daniel Schuller</h3>
+                                <button class="events-btn-heart" onclick="toggleFavorite(event)" title="Save to favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <p class="events-card-description">Born 1731, Swedish botanist Daniel Schuller was a student of Carl Linnaeus who spent decades cataloguing and naming over 1000 plant species with detailed botanical drawings.</p>
+                            <div class="events-card-info">
+                                <div class="events-card-info-group">
+                                    <span class="events-card-info-label">📅 DATES</span>
+                                    <span>15 Apr 2026 - 30 Jun 2026</span>
+                                </div>
+                                <div class="events-card-info-group">
+                                    <span class="events-card-info-label">🕐 TIME</span>
+                                    <span>Daily 10:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="events-card-info-group">
+                                    <span class="events-card-info-label">📍 LOCATION</span>
+                                    <span>Napoleon Wing, Ground Floor</span>
+                                </div>
+                            </div>
+                            <a href="/WhatsOn/Event3" class="events-btn-book">BOOK</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 4: Thierry Mugler -->
+                    <div class="events-card" data-event-id="4" data-genre="Fashion" data-title="Exhibition: Thierry Mugler" data-sort-title="thierry mugler" data-start-date="20260622" data-end-date="20260804">
+                        <div class="events-card-image">
+                            <img src="~/images/Picture13.png" alt="Thierry Mugler">
+                            </div>
+                            <div class="events-card-content">
+                                <div class="events-card-header">
+                                    <h3>Exhibition: Thierry Mugler</h3>
+                                    <button class="events-btn-heart" onclick="toggleFavorite(event)" title="Save to favorites">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                                <p class="events-card-description">French fashion designer Thierry Mugler is celebrated for bold futuristic design and nature-inspired silhouettes, featuring sculptural animal-inspired forms.</p>
+                                <div class="events-card-info">
+                                    <div class="events-card-info-group">
+                                        <span class="events-card-info-label">📅 DATES</span>
+                                        <span>22 Jun 2026 - 4 Aug 2026</span>
+                                    </div>
+                                    <div class="events-card-info-group">
+                                        <span class="events-card-info-label">🕐 TIME</span>
+                                        <span>Mon-Fri 11:00 AM - 7:00 PM</span>
+                                    </div>
+                                    <div class="events-card-info-group">
+                                        <span class="events-card-info-label">📍 LOCATION</span>
+                                        <span>Augustus Room, Floor 3</span>
+                                    </div>
+                                </div>
+                                <a href="/WhatsOn/Event4" class="events-btn-book">BOOK</a>
+                            </div>
+                        </div>
+
+                        <!-- Event 5: Craft Mania -->
+                        <div class="events-card" data-event-id="5" data-genre="Workshop" data-title="Workshop: Craft Mania" data-sort-title="craft mania" data-start-date="20260412" data-end-date="20260414">
+                            <div class="events-card-image">
+                                <img src="~/images/Picture14.png" alt="Craft Mania">
+                                </div>
+                                <div class="events-card-content">
+                                    <div class="events-card-header">
+                                        <h3>Workshop: Craft Mania</h3>
+                                        <button class="events-btn-heart" onclick="toggleFavorite(event)" title="Save to favorites">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <p class="events-card-description">A fun hands-on workshop where children learn to care for the planet through upcycled crafts. Discover how simple eco-friendly actions can make a big difference.</p>
+                                    <div class="events-card-info">
+                                        <div class="events-card-info-group">
+                                            <span class="events-card-info-label">📅 DATES</span>
+                                            <span>12 Apr 2026 - 14 Apr 2026</span>
+                                        </div>
+                                        <div class="events-card-info-group">
+                                            <span class="events-card-info-label">🕐 TIME</span>
+                                            <span>Mon-Fri 2:00 PM - 5:00 PM</span>
+                                        </div>
+                                        <div class="events-card-info-group">
+                                            <span class="events-card-info-label">📍 LOCATION</span>
+                                            <span>Victoria Plaza, 26 - Floor 2</span>
+                                        </div>
+                                    </div>
+                                    <a href="/WhatsOn/Event5" class="events-btn-book">BOOK</a>
+                                </div>
+                            </div>
+
+                            <!-- Event 6: Extinction Event -->
+                            <div class="events-card" data-event-id="6" data-genre="Paintings/Drawings" data-title="Exhibition: Extinction Event" data-sort-title="extinction event" data-start-date="20260805" data-end-date="20261020">
+                                <div class="events-card-image">
+                                    <img src="~/images/Picture15.png" alt="Extinction Event">
+                                    </div>
+                                    <div class="events-card-content">
+                                        <div class="events-card-header">
+                                            <h3>Exhibition: Extinction Event</h3>
+                                            <button class="events-btn-heart" onclick="toggleFavorite(event)" title="Save to favorites">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        </div>
+                                        <p class="events-card-description">A series of paintings and drawings documenting the passenger pigeon, once a flourishing species across the Americas. This exhibition explores what we have lost.</p>
+                                        <div class="events-card-info">
+                                            <div class="events-card-info-group">
+                                                <span class="events-card-info-label">📅 DATES</span>
+                                                <span>5 Aug 2026 - 20 Oct 2026</span>
+                                            </div>
+                                            <div class="events-card-info-group">
+                                                <span class="events-card-info-label">🕐 TIME</span>
+                                                <span>Daily 9:00 AM - 6:00 PM</span>
+                                            </div>
+                                            <div class="events-card-info-group">
+                                                <span class="events-card-info-label">📍 LOCATION</span>
+                                                <span>Marco Polo Hall, All Floors</span>
+                                            </div>
+                                        </div>
+                                        <a href="/WhatsOn/Event6" class="events-btn-book">BOOK</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <!-- JavaScript for filtering and sorting -->
+                        @section Scripts {
+                            <script>
+                                // Filter and sort the event cards
+                                function applyFilters() {
+                                    var genreFilter = document.getElementById('genre-filter').value;
+                                    var sortFilter = document.getElementById('sort-filter').value;
+                                    var cards = document.querySelectorAll('.events-card');
+
+                                    // Show/hide cards based on genre
+                                    cards.forEach(function (card) {
+                                        var isMatch = genreFilter === '' || card.dataset.genre === genreFilter;
+                                        card.classList.toggle('hidden', !isMatch);
+                                    });
+
+                                    // Sort visible cards
+                                    var visibleCards = Array.from(cards).filter(function (card) {
+                                        return !card.classList.contains('hidden');
+                                    });
+
+                                    visibleCards.sort(function (a, b) {
+                                        return getSortValue(a, b, sortFilter);
+                                    });
+
+                                    // Reorder cards in the grid
+                                    var grid = document.getElementById('events-grid');
+                                    visibleCards.forEach(function (card) {
+                                        grid.appendChild(card);
+                                    });
+                                }
+
+                                // Compare two cards for sorting
+                                function getSortValue(a, b, sortType) {
+                                    var titleA = a.dataset.sortTitle.toLowerCase();
+                                    var titleB = b.dataset.sortTitle.toLowerCase();
+                                    var dateA = parseInt(a.dataset.startDate);
+                                    var dateB = parseInt(b.dataset.startDate);
+                                    var endDateA = parseInt(a.dataset.endDate);
+                                    var endDateB = parseInt(b.dataset.endDate);
+
+                                    switch (sortType) {
+                                        case 'a-z': return titleA.localeCompare(titleB);
+                                        case 'z-a': return titleB.localeCompare(titleA);
+                                        case 'oldest': return dateA - dateB;
+                                        case 'ending': return endDateA - endDateB;
+                                        default: return dateB - dateA; // newest first
+                                    }
+                                }
+
+                                // Toggle heart icon on/off
+                                function toggleFavorite(event) {
+                                    event.stopPropagation();
+                                    var button = event.target.closest('.events-btn-heart');
+                                    button.classList.toggle('active');
+                                    var icon = button.querySelector('i');
+                                    icon.classList.toggle('far');
+                                    icon.classList.toggle('fas');
+                                }
+
+                                // Placeholder - will link to favourites page later
+                                function goToFavorites() {
+                                    console.log('Navigate to Saved Events page');
+                                }
+                            </script>
+                        }
