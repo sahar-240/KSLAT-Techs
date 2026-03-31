@@ -1,0 +1,173 @@
+﻿@{
+    ViewData["Title"] = "What's On";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/whatson.css" />
+
+<!-- Hero Banner -->
+<section class="hero-banner">
+    <img src="~/images/whats-on-banner.jpg" alt="What's On" class="banner-image" />
+    <div class="banner-overlay">
+        <h1 class="banner-title">WHAT'S ON</h1>
+        <p class="banner-subtitle">VIEW OUR TOURS & EVENTS</p>
+    </div>
+</section>
+
+<!-- Upcoming Section with Carousel -->
+<section class="upcoming-section">
+    <div class="upcoming-container">
+        <button class="nav-circle nav-left" onclick="scrollLeft()">‹</button>
+
+        <div class="upcoming-cards-wrapper" id="cardsWrapper">
+            <!-- Tour Card 1: Identity in Desire -->
+            <div class="upcoming-card tour-card">
+                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: block; width: 100%; height: 100%;">
+                    <img src="~/images/identity-desire.jpg" alt="Identity in Desire Tour" class="card-image" />
+                    <div class="card-overlay">
+                        <span class="card-badge">UPCOMING</span>
+                        <div class="card-text">
+                            <span class="card-label">TOUR</span>
+                            <h3 class="card-title">IDENTITY IN DESIRE</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tour Card 2: Ancient Alchemy -->
+            <div class="upcoming-card tour-card">
+                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: block; width: 100%; height: 100%;">
+                    <img src="~/images/ancient-alchemy.jpg" alt="Ancient Alchemy Tour" class="card-image" />
+                    <div class="card-overlay">
+                        <span class="card-badge">UPCOMING</span>
+                        <div class="card-text">
+                            <span class="card-label">TOUR</span>
+                            <h3 class="card-title">ANCIENT ALCHEMY</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tour Card 3: Literary Legacies -->
+            <div class="upcoming-card tour-card">
+                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: block; width: 100%; height: 100%;">
+                    <img src="~/images/literary-legacies.jpg" alt="Literary Legacies Tour" class="card-image" />
+                    <div class="card-overlay">
+                        <span class="card-badge">UPCOMING</span>
+                        <div class="card-text">
+                            <span class="card-label">TOUR</span>
+                            <h3 class="card-title">LITERARY LEGACIES</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tour Card 4: Architecture Greece -->
+            <div class="upcoming-card tour-card">
+                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: block; width: 100%; height: 100%;">
+                    <img src="~/images/architecture-greece.jpg" alt="Architecture Greece Tour" class="card-image" />
+                    <div class="card-overlay">
+                        <span class="card-badge">UPCOMING</span>
+                        <div class="card-text">
+                            <span class="card-label">TOUR</span>
+                            <h3 class="card-title">ARCHITECTURE: GREECE</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <button class="nav-circle nav-right" onclick="scrollRight()">›</button>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section class="events-section">
+    <div class="container">
+        <h2 class="section-title">EVENTS</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid-container">
+            <div class="event-item">
+                <img src="~/images/iris-van-herpen.jpg" alt="Iris van Herpen Exhibition" class="event-image" />
+                <div class="event-overlay">
+                    <span class="event-label">EXHIBITION</span>
+                    <h4 class="event-title">IRIS VAN HERPEN</h4>
+                </div>
+            </div>
+
+            <div class="browse-card">
+                <a href="/WhatsOn/Events" class="browse-link">
+                    <span class="browse-text">BROWSE ALL</span>
+                    <span class="browse-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tours Section -->
+<section class="tours-section">
+    <div class="container">
+        <h2 class="section-title">TOURS</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid-container">
+            <div class="tour-item">
+                <img src="~/images/architecture-greece.jpg" alt="Architecture Greece Tour" class="tour-image" />
+                <div class="tour-overlay">
+                    <span class="tour-label">TOUR</span>
+                    <h4 class="tour-title">ARCHITECTURE: GREECE</h4>
+                </div>
+            </div>
+
+            <div class="browse-card">
+                <a href="/WhatsOn/Tours" class="browse-link">
+                    <span class="browse-text">BROWSE ALL</span>
+                    <span class="browse-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Explore More Section -->
+<section class="explore-more">
+    <h2 class="explore-title">EXPLORE MORE</h2>
+    <div class="explore-grid">
+        <a href="/WhatsOn/Events" class="explore-card">
+            <span class="explore-icon">🎭</span>
+            <h3>Events</h3>
+            <p>Discover Our Upcoming Events</p>
+        </a>
+        <a href="/WhatsOn/Tours" class="explore-card">
+            <span class="explore-icon">🎨</span>
+            <h3>Tours</h3>
+            <p>Guided Gallery Experiences</p>
+        </a>
+        <a href="#" class="explore-card">
+            <span class="explore-icon">📚</span>
+            <h3>Exhibitions</h3>
+            <p>View Current Exhibitions</p>
+        </a>
+    </div>
+</section>
+
+<script>
+    let currentSlide = 0;
+    const cardWidth = 320; // 280px card + 32px gap + 8px padding
+    const cardsPerView = 2;
+
+    function scrollLeft() {
+        const wrapper = document.getElementById('cardsWrapper');
+        currentSlide = Math.max(0, currentSlide - 1);
+        wrapper.scrollLeft = currentSlide * cardWidth;
+    }
+
+    function scrollRight() {
+        const wrapper = document.getElementById('cardsWrapper');
+        const maxSlides = 4 - cardsPerView; // 4 total cards - 2 visible = 2 slides
+        currentSlide = Math.min(maxSlides, currentSlide + 1);
+        wrapper.scrollLeft = currentSlide * cardWidth;
+    }
+</script>

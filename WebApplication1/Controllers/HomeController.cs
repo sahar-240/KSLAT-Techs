@@ -1,49 +1,43 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using WebApplication1.Data;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class HomeController : Controller
+    // IDE0290: Use primary constructor
+    public class HomeController(ILogger<HomeController> logger, IMuseumData data) : Controller
     {
-        private readonly MuseumDbContext _context;
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger, MuseumDbContext context)
-        {
-            _logger = logger;
-            _context = context;
-        }
-
-        public async Task<IActionResult> Index()
+        // IDE0305: Collection initialisation simplified (ToList() -> [..])
+        public IActionResult Index()
         {
             var viewModel = new HomeViewModel
             {
-                OpeningHours = await _context.OpeningHours.ToListAsync(),
-                FAQs = await _context.FAQs
-                    .Where(f => f.IsActive)
-                    .OrderBy(f => f.DisplayOrder)
-                    .ToListAsync()
+                OpeningHours = [.. data.GetOpeningHours()],
+                FAQs = [.. data.GetActiveFaqs()]
             };
-
             return View(viewModel);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        public IActionResult Privacy() => View();
+        public IActionResult Visit() => View();
+        public IActionResult Contact() => View();
+        public IActionResult About() => View();
+        public IActionResult Terms() => View();
+        public IActionResult Support() => View();
+        public IActionResult Donation() => View();
 
-        public IActionResult Visit()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ProcessDonation(DonationViewModel model)
         {
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            return View();
+            if (ModelState.IsValid)
+            {
+                // TODO: Save donation to database
+                TempData["SuccessMessage"] = "Thank you for your donation!";
+                return RedirectToAction("Donation");
+            }
+            return View("Donation", model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
