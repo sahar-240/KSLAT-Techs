@@ -4,6 +4,7 @@
     string? tourName = Context.Request.Query["tour"];
 }
 
+<!-- In _Layout.cshtml (main layout) -->
 <link rel="stylesheet" href="~/css/whatson.css" />
 
 <!-- Back Button -->
@@ -76,7 +77,7 @@
             <!-- Email -->
             <div class="form-group">
                 <label for="email">EMAIL:</label>
-                <input type="email" id="email" name="email" placeholder="" required />
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
             </div>
 
             <!-- Phone -->
@@ -103,6 +104,13 @@
         const quantity = document.getElementById('quantity').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
+        const companion = document.getElementById('companion').checked;
+
+        // Validate form
+        if (!tour || !date || !time || !quantity || !email) {
+            alert('Please fill in all required fields');
+            return;
+        }
 
         // Create booking object
         const booking = {
@@ -112,10 +120,12 @@
             quantity: quantity,
             email: email,
             phone: phone,
-            ticketNumber: Math.random().toString().substr(2, 16).padEnd(16, '0')
+            companion: companion,
+            ticketNumber: 'TKT' + Math.random().toString().substr(2, 16).padEnd(16, '0'),
+            bookingDate: new Date().toISOString()
         };
 
-        // Store in session/localStorage and redirect to ticket
+        // Store in session storage and redirect to ticket
         sessionStorage.setItem('lastBooking', JSON.stringify(booking));
         window.location.href = '/WhatsOn/Ticket';
     });

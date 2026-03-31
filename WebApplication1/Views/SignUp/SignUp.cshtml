@@ -1,0 +1,245 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/amenities.css" />
+<style>
+    /* ── Page wrapper ── */
+    .signup-page {
+        background-color: #f5f5f5;
+        padding: 0 0 60px 0;
+    }
+
+    /* ── Shared section box ── */
+    .form-section-box {
+        background-color: #ffffff;
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 0;
+        border: 1px solid #e0e0e0;
+    }
+
+    /* ── Section title banner (green tinted) ── */
+    .section-title-banner {
+        background-color: #c8e6c9;
+        padding: 14px 28px;
+    }
+
+        .section-title-banner h1,
+        .section-title-banner h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+    /* ── Register label + divider ── */
+    .register-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #2d5f3f;
+        margin: 28px 28px 0;
+    }
+
+    .register-divider {
+        height: 2px;
+        background-color: #4caf50;
+        margin: 6px 28px 20px;
+    }
+
+    /* ── Form layout ── */
+    .signup-form,
+    .login-form {
+        padding: 0 28px 28px;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 18px;
+    }
+
+    .form-label {
+        min-width: 110px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #333;
+        padding-top: 10px;
+        text-transform: uppercase;
+    }
+
+    .form-control {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        font-size: 0.85rem;
+        font-family: inherit;
+        background: #fff;
+        transition: border-color 0.2s;
+    }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4caf50;
+        }
+
+    .form-control-full {
+        width: 100%;
+        flex: 1;
+    }
+
+    .form-control-textarea {
+        resize: vertical;
+        width: 100%;
+        flex: 1;
+    }
+
+    /* ── Name row (title + first + last) ── */
+    .name-inputs {
+        display: flex;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .title-select {
+        width: 90px;
+        flex-shrink: 0;
+    }
+
+    /* ── City & county row ── */
+    .city-county-group .name-inputs {
+        flex: 1;
+    }
+
+    /* ── Submit / Login buttons ── */
+    .submit-btn,
+    .login-btn {
+        display: block;
+        margin: 10px auto 0;
+        padding: 10px 40px;
+        background-color: #4caf50;
+        color: #ffffff;
+        border: none;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+        .submit-btn:hover,
+        .login-btn:hover {
+            background-color: #388e3c;
+        }
+
+    /* ── Login label ── */
+    .login-sublabel {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #333;
+        margin: 28px 28px 20px;
+    }
+</style>
+
+<div class="signup-page">
+
+    <!-- ── SIGN UP SECTION ── -->
+    <div class="form-section-box">
+        <div class="section-title-banner">
+            <h1>SIGN UP</h1>
+        </div>
+
+        <p class="register-label">REGISTER</p>
+        <div class="register-divider"></div>
+
+        <form class="signup-form" id="signupForm" method="POST" action="@Url.Action("SignUp", "SignUp")">
+
+            <div class="form-group name-group">
+                <label class="form-label">NAME:</label>
+                <div class="name-inputs">
+                    <select class="form-control title-select" name="Title">
+                        <option value="">Title</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Dr">Dr</option>
+                    </select>
+                    <input type="text" class="form-control" name="FirstName" placeholder="First Name" required />
+                    <input type="text" class="form-control" name="LastName" placeholder="Last Name" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">EMAIL:</label>
+                <input type="email" class="form-control form-control-full" name="Email" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">PHONE:</label>
+                <input type="tel" class="form-control form-control-full" name="Phone" placeholder="Optional" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">USERNAME:</label>
+                <input type="text" class="form-control form-control-full" name="Username" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">ADDRESS:</label>
+                <textarea class="form-control form-control-full form-control-textarea" name="Address" rows="3"></textarea>
+            </div>
+
+            <div class="form-group city-county-group">
+                <label class="form-label">CITY &amp; COUNTY:</label>
+                <div class="name-inputs">
+                    <input type="text" class="form-control" name="City" placeholder="City" style="flex:1;" />
+                    <select class="form-control" name="County" style="flex:1;">
+                        <option value="">County (Optional)</option>
+                        <option value="London">London</option>
+                        <option value="Greater London">Greater London</option>
+                        <option value="Surrey">Surrey</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">POSTCODE:</label>
+                <input type="text" class="form-control form-control-full" name="Postcode" />
+            </div>
+
+            <button type="submit" class="submit-btn">SIGN UP</button>
+        </form>
+    </div>
+
+    <!-- ── LOGIN SECTION ── -->
+    <div class="form-section-box">
+        <div class="section-title-banner">
+            <h2>LOGIN</h2>
+        </div>
+
+        <p class="login-sublabel">LOGIN</p>
+        <div class="register-divider"></div>
+
+        <form class="login-form" method="POST" action="@Url.Action("Index", "Login")">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label class="form-label">USERNAME:</label>
+                <input type="text" class="form-control form-control-full" name="username" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">PASSWORD:</label>
+                <input type="password" class="form-control form-control-full" name="password" required />
+            </div>
+
+            <button type="submit" class="login-btn">LOGIN</button>
+        </form>
+    </div>
+
+</div>
