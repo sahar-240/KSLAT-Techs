@@ -105,19 +105,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:0:0:{ecb7191a-597b-41f5-9843-03a4cf275dde}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}"
             },
             {
               "$type": "Document",
@@ -205,14 +201,10 @@
               "RelativeDocumentMoniker": "WebApplication1\\Views\\WhatsOn\\Tours.cshtml",
               "ToolTip": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\WhatsOn\\Tours.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\WhatsOn\\Tours.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-23T17:20:58.614Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
