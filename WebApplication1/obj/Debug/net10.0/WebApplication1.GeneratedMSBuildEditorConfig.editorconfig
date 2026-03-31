@@ -46,12 +46,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxUaWNrZXRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Amenities.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0aWVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Amenties/Amenities.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbnRpZXNcQW1lbml0aWVzLmNzaHRtbA==
+[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Amenities/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Event1.cshtml]
