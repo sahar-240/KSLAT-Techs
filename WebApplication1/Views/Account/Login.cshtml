@@ -1,7 +1,7 @@
-﻿
+﻿@model List<WebApplication1.Models.SavedItemViewModel>
 @{
-    Layout = null;
-    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+    ViewData["Title"] = "Saved";
 }
 
 <link rel="stylesheet" href="~/css/Login.css">
@@ -14,8 +14,8 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="@Url.Action("Index", "Home")">VISIT US</a></li>
-                    <li><a href="@Url.Action("WhatsOn", "Home")">WHAT'S ON</a></li>
-                    <li><a href="@Url.Action("Amenities", "Home")">AMENITIES</a></li>
+                    <li><a href="@Url.Action("Index", "WhatsOn")">WHAT'S ON</a></li>
+                    <li><a href="@Url.Action("Index", "Amenities")">AMENITIES</a></li>
                     <li><a href="@Url.Action("Account", "Account")">MEMBERSHIP</a></li>
                     <li><a href="#" class="search-icon">🔍</a></li>
                 </ul>
@@ -23,55 +23,38 @@
         </nav>
 
         <!-- Main Content -->
-        <div class="login-container">
-            <!-- Login Header -->
-            <div class="login-header">
-                <h2 class="login-header-title">LOGIN</h2>
+        <div class="saved-container">
+            <!-- Header Section -->
+            <div class="saved-header">
+                <h1 class="saved-title">SAVED</h1>
             </div>
 
-            <!-- Login Form Section -->
-            <div class="login-form-section">
-                <div class="login-box">
-                    <h3 class="form-title">LOGIN</h3>
-            
-                    <form method="post" action="@Url.Action("Login", "Login")">
-                        <!-- Username Field -->
-                        <div class="form-group">
-                            <label for="username" class="form-label">USERNAME:</label>
-                            <input type="text"
-                                   id="username"
-                                   name="username"
-                                   class="form-input"
-                                   placeholder=""
-                                   required>
+            <!-- Saved Items Section -->
+            <div class="saved-items-container">
+                <div class="saved-items">
+                    <!-- Saved items will be displayed here -->
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <div class="saved-item">
+                                <h3>@item.Title</h3>
+                                <p>@item.Description</p>
+                                <div class="item-details">
+                                    <span>@item.Date</span>
+                                    <button class="remove-btn" data-id="@item.Id">Remove</button>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="no-saved-items">
+                            <p>You haven't saved any events yet.</p>
                         </div>
-
-                        <!-- Password Field -->
-                        <div class="form-group">
-                            <label for="password" class="form-label">PASSWORD:</label>
-                            <input type="password"
-                                   id="password"
-                                   name="password"
-                                   class="form-input"
-                                   placeholder=""
-                                   required>
-                        </div>
-
-                        <!-- Login Button -->
-                        <div class="form-group button-group">
-                            <button type="submit" class="login-btn">LOGIN</button>
-                        </div>
-                    </form>
-
-                    <!-- Register Link -->
-                    <div class="register-link">
-                        <p>Don't have an account? <a href="@Url.Action("Register", "Account")">Register here</a></p>
-                    </div>
+                    }
                 </div>
             </div>
-
-            <!-- Spacer -->
-            <div class="login-spacer"></div>
         </div>
 
         <!-- Footer -->
