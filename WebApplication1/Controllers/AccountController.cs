@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -10,16 +11,18 @@ namespace WebApplication1.Controllers
             return View("~/Views/Account/Account.cshtml");
         }
 
-        // Saved Page
+        // BUG FIX: Pass an empty list so Saved.cshtml doesn't throw NullReferenceException
         public IActionResult Saved()
         {
-            return View("~/Views/Account/Saved.cshtml");
+            var savedItems = new List<SavedItemViewModel>(); // TODO: load from database
+            return View("~/Views/Account/Saved.cshtml", savedItems);
         }
 
-        // Tickets Page
+        // BUG FIX: Pass an empty list so Tickets.cshtml doesn't throw NullReferenceException
         public IActionResult Tickets()
         {
-            return View("~/Views/Account/Tickets.cshtml");
+            var tickets = new List<TicketViewModel>(); // TODO: load from database
+            return View("~/Views/Account/Tickets.cshtml", tickets);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model List<WebApplication1.Models.TicketViewModel>
 @{
     Layout = null;
     ViewData["Title"] = "Tickets";
@@ -14,8 +14,8 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="@Url.Action("Index", "Home")">VISIT US</a></li>
-                    <li><a href="@Url.Action("WhatsOn", "Home")">WHAT'S ON</a></li>
-                    <li><a href="@Url.Action("Amenities", "Home")">AMENITIES</a></li>
+                    <li><a href="@Url.Action("Index", "WhatsOn")">WHAT'S ON</a></li>
+                    <li><a href="@Url.Action("Index", "Amenities")">AMENITIES</a></li>
                     <li><a href="@Url.Action("Account", "Account")">MEMBERSHIP</a></li>
                     <li><a href="#" class="search-icon">🔍</a></li>
                 </ul>
@@ -40,7 +40,7 @@
                             <div class="ticket-item">
                                 <div class="ticket-header">
                                     <h3>@ticket.Title</h3>
-                                    <span class="ticket-status @ticket.Status.ToLower()">@ticket.Status</span>
+                                    <span class="ticket-status @(ticket.Status?.ToLower() ?? "unknown")">@(ticket.Status ?? "Unknown")</span>
                                 </div>
                                 <p class="ticket-description">@ticket.Description</p>
                                 <div class="ticket-details">
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="detail-group">
                                         <span class="detail-label">Price:</span>
-                                        <span class="detail-value">$@ticket.Price</span>
+                                        <span class="detail-value">£@ticket.Price</span>
                                     </div>
                                 </div>
                                 <div class="ticket-actions">
@@ -68,7 +68,7 @@
                     {
                         <div class="no-tickets">
                             <p>You don't have any bookings yet.</p>
-                            <a href="@Url.Action("WhatsOn", "Home")" class="book-btn">Browse Events</a>
+                            <a href="@Url.Action("Index", "WhatsOn")" class="book-btn">Browse Events</a>
                         </div>
                     }
                 </div>

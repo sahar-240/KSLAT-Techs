@@ -3,135 +3,257 @@
     Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership - Natural Gallery Museum</title>
-    <link rel="stylesheet" href="~/css/amenities-style.css">
-        <link rel="stylesheet" href="~/css/membership-style.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        </head>
-        <body>
-            <!-- Membership Page -->
-            <div class="membership-page">
-                <!-- Header -->
-                <header class="membership-header">
-                    <div class="header-top">
-                        <div class="logo">
-                            <img src="~/images/logo.png" alt="Natural Gallery Logo">
-                            </div>
-                            <nav class="nav-menu">
-                                <a href="@Url.Action("Index", "Home")" class="nav-link">VISIT US</a>
-                                <a href="@Url.Action("Index", "Home")" class="nav-link">WHAT'S ON</a>
-                                <a href="@Url.Action("Amenities", "Amenities")" class="nav-link">AMENITIES</a>
-                                <a href="@Url.Action("Membership", "Amenities")" class="nav-link active">MEMBERSHIP</a>
-                            </nav>
-                            <div class="header-actions">
-                                <button class="search-btn">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
+<link rel="stylesheet" href="~/css/amenities.css" />
+<style>
+    /* ── Hero ── */
+    .membership-hero {
+        position: relative;
+        width: 100%;
+        height: 260px;
+        overflow: hidden;
+        background-color: #1a1a1a;
+    }
 
-                        <!-- Hero Section -->
-                        <div class="membership-hero">
-                            <img src="~/images/membership-hero.jpg" alt="Membership Hero" class="hero-image">
-                                <div class="hero-content">
-                                    <h1 class="hero-title">MEMBERSHIP</h1>
-                                </div>
-                            </div>
-                        </header>
+    .membership-hero .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.75;
+    }
 
-                        <!-- Main Content -->
-                        <main class="membership-main">
-                            <!-- Sign Up Section -->
-                            <section class="signup-section">
-                                <button class="signup-btn" onclick="window.location.href='@Url.Action("SignUp", "Amenities")'">
-                                    <span class="arrow">→</span>
-                                    <span class="text">SIGN UP</span>
-                                </button>
-                            </section>
+    .membership-hero .hero-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-                            <!-- Benefits Introduction -->
-                            <section class="benefits-intro">
-                                <h2 class="intro-title">JOIN OUR MEMBERS SCHEME FOR FREE</h2>
-                                <p class="intro-text">RECEIVE EMAILS FOR OUR MEMBER ONLY EVENTS & DISCOUNTS</p>
-                            </section>
+    .membership-hero .hero-title {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: 6px;
+        color: #ffffff;
+        border: 3px solid #4caf50;
+        padding: 10px 40px;
+        background: rgba(0,0,0,0.25);
+    }
 
-                            <!-- Benefits Grid Section -->
-                            <section class="benefits-grid">
-                                <!-- Benefit 1 -->
-                                <div class="benefit-card benefit-1">
-                                    <div class="benefit-image">
-                                        <img src="~/images/benefit-portrait.jpg" alt="View and Modify Your Likes">
-                                        </div>
-                                        <div class="benefit-text">
-                                            <h3 class="benefit-title">BE ABLE TO VIEW & MODIFY YOUR LIKES</h3>
-                                        </div>
-                                    </div>
+    /* ── Sign Up Button ── */
+    .signup-section {
+        background-color: #1a1a1a;
+        padding: 0;
+    }
 
-                                    <!-- Benefit 2 -->
-                                    <div class="benefit-card benefit-2">
-                                        <div class="benefit-image">
-                                            <img src="~/images/benefit-eye.jpg" alt="View and Modify Your Tickets">
-                                            </div>
-                                            <div class="benefit-text">
-                                                <h3 class="benefit-title">BE ABLE TO VIEW & MODIFY YOUR TICKETS</h3>
-                                            </div>
-                                        </div>
-                                    </section>
+    .signup-btn {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        padding: 22px 40px;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        transition: background-color 0.3s;
+    }
 
-                                    <!-- Additional Benefits -->
-                                    <section class="additional-benefits">
-                                        <div class="benefit-item">
-                                            <h3>EXCLUSIVE ACCESS</h3>
-                                            <p>Get early access to new exhibitions and special events reserved for members only.</p>
-                                        </div>
-                                        <div class="benefit-item">
-                                            <h3>SPECIAL DISCOUNTS</h3>
-                                            <p>Enjoy discounts on memberships renewals, gift shop purchases, and dining at our restaurants.</p>
-                                        </div>
-                                        <div class="benefit-item">
-                                            <h3>MEMBER NEWSLETTER</h3>
-                                            <p>Stay updated with curated content, behind-the-scenes stories, and exclusive member highlights.</p>
-                                        </div>
-                                        <div class="benefit-item">
-                                            <h3>PRIORITY SUPPORT</h3>
-                                            <p>Receive priority customer service and assistance with member-related inquiries.</p>
-                                        </div>
-                                    </section>
-                                </main>
+    .signup-btn:hover {
+        background-color: #2d2d2d;
+    }
 
-                                <!-- Footer -->
-                                <footer class="membership-footer">
-                                    <div class="footer-content">
-                                        <div class="footer-logo">
-                                            <img src="~/images/footer-logo.png" alt="Natural Gallery Logo">
-                                            </div>
-                                            <div class="footer-links">
-                                                <a href="@Url.Action("Index", "Home")" class="footer-link">ABOUT US</a>
-                                                <span class="footer-divider">|</span>
-                                                <a href="@Url.Action("Index", "Home")" class="footer-link">CONTACT</a>
-                                                <span class="footer-divider">|</span>
-                                                <a href="@Url.Action("Index", "Home")" class="footer-link">HELP</a>
-                                                <span class="footer-divider">|</span>
-                                                <a href="@Url.Action("Index", "Home")" class="footer-link">BLOG & FAQS</a>
-                                                <span class="footer-divider">|</span>
-                                                <a href="@Url.Action("Amenities", "Amenities")" class="footer-link" onclick="showPrivacyPolicy(); return false;">PRIVACY POLICY</a>
-                                            </div>
-                                            <div class="footer-contact">
-                                                <p>📍 The Fairylands, London W6 8LP</p>
-                                                <p>📞 +44 (0)20 8991 0200</p>
-                                            </div>
-                                        </div>
-                                    </footer>
-                                </div>
+    .signup-btn .arrow {
+        font-size: 1.6rem;
+        color: #ffffff;
+    }
 
-                                <!-- JavaScript -->
-                                <script>
-                                        // Additional script for any membership page functionality
-                                </script>
-                            </body>
-                        </html>
+    /* ── Benefits Intro ── */
+    .benefits-intro {
+        text-align: center;
+        padding: 40px 20px 20px;
+        background: #ffffff;
+    }
+
+    .intro-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #2d5f3f;
+        margin-bottom: 8px;
+    }
+
+    .intro-text {
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+        color: #333;
+    }
+
+    /* ── Benefits Grid ── */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: #ffffff;
+        padding: 20px 40px 40px;
+    }
+
+    .benefit-card {
+        position: relative;
+        overflow: hidden;
+        height: 220px;
+    }
+
+    .benefit-card .benefit-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .benefit-card .benefit-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(60%);
+    }
+
+    .benefit-card .benefit-text {
+        position: absolute;
+        padding: 12px 16px;
+        background-color: rgba(143, 188, 143, 0.88);
+        max-width: 55%;
+    }
+
+    /* Benefit 1: text bottom-right */
+    .benefit-1 .benefit-text {
+        bottom: 0;
+        right: 0;
+    }
+
+    /* Benefit 2: text bottom-left */
+    .benefit-2 .benefit-text {
+        bottom: 0;
+        left: 0;
+    }
+
+    .benefit-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        color: #1a1a1a;
+        line-height: 1.4;
+    }
+
+    /* ── Additional Benefits ── */
+    .additional-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        background: #f5f5f5;
+    }
+
+    .benefit-item {
+        padding: 30px 30px;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+    }
+
+    .benefit-item:nth-child(even) {
+        border-right: none;
+    }
+
+    .benefit-item h3 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #2d5f3f;
+        margin-bottom: 10px;
+    }
+
+    .benefit-item p {
+        font-size: 0.85rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* ── Responsive ── */
+    @@media (max-width: 768px) {
+        .benefits-grid {
+            grid-template-columns: 1fr;
+            padding: 10px;
+        }
+        .additional-benefits {
+            grid-template-columns: 1fr;
+        }
+        .membership-hero .hero-title {
+            font-size: 2rem;
+            letter-spacing: 3px;
+        }
+    }
+</style>
+
+<!-- Hero Section -->
+<div class="membership-hero">
+    <img src="~/images/membership-hero.jpg" alt="Membership Hero" class="hero-image" />
+    <div class="hero-content">
+        <h1 class="hero-title">MEMBERSHIP</h1>
+    </div>
+</div>
+
+<!-- Sign Up Button -->
+<section class="signup-section">
+    <button class="signup-btn" onclick="window.location.href='@Url.Action("SignUp", "Amenities")'">
+        <span class="arrow">→</span>
+        <span class="text">SIGN UP</span>
+    </button>
+</section>
+
+<!-- Benefits Introduction -->
+<section class="benefits-intro">
+    <h2 class="intro-title">JOIN OUR MEMBERS SCHEME FOR FREE</h2>
+    <p class="intro-text">RECEIVE EMAILS FOR OUR MEMBER ONLY EVENTS &amp; DISCOUNTS</p>
+</section>
+
+<!-- Benefits Grid -->
+<section class="benefits-grid">
+    <!-- Benefit 1: portrait image, text bottom-right -->
+    <div class="benefit-card benefit-1">
+        <div class="benefit-image">
+            <img src="~/images/benefit-portrait.jpg" alt="View and Modify Your Likes" />
+        </div>
+        <div class="benefit-text">
+            <h3 class="benefit-title">BE ABLE TO VIEW &amp; MODIFY YOUR LIKES</h3>
+        </div>
+    </div>
+
+    <!-- Benefit 2: eye image, text bottom-left -->
+    <div class="benefit-card benefit-2">
+        <div class="benefit-image">
+            <img src="~/images/benefit-eye.jpg" alt="View and Modify Your Tickets" />
+        </div>
+        <div class="benefit-text">
+            <h3 class="benefit-title">BE ABLE TO VIEW &amp; MODIFY YOUR TICKETS</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Additional Benefits -->
+<section class="additional-benefits">
+    <div class="benefit-item">
+        <h3>EXCLUSIVE ACCESS</h3>
+        <p>Get early access to new exhibitions and special events reserved for members only.</p>
+    </div>
+    <div class="benefit-item">
+        <h3>SPECIAL DISCOUNTS</h3>
+        <p>Enjoy discounts on membership renewals, gift shop purchases, and dining at our restaurants.</p>
+    </div>
+    <div class="benefit-item">
+        <h3>MEMBER NEWSLETTER</h3>
+        <p>Stay updated with curated content, behind-the-scenes stories, and exclusive member highlights.</p>
+    </div>
+    <div class="benefit-item">
+        <h3>PRIORITY SUPPORT</h3>
+        <p>Receive priority customer service and assistance with member-related inquiries.</p>
+    </div>
+</section>
