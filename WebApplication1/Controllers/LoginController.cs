@@ -4,31 +4,35 @@ namespace WebApplication1.Controllers
 {
     public class LoginController : Controller
     {
-        // Login Page
+        // Login Page GET
         public IActionResult Index()
         {
             return View("~/Views/Account/Login.cshtml");
         }
 
-        // Handle Login POST
+        // Login Page POST
+        // IDE0060: Removed unused parameters - replace with real auth logic when ready
         [HttpPost]
-        public IActionResult Index(string username, string password)
+        [ActionName("Index")]
+        public IActionResult IndexPost()
         {
-            // Add your authentication logic here
+            // TODO: Inject UserManager / auth service and validate credentials here
             return RedirectToAction("Account", "Account");
         }
 
-        // Register Page
+        // Register GET
         public IActionResult Register()
         {
-            return View();
+            return View("~/Views/SignUp/SignUp.cshtml");
         }
 
-        // Handle Register POST
+        // Register POST
+        // IDE0060: Removed unused parameters - replace with real registration logic when ready
         [HttpPost]
-        public IActionResult Register(string username, string email, string password)
+        [ActionName("Register")]
+        public IActionResult RegisterPost()
         {
-            // Add your registration logic here
+            // TODO: Inject UserManager / auth service and create account here
             return RedirectToAction("Index", "Login");
         }
     }

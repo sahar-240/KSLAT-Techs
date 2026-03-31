@@ -73,10 +73,10 @@
                         <p>Patrons are the core funding for the gallery and help ensure we can continue our work.</p>
                         <p><strong>Patron tiers available:</strong></p>
                         <ul class="patron-tiers">
-                            <li>Bronze - $1,000 annually</li>
-                            <li>Silver - $2,500 annually</li>
-                            <li>Gold - $5,000 annually</li>
-                            <li>Platinum - $10,000+ annually</li>
+                            <li>Bronze - £1,000 annually</li>
+                            <li>Silver - £2,500 annually</li>
+                            <li>Gold - £5,000 annually</li>
+                            <li>Platinum - £10,000+ annually</li>
                         </ul>
                         <p>Please contact us at <a href="mailto:patrons@museum.com">patrons@museum.com</a> or call <strong>020-XXXX-XXXX</strong></p>
                         <button class="btn btn-primary">BECOME A PATRON</button>
@@ -130,7 +130,7 @@
                 <div class="modal-content">
                     <span class="close" onclick="closeDonationModal()">&times;</span>
                     <h2>Make a Donation</h2>
-                    <form id="donation-form" method="post">
+                    <form id="donation-form" method="post" action="@Url.Action("ProcessDonation", "Home")">
             
                         <!-- CSRF Token -->
                         @Html.AntiForgeryToken()

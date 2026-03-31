@@ -1,6 +1,5 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "_Layout";
     ViewData["Title"] = "Account";
 }
 
@@ -14,8 +13,8 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="@Url.Action("Index", "Home")">VISIT US</a></li>
-                    <li><a href="@Url.Action("WhatsOn", "Home")">WHAT'S ON</a></li>
-                    <li><a href="@Url.Action("Amenities", "Home")">AMENITIES</a></li>
+                    <li><a href="@Url.Action("Index", "WhatsOn")">WHAT'S ON</a></li>
+                    <li><a href="@Url.Action("Index", "Amenities")">AMENITIES</a></li>
                     <li><a href="@Url.Action("Account", "Account")" class="active">MEMBERSHIP</a></li>
                     <li><a href="#" class="search-icon">🔍</a></li>
                 </ul>
