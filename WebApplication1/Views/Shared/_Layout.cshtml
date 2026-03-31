@@ -3,44 +3,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Natural History Museum</title>
+    <title>@ViewData["Title"] - Natural Gallery</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <!-- Font Awesome for Search Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- BUG FIX: Updated navbar to include full site navigation (was missing WHAT'S ON, AMENITIES, MEMBERSHIP) -->
+    <!-- BUG FIX: Removed broken #about anchor href -->
     <nav class="navbar">
-        <div class="navbar-content">
-            <!-- Logo -->
+        <div class="container">
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                <span class="brand-icon">🏛️</span>
-                <span class="brand-text">Natural<br>Gallery</span>
+                Natural Gallery
             </a>
-
-
-            <!-- Nav Links -->
             <ul class="nav-links">
-                <li><a asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" && ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")">VISIT US</a></li>
-                <li><a asp-controller="WhatsOn" asp-action="Index" class="@(ViewContext.RouteData.Values["Controller"]?.ToString() == "WhatsOn" ? "active" : "")">WHAT'S ON</a></li>
-                <li><a href="#amenities" class="">AMENITIES</a></li>
-                <li><a asp-controller="Home" asp-action="Support" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Support" ? "active" : "")">MEMBERSHIP</a></li>
+                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                <li><a asp-controller="WhatsOn" asp-action="Index">WHAT'S ON</a></li>
+                <li><a asp-controller="Amenities" asp-action="Index">AMENITIES</a></li>
+                <li><a asp-controller="Amenities" asp-action="Membership">MEMBERSHIP</a></li>
+                <li><a asp-controller="Home" asp-action="Visit">VISIT</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">CONTACT</a></li>
             </ul>
-
-            <!-- Search Icon -->
-            <button class="search-toggle" onclick="toggleSearch()" aria-label="Search">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-
-        <!-- Search Bar -->
-        <div id="search-bar" class="search-bar" style="display: none;">
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="SEARCH">
-                <button type="button" class="search-btn" onclick="performSearch()">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
         </div>
     </nav>
 
@@ -53,28 +35,31 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Natural History Museum</h4>
+                    <h4>Natural Gallery</h4>
                     <p>Inspiring curiosity about the natural world</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="Support">Support Us</a></li>
-                        <li><a asp-controller="Home" asp-action="Donation">Donate</a></li>
-                        <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
                         <li><a asp-controller="WhatsOn" asp-action="Index">What's On</a></li>
+                        <li><a asp-controller="Amenities" asp-action="Index">Amenities</a></li>
+                        <li><a asp-controller="Amenities" asp-action="Membership">Membership</a></li>
+                        <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                        <li><a asp-controller="Home" asp-action="Terms">Terms &amp; Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: <a href="mailto:info@nhm.ac.uk">info@nhm.ac.uk</a></p>
-                    <p>Phone: <a href="tel:+442079425000">+44 20 7942 5000</a></p>
-                    <p>Address: Cromwell Road<br>London SW7 5BD<br>United Kingdom</p>
+                    <p>📍 The Fairylands, London W6 8LP</p>
+                    <p>📞 +44 (0)20 8991 0200</p>
+                    <p>✉ info@naturalgallery.co.uk</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Natural History Museum. All rights reserved.</p>
+                <p>&copy; 2026 Natural Gallery. All rights reserved.</p>
             </div>
         </div>
     </footer>
