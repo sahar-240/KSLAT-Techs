@@ -5,33 +5,40 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class HomeController : Controller
+    // IDE0290: Use primary constructor
+    public class HomeController(ILogger<HomeController> logger, IMuseumData data) : Controller
     {
-        private readonly IMuseumData _data;
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger, IMuseumData data)
-        {
-            _logger = logger;
-            _data = data;
-        }
-
+        // IDE0305: Collection initialisation simplified (ToList() -> [..])
         public IActionResult Index()
         {
             var viewModel = new HomeViewModel
             {
-                OpeningHours = _data.GetOpeningHours().ToList(),
-                FAQs = _data.GetActiveFaqs().ToList()
+                OpeningHours = [.. data.GetOpeningHours()],
+                FAQs = [.. data.GetActiveFaqs()]
             };
-
             return View(viewModel);
         }
 
         public IActionResult Privacy() => View();
-
         public IActionResult Visit() => View();
-
         public IActionResult Contact() => View();
+        public IActionResult About() => View();
+        public IActionResult Terms() => View();
+        public IActionResult Support() => View();
+        public IActionResult Donation() => View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ProcessDonation(DonationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // TODO: Save donation to database
+                TempData["SuccessMessage"] = "Thank you for your donation!";
+                return RedirectToAction("Donation");
+            }
+            return View("Donation", model);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
