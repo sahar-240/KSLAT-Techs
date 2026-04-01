@@ -7,141 +7,84 @@
 
 <!-- Hero Banner with What's On Title -->
 <section class="hero-banner">
-    <img src="~/images/banner-tapestry.jpg" alt="Gallery Tapestry Collection" class="banner-image" />
+    <img src="~/images/Picture32.png" alt="Gallery Tapestry Collection" class="banner-image" />
     <div class="banner-overlay">
         <h1 class="banner-title">WHAT'S ON</h1>
         <p class="banner-subtitle">VIEW OUR TOURS & EVENTS</p>
     </div>
 </section>
 
-<section>
 <!-- Upcoming Section with Carousel -->
-<div class="upcoming-container">
-    <!-- Left Arrow -->
-    <button class="nav-circle nav-left" onclick="slideLeft()">‹</button>
+<section class="upcoming-section">
+    <div class="upcoming-container">
+        <!-- Left Arrow -->
+        <button class="nav-circle nav-left" onclick="slideLeft()">‹</button>
 
-<<<<<<< HEAD
-    <!-- Viewport that clips to show only 2 cards -->
-    <div style="width: 704px; overflow: hidden; position: relative;">
-        <!-- Carousel Wrapper with 4 Cards -->
-        <div class="upcoming-cards-wrapper" id="cardsWrapper">
-            <!-- Card 1 -->
-            <div class="upcoming-card">
-                <a href="/WhatsOn/Tours">
-                    <img src="~/images/identity-desire.jpg" class="card-image" />
-                    <div class="card-overlay">
-                        <span class="card-badge">UPCOMING</span>
-                        <div class="card-text">
-                            <span class="card-label">TOUR</span>
-                            <h3 class="card-title">IDENTITY IN DESIRE</h3>
+        <!-- Viewport that clips to show only 2 cards -->
+        <div style="width: 728px; height: 300px; overflow: hidden; position: relative;">
+            <!-- Carousel Wrapper with 4 Cards -->
+            <div class="upcoming-cards-wrapper" id="cardsWrapper" style="display: flex; gap: 24px; width: 1432px; transition: transform 0.3s ease;">
+                <!-- Card 1: Identity in Desire -->
+                <div class="upcoming-card">
+                    <a href="/WhatsOn/Tours">
+                        <img src="~/images/Picture10.png" alt="Identity in Desire Tour" class="card-image" />
+                        <div class="card-overlay">
+                            <span class="card-badge">UPCOMING</span>
+                            <div class="card-text">
+                                <span class="card-label">TOUR</span>
+                                <h3 class="card-title">IDENTITY IN DESIRE</h3>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
 
-            <!-- Card 2 -->
-            <div class="upcoming-card">
-                <a href="/WhatsOn/Tours">
-                    <img src="~/images/ancient-alchemy.jpg" class="card-image" />
-=======
-        <!-- Left Navigation Circle -->
-        <button class="nav-circle nav-left" onclick="scrollLeft()">‹</button>
-
-        <!-- Cards Wrapper - THIS IS KEY! -->
-        <div class="upcoming-cards-wrapper" id="cardsWrapper">
-            <!-- Tour Card 1: Identity in Desire -->
-            <div class="upcoming-card tour-card">
-                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: 100%; height: 100%;">
-                    <img src="~/images/identity-desire.jpg" alt="Identity in Desire Tour" class="card-image" />
-                    <div class="card-overlay">
-                        <span class="card-badge">UPCOMING</span>
-                        <div class="card-text">
-                            <span class="card-label">TOUR</span>
-                            <h3 class="card-title">IDENTITY IN DESIRE</h3>
+                <!-- Card 2: Ancient Alchemy -->
+                <div class="upcoming-card">
+                    <a href="/WhatsOn/Tours">
+                        <img src="~/images/Picture22.png" alt="Ancient Alchemy Tour" class="card-image" />
+                        <div class="card-overlay">
+                            <span class="card-badge">UPCOMING</span>
+                            <div class="card-text">
+                                <span class="card-label">TOUR</span>
+                                <h3 class="card-title">ANCIENT ALCHEMY</h3>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
 
-            <!-- Tour Card 2: Ancient Alchemy -->
-            <div class="upcoming-card tour-card">
-                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: 100%; height: 100%;">
-                    <img src="~/images/ancient-alchemy.jpg" alt="Ancient Alchemy Tour" class="card-image" />
->>>>>>> master
-                    <div class="card-overlay">
-                        <span class="card-badge">UPCOMING</span>
-                        <div class="card-text">
-                            <span class="card-label">TOUR</span>
-                            <h3 class="card-title">ANCIENT ALCHEMY</h3>
+                <!-- Card 3: One Earth -->
+                <div class="upcoming-card">
+                    <a href="/WhatsOn/Event2">
+                        <img src="~/images/Picture12.png" alt="One Earth Exhibition" class="card-image" />
+                        <div class="card-overlay">
+                            <span class="card-badge">UPCOMING</span>
+                            <div class="card-text">
+                                <span class="card-label">EXHIBITION</span>
+                                <h3 class="card-title">ONE EARTH</h3>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
 
-<<<<<<< HEAD
-            <!-- Card 3 -->
-            <div class="upcoming-card">
-                <a href="/WhatsOn/Event2">
-                    <img src="~/images/Picture12.png" class="card-image" />
-                    <div class="card-overlay">
-                        <span class="card-badge">UPCOMING</span>
-                        <div class="card-text">
-                            <span class="card-label">EXHIBITION</span>
-                            <h3 class="card-title">ONE EARTH</h3>
-=======
-            <!-- Tour Card 3: Literary Legacies -->
-            <div class="upcoming-card tour-card">
-                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: 100%; height: 100%;">
-                    <img src="~/images/literary-legacies.jpg" alt="Literary Legacies Tour" class="card-image" />
-                    <div class="card-overlay">
-                        <span class="card-badge">UPCOMING</span>
-                        <div class="card-text">
-                            <span class="card-label">TOUR</span>
-                            <h3 class="card-title">LITERARY LEGACIES</h3>
->>>>>>> master
+                <!-- Card 4: Daniel Schuller -->
+                <div class="upcoming-card">
+                    <a href="/WhatsOn/Event3">
+                        <img src="~/images/Picture9.png" alt="Daniel Schuller Exhibition" class="card-image" />
+                        <div class="card-overlay">
+                            <span class="card-badge">UPCOMING</span>
+                            <div class="card-text">
+                                <span class="card-label">EXHIBITION</span>
+                                <h3 class="card-title">DANIEL SCHULLER</h3>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-
-<<<<<<< HEAD
-            <!-- Card 4 -->
-            <div class="upcoming-card">
-                <a href="/WhatsOn/Event3">
-                    <img src="~/images/Picture9.png" class="card-image" />
-                    <div class="card-overlay">
-                        <span class="card-badge">UPCOMING</span>
-                        <div class="card-text">
-                            <span class="card-label">EXHIBITION</span>
-                            <h3 class="card-title">DANIEL SCHULLER</h3>
-=======
-            <!-- Tour Card 4: Architecture Greece -->
-            <div class="upcoming-card tour-card">
-                <a href="/WhatsOn/Tours" style="text-decoration: none; color: inherit; display: 100%; height: 100%;">
-                    <img src="~/images/architecture-greece.jpg" alt="Architecture Greece Tour" class="card-image" />
-                    <div class="card-overlay">
-                        <span class="card-badge">UPCOMING</span>
-                        <div class="card-text">
-                            <span class="card-label">TOUR</span>
-                            <h3 class="card-title">ARCHITECTURE: GREECE</h3>
->>>>>>> master
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
 
-        <!-- Right Navigation Circle -->
-        <button class="nav-circle nav-right" onclick="scrollRight()">›</button>
-
->>>>>>> master
+        <!-- Right Arrow -->
+        <button class="nav-circle nav-right" onclick="slideRight()">›</button>
     </div>
-
-    <!-- Right Arrow -->
-    <button class="nav-circle nav-right" onclick="slideRight()">›</button>
-</div> 
 </section>
 
 <!-- Events Section -->
@@ -150,7 +93,7 @@
     <div class="section-divider"></div>
     <div class="grid-container">
         <div class="event-item">
-            <img src="~/images/iris-van-herpen.jpg" alt="Iris van Herpen Exhibition" class="event-image" />
+            <img src="~/images/Picture11.png" alt="Iris van Herpen Exhibition" class="event-image" />
             <div class="event-overlay">
                 <span class="event-label">EXHIBITION</span>
                 <h4 class="event-title">IRIS VAN HERPEN</h4>
@@ -171,7 +114,7 @@
     <div class="section-divider"></div>
     <div class="grid-container">
         <div class="tour-item">
-            <img src="~/images/architecture-greece.jpg" alt="Architecture Greece Tour" class="tour-image" />
+            <img src="~/images/Picture24.png" alt="Architecture Greece Tour" class="tour-image" />
             <div class="tour-overlay">
                 <span class="tour-label">TOUR</span>
                 <h4 class="tour-title">ARCHITECTURE: GREECE</h4>
@@ -185,8 +128,8 @@
         </div>
     </div>
 </section>
+
 <script>
-<<<<<<< HEAD
     let index = 0;
     const wrapper = document.getElementById('cardsWrapper');
     const cardWidth = 340;
@@ -209,22 +152,5 @@
             wrapper.style.transform = `translateX(-${shift}px)`;
             console.log('Right clicked - Index:', index, 'Shift:', shift);
         }
-=======
-    let currentSlide = 0;
-    const cardWidth = 320; // 280px card + 32px gap + 8px padding
-    const cardsPerView = 2;
-
-    function scrollLeft() {
-        const wrapper = document.getElementById('cardsWrapper');
-        currentSlide = Math.max(0, currentSlide - 1);
-        wrapper.scrollLeft = currentSlide * cardWidth;
-    }
-
-    function scrollRight() {
-        const wrapper = document.getElementById('cardsWrapper');
-        const maxSlides = 4 - cardsPerView; // 4 total cards - 2 visible = 2 slides
-        currentSlide = Math.min(maxSlides, currentSlide + 1);
-        wrapper.scrollLeft = currentSlide * cardWidth;
->>>>>>> master
     }
 </script>
