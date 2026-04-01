@@ -15,7 +15,7 @@ html, body {
 
 body {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
-    background-color: #1a1a1a;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
 }
@@ -75,18 +75,68 @@ a {
    ============================================ */
 
 .upcoming-section {
+<<<<<<< HEAD
+    background: #ffffff !important;
+    padding: 60px 20px;
+=======
     padding: 40px 20px;
     background-color: #fff;
+>>>>>>> master
 }
-
 .upcoming-container {
+<<<<<<< HEAD
+    max-width: 100%;
+=======
     max-width: 1200px;
+>>>>>>> master
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+    gap: 20px;
+    position: relative;
+}
+
+.upcoming-cards-wrapper {
+    display: flex;
+    gap: 24px;
+    width: 1432px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.nav-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2b6c51;
+    color: white;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+    .nav-circle:hover {
+        background-color: #1f5c38;
+        transform: scale(1.1);
+    }
+
+.nav-left,
+.nav-right {
+    position: relative;
+    z-index: 10;
+=======
     gap: 30px;
     position: relative;
+>>>>>>> master
 }
 
 .nav-circle {
@@ -132,13 +182,66 @@ a {
     }
 
 .upcoming-card {
+<<<<<<< HEAD
+    width: 340px;
+    height: 300px;
+=======
     width: 280px;
     height: 320px;
+>>>>>>> master
     position: relative;
     border: 4px solid #000;
     overflow: hidden;
     flex-shrink: 0;
     background: #000;
+<<<<<<< HEAD
+}
+
+    .upcoming-card a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+
+.card-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card-badge {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #a8d68f;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+=======
     scroll-snap-align: center;
 }
 
@@ -158,10 +261,40 @@ a {
     padding: 20px;
     text-align: center;
     transition: all 0.3s ease;
+>>>>>>> master
 }
 
 .card-label {
     display: block;
+<<<<<<< HEAD
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: #999;
+    font-weight: 600;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.3;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.upcoming-card:hover .card-overlay {
+    background: rgba(43, 108, 81, 0.95);
+}
+/* ============================================
+   SECTION DIVIDER
+   ============================================ */
+
+.section-divider {
+    width: 150px;
+    height: 2px;
+    background-color: #2b6c51;
+    margin: 0 auto 40px;
+=======
     font-size: 0.75rem;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -184,6 +317,7 @@ a {
     display: block;
     width: 100%;
     height: 100%;
+>>>>>>> master
 }
 
 /* ============================================
@@ -244,7 +378,11 @@ a {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+    height: 100%;
+=======
     height: 280px;
+>>>>>>> master
     position: relative;
 }
 
@@ -300,6 +438,13 @@ a {
 .tour-item:hover .tour-overlay {
     background: rgba(43, 108, 81, 0.9);
 }
+<<<<<<< HEAD
+
+/* ============================================
+   BROWSE CARD
+   ============================================ */
+=======
+>>>>>>> master
 
 .browse-card {
     display: flex;
@@ -413,7 +558,7 @@ a {
     color: #333;
 }
 
-.tour-title {
+.tour-title-detail {
     font-size: 1.8rem;
     font-weight: 700;
     color: #a8d68f;
@@ -831,6 +976,21 @@ a {
     }
 
 /* ============================================
+<<<<<<< HEAD
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .upcoming-cards-wrapper {
+        width: 1432px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   ============================================ */
+
+=======
    EXPLORE MORE SECTION - CLICKABLE CARDS
    ============================================ */
 
@@ -929,6 +1089,7 @@ a {
     }
 }
 
+>>>>>>> master
 @media (max-width: 768px) {
     .banner-title {
         font-size: 2rem;
@@ -944,6 +1105,31 @@ a {
     }
 
     .upcoming-cards-wrapper {
+<<<<<<< HEAD
+        width: 1432px;
+    }
+
+    .upcoming-card {
+        width: 340px;
+        height: 300px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-badge {
+        font-size: 0.65rem;
+    }
+
+    .nav-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+
+    .grid-container {
+=======
         width: 560px;
     }
 
@@ -960,6 +1146,7 @@ a {
 
     .grid-container,
     .grid-2-container {
+>>>>>>> master
         grid-template-columns: 1fr;
         gap: 24px;
     }
@@ -969,7 +1156,11 @@ a {
     }
 
     .browse-card {
+<<<<<<< HEAD
+        min-height: 200px;
+=======
         min-height: 250px;
+>>>>>>> master
     }
 
     .tour-card-detailed {
@@ -981,7 +1172,11 @@ a {
         padding: 24px;
     }
 
+<<<<<<< HEAD
+    .tour-title-detail,
+=======
     .tour-title,
+>>>>>>> master
     .tour-title-light {
         font-size: 1.4rem;
     }
@@ -1019,6 +1214,8 @@ a {
     .booking-title {
         font-size: 1.5rem;
     }
+<<<<<<< HEAD
+=======
 
     .explore-title {
         font-size: 2rem;
@@ -1047,6 +1244,7 @@ a {
     .explore-card p {
         font-size: 0.8rem;
     }
+>>>>>>> master
 }
 
 @media (max-width: 480px) {
@@ -1054,6 +1252,33 @@ a {
         font-size: 1.6rem;
     }
 
+<<<<<<< HEAD
+    .upcoming-cards-wrapper {
+        width: 1432px;
+    }
+
+    .upcoming-card {
+        width: 340px;
+        height: 300px;
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+    }
+
+    .card-label {
+        font-size: 0.6rem;
+    }
+
+    .nav-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .upcoming-section {
+        padding: 30px 10px;
+=======
     .upcoming-container {
         gap: 5px;
     }
@@ -1075,12 +1300,15 @@ a {
 
     .card-title {
         font-size: 1rem;
+>>>>>>> master
     }
 
     .section-title {
         font-size: 1.3rem;
     }
 
+<<<<<<< HEAD
+=======
     .grid-container,
     .grid-2-container {
         grid-template-columns: 1fr;
@@ -1098,11 +1326,16 @@ a {
         font-size: 2rem;
     }
 
+>>>>>>> master
     .tour-card-detailed {
         margin-bottom: 24px;
     }
 
+<<<<<<< HEAD
+    .tour-title-detail,
+=======
     .tour-title,
+>>>>>>> master
     .tour-title-light {
         font-size: 1.2rem;
     }
@@ -1128,6 +1361,8 @@ a {
     .ticket-number {
         font-size: 1.2rem;
     }
+<<<<<<< HEAD
+=======
 
     .explore-title {
         font-size: 1.6rem;
@@ -1154,4 +1389,5 @@ a {
     .explore-card p {
         font-size: 0.75rem;
     }
+>>>>>>> master
 }
