@@ -5,6 +5,7 @@
 
 <!-- In _Layout.cshtml (main layout) -->
 <link rel="stylesheet" href="~/css/whatson.css" />
+<link rel="stylesheet" href="~/css/whatson.css" />
 
 <!-- Hero Banner -->
 <section class="hero-banner">
@@ -41,8 +42,10 @@
                     <li>LANGUAGES: ENGLISH, FRENCH</li>
                     <li>AVAILABILITY: TUESDAY - SUNDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Ancient Alchemy" class="tour-book-btn">BOOK</a>
-                <span class="tour-star">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=ancient-alchemy" class="tour-book-btn">BOOK</a>
+                    <button class="tour-heart-icon" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
@@ -63,8 +66,10 @@
                     <li>LANGUAGES: ENGLISH, SPANISH, GERMAN</li>
                     <li>AVAILABILITY: WEDNESDAY - SATURDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Identity in Desire" class="tour-book-btn-light">BOOK</a>
-                <span class="tour-star-light">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=identity-desire" class="tour-book-btn-light">BOOK</a>
+                    <button class="tour-heart-icon-light" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
@@ -85,8 +90,10 @@
                     <li>LANGUAGES: ENGLISH, ITALIAN</li>
                     <li>AVAILABILITY: THURSDAY - SUNDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Literary Legacies" class="tour-book-btn">BOOK</a>
-                <span class="tour-star">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=literary-legacies" class="tour-book-btn">BOOK</a>
+                    <button class="tour-heart-icon" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
@@ -107,10 +114,22 @@
                     <li>LANGUAGES: ENGLISH, GREEK</li>
                     <li>AVAILABILITY: MONDAY - FRIDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Architecture Greece" class="tour-book-btn-light">BOOK</a>
-                <span class="tour-star-light">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=architecture-greece" class="tour-book-btn-light">BOOK</a>
+                    <button class="tour-heart-icon-light" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
     </div>
 </section>
+
+<script>
+    // Heart button functionality
+    document.querySelectorAll('.tour-heart-icon, .tour-heart-icon-light').forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.textContent = this.classList.contains('active') ? '♥' : '♡';
+        });
+    });
+</script>
