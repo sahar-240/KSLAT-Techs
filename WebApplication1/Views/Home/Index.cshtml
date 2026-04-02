@@ -4,12 +4,14 @@
 }
 
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>NATURAL HISTORY MUSEUM</h1>
-        <p>Discover the wonders of nature and history</p>
+<div class="hero-section">
+    <img src="~/images/Picture1.png" alt="Hero Background" class="hero-image" />
+    <div class="hero-overlay">
+        <h1 class="hero-title">NATURAL HISTORY MUSEUM</h1>
+        <p>Where Art Preserves Memory.</p>
     </div>
-</section>
+</div>
+
 
 <!-- Mission Section -->
 <section class="mission" id="about">
@@ -17,7 +19,7 @@
         <h2>OUR MISSION</h2>
         <div class="mission-content">
             <div class="mission-image">
-                <img src="~/images/mission.jpg" alt="Museum Mission">
+                <img src="~/images/Picture2.png" alt="Museum Mission">
             </div>
             <div class="mission-text">
                 <p>To inspire curiosity and foster a deeper understanding of the natural world through engaging exhibits, educational programs, and groundbreaking research. We preserve precious specimens and artifacts for future generations while making science accessible to all.</p>
@@ -33,145 +35,148 @@
         <h2>SUPPORT US</h2>
         <div class="support-content">
             <div class="support-text">
-                <p>Your generous donations help us continue our mission to educate, inspire, and preserve our natural heritage. Every contribution makes a difference in supporting our exhibits, research, and educational programs.</p>
+                    <p>
+                        Your support helps sustain future workshops and the continued preservation of our history.
+
+
+                        For more information:
+                    </p>
                 <button class="btn btn-secondary" onclick="openDonationModal()">DONATE NOW</button>
             </div>
             <div class="support-image">
-                <img src="~/images/support.jpg" alt="Support Museum">
+                    <img src="~/images/Picture3.png" alt="Support Museum">
             </div>
         </div>
     </div>
 </section>
 
-<!-- Opening Hours Section -->
-<section class="opening-hours">
-    <div class="container">
-        <h2>PLAN YOUR VISIT</h2>
-        <h3>OPENING HOURS</h3>
-        <div class="hours-list">
-            @foreach (var hour in Model.OpeningHours)
-            {
-                <div class="hours-item">
-                    <span class="day">@hour.DayOfWeek</span>
-                    <span class="time">
-                        @if (hour.IsClosed)
-                        {
-                            <text>CLOSED</text>
-                        }
-                        else
-                        {
-                            <text>@hour.OpenTime?.ToString(@"hh\:mm") - @hour.CloseTime?.ToString(@"hh\:mm")</text>
-                        }
-                    </span>
+        <!-- Opening Hours Section -->
+        <section class="opening-hours">
+            <div class="container">
+                <h2>PLAN YOUR VISIT</h2>
+                <h3>OPENING HOURS</h3>
+                <div class="hours-list">
+                    @foreach (var hour in Model.OpeningHours)
+                    {
+                        <div class="hours-item">
+                            <span class="day">@hour.DayOfWeek</span>
+                            <span class="time">
+                                @if (hour.IsClosed)
+                                {
+                                    <text>CLOSED</text>
+                                }
+                                else
+                                {
+                                    <text>@hour.OpenTime?.ToString(@"hh\:mm") - @hour.CloseTime?.ToString(@"hh\:mm")</text>
+                                }
+                            </span>
+                        </div>
+                    }
                 </div>
-            }
-        </div>
-    </div>
-</section>
+                <div class="hours-disclaimer">
+                    <p>OPENING HOURS MAY BE SUBJECT TO CHANGE<br />PLEASE CONTACT US</p>
+                </div>
+            </div>
+        </section>
 
-<!-- Membership Section -->
-<section class="membership">
-    <div class="container">
-        <h2>BECOME A MEMBER</h2>
-        <div class="membership-grid">
-            <div class="membership-card">
-                <h3>INDIVIDUAL</h3>
-                <p class="price">$75/year</p>
-                <ul>
-                    <li>Unlimited free admission</li>
-                    <li>10% discount in museum shop</li>
-                    <li>Members-only events</li>
-                    <li>Quarterly newsletter</li>
-                </ul>
-                <button class="btn btn-primary">JOIN NOW</button>
+        <!-- Membership Section -->
+        <section class="membership">
+            <div class="membership-content">
+                <div class="membership-image">
+                    <img src="~/images/Picture4.png" alt="Museum Collections" />
+                </div>
+                <div class="membership-info">
+                    <h2>BECOME A MEMBER</h2>
+                    <p>DISCOUNTS</p>
+                    <p>MEMBER ONLY COLLECTIONS</p>
+                    <p>MODIFY &amp; VIEW TICKETS</p>
+                    <p>SIGN UP FOR FREE</p>
+                    <a asp-controller="SignUp" asp-action="SignUp" class="btn btn-primary">SIGN UP</a>
+                </div>
             </div>
-            <div class="membership-card featured">
-                <h3>DUAL</h3>
-                <p class="price">$120/year</p>
-                <ul>
-                    <li>All Individual benefits</li>
-                    <li>For you + one guest</li>
-                    <li>Priority booking</li>
-                    <li>Special exhibition previews</li>
-                </ul>
-                <button class="btn btn-primary">JOIN NOW</button>
-            </div>
-            <div class="membership-card">
-                <h3>FAMILY</h3>
-                <p class="price">$150/year</p>
-                <ul>
-                    <li>All Dual benefits</li>
-                    <li>For 2 adults + up to 4 children</li>
-                    <li>Free guest passes</li>
-                    <li>Family programs access</li>
-                </ul>
-                <button class="btn btn-primary">JOIN NOW</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Accessibility Section -->
-<section class="accessibility">
-    <div class="container">
-        <h2>ACCESSIBILITY</h2>
-        <div class="accessibility-grid">
-            <div class="accessibility-item">
-                <h3>WHEELCHAIR ACCESS</h3>
-                <p>Full wheelchair accessibility throughout the museum with ramps and elevators</p>
-            </div>
-            <div class="accessibility-item">
-                <h3>ASSISTED LISTENING</h3>
-                <p>Assisted listening devices available at no charge from the information desk</p>
-            </div>
-            <div class="accessibility-item">
-                <h3>SENSORY FRIENDLY</h3>
-                <p>Sensory-friendly hours and quiet spaces available for visitors who need them</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Location Section -->
-<section class="location">
-    <div class="container">
-        <h2>FIND US</h2>
-        <div class="location-content">
-            <div class="map">
-                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1784%2C51.4958%2C-0.1754%2C51.4978&layer=mapnik"
-                        width="600"
-                        height="400"
-                        frameborder="0">
-                </iframe>
-            </div>
-            <div class="location-info">
-                <h3>LOCATION</h3>
-                <p>Cromwell Road<br>London SW7 5BD<br>United Kingdom</p>
-                <button class="btn btn-secondary">GET DIRECTIONS</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="faq">
-    <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq-list">
-            @foreach (var faq in Model.FAQs)
-            {
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        @faq.Question
+        </section>
+        <!-- Accessibility Section -->
+        <section class="accessibility">
+            <div class="container">
+                <h2>ACCESSIBILITY</h2>
+                <div class="accessibility-grid">
+                    <div class="accessibility-item">
+                        <h3>PHYSICAL</h3>
+                        <ul>
+                            <li>STEP-FREE ENTRANCE</li>
+                            <li>LIFT ACCESS TO ALL FLOORS</li>
+                            <li>ACCESSIBLE TOILETS</li>
+                            <li>WHEELCHAIR-FRIENDLY GALLERIES</li>
+                            <li>SEATING THROUGHOUT EXHIBITIONS</li>
+                        </ul>
                     </div>
-                    <div class="faq-answer">
-                        <p>@faq.Answer</p>
+                    <div class="accessibility-item">
+                        <h3>SENSORY</h3>
+                        <ul>
+                            <li>AUDIO DESCRIPTIONS</li>
+                            <li>CAPTIONED VIDEO INSTALLATIONS</li>
+                            <li>LARGE PRINT GUIDES</li>
+                            <li>HEARING LOOPS AT RECEPTION</li>
+                            <li>QUIET VISITING HOURS*</li>
+                            <li style="font-size: 0.8rem; margin-top: 0.5rem;">*WED & THUR 12:00-18:00</li>
+                        </ul>
+                    </div>
+                    <div class="accessibility-item">
+                        <h3>ASSISTED</h3>
+                        <ul>
+                            <li>FREE COMPANION TICKET</li>
+                            <li>ASSISTANCE ANIMALS WELCOME</li>
+                            <li>ADAPTED GUIDED TOURS AVAILABLE*</li>
+                            <li style="font-size: 0.8rem; margin-top: 0.5rem;">*PLEASE CONTACT US IN ADVANCE</li>
+                        </ul>
                     </div>
                 </div>
-            }
-        </div>
-    </div>
-</section>
+                <p class="accessibility-bottom-text">+ IF YOU REQUIRE SPECIFIC ACCOMMODATIONS, PLEASE CONTACT US IN ADVANCE +</p>
+            </div>
+        </section>
+        <!-- Location Section -->
+        <section class="location">
+            <div class="container">
+                <h2>FIND US</h2>
+                <div class="location-content">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.5849609503636!2d-0.17641!3d51.496355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d5d5e5e5e5%3A0x1e5e5e5e5e5e5e5!2sNatural%20History%20Museum!5e0!3m2!1sen!2suk!4v1234567890"
+                                width="100%"
+                                height="500"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="location-info">
+                        <h3>LOCATION</h3>
+                        <p>THE NATURAL GALLERY<br />THE BURROWS,<br />HENDON WAY,<br />LONDON NW4 4BT</p>
+                        <a href="https://www.google.com/maps/search/The+Burrows+Hendon+Way+London+NW4+4BT" target="_blank" class="btn btn-secondary">DIRECTIONS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>FAQ</h2>
+            <div class="container">
+                <div class="faq-list">
+                    @foreach (var faq in Model.FAQs)
+                    {
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                @faq.Question
+                            </div>
+                            <div class="faq-answer">
+                                <p>@faq.Answer</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
 
 <!-- Donation Modal -->
 <div id="donation-modal" class="modal">
