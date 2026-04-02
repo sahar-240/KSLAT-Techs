@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JYFIiTKk3BY=",
+  "dgSpecHash": "t0ze85pwXmc=",
   "success": true,
-  "projectFilePath": "c:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amine\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\amine\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

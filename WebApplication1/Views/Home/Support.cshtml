@@ -1,162 +1,72 @@
-﻿@model WebApplication1.Models.SupportViewModel
-@using WebApplication1.Models
-@{
+﻿@{
     ViewData["Title"] = "Support Us";
+    Layout = "_Layout";
 }
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>SUPPORT US</h1>
-        <p>Help us preserve and share our natural heritage</p>
-    </div>
-</section>
+<link rel="stylesheet" href="~/css/support.css">
 
-<!-- Support Overview Section -->
-<section class="support-overview">
-    <div class="container">
-        <h2>WHY YOUR SUPPORT MATTERS</h2>
-        <p class="overview-text">Your support is crucial to our mission. The Natural Gallery relies on support from a wide range of sources and there are many ways you can contribute to supporting the work we do for the future.</p>
-        <p class="overview-text">Your support helps the following:</p>
-        <ul class="support-list">
-            <li>Library, collections and archives</li>
-            <li>Teaching and learning programs</li>
-            <li>Cutting-edge scientific research</li>
-            <li>Museum exhibitions and displays</li>
-        </ul>
-    </div>
-</section>
-
-<!-- Donate Section -->
-<section class="donate-section">
-    <div class="container">
-        <div class="donate-content">
-            <div class="donate-text">
-                <h2>DONATE</h2>
-                <p>Your generous donations help our gallery share its art with the world. Thank you.</p>
-                <p>Your donations keep our gallery free and help support the work we do for the future.</p>
-                <button class="btn btn-secondary" onclick="openDonationModal()">DONATE NOW</button>
-            </div>
-            <div class="donate-image">
-                <img src="~/images/donate-check.jpg" alt="Donation">
-                </div>
+    <!-- Hero Section -->
+    <div class="support-hero">
+        <img src="~/images/Picture5.png" alt="Support Us" class="hero-image" />
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">SUPPORT US</h1>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Volunteer Section -->
-    <section class="volunteer-section">
-        <div class="container">
-            <div class="volunteer-content">
-                <div class="volunteer-image">
-                    <img src="~/images/volunteers.jpg" alt="Volunteers">
-                    </div>
-                    <div class="volunteer-text">
-                        <h2>VOLUNTEER</h2>
-                        <p>Share your passion for natural history and join our volunteer team.</p>
-                        <p>We are always looking for enthusiastic and committed volunteers to help us deliver outstanding experiences for our visitors.</p>
-                        <p>All volunteers must be 18 and over.</p>
-                        <p>For more information, please contact us at <a href="mailto:volunteers@museum.com">volunteers@museum.com</a> or call <strong>020-XXXX-XXXX</strong></p>
-                        <button class="btn btn-primary">LEARN MORE</button>
-                    </div>
-                </div>
+    <!-- Support Introduction -->
+    <div class="support-intro">
+        <h2 class="intro-title">SUPPORT US</h2>
+        <p class="intro-text">
+            YOUR SUPPORT IS VITAL FOR HELPING US SHARE THE ART, HISTORY OF HISTORY.
+            THE NATURAL GALLERY RELIES ON CONTRIBUTIONS FROM A WIDE RANGE OF DONORS AND THEIR
+            GENEROSITY IS ESSENTIAL. SUPPORT US IN A NUMBER OF WAYS.
+        </p>
+    </div>
+
+    <!-- Support Sections -->
+    <div class="support-sections">
+        <!-- Volunteer Section -->
+        <div class="support-section">
+            <img src="~/images/Picture6.png" alt="Volunteer" class="section-image" />
+            <div class="section-content">
+                <h3 class="section-title">VOLUNTEER</h3>
+                <p class="section-text">SHARE YOUR KNOWLEDGE AND SKILLS WITH OUR TEAM.</p>
+                <p class="section-text">MAKE A POSITIVE DIFFERENCE BY VOLUNTEERING YOUR TIME AND EXPERTISE.</p>
+                <p class="section-text">ALL VOLUNTEERS MUST BE 16 OR OLDER.</p>
+                <p class="section-text">PLEASE CONTACT US AT: +44 (0)20 7942 5000</p>
             </div>
-        </section>
+        </div>
 
-        <!-- Become a Patron Section -->
-        <section class="patron-section">
-            <div class="container">
-                <h2>BECOME A PATRON</h2>
-                <div class="patron-content">
-                    <div class="patron-text">
-                        <p>Support the gallery behind the scenes and experience unprecedented access to our collection and events.</p>
-                        <p>Patrons are the core funding for the gallery and help ensure we can continue our work.</p>
-                        <p><strong>Patron tiers available:</strong></p>
-                        <ul class="patron-tiers">
-                            <li>Bronze - £1,000 annually</li>
-                            <li>Silver - £2,500 annually</li>
-                            <li>Gold - £5,000 annually</li>
-                            <li>Platinum - £10,000+ annually</li>
-                        </ul>
-                        <p>Please contact us at <a href="mailto:patrons@museum.com">patrons@museum.com</a> or call <strong>020-XXXX-XXXX</strong></p>
-                        <button class="btn btn-primary">BECOME A PATRON</button>
-                    </div>
-                    <div class="patron-image">
-                        <img src="~/images/patron.jpg" alt="Patron Benefits">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Ways to Give Section -->
-            <section class="ways-to-give">
-                <div class="container">
-                    <h2>WAYS TO GIVE</h2>
-                    <div class="ways-grid">
-                        <div class="way-item">
-                            <h3>ONE-TIME DONATION</h3>
-                            <p>Make a single donation of any amount to support our mission immediately.</p>
-                            <button class="btn btn-secondary" onclick="openDonationModal()">DONATE</button>
-                        </div>
-                        <div class="way-item">
-                            <h3>MONTHLY GIVING</h3>
-                            <p>Become a sustaining member with a monthly contribution to ensure continuous support.</p>
-                            <button class="btn btn-secondary">SET UP MONTHLY GIFT</button>
-                        </div>
-                        <div class="way-item">
-                            <h3>LEGACY GIVING</h3>
-                            <p>Leave a lasting impact by including the museum in your will or estate plan.</p>
-                            <button class="btn btn-secondary">LEARN MORE</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section class="support-contact">
-                <div class="container">
-                    <h2>QUESTIONS?</h2>
-                    <p>For more information about supporting the Natural History Museum, please contact our Development Team:</p>
-                    <p class="contact-info">
-                        <strong>Email:</strong> <a href="mailto:development@museum.com">development@museum.com</a><br>
-                        <strong>Phone:</strong> 020-XXXX-XXXX<br>
-                        <strong>Address:</strong> Cromwell Road, London SW7 5BD, United Kingdom
-                    </p>
-                </div>
-            </section>
-
-            <!-- Donation Modal (Reused from Home) -->
-            <div id="donation-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeDonationModal()">&times;</span>
-                    <h2>Make a Donation</h2>
-                    <form id="donation-form" method="post" action="@Url.Action("ProcessDonation", "Home")">
-            
-                        <!-- CSRF Token -->
-                        @Html.AntiForgeryToken()
-
-                        <div class="form-group">
-                            <label for="donor-name">Name</label>
-                            <input type="text" id="donor-name" name="donorName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="donor-email">Email</label>
-                            <input type="email" id="donor-email" name="donorEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="amount">Amount (£)</label>
-                            <input type="number" id="amount" name="amount" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message (Optional)</label>
-                            <textarea id="message" name="message" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" name="isAnonymous"> Make this donation anonymous
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">DONATE</button>
-                    </form>
-                </div>
+        <!-- Donate Section -->
+        <div class="support-section">
+            <img src="~/images/Picture7.png" alt="Donate" class="section-image" />
+            <div class="section-content">
+                <h3 class="section-title">DONATE</h3>
+                <p class="section-text">YOUR DONATION HELPS OUR GALLERY NEED TO CONTINUE ITS MISSION.</p>
+                <ul class="section-list">
+                    <li>A DONATION OF ANY SIZE IS DEEPLY APPRECIATED</li>
+                    <li>LARGE GIFTS MAKE A BIG IMPACT ON THE GALLERY</li>
+                    <li>WE ARE TRULY THANKFUL FOR YOUR SUPPORT</li>
+                </ul>
+                <a asp-controller="Home" asp-action="Donation" class="donate-btn">DONATE</a>
             </div>
+        </div>
+
+        <!-- Become A Patron Section (Full Width) -->
+        <div class="support-section full-width">
+            <img src="~/images/Picture8.png" alt="Become a Patron" class="section-image" />
+            <div class="section-content">
+                <h3 class="section-title">BECOME A PATRON</h3>
+                <p class="section-text">HELP PRESERVE AND ENHANCE THE NATURAL GALLERY'S PATRON.</p>
+                <ul class="section-list">
+                    <li>FUNDING OF NEW EXHIBITIONS AND PERMANENT COLLECTIONS</li>
+                    <li>SUPPORT FOR CONSERVATION AND RESTORATION PROJECTS</li>
+                    <li>EDUCATIONAL PROGRAMME SPONSORSHIP</li>
+                    <li>RESEARCH - CLOSE ANNUALLY</li>
+                </ul>
+                <p class="section-text">PLEASE CONTACT US AT: +44 (0)20 7942 5000</p>
+            </div>
+        </div>
+    </div>
