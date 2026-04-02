@@ -226,10 +226,10 @@ C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\bundle\WebApplication1.styles.css
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css
-C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\wktvx2islf-{0}-mu10dug8mn-mu10dug8mn.gz
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\cqykpfy2gk-{0}-oyaax45pze-oyaax45pze.gz
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\h4dild292b-{0}-exrzzi800e-exrzzi800e.gz
-C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-75ha24lffr-75ha24lffr.gz
+C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\ailvd6v4lm-{0}-onzbcmwyjf-onzbcmwyjf.gz
+C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-bwo2rbpe9r-bwo2rbpe9r.gz
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\5e8deymhti-{0}-3jcdgzm028-3jcdgzm028.gz
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\u3m5yo2x8f-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\w3u7ibosd4-{0}-tp74c1zy8i-tp74c1zy8i.gz
@@ -306,3 +306,4 @@ C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net1
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.pdb
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\WebApplication1.genruntimeconfig.cache
 C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
+C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\obj\Debug\net10.0\compressed\wktvx2islf-{0}-7d5cy8v7cm-7d5cy8v7cm.gz
