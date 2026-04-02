@@ -230,6 +230,39 @@ body {
         font-size: 24px;
     }
 }
+
+/* ==================== WHO ARE WE SECTION ==================== */
+.who-are-we {
+    background-color: #d4f1ed;
+    padding: 60px 40px;
+}
+
+.who-are-we-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.who-are-we h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0 0 25px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.who-are-we p {
+    font-size: 13px;
+    color: var(--text-dark);
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 /* Buttons */
 .btn {
     padding: 12px 30px;
@@ -281,47 +314,230 @@ section {
         margin-bottom: 2rem;
         color: var(--text-dark);
     }
-
-/* Mission Section */
+/* ==================== MISSION SECTION ==================== */
 .mission {
-    background-color: var(--bg-light);
+    background-color: #ffffff;
+    padding: 60px 40px;
 }
+
+    .mission h2 {
+        display: none;
+    }
 
 .mission-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 60px;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.mission-image img {
+.mission-image {
     width: 100%;
+    overflow: hidden;
     border-radius: 8px;
+    order: 1;
 }
 
-.mission-text p {
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    color: var(--text-light);
+    .mission-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+.mission-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 2;
+    padding-right: 40px;
 }
 
-/* Support Section */
+    .mission-text h3 {
+        text-align: left;
+        font-size: 28px;
+        font-weight: 800;
+        color: #2c5f2d;
+        margin: 0 0 20px 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .mission-text p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+        color: #555;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .mission-text .btn {
+        width: fit-content;
+    }
+
+/* ==================== SUPPORT SECTION ==================== */
+.support {
+    background-color: #d4f1ed;
+    padding: 60px 40px;
+}
+
+    .support h2 {
+        display: none;
+    }
+
 .support-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 60px;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.support-image img {
+.support-image {
     width: 100%;
+    overflow: hidden;
     border-radius: 8px;
+    order: 2;
 }
 
-.support-text p {
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    color: var(--text-light);
+    .support-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+.support-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 1;
+    padding-left: 40px;
+}
+
+    .support-text h3 {
+        text-align: left;
+        font-size: 28px;
+        font-weight: 800;
+        color: #2c5f2d;
+        margin: 0 0 20px 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .support-text p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+        color: #333;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .support-text .btn {
+        width: fit-content;
+    }
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+    .mission-content,
+    .support-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .mission-image {
+        order: 1;
+    }
+
+    .mission-text {
+        order: 2;
+        padding-right: 0;
+    }
+
+    .support-image {
+        order: 1;
+    }
+
+    .support-text {
+        order: 2;
+        padding-left: 0;
+    }
+
+        .mission-text h3,
+        .support-text h3 {
+            font-size: 24px;
+        }
+}
+
+@media (max-width: 768px) {
+    .mission {
+        padding: 40px 20px;
+    }
+
+    .support {
+        padding: 40px 20px;
+    }
+
+    .mission-content,
+    .support-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .mission-text h3,
+    .support-text h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .mission-text p,
+    .support-text p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .mission-text .btn,
+    .support-text .btn {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .mission {
+        padding: 30px 15px;
+    }
+
+    .support {
+        padding: 30px 15px;
+    }
+
+    .mission-text h3,
+    .support-text h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .mission-text p,
+    .support-text p {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .mission-text .btn,
+    .support-text .btn {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
 }
 
 /* Opening Hours */

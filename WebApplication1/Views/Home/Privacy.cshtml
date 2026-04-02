@@ -1,6 +1,110 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
+    Layout = "_Layout";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<link rel="stylesheet" href="~/css/privacy.css">
+
+    <!-- Privacy Header -->
+    <div class="privacy-header">
+        <h1 class="privacy-title">PRIVACY POLICY – NATURAL GALLERY MUSEUM</h1>
+    </div>
+
+    <!-- Privacy Content -->
+    <div class="privacy-container">
+        <p class="privacy-intro">
+            AT NATURAL GALLERY MUSEUM, WE RESPECT YOUR PRIVACY AND HANDLE YOUR PERSONAL DATA
+            IN LINE WITH UK GDPR. THIS POLICY EXPLAINS HOW WE COLLECT, USE, AND PROTECT YOUR
+            INFORMATION WHEN YOU INTERACT WITH OUR WEBSITE, EVENTS, DONATE, OR JOIN OUR
+            MEMBERSHIP PROGRAMME.
+        </p>
+
+        <!-- Information We Collect -->
+        <div class="privacy-section">
+            <h2 class="section-title">INFORMATION WE COLLECT</h2>
+            <p class="section-intro">WE MAY COLLECT:</p>
+            <ul class="section-list">
+                <li>VISITOR DATA: NAMES, EMAIL ADDRESSES, PHONE NUMBERS</li>
+                <li>MEMBERSHIP DATA: PAYMENT INFORMATION, MEMBERSHIP DATES, PREFERENCES</li>
+                <li>BOOKING &amp; EVENTS: TICKET PURCHASES, REGISTRATION, EVENT PREFERENCES</li>
+                <li>DONATIONS: DONATION AMOUNTS AND PAYMENT INFORMATION</li>
+                <li>WEBSITE USAGE: COOKIES, ANALYTICS, INTERACTION DATA</li>
+            </ul>
+        </div>
+
+        <!-- How We Use Your Data -->
+        <div class="privacy-section">
+            <h2 class="section-title">HOW WE USE YOUR DATA</h2>
+            <p class="section-intro">WE USE YOUR DATA TO:</p>
+            <ul class="section-list">
+                <li>MANAGE MEMBERSHIPS, RENEWALS, AND BENEFITS</li>
+                <li>PROCESS TICKET BOOKINGS, DONATIONS, AND PURCHASES</li>
+                <li>SEND NEWSLETTERS, EVENT UPDATES, AND MEMBER OFFERS (OPT-IN ONLY)</li>
+                <li>IMPROVE WEBSITE, EXHIBITIONS, AND VISITOR EXPERIENCE</li>
+                <li>COMPLY WITH LEGAL OBLIGATIONS</li>
+            </ul>
+        </div>
+
+        <!-- Sharing & Security -->
+        <div class="privacy-section">
+            <h2 class="section-title">SHARING &amp; SECURITY</h2>
+            <p class="section-content">
+                WE DO NOT SELL YOUR DATA. WE MAY SHARE PERSONAL INFORMATION WITH TRUSTED SERVICE PROVIDERS FOR
+                PAYMENTS, MAILING, OR EVENT MANAGEMENT. ALL DATA IS STORED SECURELY USING APPROPRIATE TECHNICAL AND
+                ORGANISATIONAL SAFEGUARDS.
+            </p>
+        </div>
+
+        <!-- Cookies -->
+        <div class="privacy-section">
+            <h2 class="section-title">COOKIES</h2>
+            <p class="section-content">
+                WE USE COOKIES TO ENHANCE YOUR EXPERIENCE, ANALYSE TRAFFIC, AND PERSONALISE CONTENT. YOU CAN
+                MANAGE COOKIES IN YOUR BROWSER SETTINGS.
+            </p>
+            <p class="section-intro">UNDER UK GDPR, YOU CAN:</p>
+            <ul class="section-list">
+                <li>ACCESS, CORRECT, OR REQUEST DELETION OF YOUR DATA</li>
+                <li>WITHDRAW CONSENT FOR MARKETING AT ANY TIME</li>
+                <li>REQUEST A COPY OF YOUR DATA</li>
+            </ul>
+        </div>
+
+        <!-- Data Retention -->
+        <div class="privacy-section">
+            <h2 class="section-title">DATA RETENTION</h2>
+            <p class="section-content">
+                WE KEEP PERSONAL DATA ONLY AS LONG AS NECESSARY TO PROVIDE SERVICES,
+                MANAGE MEMBERSHIPS, AND MEET LEGAL OR BUSINESS OBLIGATIONS.
+            </p>
+        </div>
+
+        <!-- Accessibility -->
+        <div class="privacy-section">
+            <h2 class="section-title">ACCESSIBILITY</h2>
+            <p class="section-content">
+                NATURAL GALLERY MUSEUM IS COMMITTED TO MAKING OUR WEBSITE AND EXHIBITIONS ACCESSIBLE TO EVERYONE,
+                INCLUDING PEOPLE WITH DISABILITIES. WE STRIVE TO MEET WCAG 2.1 AA STANDARDS FOR DIGITAL ACCESSIBILITY.
+            </p>
+            <p class="section-content">
+                FOR ANY ACCESSIBILITY ISSUES OR QUESTIONS, PLEASE CONTACT US AT:
+                <strong>EMAIL: INFO@NATURALGALLERY.CO.UK</strong>
+            </p>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="privacy-section">
+            <h2 class="section-title">CONTACT US</h2>
+            <p class="section-content">
+                FOR QUESTIONS OR DATA REQUESTS, CONTACT US VIA OUR WEBSITE OR AT:<br />
+                <strong>EMAIL: INFO@NATURALGALLERY.CO.UK</strong><br />
+                <strong>ADDRESS: THE FAIRYLANDS, LONDON W6 8LP</strong><br />
+                <strong>PHONE: +44 (0)20 7942 5000</strong>
+            </p>
+        </div>
+
+        <!-- Accept Button -->
+        <div class="privacy-actions">
+            <button class="accept-btn" onclick="window.location.href='@Url.Action("Index", "Home")'">ACCEPT</button>
+        </div>
+    </div>
