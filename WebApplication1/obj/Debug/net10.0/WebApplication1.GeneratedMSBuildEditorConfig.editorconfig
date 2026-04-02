@@ -50,32 +50,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Event1.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50MS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Event2.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50Mi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Event3.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50My5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Event4.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50NC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Event5.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50NS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Event6.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50Ni5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50Qm9vay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50RGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Events.cshtml]

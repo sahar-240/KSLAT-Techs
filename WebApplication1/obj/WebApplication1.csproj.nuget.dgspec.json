@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj": {}
+    "c:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj": {
+    "c:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "c:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "c:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\amine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\obj\\",
+        "outputPath": "c:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[10.0.2, )"
