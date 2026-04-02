@@ -5,10 +5,11 @@
 
 <!-- In _Layout.cshtml (main layout) -->
 <link rel="stylesheet" href="~/css/whatson.css" />
+<link rel="stylesheet" href="~/css/whatson.css" />
 
 <!-- Hero Banner -->
 <section class="hero-banner">
-    <img src="~/images/banner-tapestry.jpg" alt="Gallery Tapestry Collection" class="banner-image" />
+    <img src="~/images/Picture27.png" alt="Gallery Tapestry Collection" class="banner-image" />
     <div class="banner-overlay">
         <h1 class="banner-title">TOURS</h1>
         <p class="banner-subtitle">EXPLORE OUR GALLERY EXPERIENCES</p>
@@ -27,7 +28,7 @@
         <!-- Tour 1: Ancient Alchemy -->
         <div class="tour-card-detailed">
             <div class="tour-card-left">
-                <img src="~/images/ancient-alchemy.jpg" alt="Ancient Alchemy Tour" class="tour-image-large" />
+                <img src="~/images/Picture24.png" alt="Ancient Alchemy Tour" class="tour-image-large" />
             </div>
             <div class="tour-card-right tour-dark">
                 <h3 class="tour-title">ANCIENT ALCHEMY</h3>
@@ -41,15 +42,17 @@
                     <li>LANGUAGES: ENGLISH, FRENCH</li>
                     <li>AVAILABILITY: TUESDAY - SUNDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Ancient Alchemy" class="tour-book-btn">BOOK</a>
-                <span class="tour-star">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=ancient-alchemy" class="tour-book-btn">BOOK</a>
+                    <button class="tour-heart-icon" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
         <!-- Tour 2: Identity in Desire -->
         <div class="tour-card-detailed tour-light-bg">
             <div class="tour-card-left">
-                <img src="~/images/identity-desire.jpg" alt="Identity in Desire Tour" class="tour-image-large" />
+                <img src="~/images/Picture10.png" alt="Identity in Desire Tour" class="tour-image-large" />
             </div>
             <div class="tour-card-right">
                 <h3 class="tour-title-light">IDENTITY IN DESIRE</h3>
@@ -63,15 +66,17 @@
                     <li>LANGUAGES: ENGLISH, SPANISH, GERMAN</li>
                     <li>AVAILABILITY: WEDNESDAY - SATURDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Identity in Desire" class="tour-book-btn-light">BOOK</a>
-                <span class="tour-star-light">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=identity-desire" class="tour-book-btn-light">BOOK</a>
+                    <button class="tour-heart-icon-light" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
         <!-- Tour 3: Literary Legacies -->
         <div class="tour-card-detailed">
             <div class="tour-card-left">
-                <img src="~/images/literary-legacies.jpg" alt="Literary Legacies Tour" class="tour-image-large" />
+                <img src="~/images/Picture23.png" alt="Literary Legacies Tour" class="tour-image-large" />
             </div>
             <div class="tour-card-right tour-dark">
                 <h3 class="tour-title">LITERARY LEGACIES</h3>
@@ -85,15 +90,17 @@
                     <li>LANGUAGES: ENGLISH, ITALIAN</li>
                     <li>AVAILABILITY: THURSDAY - SUNDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Literary Legacies" class="tour-book-btn">BOOK</a>
-                <span class="tour-star">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=literary-legacies" class="tour-book-btn">BOOK</a>
+                    <button class="tour-heart-icon" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
         <!-- Tour 4: Architecture Greece -->
         <div class="tour-card-detailed tour-light-bg">
             <div class="tour-card-left">
-                <img src="~/images/architecture-greece.jpg" alt="Architecture: Greece Tour" class="tour-image-large" />
+                <img src="~/images/Picture24.png" alt="Architecture: Greece Tour" class="tour-image-large" />
             </div>
             <div class="tour-card-right">
                 <h3 class="tour-title-light">ARCHITECTURE: GREECE</h3>
@@ -107,10 +114,22 @@
                     <li>LANGUAGES: ENGLISH, GREEK</li>
                     <li>AVAILABILITY: MONDAY - FRIDAY</li>
                 </ul>
-                <a href="/WhatsOn/Booking?tour=Architecture Greece" class="tour-book-btn-light">BOOK</a>
-                <span class="tour-star-light">★</span>
+                <div class="tour-actions">
+                    <a href="/WhatsOn/Booking?tour=architecture-greece" class="tour-book-btn-light">BOOK</a>
+                    <button class="tour-heart-icon-light" aria-label="Add to favorites">♡</button>
+                </div>
             </div>
         </div>
 
     </div>
 </section>
+
+<script>
+    // Heart button functionality
+    document.querySelectorAll('.tour-heart-icon, .tour-heart-icon-light').forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.textContent = this.classList.contains('active') ? '♥' : '♡';
+        });
+    });
+</script>
