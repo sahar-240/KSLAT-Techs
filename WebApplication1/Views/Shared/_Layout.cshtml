@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-    <!-- BUG FIX: Updated navbar to include full site navigation (was missing WHAT'S ON, AMENITIES, MEMBERSHIP) -->
-    <!-- BUG FIX: Removed broken #about anchor href -->
+    <!-- FIXED: Updated navbar to match Figma design with logo, correct nav items, and search icon -->
     <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                Natural Gallery
-            </a>
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-leaf"></i> Natural Gallery
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                <li><a asp-controller="Home" asp-action="Index">VISIT US</a></li>
                 <li><a asp-controller="WhatsOn" asp-action="Index">WHAT'S ON</a></li>
                 <li><a asp-controller="Amenities" asp-action="Index">AMENITIES</a></li>
-                <li><a asp-controller="Amenities" asp-action="Membership">MEMBERSHIP</a></li>
-                <li><a asp-controller="Home" asp-action="Visit">VISIT</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">CONTACT</a></li>
+                <li><a asp-controller="Membership" asp-action="Index">MEMBERSHIP</a></li>
             </ul>
+            <div class="navbar-right">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            </div>
         </div>
     </nav>
 
@@ -44,7 +46,7 @@
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-controller="WhatsOn" asp-action="Index">What's On</a></li>
                         <li><a asp-controller="Amenities" asp-action="Index">Amenities</a></li>
-                        <li><a asp-controller="Amenities" asp-action="Membership">Membership</a></li>
+                        <li><a asp-controller="Membership" asp-action="Index">Membership</a></li>
                         <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
                         <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                         <li><a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>

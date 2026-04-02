@@ -5265,23 +5265,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tanzi\\.nuget\\packages\\": {},
+    "C:\\Users\\amine\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\tanzi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tanzi\\source\\repos\\KSLAT-Techs\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\amine\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tanzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\amine\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5290,7 +5290,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
