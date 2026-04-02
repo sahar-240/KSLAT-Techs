@@ -3,47 +3,51 @@ using System.Diagnostics;
 using WebApplication1.Data;
 using WebApplication1.Models;
 
-namespace WebApplication1.Controllers
+public class HomeController(ILogger<HomeController> logger, IMuseumData data) : Controller
 {
-    // IDE0290: Use primary constructor
-    public class HomeController(ILogger<HomeController> logger, IMuseumData data) : Controller
+    public IActionResult Index()
     {
-        // IDE0305: Collection initialisation simplified (ToList() -> [..])
-        public IActionResult Index()
+        logger.LogInformation("Home page accessed");
+        var viewModel = new HomeViewModel
         {
-            var viewModel = new HomeViewModel
-            {
-                OpeningHours = [.. data.GetOpeningHours()],
-                FAQs = [.. data.GetActiveFaqs()]
-            };
-            return View(viewModel);
-        }
+            OpeningHours = [.. data.GetOpeningHours()],
+            FAQs = [.. data.GetActiveFaqs()]
+        };
+        return View(viewModel);
+    }
 
-        public IActionResult Privacy() => View();
-        public IActionResult Visit() => View();
-        public IActionResult Contact() => View();
-        public IActionResult About() => View();
-        public IActionResult Terms() => View();
-        public IActionResult Support() => View();
-        public IActionResult Donation() => View();
+    public IActionResult Privacy() => View();
+    public IActionResult Visit() => View();
+    public IActionResult Contact() => View();
+    public IActionResult About() => View();
+    public IActionResult Terms() => View();
+    public IActionResult Support() => View();
+    public IActionResult Donation() => View();
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult ProcessDonation(DonationViewModel model)
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult ProcessDonation(DonationViewModel model)
+    {
+        if (ModelState.IsValid)
         {
-            if (ModelState.IsValid)
+            try
             {
-                // TODO: Save donation to database
+                logger.LogInformation("Donation processed successfully");
                 TempData["SuccessMessage"] = "Thank you for your donation!";
                 return RedirectToAction("Donation");
             }
-            return View("Donation", model);
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error processing donation");
+                ModelState.AddModelError("", "Error processing donation. Please try again.");
+            }
         }
+        return View("Donation", model);
+    }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

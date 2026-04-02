@@ -91,4 +91,19 @@ yarn-error.log*
 
 # wwwroot (if you want to exclude compiled assets)
 # Uncomment if needed:
+<<<<<<< HEAD
 # wwwroot/lib/
+/WebApplication1/obj/Debug/net10.0/rpswa.dswa.cache.json
+/.gitignore
+/WebApplication1/obj/Debug/net10.0/rpswa.dswa.cache.json
+/WebApplication1/obj/Debug/net10.0/WebApplication1.AssemblyInfo.cs
+/WebApplication1/obj/Debug/net10.0/WebApplication1.AssemblyInfoInputs.cache
+/WebApplication1/obj/Debug/net10.0/WebApplication1.AssemblyInfo.cs
+/.vs/WebApplication1/CopilotIndices/18.4.105.37992
+/.vs/ProjectEvaluation
+/.vs/WebApplication1.slnx/DesignTimeBuild/.dtbcache.v2
+/.vs/WebApplication1.slnx/FileContentIndex
+/WebApplication1/obj/Debug/net10.0/rbcswa.dswa.cache.json
+=======
+# wwwroot/lib/
+>>>>>>> 9e4dc9b04e3ae74178d6fac7778f2a9c1d256188
