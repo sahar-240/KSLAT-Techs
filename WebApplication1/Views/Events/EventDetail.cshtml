@@ -1,0 +1,68 @@
+﻿@model WebApplication1.Models.Event
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
+
+<div class="event-detail-card">
+    <div class="event-detail-image-section">
+        <a href="/WhatsOn/Events" class="event-detail-back" title="Return to Events">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="event-detail-image">
+            <img src="@Url.Content(Model.ImagePath)" alt="@Model.Title">
+        </div>
+        <div class="event-detail-title-box">
+            <div class="event-detail-title-wrapper">
+                <span class="event-detail-label">@Model.EventType.ToUpper()</span>
+                <span class="event-detail-title" style="color: @Model.ThemeColour;">@Model.Title.ToUpper()</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="event-detail-info" style="background-color: @Model.ThemeColour;">
+        <div class="event-detail-date-box">
+            <div class="event-detail-year">@Model.StartDate.Year</div>
+            <div class="event-detail-date-row">
+                <div class="event-detail-date-number">@Model.StartDate.ToString("dd")</div>
+                <div class="event-detail-date-divider"></div>
+                <div class="event-detail-date-number">@Model.EndDate.ToString("dd")</div>
+            </div>
+            <div class="event-detail-date-labels">
+                <div class="event-detail-date-label">@Model.StartDate.ToString("MMM").ToUpper()</div>
+                <div class="event-detail-date-label">@Model.EndDate.ToString("MMM").ToUpper()</div>
+            </div>
+        </div>
+
+        <div class="event-detail-content">
+            <div class="event-detail-item">
+                <span class="event-detail-item-label">TIME</span>
+                <span>@Model.TimeInfo.ToUpper()</span>
+            </div>
+            <div class="event-detail-item">
+                <span class="event-detail-item-label">LOCATION</span>
+                <span>@Model.Location.ToUpper()</span>
+            </div>
+            <div class="event-detail-description">
+                @Model.FullDescription
+            </div>
+            <div class="event-detail-footer">
+                <button class="event-detail-heart" onclick="toggleHeart(this)" title="Save to favorites">
+                    <i class="far fa-heart"></i>
+                </button>
+                <a asp-action="EventBook" asp-route-id="@Model.EventId" class="event-detail-book-btn">BOOK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleHeart(element) {
+        var icon = element.querySelector('i');
+        element.classList.toggle('active');
+        icon.classList.toggle('far');
+        icon.classList.toggle('fas');
+    }
+</script>

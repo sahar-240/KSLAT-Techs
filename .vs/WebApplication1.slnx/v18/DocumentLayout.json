@@ -1,20 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\",
+  "WorkspaceRootPath": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\sahar\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\views\\whatson\\tours.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\whatson\\tours.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\sahar\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\views\\whatson\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\whatson\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\views\\account\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+>>>>>>> 6735a679a6191385e9a5938e33ba2c98030873ab
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\sahar\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\wwwroot\\css\\whatson.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\whatson.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\views\\account\\tickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\tickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\sahar\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\wwwroot\\images\\picture10.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\images\\picture10.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
@@ -100,19 +106,28 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\sahar\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\views\\account\\saved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\saved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\amine\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\wwwroot\\css\\account.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\account.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+>>>>>>> 6735a679a6191385e9a5938e33ba2c98030873ab
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             }
           ]
@@ -182,10 +197,34 @@
               "ViewState": "AgIAAPkDAAAAAAAAAADwvyEEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-03-23T17:31:09.798Z",
+=======
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tickets.cshtml",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\Account\\Tickets.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Tickets.cshtml",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\Account\\Tickets.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Account\\Tickets.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T21:57:02.852Z",
+>>>>>>> 6735a679a6191385e9a5938e33ba2c98030873ab
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
               "Title": "Picture7.png - PNG [772x720, 32 bit, PNG]",
               "DocumentMoniker": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\wwwroot\\images\\Picture7.png",
@@ -205,11 +244,22 @@
               "ToolTip": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAK4AAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+=======
+              "DocumentIndex": 2,
+              "Title": "Saved.cshtml",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\Account\\Saved.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Saved.cshtml",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\Account\\Saved.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Account\\Saved.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+>>>>>>> 6735a679a6191385e9a5938e33ba2c98030873ab
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T14:35:23.987Z"
+              "WhenOpened": "2026-04-02T21:56:04.002Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Controllers\\HomeController.cs",
@@ -277,11 +327,22 @@
               "ToolTip": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\site.css",
               "RelativeToolTip": "WebApplication1\\wwwroot\\css\\site.css",
               "ViewState": "AgIAACoIAAAAAAAAAAAYwCsIAAAAAAAAAAAAAA==",
+=======
+              "DocumentIndex": 3,
+              "Title": "Account.css",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\Account.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\Account.css",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\wwwroot\\css\\Account.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\Account.css",
+              "ViewState": "AgIAAFICAAAAAAAAAAAQwIQCAAA8AAAAAAAAAA==",
+>>>>>>> 6735a679a6191385e9a5938e33ba2c98030873ab
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-02-18T14:09:28.464Z"
+              "WhenOpened": "2026-04-02T21:53:52.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 12,
               "Title": "Ticket.cshtml",
               "DocumentMoniker": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\WhatsOn\\Ticket.cshtml",
@@ -435,6 +496,18 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T14:39:35.699Z"
+=======
+              "DocumentIndex": 0,
+              "Title": "Account.cshtml",
+              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\Account\\Account.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Account.cshtml",
+              "ToolTip": "C:\\Users\\amine\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Views\\Account\\Account.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Account\\Account.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T21:38:45.698Z",
+              "EditorCaption": ""
+>>>>>>> 6735a679a6191385e9a5938e33ba2c98030873ab
             }
           ]
         }

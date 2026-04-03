@@ -1,0 +1,450 @@
+﻿/* ==================== GENERAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+/* ==================== HERO SECTION ==================== */
+.donation-hero {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.hero-content {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #2d5f3f;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 60px;
+    display: inline-block;
+}
+
+/* ==================== DONATION CONTAINER ==================== */
+.donation-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 60px 40px;
+    background-color: #ffffff;
+}
+
+.donation-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2d5f3f;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intro-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==================== AMOUNT SELECTION ==================== */
+.amount-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.amount-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.amount-btn {
+    padding: 12px 28px;
+    background-color: #2d5f3f;
+    color: #ffffff;
+    border: 2px solid #2d5f3f;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+    .amount-btn:hover {
+        background-color: #1e4229;
+        border-color: #1e4229;
+    }
+
+    .amount-btn.active {
+        background-color: #4caf50;
+        border-color: #4caf50;
+    }
+
+.select-amount-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2d5f3f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+/* ==================== INFO BOX ==================== */
+.info-box {
+    background-color: #f5f5f5;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0;
+    border-left: 4px solid #2d5f3f;
+}
+
+    .info-box h4 {
+        font-size: 13px;
+        font-weight: 700;
+        color: #2d5f3f;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .info-box p {
+        font-size: 12px;
+        color: #666;
+        line-height: 1.7;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+/* ==================== COMMENT SECTION ==================== */
+.comment-section {
+    margin: 40px 0;
+}
+
+.comment-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2d5f3f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.comment-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+    .comment-textarea:focus {
+        outline: none;
+        border-color: #2d5f3f;
+        box-shadow: 0 0 0 3px rgba(45, 95, 63, 0.1);
+    }
+
+/* ==================== BILLING ADDRESS ==================== */
+.billing-section {
+    margin: 40px 0;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2d5f3f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2d5f3f;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.form-control {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: #2d5f3f;
+        box-shadow: 0 0 0 3px rgba(45, 95, 63, 0.1);
+    }
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+    .form-row.full {
+        grid-template-columns: 1fr;
+    }
+
+/* ==================== AGREEMENT ==================== */
+.agreement-section {
+    background-color: #f5f5f5;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.agreement-text {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.6;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+/* ==================== SUBMIT BUTTON ==================== */
+.submit-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.submit-btn {
+    padding: 16px 60px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+}
+
+    .submit-btn:hover {
+        background-color: #2d2d2d;
+        transform: scale(1.05);
+    }
+
+    .submit-btn:active {
+        transform: scale(0.98);
+    }
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    .donation-hero {
+        min-height: 300px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+        letter-spacing: 2px;
+        padding: 15px 40px;
+    }
+
+    .donation-container {
+        padding: 40px 20px;
+    }
+
+    .amount-buttons {
+        gap: 10px;
+    }
+
+    .amount-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .submit-btn {
+        padding: 14px 40px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .donation-hero {
+        min-height: 250px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+        padding: 12px 30px;
+        letter-spacing: 1px;
+    }
+
+    .donation-container {
+        padding: 30px 15px;
+    }
+
+    .intro-title {
+        font-size: 14px;
+    }
+
+    .intro-text {
+        font-size: 12px;
+    }
+
+    .amount-buttons {
+        gap: 8px;
+    }
+
+    .amount-btn {
+        padding: 10px 16px;
+        font-size: 11px;
+        flex: 1;
+        min-width: 60px;
+    }
+
+    .section-title {
+        font-size: 12px;
+    }
+
+    .form-label {
+        font-size: 11px;
+    }
+
+    .form-control {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .info-box {
+        padding: 20px;
+    }
+
+        .info-box h4 {
+            font-size: 12px;
+        }
+
+        .info-box p {
+            font-size: 11px;
+        }
+
+    .agreement-text {
+        font-size: 10px;
+    }
+
+    .submit-btn {
+        padding: 12px 30px;
+        font-size: 12px;
+    }
+}
+
+/* ==================== CUSTOM AMOUNT INPUT ==================== */
+.custom-amount-wrapper {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+    .custom-amount-wrapper.active {
+        display: block;
+    }
+
+.custom-amount-input {
+    padding: 12px 15px;
+    border: 2px solid #2d5f3f;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 150px;
+    transition: border-color 0.3s ease;
+}
+
+    .custom-amount-input:focus {
+        outline: none;
+        border-color: #4caf50;
+        box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    }
+
+.custom-amount-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2d5f3f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
