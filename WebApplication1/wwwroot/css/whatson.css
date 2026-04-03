@@ -24,6 +24,7 @@ a {
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
 /* ============================================
    HERO BANNER
    ============================================ */
@@ -63,6 +64,9 @@ a {
     letter-spacing: 3px;
     margin-bottom: 8px;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 8px;
 }
 
 .banner-subtitle {
@@ -71,6 +75,7 @@ a {
     letter-spacing: 1.5px;
     font-weight: 500;
 }
+
 /* ============================================
    UPCOMING SECTION WITH CAROUSEL
    ============================================ */
@@ -205,14 +210,35 @@ a {
 }
 
 /* ============================================
-   SECTION DIVIDER
+   SECTION HEADER & DIVIDER
    ============================================ */
+
+.section-header-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #2b6c51;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 8px;
+    display: inline-block;
+}
 
 .section-divider {
     width: 150px;
     height: 2px;
     background-color: #2b6c51;
-    margin: 0 auto 40px;
+    margin: 0;
 }
 
 /* ============================================
@@ -228,15 +254,6 @@ a {
     background-color: #e5ede5;
     padding: 48px 20px;
     margin-top: 8px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #2b6c51;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
 }
 
 .grid-2-container {
@@ -325,23 +342,6 @@ a {
     background: rgba(43, 108, 81, 0.9);
 }
 
-.browse-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #2b6c51;
-    background-color: #f0f8f5;
-    transition: all 0.3s ease;
-    border-radius: 12px;
-    height: 400px;
-    min-height: 400px;
-}
-
-    .browse-card:hover {
-        background-color: #e0f0eb;
-        border-color: #1f5c38;
-    }
-
 /* ============================================
    BROWSE CARD
    ============================================ */
@@ -354,6 +354,8 @@ a {
     background-color: #f0f8f5;
     transition: all 0.3s ease;
     border-radius: 12px;
+    height: 400px;
+    min-height: 400px;
 }
 
     .browse-card:hover {
@@ -893,6 +895,7 @@ a {
     .banner-title {
         font-size: 2rem;
         letter-spacing: 2px;
+        padding: 15px 30px;
     }
 
     .banner-subtitle {
@@ -933,6 +936,7 @@ a {
 
     .section-title {
         font-size: 1.5rem;
+        padding: 15px 30px;
     }
 
     .browse-card {
@@ -991,6 +995,7 @@ a {
 @media (max-width: 480px) {
     .banner-title {
         font-size: 1.6rem;
+        padding: 12px 20px;
     }
 
     .upcoming-cards-wrapper {
@@ -1022,6 +1027,7 @@ a {
 
     .section-title {
         font-size: 1.3rem;
+        padding: 12px 20px;
     }
 
     .tour-card-detailed {
@@ -1055,3 +1061,5 @@ a {
         font-size: 1.2rem;
     }
 }
+
+
