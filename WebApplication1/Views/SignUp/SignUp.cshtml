@@ -73,27 +73,19 @@
         </form>
     </div>
 
-    <!-- LOGIN SECTION -->
+    <!-- LOGIN LINK SECTION -->
     <div class="form-section-box">
         <div class="section-title-banner">
-            <h2>LOGIN</h2>
+            <h2>ALREADY A MEMBER?</h2>
         </div>
 
-        <form class="login-form" method="POST" action="@Url.Action("Index", "Login")">
-            @Html.AntiForgeryToken()
-
-            <div class="form-group">
-                <label class="form-label">USERNAME:</label>
-                <input type="text" class="form-control form-control-full" name="username" required />
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">PASSWORD:</label>
-                <input type="password" class="form-control form-control-full" name="password" required />
-            </div>
-
-            <button type="submit" class="login-btn">LOGIN</button>
-        </form>
+        <div class="signup-link-container">
+            <p class="signup-link-text">Log in to your account to access your membership benefits.</p>
+            <a href="@Url.Action("Index", "Login")" class="signup-link-button">
+                <span class="arrow">→</span>
+                <span class="text">LOGIN</span>
+            </a>
+        </div>
     </div>
 
 </div>
