@@ -21,31 +21,30 @@ public class HomeController(ILogger<HomeController> logger, IMuseumData data) : 
     public IActionResult Contact() => View();
     public IActionResult About() => View();
     public IActionResult Terms() => View();
-    public IActionResult Support() => View();
-    public IActionResult Donation() => View();
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult ProcessDonation(DonationViewModel model)
+    public IActionResult Support()
     {
-        if (ModelState.IsValid)
-        {
-            try
-            {
-                logger.LogInformation("Donation processed successfully");
-                TempData["SuccessMessage"] = "Thank you for your donation!";
-                return RedirectToAction("Donation");
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(ex, "Error processing donation");
-                ModelState.AddModelError("", "Error processing donation. Please try again.");
-            }
-        }
-        return View("Donation", model);
+        return View();
+    }
+    public IActionResult Donation()
+    {
+        return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [HttpPost]
+    public IActionResult ProcessDonation(string firstName, string lastName, string email,
+        string phone, string address, string city, string country, string postcode,
+        decimal amount, string comment)
+    {
+        // Handle payment processing here
+        // Integrate with payment gateway (Stripe, PayPal, etc.)
+
+        return RedirectToAction("DonationConfirmation");
+    }
+
+    public IActionResult DonationConfirmation()
+    {
+        return View();
+    }
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
