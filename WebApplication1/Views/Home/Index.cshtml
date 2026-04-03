@@ -49,7 +49,7 @@
             <h3>SUPPORT US</h3>
             <p>YOUR SUPPORT HELPS SUSTAIN FUTURE WORKSHOPS AND THE CONTINUED PRESERVATION OF OUR HISTORY.</p>
             <p>FOR MORE INFORMATION:</p>
-            <a href="#" class="btn btn-primary">SUPPORT</a>
+            <a asp-controller="Home" asp-action="Support" class="btn btn-primary">Support US</a>
         </div>
         <div class="support-image">
             <img src="~/images/Picture3.png" alt="Support Us" />
@@ -58,34 +58,34 @@
 </section>
 
 
-        <!-- Opening Hours Section -->
-        <section class="opening-hours">
-            <div class="container">
-                <h2>PLAN YOUR VISIT</h2>
-                <h3>OPENING HOURS</h3>
-                <div class="hours-list">
-                    @foreach (var hour in Model.OpeningHours)
-                    {
-                        <div class="hours-item">
-                            <span class="day">@hour.DayOfWeek</span>
-                            <span class="time">
-                                @if (hour.IsClosed)
-                                {
-                                    <text>CLOSED</text>
-                                }
-                                else
-                                {
-                                    <text>@hour.OpenTime?.ToString(@"hh\:mm") - @hour.CloseTime?.ToString(@"hh\:mm")</text>
-                                }
-                            </span>
-                        </div>
-                    }
+<!-- Opening Hours Section -->
+<section class="opening-hours">
+    <div class="container">
+        <h2>PLAN YOUR VISIT</h2>
+        <h3>OPENING HOURS</h3>
+        <div class="hours-list" id="hoursList">
+            @foreach (var hour in Model.OpeningHours)
+            {
+                <div class="hours-item" data-day="@hour.DayOfWeek">
+                    <span class="day">@hour.DayOfWeek</span>
+                    <span class="time">
+                        @if (hour.IsClosed)
+                        {
+                            <text>CLOSED</text>
+                        }
+                        else
+                        {
+                            <text>@hour.OpenTime?.ToString(@"hh\:mm") - @hour.CloseTime?.ToString(@"hh\:mm")</text>
+                        }
+                    </span>
                 </div>
-                <div class="hours-disclaimer">
-                    <p>OPENING HOURS MAY BE SUBJECT TO CHANGE<br />PLEASE CONTACT US</p>
-                </div>
-            </div>
-        </section>
+            }
+        </div>
+        <div class="hours-disclaimer">
+            <p>OPENING HOURS MAY BE SUBJECT TO CHANGE<br />PLEASE CONTACT US</p>
+        </div>
+    </div>
+</section>
 
         <!-- Membership Section -->
         <section class="membership">
@@ -159,61 +159,66 @@
                     </div>
                     <div class="location-info">
                         <h3>LOCATION</h3>
-                        <p>THE NATURAL GALLERY<br />THE BURROWS,<br />HENDON WAY,<br />LONDON NW4 4BT</p>
-                        <a href="https://www.google.com/maps/search/The+Burrows+Hendon+Way+London+NW4+4BT" target="_blank" class="btn btn-secondary">DIRECTIONS</a>
+                        <p>Natural History Mueseum<br />Cromwell Rd,<br />South Kensington,<br />LONDON SW7 5BD</p>
+                <a href="https://www.google.com/maps/search/The+Burrows+Hendon+Way+London+NW4+4BT" target="_blank" class="btn btn-primary">DIRECTIONS</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="faq">
-            <h2>FAQ</h2>
-            <div class="container">
-                <div class="faq-list">
-                    @foreach (var faq in Model.FAQs)
-                    {
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFAQ(this)">
-                                @faq.Question
-                            </div>
-                            <div class="faq-answer">
-                                <p>@faq.Answer</p>
-                            </div>
-                        </div>
-                    }
+<!-- FAQ Section -->
+<section class="faq">
+    <div class="container">
+        <div class="faq-list">
+            <div class="faq-header">FAQ</div>
+            @foreach (var faq in Model.FAQs)
+            {
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        @faq.Question
+                    </div>
+                    <div class="faq-answer">
+                        <p>@faq.Answer</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-<!-- Donation Modal -->
-<div id="donation-modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeDonationModal()">&times;</span>
-        <h2>Make a Donation</h2>
-        <form id="donation-form">
-            <div class="form-group">
-                <label for="donor-name">Name</label>
-                <input type="text" id="donor-name" name="donorName" required>
-            </div>
-            <div class="form-group">
-                <label for="donor-email">Email</label>
-                <input type="email" id="donor-email" name="donorEmail" required>
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount ($)</label>
-                <input type="number" id="amount" name="amount" min="1" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message (Optional)</label>
-                <textarea id="message" name="message" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <label>
-                    <input type="checkbox" name="isAnonymous"> Make this donation anonymous
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">DONATE</button>
-        </form>
+            }
+        </div>
     </div>
-</div>
+</section>
+
+ @section Scripts {
+    <script>
+        function highlightTodaysHours() {
+            const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+            const today = days[new Date().getDay()];
+            
+            const hoursItems = document.querySelectorAll('.hours-item');
+            hoursItems.forEach(item => {
+                if (item.getAttribute('data-day') === today) {
+                    item.classList.add('today');
+                }
+            });
+        }
+
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            highlightTodaysHours();
+        });
+
+    </script>
+}

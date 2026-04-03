@@ -18,7 +18,10 @@ public class HomeController(ILogger<HomeController> logger, IMuseumData data) : 
 
     public IActionResult Privacy() => View();
     public IActionResult Visit() => View();
-    public IActionResult Contact() => View();
+    public IActionResult Contact()
+    {
+        return View();
+    }
     public IActionResult About() => View();
     public IActionResult Terms() => View();
     public IActionResult Support()
