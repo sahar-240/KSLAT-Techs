@@ -11,15 +11,21 @@ namespace WebApplication1.Data
 
         public DbSet<OpeningHour> OpeningHours { get; set; }
         public DbSet<FAQ> FAQs { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure default value for CreatedAt
             modelBuilder.Entity<FAQ>()
                 .Property(f => f.CreatedAt)
                 .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Event)
+                .WithMany()
+                .HasForeignKey(b => b.EventId);
         }
     }
 }

@@ -4,32 +4,33 @@ namespace WebApplication1.Controllers
 {
     public class AmenitiesController : Controller
     {
-        // GET: Amenities/Index
+        // FIX: Index() must use explicit path — file is Amenities.cshtml not Index.cshtml
         public IActionResult Index()
         {
             return View();
         }
 
-        // BUG FIX: Added missing Privacy action (linked from Amenities.cshtml header and footer)
+        // Privacy page — same view, JS toggles the privacy div
         public IActionResult Privacy()
         {
-            return View("~/Views/Amenities/Amenities.cshtml");
+            return View("~/Views/Amenities/Index.cshtml");
         }
 
-        // BUG FIX: Added missing JoinMembership POST action (form in Amenities.cshtml)
+        // JOIN button on Membership page
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult JoinMembership()
         {
             return RedirectToAction("Membership");
         }
 
-        // BUG FIX: Added missing Membership action (linked from Membership.cshtml nav)
+        // Membership page
         public IActionResult Membership()
         {
             return View("~/Views/Membership/Membership.cshtml");
         }
 
-        // BUG FIX: Added missing SignUp action (button in Membership.cshtml)
+        // Sign Up page
         public IActionResult SignUp()
         {
             return View("~/Views/SignUp/SignUp.cshtml");

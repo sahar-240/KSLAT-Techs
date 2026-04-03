@@ -1,39 +1,36 @@
-﻿@{
-    ViewData["Title"] = "Book Event";
+﻿@model WebApplication1.Models.Event
+@{
+    ViewData["Title"] = "Book " + Model.Title;
     Layout = "_Layout";
 }
 
 <link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
 
 <div class="booking-container">
-    <form class="booking-form" id="booking-form">
+    <form class="booking-form" method="post" asp-action="EventBook" asp-route-id="@Model.EventId" id="booking-form">
 
-        <!-- Event name (auto-filled from URL) -->
         <div class="booking-field">
-            <label for="event-name">EVENT:</label>
-            <input type="text" id="event-name" readonly>
+            <label>EVENT:</label>
+            <input type="text" value="@Model.Title" readonly>
         </div>
 
-        <!-- Date picker -->
         <div class="booking-field">
-            <label for="event-date">DATE:</label>
-            <select id="event-date">
+            <label for="bookingDate">DATE:</label>
+            <select name="bookingDate" id="event-date">
                 <option value="">Select date</option>
             </select>
         </div>
 
-        <!-- Time picker -->
         <div class="booking-field">
-            <label for="event-time">TIME:</label>
-            <select id="event-time">
-                <option value="">Select time</option>
+            <label for="bookingTime">TIME:</label>
+            <select name="bookingTime" id="event-time">
+                <option value="">Select a date first</option>
             </select>
         </div>
 
-        <!-- Quantity -->
         <div class="booking-field">
-            <label for="event-qty">QUANTITY:</label>
-            <select id="event-qty">
+            <label for="quantity">QUANTITY:</label>
+            <select name="quantity" id="event-qty">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -42,174 +39,128 @@
             </select>
         </div>
 
-        <!-- Email (required) -->
         <div class="booking-field">
-            <label for="event-email">EMAIL:</label>
-            <input type="email" id="event-email" placeholder="your email">
+            <label for="email">EMAIL:</label>
+            <input type="email" name="email" id="event-email" placeholder="your email" required>
         </div>
         <span class="booking-error" id="email-error">Please enter a valid email address</span>
 
-        <!-- Phone (optional, numbers only) -->
         <div class="booking-field">
-            <label for="event-phone">PHONE:</label>
-            <input type="tel" id="event-phone" placeholder="Optional" maxlength="15">
+            <label for="phone">PHONE:</label>
+            <input type="tel" name="phone" id="event-phone" placeholder="Optional" maxlength="15">
         </div>
         <span class="booking-error" id="phone-error">Phone must be numbers only (10-15 digits)</span>
 
-        <!-- Submit button -->
-        <button type="button" onclick="submitBooking()" class="booking-submit">BOOK</button>
+        <button type="submit" onclick="return validateBooking()" class="booking-submit">BOOK</button>
     </form>
 </div>
 
 <script>
-    // =============================================
-    // EVENT DATA - dates and times for each event
-    // This is what gets replaced by SQL later
-    // =============================================
-    var eventData = {
-        'Iris Van Herpen': {
-            start: new Date(2026, 3, 16),   // 16 Apr 2026 (months are 0-based so 3 = April)
-            end: new Date(2026, 4, 31),     // 31 May 2026
-            times: ['10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM']
-        },
-        'One Earth': {
-            start: new Date(2026, 6, 7),    // 7 Jul 2026
-            end: new Date(2026, 8, 15),     // 15 Sep 2026
-            times: ['10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM']
-        },
-        'Daniel Schuller': {
-            start: new Date(2026, 3, 15),   // 15 Apr 2026
-            end: new Date(2026, 5, 30),     // 30 Jun 2026
-            times: ['10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM']
-        },
-        'Thierry Mugler': {
-            start: new Date(2026, 5, 22),   // 22 Jun 2026
-            end: new Date(2026, 7, 4),      // 4 Aug 2026
-            times: ['11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM']
-        },
-        'Craft Mania': {
-            start: new Date(2026, 3, 12),   // 12 Apr 2026
-            end: new Date(2026, 3, 14),     // 14 Apr 2026
-            times: ['2:00 PM', '3:00 PM', '4:00 PM']
-        },
-        'Extinction Event': {
-            start: new Date(2026, 7, 5),    // 5 Aug 2026
-            end: new Date(2026, 9, 20),     // 20 Oct 2026
-            times: ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM']
-        }
-    };
+    var startDate = new Date("@Model.StartDate.ToString("yyyy-MM-dd")");
+    var endDate = new Date("@Model.EndDate.ToString("yyyy-MM-dd")");
+    var timeInfo = "@Model.TimeInfo";
 
-    // Get event name from URL
-    var params = new URLSearchParams(window.location.search);
-    var eventName = params.get('event') || '';
-    document.getElementById('event-name').value = eventName;
+    // Museum hours: Mon-Fri 9-17, Sat 10-18, Sunday CLOSED
+    var weekdayOpen = 9, weekdayClose = 17;
+    var satOpen = 10, satClose = 18;
+    var hasSaturday = true;
 
-    // Look up this event's data
-    var thisEvent = eventData[eventName];
-
-    // Fill in the DATE dropdown with only valid dates for this event
-    if (thisEvent) {
-        var dateSelect = document.getElementById('event-date');
-        var currentDate = new Date(thisEvent.start.getTime()); // copy the start date
-
-        while (currentDate <= thisEvent.end) {
-            var option = document.createElement('option');
-            option.value = currentDate.toLocaleDateString('en-GB', {
-                weekday: 'short',
-                day: 'numeric',
-                month: 'short',
-                year: 'numeric'
-            });
-            option.textContent = option.value;
-            dateSelect.appendChild(option);
-
-            // Move to next day
-            currentDate.setDate(currentDate.getDate() + 1);
-        }
-
-        // Fill in the TIME dropdown with only valid times for this event
-        var timeSelect = document.getElementById('event-time');
-        for (var i = 0; i < thisEvent.times.length; i++) {
-            var timeOption = document.createElement('option');
-            timeOption.value = thisEvent.times[i];
-            timeOption.textContent = thisEvent.times[i];
-            timeSelect.appendChild(timeOption);
-        }
+    var parts = timeInfo.split(',');
+    var weekdayMatch = parts[0].match(/(\d{1,2}:\d{2}\s*[AP]M)\s*-\s*(\d{1,2}:\d{2}\s*[AP]M)/i);
+    if (weekdayMatch) {
+        weekdayOpen = parseTimeToHour(weekdayMatch[1].trim());
+        weekdayClose = parseTimeToHour(weekdayMatch[2].trim());
     }
 
-    // Check if an email address looks valid
+    if (parts.length > 1) {
+        var satMatch = parts[1].match(/(\d{1,2}:\d{2}\s*[AP]M)\s*-\s*(\d{1,2}:\d{2}\s*[AP]M)/i);
+        if (satMatch) {
+            satOpen = parseTimeToHour(satMatch[1].trim());
+            satClose = parseTimeToHour(satMatch[2].trim());
+        }
+    } else {
+        hasSaturday = false;
+    }
+
+    // Build DATE dropdown - skip Sundays (closed) and Saturdays if no Sat hours
+    var dateSelect = document.getElementById('event-date');
+    var currentDate = new Date(startDate.getTime());
+
+    while (currentDate <= endDate) {
+        var dayOfWeek = currentDate.getDay();
+        if (dayOfWeek === 0) { currentDate.setDate(currentDate.getDate() + 1); continue; }
+        if (dayOfWeek === 6 && !hasSaturday) { currentDate.setDate(currentDate.getDate() + 1); continue; }
+
+        var option = document.createElement('option');
+        option.value = currentDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+        option.textContent = option.value;
+        option.dataset.dayOfWeek = dayOfWeek;
+        dateSelect.appendChild(option);
+        currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    // When date is picked, update times based on weekday vs Saturday
+    dateSelect.addEventListener('change', function () {
+        var timeSelect = document.getElementById('event-time');
+        timeSelect.innerHTML = '<option value="">Select time</option>';
+        var selected = dateSelect.options[dateSelect.selectedIndex];
+        if (!selected.value) return;
+
+        var dayOfWeek = parseInt(selected.dataset.dayOfWeek);
+        var openHour = (dayOfWeek === 6) ? satOpen : weekdayOpen;
+        var closeHour = (dayOfWeek === 6) ? satClose : weekdayClose;
+
+        // Clamp to museum hours
+        var museumOpen = (dayOfWeek === 6) ? 10 : 9;
+        var museumClose = (dayOfWeek === 6) ? 18 : 17;
+        if (openHour < museumOpen) openHour = museumOpen;
+        if (closeHour > museumClose) closeHour = museumClose;
+
+        for (var h = openHour; h < closeHour; h++) {
+            var timeOption = document.createElement('option');
+            timeOption.value = formatHour(h);
+            timeOption.textContent = formatHour(h);
+            timeSelect.appendChild(timeOption);
+        }
+    });
+
+    function parseTimeToHour(str) {
+        var match = str.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+        if (!match) return 0;
+        var hour = parseInt(match[1]);
+        var ampm = match[3].toUpperCase();
+        if (ampm === 'PM' && hour !== 12) hour += 12;
+        if (ampm === 'AM' && hour === 12) hour = 0;
+        return hour;
+    }
+
+    function formatHour(h) {
+        var ampm = h >= 12 ? 'PM' : 'AM';
+        var displayHour = h % 12;
+        if (displayHour === 0) displayHour = 12;
+        return displayHour + ':00 ' + ampm;
+    }
+
+    function validateBooking() {
+        var isValid = true;
+        document.querySelectorAll('.booking-error').forEach(function (el) { el.classList.remove('show'); });
+
+        var email = document.getElementById('event-email').value;
+        if (!email || !isValidEmail(email)) { document.getElementById('email-error').classList.add('show'); isValid = false; }
+
+        var phone = document.getElementById('event-phone').value;
+        if (phone.length > 0 && !/^\d{10,15}$/.test(phone)) { document.getElementById('phone-error').classList.add('show'); isValid = false; }
+
+        if (!document.getElementById('event-date').value) { isValid = false; alert('Please select a date'); }
+        if (!document.getElementById('event-time').value) { isValid = false; alert('Please select a time'); }
+        return isValid;
+    }
+
     function isValidEmail(email) {
         var parts = email.split(String.fromCharCode(64));
         if (parts.length !== 2) return false;
         if (parts[0].length === 0) return false;
         if (parts[1].indexOf('.') === -1) return false;
         return true;
-    }
-
-    // Validate and submit the form
-    function submitBooking() {
-        var isValid = true;
-
-        // Hide all errors first
-        document.querySelectorAll('.booking-error').forEach(function (el) {
-            el.classList.remove('show');
-        });
-
-        // Check email
-        var email = document.getElementById('event-email').value;
-        if (!email || !isValidEmail(email)) {
-            document.getElementById('email-error').classList.add('show');
-            isValid = false;
-        }
-
-        // Check phone - if filled in, must be numbers only and 10-15 digits
-        var phone = document.getElementById('event-phone').value;
-        if (phone.length > 0) {
-            var phoneRegex = /^\d{10,15}$/;
-            if (!phoneRegex.test(phone)) {
-                document.getElementById('phone-error').classList.add('show');
-                isValid = false;
-            }
-        }
-
-        // Check date is selected
-        if (!document.getElementById('event-date').value) {
-            isValid = false;
-            alert('Please select a date');
-        }
-
-        // Check time is selected
-        if (!document.getElementById('event-time').value) {
-            isValid = false;
-            alert('Please select a time');
-        }
-
-        // If everything is valid, go to ticket page
-        if (isValid) {
-            var ticketCode = generateCode();
-            var qty = document.getElementById('event-qty').value;
-            var bookDate = document.getElementById('event-date').value;
-            var bookTime = document.getElementById('event-time').value;
-
-            var url = '/WhatsOn/EventTicket'
-                + '?event=' + encodeURIComponent(eventName)
-                + '&qty=' + qty
-                + '&date=' + encodeURIComponent(bookDate)
-                + '&time=' + encodeURIComponent(bookTime)
-                + '&ticket=' + ticketCode;
-
-            window.location.href = url;
-        }
-    }
-
-    // Generate a random ticket code like "NG-4F8A-K2M7-X9BL"
-    function generateCode() {
-        var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-        var code = 'NG-';
-        for (var i = 0; i < 12; i++) {
-            if (i > 0 && i % 4 === 0) code += '-';
-            code += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return code;
     }
 </script>
