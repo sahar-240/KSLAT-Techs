@@ -1,0 +1,474 @@
+﻿/* ==================== GENERAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==================== HERO SECTION ==================== */
+.membership-hero {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #ffffff;
+    border: 3px solid #4caf50;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+/* ==================== SIGN UP SECTION ==================== */
+.signup-section {
+    background-color: #1a1a1a;
+    padding: 0;
+    width: 100%;
+}
+
+.signup-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 20px 40px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    justify-content: flex-start;
+}
+
+    .signup-btn:hover {
+        background-color: #2d2d2d;
+    }
+
+    .signup-btn:active {
+        background-color: #1a1a1a;
+    }
+
+    .signup-btn .arrow {
+        font-size: 24px;
+        color: #ffffff;
+        min-width: 30px;
+    }
+
+    .signup-btn .text {
+        letter-spacing: 2px;
+    }
+
+/* ==================== BENEFITS INTRO ==================== */
+.benefits-intro {
+    text-align: center;
+    padding: 40px 40px;
+    background: #ffffff;
+}
+
+.intro-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2d5f3f;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.intro-text {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #666;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+/* ==================== BENEFITS INTRO ==================== */
+.benefits-intro {
+    text-align: center;
+    padding: 50px 40px;
+    background: #ffffff;
+}
+
+.intro-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2d5f3f;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.intro-text {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* ==================== BENEFITS GRID ==================== */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: #ffffff;
+    padding: 0;
+}
+
+.benefit-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.benefit-1 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.benefit-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+    .benefit-2 .benefit-image {
+        order: 2;
+    }
+
+    .benefit-2 .benefit-text {
+        order: 1;
+    }
+
+.benefit-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .benefit-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.benefit-text {
+    background-color: #d4f1ed;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2d5f3f;
+    line-height: 1.6;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ==================== ADDITIONAL BENEFITS ==================== */
+.additional-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    background: #f5f5f5;
+    padding: 0;
+}
+
+.benefit-item {
+    padding: 40px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+    .benefit-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .benefit-item:nth-child(3) {
+        border-bottom: none;
+    }
+
+    .benefit-item:nth-child(4) {
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .benefit-item h3 {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #2d5f3f;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .benefit-item p {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.7;
+    }
+
+/* ==================== FOOTER ==================== */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.additional-benefits {
+    flex: 1;
+}
+
+.membership-footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    padding: 50px 40px;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-section h4 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+    .footer-section ul li {
+        font-size: 12px;
+        margin-bottom: 10px;
+        letter-spacing: 0.5px;
+    }
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .footer-section a:hover {
+        color: #4caf50;
+    }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+    .benefit-card {
+        grid-template-columns: 1fr !important;
+        min-height: auto;
+    }
+
+    .benefit-2 .benefit-image {
+        order: 0;
+    }
+
+    .benefit-2 .benefit-text {
+        order: 0;
+    }
+
+    .additional-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-item {
+        border-right: none !important;
+    }
+
+        .benefit-item:nth-child(n) {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .membership-hero {
+        min-height: 240px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+        letter-spacing: 2px;
+        padding: 12px 30px;
+    }
+
+    .signup-btn {
+        padding: 20px 20px;
+        font-size: 16px;
+    }
+
+        .signup-btn .arrow {
+            font-size: 22px;
+        }
+
+    .benefits-intro {
+        padding: 40px 20px;
+    }
+
+    .intro-title {
+        font-size: 16px;
+    }
+
+    .intro-text {
+        font-size: 13px;
+    }
+
+    .benefit-card {
+        min-height: 300px;
+    }
+
+    .benefit-text {
+        padding: 30px;
+    }
+
+    .benefit-title {
+        font-size: 14px;
+    }
+
+    .benefit-item {
+        padding: 30px;
+    }
+
+        .benefit-item h3 {
+            font-size: 13px;
+        }
+
+        .benefit-item p {
+            font-size: 12px;
+        }
+}
+
+@media (max-width: 480px) {
+    .membership-hero {
+        min-height: 200px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+        padding: 10px 20px;
+        letter-spacing: 1px;
+    }
+
+    .signup-btn {
+        padding: 15px;
+        font-size: 14px;
+        gap: 15px;
+    }
+
+        .signup-btn .arrow {
+            font-size: 18px;
+        }
+
+    .benefits-intro {
+        padding: 25px 15px;
+    }
+
+    .intro-title {
+        font-size: 14px;
+    }
+
+    .intro-text {
+        font-size: 12px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        grid-template-columns: 1fr !important;
+        min-height: 250px;
+    }
+
+    .benefit-text {
+        padding: 20px;
+    }
+
+    .benefit-title {
+        font-size: 12px;
+    }
+
+    .additional-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-item {
+        padding: 20px;
+        border-right: none !important;
+    }
+
