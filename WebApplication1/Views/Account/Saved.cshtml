@@ -4,79 +4,55 @@
     ViewData["Title"] = "Saved";
 }
 
-<link rel="stylesheet" href="~/css/Login.css">
+<link rel="stylesheet" href="~/css/Account.css">
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <img src="~/images/natural-gallery-logo.png" alt="Natural Gallery">
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="@Url.Action("Index", "Home")">VISIT US</a></li>
-                    <li><a href="@Url.Action("WhatsOn", "Home")">WHAT'S ON</a></li>
-                    <li><a href="@Url.Action("Amenities", "Home")">AMENITIES</a></li>
-                    <li><a href="@Url.Action("Account", "Account")">MEMBERSHIP</a></li>
-                    <li><a href="#" class="search-icon">🔍</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="saved-container">
-            <!-- Header Section -->
-            <div class="saved-header">
-                <h1 class="saved-title">SAVED</h1>
-            </div>
-
-            <!-- Saved Items Section -->
-            <div class="saved-items-container">
-                <div class="saved-items">
-                    <!-- Saved items will be displayed here -->
-                    @if (Model != null && Model.Count > 0)
-                    {
-                        @foreach (var item in Model)
-                        {
-                            <div class="saved-item">
-                                <h3>@item.Title</h3>
-                                <p>@item.Description</p>
-                                <div class="item-details">
-                                    <span>@item.Date</span>
-                                    <button class="remove-btn" data-id="@item.Id">Remove</button>
-                                </div>
-                            </div>
-                        }
-                    }
-                    else
-                    {
-                        <div class="no-saved-items">
-                            <p>You haven't saved any events yet.</p>
-                        </div>
-                    }
+    <!-- Main Content -->
+    <div class="saved-container">
+        <!-- Hero Section -->
+        <div class="saved-header">
+            <img src="~/images/Picture29.png" alt="Saved" class="hero-image2" />
+            <div class="hero-overlay2">
+                <div class="hero-content2">
+                    <h1 class="saved-title">SAVED</h1>
                 </div>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-logo">
-                    <img src="~/images/natural-gallery-logo-white.png" alt="Natural Gallery">
-                    </div>
-                    <div class="footer-content">
-                        <div class="footer-info">
-                            <span class="footer-text">The Branching Gardens 1234 567</span>
-                            <span class="footer-divider">|</span>
-                            <span class="footer-text">+1 (555) 890 0000</span>
+        <!-- Saved Items Section -->
+        <div class="saved-items-container">
+            <div class="saved-items">
+                <!-- Saved items will be displayed here -->
+                @if (Model != null && Model.Count > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="saved-item">
+                            <h3>@item.Title</h3>
+                            <p>@item.Description</p>
+                            <div class="item-details">
+                                <span>@item.Date</span>
+                                <button class="remove-btn" data-id="@item.Id">Remove</button>
+                            </div>
                         </div>
-                        <ul class="footer-links">
-                            <li><a href="@Url.Action("Index", "Home")">HOME</a></li>
-                            <li><a href="@Url.Action("About", "Home")">ABOUT</a></li>
-                            <li><a href="@Url.Action("Contact", "Home")">HELP</a></li>
-                            <li><a href="@Url.Action("Privacy", "Home")">PRIVACY POLICY</a></li>
-                            <li><a href="@Url.Action("Terms", "Home")">TERMS & CONDITIONS</a></li>
-                        </ul>
-                        <p class="footer-copyright">Copyright © 2025 Natural Gallery</p>
+                    }
+                }
+                else
+                {
+                    <div class="no-saved-items">
+                        <p>You haven't saved any events yet.</p>
                     </div>
-                </div>
-            </footer>
+                }
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    console.log('Remove item:', id);
+                });
+            });
+        </script>
+    }
