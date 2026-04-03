@@ -4,36 +4,31 @@ namespace WebApplication1.Controllers
 {
     public class LoginController : Controller
     {
-        // Login Page GET
+        [HttpGet]
         public IActionResult Index()
         {
-            return View("~/Views/Account/Login.cshtml");
+            return View();
         }
 
-        // Login Page POST
-        // IDE0060: Removed unused parameters - replace with real auth logic when ready
         [HttpPost]
-        [ActionName("Index")]
-        public IActionResult IndexPost()
+        public IActionResult Index(string username, string password)
         {
-            // TODO: Inject UserManager / auth service and validate credentials here
-            return RedirectToAction("Account", "Account");
+            // Add your login logic here
+            // For now, this is a placeholder
+            if (ValidateCredentials(username, password))
+            {
+                // Set up session/cookie authentication here
+                return RedirectToAction("Index", "Home");
+            }
+
+            ModelState.AddModelError("", "Invalid username or password");
+            return View();
         }
 
-        // Register GET
-        public IActionResult Register()
+        private bool ValidateCredentials(string username, string password)
         {
-            return View("~/Views/SignUp/SignUp.cshtml");
-        }
-
-        // Register POST
-        // IDE0060: Removed unused parameters - replace with real registration logic when ready
-        [HttpPost]
-        [ActionName("Register")]
-        public IActionResult RegisterPost()
-        {
-            // TODO: Inject UserManager / auth service and create account here
-            return RedirectToAction("Index", "Login");
+            // Add your authentication logic here
+            return !string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password);
         }
     }
 }
