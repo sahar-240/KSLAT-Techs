@@ -1,0 +1,293 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* ==================== SIGNUP PAGE STYLES ==================== */
+.signup-page {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    min-height: calc(100vh - 200px);
+}
+
+.form-section-box {
+    background-color: #ffffff;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+}
+
+/* ── Section title banner ── */
+.section-title-banner {
+    background-color: transparent;
+    padding: 0 0 30px 0;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #e0e0e0;
+}
+
+    .section-title-banner h1,
+    .section-title-banner h2 {
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: #1a1a1a;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+/* ── Register/Login label + divider ── */
+.register-label,
+.login-sublabel {
+    display: none;
+}
+
+.register-divider {
+    display: none;
+}
+
+/* ── Form layout ── */
+.signup-form,
+.login-form {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.form-control {
+    padding: 14px 16px;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: inherit;
+    background: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+    .form-control::placeholder {
+        color: #999;
+        font-size: 13px;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-bottom-color: #4caf50;
+    }
+
+.form-control-full {
+    width: 100%;
+}
+
+.form-control-textarea {
+    resize: vertical;
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid #e0e0e0;
+    padding: 14px 16px;
+}
+
+/* ── Name row (title + first + last) ── */
+.name-group {
+    flex-direction: row !important;
+    gap: 0;
+    align-items: flex-start;
+}
+
+    .name-group .form-label {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+.name-inputs {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.title-select {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.name-inputs input,
+.name-inputs select {
+    width: 100%;
+    min-width: 0;
+}
+
+/* ── City & county row ── */
+.city-county-group {
+    flex-direction: column !important;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+    .city-county-group .form-label {
+        width: 100%;
+    }
+
+    .city-county-group .name-inputs {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+/* ── Submit / Login buttons ── */
+.submit-btn,
+.login-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 14px 60px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+    .submit-btn:hover,
+    .login-btn:hover {
+        background-color: #388e3c;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    }
+
+    .submit-btn:active,
+    .login-btn:active {
+        transform: translateY(0);
+    }
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+    .name-inputs {
+        grid-template-columns: 100px 1fr 1fr !important;
+        gap: 15px;
+    }
+
+    .city-county-group .name-inputs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .signup-page {
+        padding: 40px 20px;
+    }
+
+    .form-section-box {
+        margin: 30px auto;
+    }
+
+    .section-title-banner {
+        padding: 0 0 20px 0;
+        margin-bottom: 30px;
+    }
+
+        .section-title-banner h1,
+        .section-title-banner h2 {
+            font-size: 26px;
+            letter-spacing: 1.5px;
+        }
+
+    .signup-form,
+    .login-form {
+        gap: 25px;
+    }
+
+    .name-inputs {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .title-select {
+        width: 100%;
+    }
+
+    .city-county-group .name-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .form-control {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-page {
+        padding: 20px 15px;
+    }
+
+    .form-section-box {
+        margin: 20px 0;
+    }
+
+    .section-title-banner {
+        padding: 0 0 15px 0;
+        margin-bottom: 20px;
+    }
+
+        .section-title-banner h1,
+        .section-title-banner h2 {
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+    .signup-form,
+    .login-form {
+        gap: 20px;
+    }
+
+    .form-label {
+        font-size: 11px;
+    }
+
+    .form-control {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .name-inputs {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    .submit-btn,
+    .login-btn {
+        padding: 12px 40px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+}

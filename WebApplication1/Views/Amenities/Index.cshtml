@@ -1,0 +1,178 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Amenities";
+}
+
+<link rel="stylesheet" href="~/css/amenities.css" asp-append-version="true" />
+
+<!-- AMENITIES PAGE -->
+<div id="amenities-page" class="page-container">
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <img src="~/images/Picture16.png" alt="Hero Background" class="hero-image" />
+        <div class="hero-overlay">
+            <h1 class="hero-title">FOOD</h1>
+            <h2 class="hero-subtitle">DRINKS</h2>
+            <h3 class="hero-tertiary">FACILITIES</h3>
+        </div>
+    </div>
+
+    <!-- Amenities Cards -->
+    <section class="amenities-section">
+        <div class="section-content">
+
+            <div class="amenity-card">
+                <img src="~/images/Picture17.png" alt="Fresh Salad" class="amenity-image" />
+                <div class="card-content">
+                    <h3 class="card-title">
+                        Enjoy a full course meal at The greenhouse.
+
+                        Choose from a selection of appetisers, starters, mains, and desserts.
+                    </h3>
+                </div>
+            </div>
+
+            <div class="amenity-card">
+                <img src="~/images/Picture18.png" alt="Restaurant Interior" class="amenity-image" />
+                <div class="card-content">
+                    <h3 class="card-title">
+                        Relax at the Grove, and tuck into a freshly prepared lunch.
+
+                        Pick from a selection of hot & cold meals, including wraps, salads, sandwiches, and fries
+                    </h3>
+                </div>
+            </div>
+
+            <div class="amenity-card">
+                <img src="~/images/Picture19.png" alt="Pastries and Baked Goods" class="amenity-image" />
+                <div class="card-content">
+                    <h3 class="card-title">
+                        Take a break and enjoy one of our many pastries at the Meadow Cafe.
+
+                        Enjoy our baked goods, sandwiches, fruits, and drinks.
+                    </h3>                   
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="amenities-membership-section">
+        <div class="amenities-membership-content">
+            <h2 class="amenities-membership-title">BECOME A MEMBER TO RECEIVE SPECIAL DISCOUNTS</h2>
+            <a asp-controller="SignUp" asp-action="SignUp" class="amenities-membership-btn">Join</a>
+        </div>
+        <div class="amenities-membership-image">
+            <img asp-append-version="true" src="~/images/Picture20.png" alt="Membership Benefits" />
+        </div>
+    </section>
+
+    <!-- Forest Play Space Section -->
+    <section class="forest-play-section">
+        <div class="forest-image">
+            <img src="~/images/Picture21.png" alt="Forest Play Space" />
+        </div>
+        <div class="forest-content">
+            <h2 class="forest-title">THE FOREST PLAY SPACE</h2>
+            <p class="forest-description">CHILDREN AGES 3-5 HAVE A DEDICATED SPACE WHERE THEY CAN EXPLORE AND LEARN THROUGH PLAY.</p>
+            <p class="forest-highlight">IT OFFERS A VARIETY OF HANDS-ON ACTIVITIES DESIGNED TO ENCOURAGE CREATIVITY, CURIOSITY, AND ENGAGEMENT WITH THE NATURAL WORLD.</p>
+            <p class="forest-note">AT THE NATURAL GALLERY WE BELIEVE IN FOSTERING CHILDREN'S CREATIVITY AND WONDER, WHICH IS WHY WE CREATED THIS BEAUTIFUL SPACE FOR OUR YOUNGEST GUESTS.</p>
+            <p class="forest-additional">WE ENCOURAGE PARENTS TO STEP BY DURING YOUR VISIT TO TAKE A BREAK AND LET YOUR CHILDREN EXPLORE THEIR CURIOSITY.</p>
+        </div>
+    </section>
+
+</div><!-- end #amenities-page -->
+<!-- PRIVACY POLICY PAGE (toggled via JS, same URL) -->
+<div id="privacy-page" class="page-container" style="display: none;">
+
+    <section class="privacy-content">
+        <h1 class="privacy-title">PRIVACY POLICY - NATURAL GALLERY MUSEUM</h1>
+
+        <p class="privacy-intro">
+            AT NATURAL GALLERY MUSEUM, WE RESPECT YOUR PRIVACY AND HANDLE YOUR PERSONAL DATA IN LINE WITH THE UNITED KINGDOM DATA PROTECTION ACT 2018.
+        </p>
+
+        <div class="privacy-section">
+            <h2 class="section-title">INFORMATION WE COLLECT</h2>
+            <p class="section-intro">WE MAY COLLECT:</p>
+            <ul class="section-list">
+                <li>VISITOR DATA: NAMES, EMAIL ADDRESSES, PHONE NUMBERS</li>
+                <li>MEMBERSHIP DATA: PAYMENT INFORMATION, MEMBERSHIP DATES, PREFERENCES</li>
+                <li>WEBSITE USAGE: COOKIES, ANALYTICS, INTERACTION DATA</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2 class="section-title">HOW WE USE YOUR DATA</h2>
+            <ul class="section-list">
+                <li>MANAGE MEMBERSHIPS, RENEWALS, AND BENEFITS</li>
+                <li>SEND NEWSLETTERS, EVENT UPDATES, AND MEMBER OFFERS (OPT-IN ONLY)</li>
+                <li>IMPROVE WEBSITE EXPERIENCE AND VISITOR EXPERIENCES</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2 class="section-title">SHARING AND SECURITY</h2>
+            <p class="section-text">WE DO NOT SELL YOUR DATA. WE MAY SHARE PERSONAL INFORMATION WITH TRUSTED SERVICE PROVIDERS FOR PAYMENT PROCESSING AND MARKETING PURPOSES. WE MAINTAIN STRICT DATA SECURITY PROTOCOLS TO PROTECT YOUR INFORMATION.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2 class="section-title">COOKIES</h2>
+            <p class="section-text">WE USE COOKIES TO ENHANCE YOUR EXPERIENCE AND PERSONALISE CONTENT. YOU CAN MANAGE COOKIES IN YOUR BROWSER SETTINGS.</p>
+            <ul class="section-list">
+                <li>NECESSARY COOKIES: ENABLE WEBSITE FUNCTIONALITY</li>
+                <li>ANALYTICS COOKIES: TRACK WEBSITE PERFORMANCE</li>
+                <li>MARKETING COOKIES: PERSONALISE CONTENT AND ADS</li>
+                <li>ACCESS, CORRECT OR REQUEST DELETION OF YOUR DATA</li>
+                <li>WITHDRAW CONSENT FOR MARKETING COMMUNICATIONS</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2 class="section-title">DATA RETENTION</h2>
+            <p class="section-text">WE KEEP PERSONAL DATA ONLY AS LONG AS NECESSARY TO PROVIDE SERVICES, MANAGE MEMBERSHIPS, AND MEET LEGAL OR BUSINESS OBLIGATIONS.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2 class="section-title">ACCESSIBILITY</h2>
+            <p class="section-text">NATURAL GALLERY MUSEUM IS COMMITTED TO MAKING OUR WEBSITE AND EXHIBITIONS ACCESSIBLE TO EVERYONE, INCLUDING PEOPLE WITH DISABILITIES. WE STRIVE TO MEET WCAG 2.1 AA STANDARDS FOR DIGITAL ACCESSIBILITY.</p>
+            <p class="section-text">FOR ANY ACCESSIBILITY ISSUES OR QUESTIONS, PLEASE CONTACT US AT: EMAIL: INFO@NATURALGALLERY.CO.UK.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2 class="section-title">CONTACT US</h2>
+            <p class="section-text">
+                FOR QUESTIONS OR DATA REQUESTS, CONTACT US VIA OUR WEBSITE OR AT:<br />
+                EMAIL: INFO@NATURALGALLERY.CO.UK<br />
+                ADDRESS: THE FAIRYLANDS, LONDON W6 8LP
+            </p>
+        </div>
+
+        <a href="#" onclick="showAmenitiesPage(); return false;" class="accept-btn">ACCEPT</a>
+    </section>
+
+</div><!-- end #privacy-page -->
+@section Scripts {
+    <script>
+        function showAmenitiesPage() {
+            document.getElementById('amenities-page').style.display = 'block';
+            document.getElementById('privacy-page').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        function showPrivacyPolicy() {
+            document.getElementById('amenities-page').style.display = 'none';
+            document.getElementById('privacy-page').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.location.pathname.toLowerCase().includes('privacy')) {
+                showPrivacyPolicy();
+            }
+        });
+    </script>
+}
