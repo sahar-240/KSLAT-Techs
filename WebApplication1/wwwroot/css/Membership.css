@@ -252,58 +252,6 @@ html, body {
         line-height: 1.7;
     }
 
-/* ==================== FOOTER ==================== */
-.membership-footer {
-    background-color: #2c2c2c;
-    color: #ffffff;
-    padding: 50px 40px;
-    margin-top: auto;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.footer-section h4 {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-    .footer-section ul li {
-        font-size: 12px;
-        margin-bottom: 10px;
-        letter-spacing: 0.5px;
-    }
-
-.footer-section a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-    .footer-section a:hover {
-        color: #4caf50;
-    }
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    margin-top: 20px;
-    border-top: 1px solid #555;
-    font-size: 12px;
-    color: #aaa;
-}
 
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
@@ -336,10 +284,7 @@ html, body {
             border-bottom: none;
         }
 
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+    
 }
 
 @media (max-width: 768px) {
