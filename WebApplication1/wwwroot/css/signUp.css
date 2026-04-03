@@ -97,7 +97,7 @@ body {
 
     .form-control:focus {
         outline: none;
-        border-bottom-color: #4caf50;
+        border-bottom-color: #2b6c51;
     }
 
 .form-control-full {
@@ -164,7 +164,7 @@ body {
     display: block;
     margin: 20px auto 0;
     padding: 14px 60px;
-    background-color: #4caf50;
+    background-color: #2b6c51;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -174,19 +174,74 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    box-shadow: 0 2px 8px rgba(43, 108, 81, 0.2);
 }
 
     .submit-btn:hover,
     .login-btn:hover {
-        background-color: #388e3c;
+        background-color: #1f5c38;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        box-shadow: 0 4px 12px rgba(43, 108, 81, 0.3);
     }
 
     .submit-btn:active,
     .login-btn:active {
         transform: translateY(0);
+    }
+
+/* ==================== LOGIN LINK SECTION ==================== */
+.signup-link-container {
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 300px;
+}
+
+.signup-link-text {
+    font-size: 16px;
+    color: #666;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.signup-link-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #2b6c51;
+    color: #fff;
+    padding: 14px 32px;
+    border: 2px solid #2b6c51;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+    .signup-link-button:hover {
+        background-color: #1f5c38;
+        border-color: #1f5c38;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(43, 108, 81, 0.2);
+    }
+
+    .signup-link-button .arrow {
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+    }
+
+    .signup-link-button:hover .arrow {
+        transform: translateX(4px);
     }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
@@ -243,6 +298,20 @@ body {
         padding: 12px 14px;
         font-size: 13px;
     }
+
+    .signup-link-container {
+        padding: 30px;
+        min-height: 250px;
+    }
+
+    .signup-link-text {
+        font-size: 14px;
+    }
+
+    .signup-link-button {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -289,5 +358,21 @@ body {
         padding: 12px 40px;
         font-size: 12px;
         letter-spacing: 1px;
+    }
+
+    .signup-link-container {
+        padding: 20px;
+        min-height: 200px;
+    }
+
+    .signup-link-text {
+        font-size: 12px;
+    }
+
+    .signup-link-button {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 }
