@@ -57,28 +57,38 @@
     </div>
 </section>
 
-
 <!-- Opening Hours Section -->
 <section class="opening-hours">
     <div class="container">
         <h2>PLAN YOUR VISIT</h2>
         <h3>OPENING HOURS</h3>
         <div class="hours-list" id="hoursList">
-            @foreach (var hour in Model.OpeningHours)
+            @if (Model?.OpeningHours != null && Model.OpeningHours.Any())
             {
-                <div class="hours-item" data-day="@hour.DayOfWeek">
-                    <span class="day">@hour.DayOfWeek</span>
-                    <span class="time">
-                        @if (hour.IsClosed)
+                @foreach (var hour in Model.OpeningHours)
+                {
+                    <div class="hours-item" data-day="@hour.DayOfWeek">
+                        <span class="day">@hour.DayOfWeek</span>
+                        <span class="time">
+                            @if (hour.IsClosed)
+                            {
+                                <text>CLOSED</text>
+                            }
+                            else
+                            {
+                                <text>@hour.OpeningTime?.ToString(@"hh\:mm") - @hour.ClosingTime?.ToString(@"hh\:mm")</text>
+                            }
+                        </span>
+                        @if (!string.IsNullOrEmpty(hour.Notes))
                         {
-                            <text>CLOSED</text>
+                            <span class="notes" style="font-size: 12px; color: #666; margin-left: 10px;">(@hour.Notes)</span>
                         }
-                        else
-                        {
-                            <text>@hour.OpenTime?.ToString(@"hh\:mm") - @hour.CloseTime?.ToString(@"hh\:mm")</text>
-                        }
-                    </span>
-                </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Opening hours not available.</p>
             }
         </div>
         <div class="hours-disclaimer">
@@ -169,6 +179,7 @@
     <div class="container">
         <div class="faq-list">
             <div class="faq-header">FAQ</div>
+            @if (Model?.FAQs != null && Model.FAQs.Any())
             @foreach (var faq in Model.FAQs)
             {
                 <div class="faq-item">
