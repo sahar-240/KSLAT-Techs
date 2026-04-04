@@ -6,6 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// ✅ ADD SESSION SERVICES
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // For HTTPS
+    options.Cookie.SameSite = SameSiteMode.Lax;
+});
+
 // Front-end only data provider (for opening hours, FAQs etc)
 builder.Services.AddSingleton<IMuseumData, InMemoryMuseumData>();
 
@@ -48,6 +58,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// ✅ ADD SESSION MIDDLEWARE (MUST BE BEFORE UseAuthorization)
+app.UseSession();
 
 app.UseAuthorization();
 

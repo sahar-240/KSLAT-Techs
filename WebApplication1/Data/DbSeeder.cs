@@ -6,9 +6,10 @@ namespace WebApplication1.Data
     {
         public static void Seed(MuseumDbContext db)
         {
-            if (db.Events.Any()) return;
+            if (db.Events.Any())
+            {
 
-            var events = new List<Event>
+                var events = new List<Event>
             {
                 new Event
                 {
@@ -102,8 +103,68 @@ namespace WebApplication1.Data
                 }
             };
 
-            db.Events.AddRange(events);
-            db.SaveChanges();
+                db.Events.AddRange(events);
+                db.SaveChanges();
+            }
+
+            if (!db.OpeningHours.Any())
+            {
+                var hours = new List<OpeningHour>
+                {
+                    new()
+                    {
+                        DayOfWeek = "Monday",
+                        OpeningTime = TimeSpan.Parse("10:00"),
+                        ClosingTime = TimeSpan.Parse("17:00"),
+                        IsClosed = false
+                    },
+                    new()
+                    {
+                        DayOfWeek = "Tuesday",
+                        OpeningTime = TimeSpan.Parse("10:00"),
+                        ClosingTime = TimeSpan.Parse("17:00"),
+                        IsClosed = false
+                    },
+                    new()
+                    {
+                        DayOfWeek = "Wednesday",
+                        OpeningTime = TimeSpan.Parse("10:00"),
+                        ClosingTime = TimeSpan.Parse("17:00"),
+                        IsClosed = false
+                    },
+                    new()
+                    {
+                        DayOfWeek = "Thursday",
+                        OpeningTime = TimeSpan.Parse("10:00"),
+                        ClosingTime = TimeSpan.Parse("20:00"),
+                        IsClosed = false,
+                        Notes = "Extended hours"
+                    },
+                    new()
+                    {
+                        DayOfWeek = "Friday",
+                        OpeningTime = TimeSpan.Parse("10:00"),
+                        ClosingTime = TimeSpan.Parse("17:00"),
+                        IsClosed = false
+                    },
+                    new()
+                    {
+                        DayOfWeek = "Saturday",
+                        OpeningTime = TimeSpan.Parse("11:00"),
+                        ClosingTime = TimeSpan.Parse("18:00"),
+                        IsClosed = false
+                    },
+                    new()
+                    {
+                        DayOfWeek = "Sunday",
+                        OpeningTime = TimeSpan.Parse("12:00"),
+                        ClosingTime = TimeSpan.Parse("17:00"),
+                        IsClosed = false
+                    }
+                };
+                db.OpeningHours.AddRange(hours);
+                db.SaveChanges();
+            }
         }
     }
 }
