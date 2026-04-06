@@ -12,20 +12,22 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // For HTTPS
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     options.Cookie.SameSite = SameSiteMode.Lax;
 });
 
-// Front-end only data provider (for opening hours, FAQs etc)
+// Front-end only data provider
 builder.Services.AddSingleton<IMuseumData, InMemoryMuseumData>();
 
-// SQL Database connection for Events and Bookings
+// ✅ CONNECT TO AZURE SQL DATABASE
 builder.Services.AddDbContext<MuseumDbContext>(options =>
     options.UseSqlServer(
         "Server=tcp:kslat-museum-server.database.windows.net,1433;" +
         "Initial Catalog=MuseumDb;" +
-        "User ID=museumadmin;" +
+        "Persist Security Info=False;" +
+        "User Id=museumadmin;" +
         "Password=pass123//;" +
+        "MultipleActiveResultSets=False;" +
         "Encrypt=True;" +
         "TrustServerCertificate=False;" +
         "Connection Timeout=30;",
@@ -43,7 +45,6 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MuseumDbContext>();
     db.Database.EnsureCreated();
-
     DbSeeder.Seed(db);
 }
 
@@ -54,14 +55,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
-// ✅ ADD SESSION MIDDLEWARE (MUST BE BEFORE UseAuthorization)
 app.UseSession();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

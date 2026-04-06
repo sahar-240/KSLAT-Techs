@@ -7,6 +7,13 @@
 <link rel="stylesheet" href="~/css/events.css" asp-append-version="true" />
 
 <div class="booking-container">
+    @if (TempData["Error"] != null)
+    {
+        <div style="background: #ff4444; color: #fff; padding: 12px 20px; margin-bottom: 20px; border-radius: 6px; text-align: center; font-weight: 600;">
+            @TempData["Error"]
+        </div>
+    }
+
     <form class="booking-form" method="post" asp-action="EventBook" asp-route-id="@Model.EventId" id="booking-form">
 
         <div class="booking-field">
@@ -26,6 +33,12 @@
             <select name="bookingTime" id="event-time">
                 <option value="">Select a date first</option>
             </select>
+        </div>
+
+        <!-- Available spots display -->
+        <div class="booking-field" id="spots-display" style="display:none;">
+            <label>AVAILABLE:</label>
+            <span id="spots-count" style="font-weight: 700; font-size: 1.1rem; color: #2d5f3f;"></span>
         </div>
 
         <div class="booking-field">
@@ -59,8 +72,8 @@
     var startDate = new Date("@Model.StartDate.ToString("yyyy-MM-dd")");
     var endDate = new Date("@Model.EndDate.ToString("yyyy-MM-dd")");
     var timeInfo = "@Model.TimeInfo";
+    var eventId = @Model.EventId;
 
-    // Museum hours: Mon-Fri 9-17, Sat 10-18, Sunday CLOSED
     var weekdayOpen = 9, weekdayClose = 17;
     var satOpen = 10, satClose = 18;
     var hasSaturday = true;
@@ -82,7 +95,6 @@
         hasSaturday = false;
     }
 
-    // Build DATE dropdown - skip Sundays (closed) and Saturdays if no Sat hours
     var dateSelect = document.getElementById('event-date');
     var currentDate = new Date(startDate.getTime());
 
@@ -99,10 +111,10 @@
         currentDate.setDate(currentDate.getDate() + 1);
     }
 
-    // When date is picked, update times based on weekday vs Saturday
     dateSelect.addEventListener('change', function () {
         var timeSelect = document.getElementById('event-time');
         timeSelect.innerHTML = '<option value="">Select time</option>';
+        document.getElementById('spots-display').style.display = 'none';
         var selected = dateSelect.options[dateSelect.selectedIndex];
         if (!selected.value) return;
 
@@ -110,7 +122,6 @@
         var openHour = (dayOfWeek === 6) ? satOpen : weekdayOpen;
         var closeHour = (dayOfWeek === 6) ? satClose : weekdayClose;
 
-        // Clamp to museum hours
         var museumOpen = (dayOfWeek === 6) ? 10 : 9;
         var museumClose = (dayOfWeek === 6) ? 18 : 17;
         if (openHour < museumOpen) openHour = museumOpen;
@@ -122,6 +133,23 @@
             timeOption.textContent = formatHour(h);
             timeSelect.appendChild(timeOption);
         }
+    });
+
+    // When time is picked, fetch available spots
+    document.getElementById('event-time').addEventListener('change', function () {
+        var date = document.getElementById('event-date').value;
+        var time = this.value;
+        if (!date || !time) {
+            document.getElementById('spots-display').style.display = 'none';
+            return;
+        }
+
+        fetch('/WhatsOn/GetAvailableSpots?eventId=' + eventId + '&date=' + encodeURIComponent(date) + '&time=' + encodeURIComponent(time))
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                document.getElementById('spots-count').textContent = data.spots + ' of ' + data.total + ' spots';
+                document.getElementById('spots-display').style.display = 'flex';
+            });
     });
 
     function parseTimeToHour(str) {

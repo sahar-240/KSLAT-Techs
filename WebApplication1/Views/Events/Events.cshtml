@@ -95,13 +95,19 @@
             var sortFilter = document.getElementById('sort-filter').value;
             var cards = document.querySelectorAll('.events-card');
 
+            // First: show/hide based on genre — use inline style so it always works
             cards.forEach(function (card) {
-                var isMatch = genreFilter === '' || card.dataset.genre === genreFilter;
-                card.classList.toggle('hidden', !isMatch);
+                var genre = card.getAttribute('data-genre');
+                if (genreFilter === '' || genre === genreFilter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
             });
 
+            // Then: sort only visible cards
             var visibleCards = Array.from(cards).filter(function (card) {
-                return !card.classList.contains('hidden');
+                return card.style.display !== 'none';
             });
 
             visibleCards.sort(function (a, b) { return getSortValue(a, b, sortFilter); });
@@ -136,6 +142,6 @@
             icon.classList.toggle('fas');
         }
 
-        function goToFavorites() { console.log('Navigate to Saved Events page'); }
+        function goToFavorites() { window.location.href = '/Membership/Favourites'; }
     </script>
 }

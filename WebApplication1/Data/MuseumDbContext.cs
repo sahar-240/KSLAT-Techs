@@ -3,13 +3,17 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Data
 {
-    public class MuseumDbContext(DbContextOptions<MuseumDbContext> options) : DbContext(options)
+    public class MuseumDbContext : DbContext
     {
+        public MuseumDbContext(DbContextOptions<MuseumDbContext> options) : base(options)
+        {
+        }
 
-        public DbSet<OpeningHour> OpeningHours { get; set; } = null!;
+        public DbSet<OpeningHour> OpeningHours { get; set; }
         public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

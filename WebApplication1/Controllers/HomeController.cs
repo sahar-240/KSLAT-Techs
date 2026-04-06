@@ -32,6 +32,10 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        public IActionResult ContactSuccess()
+        {
+            return View();
+        }
         public IActionResult About() => View();
         public IActionResult Terms() => View();
         public IActionResult Support()
