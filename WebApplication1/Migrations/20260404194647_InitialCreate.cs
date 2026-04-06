@@ -158,10 +158,53 @@ namespace WebApplication1.Migrations
                 name: "IX_TourBookings_TourId",
                 table: "TourBookings",
                 column: "TourId");
+
+            
+            migrationBuilder.CreateTable(
+                name: "Donations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Amount = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Postcode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    SubscribeNewsletter = table.Column<bool>(type: "bit", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false, defaultValue: "Completed"),
+                    TransactionId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DonationDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Donations", x => x.Id);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Donations_Email",
+                table: "Donations",
+                column: "Email");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Donations_DonationDate",
+                table: "Donations",
+                column: "DonationDate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Donations_Status",
+                table: "Donations",
+                column: "Status");
         }
 
-/// <inheritdoc />
-protected override void Down(MigrationBuilder migrationBuilder)
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Bookings");
@@ -180,6 +223,9 @@ protected override void Down(MigrationBuilder migrationBuilder)
 
             migrationBuilder.DropTable(
                 name: "Tours");
+
+            migrationBuilder.DropTable(
+                name: "Donations");
         }
     }
 }

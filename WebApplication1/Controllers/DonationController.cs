@@ -6,27 +6,16 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Controllers
 {
-    public class DonationController : Controller
+    public class DonationController(MuseumDbContext dbContext, ILogger<DonationController> logger, IPaymentService paymentService) : Controller
     {
-        private readonly MuseumDbContext _db;
-        private readonly ILogger<DonationController> _logger;
-        private readonly IPaymentService _paymentService;
-
-        public DonationController(MuseumDbContext db, ILogger<DonationController> logger, IPaymentService paymentService)
-        {
-            _db = db;
-            _logger = logger;
-            _paymentService = paymentService;
-        }
-
         [HttpGet]
         public IActionResult Donation()
         {
-            return View(new Donation());
+            return View(new DonationViewModel());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Donation(Donation model)
+        public async Task<IActionResult> Donation(DonationViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -35,7 +24,26 @@ namespace WebApplication1.Controllers
 
             try
             {
-                var paymentResult = await _paymentService.ProcessPaymentAsync(model);
+                // Map ViewModel to Donation model FIRST
+                var donation = new Donation
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+                    Phone = model.Phone,
+                    Address = model.Address,
+                    City = model.City,
+                    Country = model.Country,
+                    Postcode = model.Postcode,
+                    Amount = model.Amount,
+                    Message = model.Message,
+                    SubscribeNewsletter = model.SubscribeNewsletter,
+                    Status = "Pending",
+                    DonationDate = DateTime.Now
+                };
+
+                // Pass Donation model to payment service
+                var paymentResult = await paymentService.ProcessPaymentAsync(donation);
 
                 if (!paymentResult.Success)
                 {
@@ -43,17 +51,17 @@ namespace WebApplication1.Controllers
                     return View(model);
                 }
 
-                model.TransactionId = paymentResult.TransactionId;
-                model.Status = "Completed";
-                model.DonationDate = DateTime.Now;
+                donation.TransactionId = paymentResult.TransactionId;
+                donation.Status = "Completed";
 
-                _db.Donations.Add(model);
-                await _db.SaveChangesAsync();
+                dbContext.Donations.Add(donation);
+                await dbContext.SaveChangesAsync();
 
-                return RedirectToAction("DonationConfirmation", new { id = model.Id });
+                return RedirectToAction("DonationConfirmation", new { id = donation.Id });
             }
             catch (Exception ex)
             {
+                logger.LogError(ex, "Error processing donation");
                 ModelState.AddModelError("", "An error occurred. Please try again.");
                 return View(model);
             }
@@ -61,7 +69,7 @@ namespace WebApplication1.Controllers
 
         public async Task<IActionResult> DonationConfirmation(int id)
         {
-            var donation = await _db.Donations.FindAsync(id);
+            var donation = await dbContext.Donations.FindAsync(id);
             if (donation == null)
             {
                 return NotFound();

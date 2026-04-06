@@ -13,7 +13,7 @@ namespace WebApplication1.Data
         public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<Donation> Donations { get; set; }  // ADD THIS LINE
+        public DbSet<Donation> Donations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
