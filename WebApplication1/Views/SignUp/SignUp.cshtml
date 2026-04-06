@@ -3,132 +3,89 @@
     Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Natural Gallery Museum</title>
-    <link rel="stylesheet" href="~/css/amenities.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
-    <body>
-        <div class="signup-page">
-            <!-- Header -->
-            <header class="signup-header">
-                <div class="header-top">
-                    <div class="logo">
-                        <img src="~/images/logo.png" alt="Natural Gallery Logo">
-                        </div>
-                        <nav class="nav-menu">
-                            <a href="@Url.Action("Index", "Home")" class="nav-link">VISIT US</a>
-                            <a href="@Url.Action("Index", "WhatsOn")" class="nav-link">WHAT'S ON</a>
-                            <a href="@Url.Action("Index", "Amenities")" class="nav-link">AMENITIES</a>
-                            <a href="@Url.Action("Index", "Membership")" class="nav-link">MEMBERSHIP</a>
-                            <button class="search-btn">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </nav>
-                    </div>
-                </header>
+<link rel="stylesheet" href="~/css/signup.css" />
 
-                <!-- Main Content -->
-                <main class="signup-main">
-                    <div class="signup-container">
-                        <div class="signup-title-box">
-                            <h1 class="signup-title">SIGN UP</h1>
-                        </div>
+<div class="signup-page">
 
-                        <div class="register-section">
-                            <h2 class="register-label">REGISTER</h2>
-                            <div class="register-divider"></div>
+    <!-- SIGN UP SECTION -->
+    <div class="form-section-box">
+        <div class="section-title-banner">
+            <h1>SIGN UP</h1>
+        </div>
 
-                            <form class="signup-form" id="signupForm" method="POST" action="@Url.Action("SignUp", "SignUp")">
-                                <div class="form-group name-group">
-                                    <label class="form-label">NAME:</label>
-                                    <div class="name-inputs">
-                                        <select class="form-control title-select" name="Title">
-                                            <option value="">Title</option>
-                                            <option value="Mr">Mr</option>
-                                            <option value="Mrs">Mrs</option>
-                                            <option value="Ms">Ms</option>
-                                            <option value="Dr">Dr</option>
-                                        </select>
-                                        <input type="text" class="form-control" name="FirstName" placeholder="First Name" required>
-                                        <input type="text" class="form-control" name="LastName" placeholder="Last Name" required>
-                                    </div>
-                                </div>
+        <form class="signup-form" id="signupForm" method="POST" action="@Url.Action("SignUp", "SignUp")">
+            @Html.AntiForgeryToken()
 
-                                <div class="form-group">
-                                    <label class="form-label">EMAIL:</label>
-                                    <input type="email" class="form-control form-control-full" name="Email" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">PHONE:</label>
-                                    <input type="tel" class="form-control form-control-full" name="Phone" placeholder="Optional">
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">USERNAME:</label>
-                                    <input type="text" class="form-control form-control-full" name="Username" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">ADDRESS:</label>
-                                    <textarea class="form-control form-control-full form-control-textarea" name="Address" rows="3"></textarea>
-                                </div>
-
-                                <div class="form-group city-county-group">
-                                    <div class="city-input">
-                                        <label class="form-label">CITY & COUNTY:</label>
-                                        <input type="text" class="form-control" name="City" placeholder="City">
-                                    </div>
-                                    <div class="county-input">
-                                        <label class="form-label">COUNTY:</label>
-                                        <select class="form-control" name="County">
-                                            <option value="">County (Optional)</option>
-                                            <option value="London">London</option>
-                                            <option value="Greater London">Greater London</option>
-                                            <option value="Surrey">Surrey</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">POSTCODE:</label>
-                                    <input type="text" class="form-control form-control-full" name="Postcode">
-                                </div>
-
-                                <button type="submit" class="submit-btn">SIGN UP</button>
-                            </form>
-                        </div>
-                    </div>
-                </main>
-
-                <!-- Footer -->
-                <footer class="signup-footer">
-                    <div class="footer-content">
-                        <div class="footer-logo">
-                            <img src="~/images/footer-logo.png" alt="Natural Gallery Logo">
-                            </div>
-                            <div class="footer-main">
-                                <div class="footer-contact-row">
-                                    <div class="footer-contact-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>The Buroughs, London NW4 4BT</span>
-                                    </div>
-                                    <div class="footer-contact-item">
-                                        <i class="fas fa-phone"></i>
-                                        <span>(+44) 020 8411 5000</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="footer-contact">
-                                <p>Copyright © 2024 • Natural Gallery</p>
-                            </div>
-                        </div>
-                    </footer>
+            <div class="form-group name-group">
+                <label class="form-label">NAME:</label>
+                <div class="name-inputs">
+                    <select class="form-control title-select" name="Title">
+                        <option value="">Title</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Dr">Dr</option>
+                    </select>
+                    <input type="text" class="form-control" name="FirstName" placeholder="First Name" required />
+                    <input type="text" class="form-control" name="LastName" placeholder="Last Name" required />
                 </div>
-            </body>
-        </html>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">EMAIL:</label>
+                <input type="email" class="form-control form-control-full" name="Email" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">PHONE:</label>
+                <input type="tel" class="form-control form-control-full" name="Phone" placeholder="Optional" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">USERNAME:</label>
+                <input type="text" class="form-control form-control-full" name="Username" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">ADDRESS:</label>
+                <textarea class="form-control form-control-textarea" name="Address"></textarea>
+            </div>
+
+            <div class="form-group city-county-group">
+                <label class="form-label">CITY &amp; COUNTY:</label>
+                <div class="name-inputs">
+                    <input type="text" class="form-control" name="City" placeholder="City" />
+                    <select class="form-control" name="County">
+                        <option value="">County (Optional)</option>
+                        <option value="London">London</option>
+                        <option value="Greater London">Greater London</option>
+                        <option value="Surrey">Surrey</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">POSTCODE:</label>
+                <input type="text" class="form-control form-control-full" name="Postcode" />
+            </div>
+
+            <button type="submit" class="submit-btn">SIGN UP</button>
+        </form>
+    </div>
+
+    <!-- LOGIN LINK SECTION -->
+    <div class="form-section-box">
+        <div class="section-title-banner">
+            <h2>ALREADY A MEMBER?</h2>
+        </div>
+
+        <div class="signup-link-container">
+            <p class="signup-link-text">Log in to your account to access your membership benefits.</p>
+            <a href="@Url.Action("Index", "Login")" class="signup-link-button">
+                <span class="arrow">→</span>
+                <span class="text">LOGIN</span>
+            </a>
+        </div>
+    </div>
+
+</div>

@@ -1,98 +1,88 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "_Layout";
     ViewData["Title"] = "Account";
 }
 
-<link rel="stylesheet" href="~/css/Login.css">
+<link rel="stylesheet" href="~/css/Account.css">
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <img src="~/images/natural-gallery-logo.png" alt="Natural Gallery">
+    <!-- Main Content -->
+    <div class="membership-container">
+        <!-- Hero Section -->
+        <div class="membership-header">
+            <img src="~/images/Picture4.png" alt="Membership" class="hero-image1" />
+            <div class="hero-overlay1">
+                <div class="hero-content1">
+                    <h1 class="membership-title">MEMBERSHIP</h1>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="@Url.Action("Index", "Home")">VISIT US</a></li>
-                    <li><a href="@Url.Action("WhatsOn", "Home")">WHAT'S ON</a></li>
-                    <li><a href="@Url.Action("Amenities", "Home")">AMENITIES</a></li>
-                    <li><a href="@Url.Action("Account", "Account")" class="active">MEMBERSHIP</a></li>
-                    <li><a href="#" class="search-icon">🔍</a></li>
-                </ul>
-            </div>
-        </nav>
-     
-        <!-- Main Content -->
-        <div class="membership-container">
-            <!-- Header Section -->
-            <div class="membership-header">
-                <h1 class="membership-title">MEMBERSHIP</h1>
-            </div>
-
-            <!-- Main Content -->
-            <div class="membership-content">
-                <!-- Saved Section -->
-                <a href="@Url.Action("Saved", "Account")" class="saved-section">
-                    <h2 class="section-title">SAVED</h2>
-                    <div class="bookmark-icon">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="15" y="10" width="70" height="80" fill="none" stroke="white" stroke-width="3" />
-                            <polyline points="50,60 35,75 35,25 65,25 65,75" fill="none" stroke="white" stroke-width="3" stroke-linejoin="miter" />
-                        </svg>
-                    </div>
-                </a>
-
-                <!-- Saved Info Section -->
-                <div class="saved-info-section">
-                    <h3 class="info-title">SAVE TOURS AND EVENTS FOR FUTURE BOOKING</h3>
-                    <p class="info-subtitle">VIEW ALL YOUR SELECTION IN ONE PLACE</p>
-                </div>
-            </div>
-
-            <!-- Bottom Section -->
-            <div class="bottom-content">
-                <!-- Tickets Info Section -->
-                <div class="tickets-info-section">
-                    <h3 class="info-title">ACCESS YOUR TICKETS ON THE WEBSITE IN ONE EASY TO FIND LOCATION</h3>
-                    <p class="info-subtitle">VIEW CURRENT & PREVIOUS BOOKINGS</p>
-                </div>
-
-                <!-- Tickets Section -->
-                <a href="@Url.Action("Tickets", "Account")" class="tickets-section">
-                    <h2 class="section-title">TICKETS</h2>
-                    <div class="ticket-icon">
-                        <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 20 20 Q 30 20 30 40 L 30 80 Q 30 100 20 100 L 180 100 Q 170 100 170 80 L 170 40 Q 170 20 180 20 Z"
-                                  fill="none" stroke="black" stroke-width="8" stroke-linejoin="round" />
-                            <circle cx="30" cy="60" r="6" fill="black" />
-                            <line x1="50" y1="60" x2="150" y2="60" stroke="black" stroke-width="3" stroke-dasharray="10,10" />
-                            <circle cx="170" cy="60" r="6" fill="black" />
-                        </svg>
-                    </div>
-                </a>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-logo">
-                    <img src="~/images/natural-gallery-logo-white.png" alt="Natural Gallery">
-                    </div>
-                    <div class="footer-content">
-                        <div class="footer-info">
-                            <span class="footer-text">The Branching Gardens 1234 567</span>
-                            <span class="footer-divider">|</span>
-                            <span class="footer-text">+1 (555) 890 0000</span>
-                        </div>
-                        <ul class="footer-links">
-                            <li><a href="@Url.Action("Index", "Home")">HOME</a></li>
-                            <li><a href="@Url.Action("About", "Home")">ABOUT</a></li>
-                            <li><a href="@Url.Action("Contact", "Home")">HELP</a></li>
-                            <li><a href="@Url.Action("Privacy", "Home")">PRIVACY POLICY</a></li>
-                            <li><a href="@Url.Action("Terms", "Home")">TERMS & CONDITIONS</a></li>
-                        </ul>
-                        <p class="footer-copyright">Copyright © 2025 Natural Gallery</p>
-                    </div>
+        <!-- Main Content -->
+        <div class="membership-content">
+            <!-- Saved Section -->
+            <a href="@Url.Action("Saved", "Account")" class="saved-section">
+                <h2 class="section-title">SAVED</h2>
+                <div class="bookmark-icon">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="15" y="10" width="70" height="80" fill="none" stroke-width="3" />
+                        <polyline points="50,60 35,75 35,25 65,25 65,75" fill="none" stroke-width="3" stroke-linejoin="miter" />
+                    </svg>
                 </div>
-            </footer>
+            </a>
+
+            <!-- Saved Info Section -->
+            <div class="saved-info-section">
+                <h3 class="info-title">SAVE TOURS AND EVENTS FOR FUTURE BOOKING</h3>
+                <p class="info-subtitle">VIEW ALL YOUR SELECTION IN ONE PLACE</p>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bottom-content">
+            <!-- Tickets Info Section -->
+            <div class="tickets-info-section">
+                <h3 class="info-title">ACCESS YOUR TICKETS ON THE WEBSITE IN ONE EASY TO FIND LOCATION</h3>
+                <p class="info-subtitle">VIEW CURRENT & PREVIOUS BOOKINGS</p>
+            </div>
+
+            <!-- Tickets Section -->
+            <a href="@Url.Action("Tickets", "Account")" class="tickets-section">
+                <h2 class="section-title">TICKETS</h2>
+                <div class="ticket-icon">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 20 20 Q 30 20 30 40 L 30 80 Q 30 100 20 100 L 180 100 Q 170 100 170 80 L 170 40 Q 170 20 180 20 Z"
+                              fill="none" stroke-width="8" stroke-linejoin="round" />
+                        <circle cx="30" cy="60" r="6" fill="currentColor" />
+                        <line x1="50" y1="60" x2="150" y2="60" stroke-width="3" stroke-dasharray="10,10" />
+                        <circle cx="170" cy="60" r="6" fill="currentColor" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div style="text-align: right; padding: 20px 40px; background-color: #f9f9f9; margin-bottom: 30px;">
+            <form method="POST" action="@Url.Action("Logout", "Login")" style="display: inline;">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="logout-btn" style="
+                    padding: 10px 25px;
+                    background-color: #d32f2f;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 4px;
+                    font-weight: 700;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    transition: background-color 0.3s ease;
+                    ">
+                    LOGOUT
+                </button>
+            </form>
+        </div>
+
+        <style>
+                .logout-btn:hover {
+                    background-color: #b71c1c;
+                }
+        </style>
+    </div>

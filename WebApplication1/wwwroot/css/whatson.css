@@ -15,7 +15,7 @@ html, body {
 
 body {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
-    background-color: #1a1a1a;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
 }
@@ -32,16 +32,18 @@ a {
 .hero-banner {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 350px;
     overflow: hidden;
     background: linear-gradient(135deg, #d4c5a9 0%, #c9b89a 100%);
 }
 
 .banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    object-fit: fill;
 }
 
 .banner-overlay {
@@ -52,6 +54,7 @@ a {
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.15);
+    z-index: 10;
 }
 
 .banner-title {
@@ -61,6 +64,9 @@ a {
     letter-spacing: 3px;
     margin-bottom: 8px;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 8px;
 }
 
 .banner-subtitle {
@@ -71,108 +77,191 @@ a {
 }
 
 /* ============================================
-   UPCOMING SECTION
+   UPCOMING SECTION WITH CAROUSEL
    ============================================ */
 
 .upcoming-section {
-    background: #fff;
-    padding: 48px 20px;
-    text-align: center;
+    background: #ffffff !important;
+    padding: 60px 20px;
 }
 
 .upcoming-container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.upcoming-cards-wrapper {
+    display: flex;
+    gap: 24px;
+    width: 1432px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.nav-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2b6c51;
+    color: white;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+    .nav-circle:hover {
+        background-color: #1f5c38;
+        transform: scale(1.1);
+    }
+
+.nav-left,
+.nav-right {
+    position: relative;
+    z-index: 10;
 }
 
 .upcoming-card {
-    background: #1a1a1a;
-    width: 280px;
-    height: 320px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(43, 108, 81, 0.15);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 340px;
+    height: 300px;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    border: 4px solid #000;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #000;
 }
 
-    .upcoming-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 20px rgba(43, 108, 81, 0.25);
-    }
-
-    .upcoming-card img {
-        width: 100%;
-        height: 65%;
-        object-fit: cover;
+    .upcoming-card a {
         display: block;
-        filter: grayscale(15%);
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
     }
 
-.card-content {
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.85) 0%, rgba(26, 26, 26, 1) 100%);
-    padding: 16px;
-    height: 35%;
+.card-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    height: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .card-badge {
-    display: inline-block;
-    background: #00a857;
-    color: #fff;
-    padding: 4px 12px;
-    border-radius: 4px;
+    display: block;
     font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    align-self: flex-start;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #a8d68f;
 }
 
 .card-text {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .card-label {
-    color: #b0b0b0;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
     display: block;
-    margin-bottom: 4px;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: #999;
+    font-weight: 600;
 }
 
-.card-text h3 {
-    color: #a8d68f;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
     margin: 0;
+    line-height: 1.3;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.upcoming-card:hover .card-overlay {
+    background: rgba(43, 108, 81, 0.95);
 }
 
 /* ============================================
-   EVENTS SECTION
+   SECTION HEADER & DIVIDER
    ============================================ */
 
-.events-section {
-    background: #e5ede5;
-    padding: 48px 20px;
+.section-header-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .section-title {
-    text-align: center;
     font-size: 1.8rem;
     color: #2b6c51;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 36px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.section-divider {
+    width: 150px;
+    height: 2px;
+    background-color: #2b6c51;
+    margin: 0;
+}
+
+/* ============================================
+   EVENTS & TOURS GRID
+   ============================================ */
+
+.events-section {
+    background-color: #e5ede5;
+    padding: 48px 20px;
+}
+
+.tours-section {
+    background-color: #e5ede5;
+    padding: 48px 20px;
+    margin-top: 8px;
+}
+
+.grid-2-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
 }
 
 .grid-container {
@@ -194,7 +283,8 @@ a {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 400px;
+    position: relative;
 }
 
     .event-item:hover,
@@ -205,37 +295,51 @@ a {
 .event-image,
 .tour-image {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
     display: block;
+    min-height: 400px;
 }
 
-.event-info,
-.tour-info {
+.event-overlay,
+.tour-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 20px;
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 1) 100%);
-    flex-grow: 1;
+    text-align: center;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    height: 100%;
 }
 
 .event-label,
-.tour-label {
+.tour-label,
+.event-category,
+.tour-category {
     color: #999;
     font-size: 0.8rem;
     letter-spacing: 1px;
     margin-bottom: 6px;
     display: block;
+    font-weight: bold;
 }
 
-.event-info h4,
-.tour-info h4 {
-    color: #7dd89d;
+.event-title,
+.tour-title {
+    color: #a8d68f;
     font-size: 1.2rem;
     font-weight: 700;
     margin: 0;
     letter-spacing: 1px;
+}
+
+.event-item:hover .event-overlay,
+.tour-item:hover .tour-overlay {
+    background: rgba(43, 108, 81, 0.9);
 }
 
 /* ============================================
@@ -243,52 +347,46 @@ a {
    ============================================ */
 
 .browse-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(43, 108, 81, 0.08);
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 300px;
-    border: 2px solid #2b6c51;
+    align-items: center;
+    border: 3px solid #2b6c51;
+    background-color: #f0f8f5;
     transition: all 0.3s ease;
+    border-radius: 12px;
+    height: 400px;
+    min-height: 400px;
 }
 
     .browse-card:hover {
-        background: #f5f9f5;
-        box-shadow: 0 6px 16px rgba(43, 108, 81, 0.15);
+        background-color: #e0f0eb;
+        border-color: #1f5c38;
     }
 
 .browse-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+    text-decoration: none;
     color: #2b6c51;
-    font-weight: 700;
-    font-size: 1.05rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.browse-text {
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 
 .browse-arrow {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2b6c51;
     transition: transform 0.3s ease;
 }
 
 .browse-card:hover .browse-arrow {
-    transform: translateX(4px);
-}
-
-/* ============================================
-   TOURS SECTION
-   ============================================ */
-
-.tours-section {
-    background: #e5ede5;
-    padding: 48px 20px;
-    margin-top: 8px;
-    border-top: 2px solid #d0d0d0;
+    transform: translateX(8px);
 }
 
 /* ============================================
@@ -347,7 +445,7 @@ a {
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     background: #2b2b2b;
     position: relative;
 }
@@ -362,7 +460,7 @@ a {
     color: #333;
 }
 
-.tour-title {
+.tour-title-detail {
     font-size: 1.8rem;
     font-weight: 700;
     color: #a8d68f;
@@ -420,13 +518,27 @@ a {
         margin-bottom: 6px;
     }
 
-.tour-details-light li {
-    font-size: 0.85rem;
-    color: #666;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
+.tour-details-light {
+    list-style: none;
+    margin-bottom: 24px;
 }
 
+    .tour-details-light li {
+        font-size: 0.85rem;
+        color: #666;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+    }
+
+/* Tour Actions Container */
+.tour-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+/* Tour Book Button */
 .tour-book-btn {
     display: inline-block;
     background: #fff;
@@ -440,7 +552,6 @@ a {
     transition: all 0.3s ease;
     text-decoration: none;
     cursor: pointer;
-    margin-right: 16px;
 }
 
     .tour-book-btn:hover {
@@ -461,7 +572,6 @@ a {
     transition: all 0.3s ease;
     text-decoration: none;
     cursor: pointer;
-    margin-right: 16px;
 }
 
     .tour-book-btn-light:hover {
@@ -469,21 +579,45 @@ a {
         color: #fff;
     }
 
-.tour-star {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    font-size: 1.5rem;
-    color: #7dd89d;
+/* Tour Heart Icons */
+.tour-heart-icon,
+.tour-heart-icon-light {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    color: #ccc;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.tour-star-light {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    font-size: 1.5rem;
-    color: #2b6c51;
+.tour-heart-icon {
+    color: #ccc;
 }
+
+    .tour-heart-icon:hover {
+        color: #a8d68f;
+        transform: scale(1.15);
+    }
+
+    .tour-heart-icon.active {
+        color: #a8d68f;
+    }
+
+.tour-heart-icon-light {
+    color: #999;
+}
+
+    .tour-heart-icon-light:hover {
+        color: #2b6c51;
+        transform: scale(1.15);
+    }
+
+    .tour-heart-icon-light.active {
+        color: #2b6c51;
+    }
 
 /* ============================================
    BOOKING PAGE STYLES
@@ -744,13 +878,24 @@ a {
     }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .upcoming-cards-wrapper {
+        width: 1432px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
    ============================================ */
 
 @media (max-width: 768px) {
     .banner-title {
         font-size: 2rem;
         letter-spacing: 2px;
+        padding: 15px 30px;
     }
 
     .banner-subtitle {
@@ -758,13 +903,30 @@ a {
     }
 
     .upcoming-container {
-        flex-direction: column;
-        align-items: center;
+        gap: 10px;
+    }
+
+    .upcoming-cards-wrapper {
+        width: 1432px;
     }
 
     .upcoming-card {
-        width: 100%;
-        max-width: 280px;
+        width: 340px;
+        height: 300px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-badge {
+        font-size: 0.65rem;
+    }
+
+    .nav-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
     }
 
     .grid-container {
@@ -774,6 +936,7 @@ a {
 
     .section-title {
         font-size: 1.5rem;
+        padding: 15px 30px;
     }
 
     .browse-card {
@@ -789,7 +952,7 @@ a {
         padding: 24px;
     }
 
-    .tour-title,
+    .tour-title-detail,
     .tour-title-light {
         font-size: 1.4rem;
     }
@@ -832,21 +995,46 @@ a {
 @media (max-width: 480px) {
     .banner-title {
         font-size: 1.6rem;
+        padding: 12px 20px;
+    }
+
+    .upcoming-cards-wrapper {
+        width: 1432px;
     }
 
     .upcoming-card {
-        width: 100%;
+        width: 340px;
+        height: 300px;
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+    }
+
+    .card-label {
+        font-size: 0.6rem;
+    }
+
+    .nav-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .upcoming-section {
+        padding: 30px 10px;
     }
 
     .section-title {
         font-size: 1.3rem;
+        padding: 12px 20px;
     }
 
     .tour-card-detailed {
         margin-bottom: 24px;
     }
 
-    .tour-title,
+    .tour-title-detail,
     .tour-title-light {
         font-size: 1.2rem;
     }
@@ -873,504 +1061,5 @@ a {
         font-size: 1.2rem;
     }
 }
-/* ============================================
-   UPCOMING SECTION WITH CAROUSEL
-   ============================================ */
 
-.upcoming-section {
-    background: #fff;
-    padding: 48px 20px;
-    text-align: center;
-}
 
-.upcoming-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-}
-
-.upcoming-cards-wrapper {
-    display: flex;
-    gap: 32px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px 0;
-    justify-content: center;
-    flex: 1;
-    scrollbar-width: none;
-}
-
-    .upcoming-cards-wrapper::-webkit-scrollbar {
-        display: none;
-    }
-
-.nav-circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #2b6c51;
-    color: white;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
-    flex-shrink: 0;
-    font-weight: bold;
-}
-
-    .nav-circle:hover {
-        background-color: #1f5c38;
-    }
-
-.nav-left,
-.nav-right {
-    position: relative;
-}
-
-.upcoming-card {
-    width: 280px;
-    height: 320px;
-    position: relative;
-    border: 4px solid #000;
-    overflow: hidden;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    background: #000;
-}
-
-.card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: 40%;
-}
-
-.card-badge {
-    display: inline-block;
-    background-color: #2b6c51;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    align-self: flex-start;
-    margin-bottom: 8px;
-}
-
-.card-label {
-    display: block;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #999;
-}
-
-.card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1.4;
-    color: #a8d68f;
-}
-
-.upcoming-card:hover .card-overlay {
-    background: rgba(43, 108, 81, 0.95);
-}
-
-/* ============================================
-   EVENTS & TOURS GRID
-   ============================================ */
-
-.events-section {
-    background-color: #e5ede5;
-    padding: 48px 20px;
-}
-
-.tours-section {
-    background-color: #e5ede5;
-    padding: 48px 20px;
-    margin-top: 8px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #2b6c51;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
-}
-
-.section-divider {
-    width: 150px;
-    height: 2px;
-    background-color: #2b6c51;
-    margin: 0 auto 40px;
-}
-
-.grid-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    align-items: stretch;
-}
-
-.event-item,
-.tour-item {
-    background: #1a1a1a;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(43, 108, 81, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 280px;
-    position: relative;
-}
-
-    .event-item:hover,
-    .tour-item:hover {
-        transform: translateY(-4px);
-    }
-
-.event-image,
-.tour-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.event-overlay,
-.tour-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.event-label,
-.tour-label {
-    color: #999;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    display: block;
-    font-weight: bold;
-}
-
-.event-title,
-.tour-title {
-    color: #a8d68f;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 1px;
-}
-
-.event-item:hover .event-overlay,
-.tour-item:hover .tour-overlay {
-    background: rgba(43, 108, 81, 0.9);
-}
-
-.browse-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #2b6c51;
-    background-color: #f0f8f5;
-    transition: all 0.3s ease;
-    border-radius: 12px;
-}
-
-    .browse-card:hover {
-        background-color: #e0f0eb;
-        border-color: #1f5c38;
-    }
-
-.browse-link {
-    text-decoration: none;
-    color: #2b6c51;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    font-weight: bold;
-}
-
-.browse-text {
-    font-size: 1rem;
-    letter-spacing: 1px;
-}
-
-.browse-arrow {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2b6c51;
-    transition: transform 0.3s ease;
-}
-
-.browse-card:hover .browse-arrow {
-    transform: translateX(8px);
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
-@media (max-width: 768px) {
-    .upcoming-container {
-        gap: 10px;
-    }
-
-    .nav-circle {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .upcoming-card {
-        width: 250px;
-        height: 280px;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .browse-card {
-        min-height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .upcoming-container {
-        gap: 5px;
-    }
-
-    .nav-circle {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-    }
-
-    .upcoming-card {
-        width: 200px;
-        height: 240px;
-    }
-
-    .card-title {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 1.3rem;
-    }
-
-    .browse-card {
-        min-height: 200px;
-    }
-
-    .browse-text {
-        font-size: 0.9rem;
-    }
-
-    .browse-arrow {
-        font-size: 2rem;
-    }
-}
-/* ============================================
-   EXPLORE MORE SECTION - CLICKABLE CARDS
-   ============================================ */
-
-.explore-more {
-    background-color: #fff;
-    padding: 80px 20px;
-}
-
-.explore-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2b6c51;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 60px;
-}
-
-.explore-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    align-items: center;
-}
-
-.explore-card {
-    background-color: transparent;
-    padding: 30px 20px;
-    border-radius: 0;
-    text-align: center;
-    box-shadow: none;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-    .explore-card:hover {
-        transform: translateY(-5px);
-        opacity: 0.9;
-    }
-
-        .explore-card:hover h3 {
-            color: #1f5c38;
-        }
-
-        .explore-card:hover p {
-            color: #1f5c38;
-        }
-
-.explore-icon {
-    font-size: 2.8rem;
-    margin-bottom: 5px;
-}
-
-.explore-card h3 {
-    font-size: 1.4rem;
-    color: #333;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin: 0;
-    transition: color 0.3s ease;
-}
-
-.explore-card p {
-    font-size: 0.9rem;
-    color: #2b6c51;
-    letter-spacing: 1px;
-    margin: 0;
-    line-height: 1.6;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
-@media (max-width: 1024px) {
-    .explore-grid {
-        gap: 40px;
-    }
-
-    .explore-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .explore-card p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .explore-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-        letter-spacing: 2px;
-    }
-
-    .explore-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .explore-card {
-        padding: 25px 15px;
-        gap: 12px;
-    }
-
-    .explore-icon {
-        font-size: 2.2rem;
-    }
-
-    .explore-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .explore-card p {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .explore-title {
-        font-size: 1.6rem;
-        margin-bottom: 30px;
-        letter-spacing: 1.5px;
-    }
-
-    .explore-grid {
-        gap: 20px;
-    }
-
-    .explore-card {
-        padding: 20px 10px;
-    }
-
-    .explore-icon {
-        font-size: 2rem;
-    }
-
-    .explore-card h3 {
-        font-size: 1rem;
-    }
-
-    .explore-card p {
-        font-size: 0.75rem;
-    }
-}

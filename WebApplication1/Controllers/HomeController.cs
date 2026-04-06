@@ -5,38 +5,77 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(ILogger<HomeController> logger, IMuseumData data, MuseumDbContext dbContext) : Controller
     {
-        private readonly IMuseumData _data;
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger, IMuseumData data)
-        {
-            _logger = logger;
-            _data = data;
-        }
-
         public IActionResult Index()
         {
+            logger.LogInformation("Home page accessed");
+
+            // Get opening hours from SQL database (ordered by day)
+            var openingHoursFromDb = dbContext.OpeningHours
+                .ToList()
+                .OrderBy(oh => GetDayOrder(oh.DayOfWeek))
+                .ToList();
+
             var viewModel = new HomeViewModel
             {
-                OpeningHours = _data.GetOpeningHours().ToList(),
-                FAQs = _data.GetActiveFaqs().ToList()
+                // Use database opening hours if available, otherwise fall back to in-memory data
+                OpeningHours = openingHoursFromDb.Count > 0 ? openingHoursFromDb : [.. data.GetOpeningHours()],
+                FAQs = [.. data.GetActiveFaqs()]
             };
-
             return View(viewModel);
         }
 
         public IActionResult Privacy() => View();
-
         public IActionResult Visit() => View();
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult About() => View();
+        public IActionResult Terms() => View();
+        public IActionResult Support()
+        {
+            return View();
+        }
+        public IActionResult Donation()
+        {
+            return View();
+        }
 
-        public IActionResult Contact() => View();
+        [HttpPost]
+        public IActionResult ProcessDonation()
+        {
+            // Handle payment processing here
+            // Integrate with payment gateway (Stripe, PayPal, etc.)
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+            return RedirectToAction("DonationConfirmation");
+        }
+
+        public IActionResult DonationConfirmation()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        // Helper method to order days
+        private static int GetDayOrder(string day)
+        {
+            return day.ToLower() switch
+            {
+                "monday" => 0,
+                "tuesday" => 1,
+                "wednesday" => 2,
+                "thursday" => 3,
+                "friday" => 4,
+                "saturday" => 5,
+                "sunday" => 6,
+                _ => 7
+            };
         }
     }
 }

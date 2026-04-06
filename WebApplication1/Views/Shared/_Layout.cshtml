@@ -3,22 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Natural History Museum</title>
+    <title>@ViewData["Title"] - Natural Gallery</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- navbar  -->
     <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                Natural History Museum
-            </a>
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-leaf"></i> Natural Gallery
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a asp-controller="Home" asp-action="Visit">VISIT</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">CONTACT</a></li>
+                <li><a asp-controller="Home" asp-action="Index">VISIT US</a></li>
+                <li><a asp-controller="WhatsOn" asp-action="Index">WHAT'S ON</a></li>
+                <li><a asp-controller="Amenities" asp-action="Index">AMENITIES</a></li>
+                <li><a asp-controller="Membership" asp-action="Index">MEMBERSHIP</a></li>
             </ul>
+            <div class="navbar-right">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            </div>
         </div>
     </nav>
 
@@ -31,25 +37,30 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Natural History Museum</h4>
+                    <h4>Natural Gallery</h4>
                     <p>Inspiring curiosity about the natural world</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="Visit">Visit</a></li>
+                        <li><a asp-controller="Home" asp-action="Index">Visit Us</a></li>
+                        <li><a asp-controller="WhatsOn" asp-action="Index">What's On</a></li>
+                        <li><a asp-controller="Amenities" asp-action="Index">Amenities</a></li>
+                        <li><a asp-controller="Membership" asp-action="Index">Membership</a></li>
                         <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                        <li><a asp-controller="Home" asp-action="Support">Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@nhm.ac.uk</p>
-                    <p>Phone: +44 20 7942 5000</p>
+                    <p>📍 Cromwell Rd, South Kensington, London SW7 5BD</p>
+                    <p>📞 +44 (0)20 8991 0200</p>
+                    <p>✉ info@naturalgallery.co.uk</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Natural History Museum. All rights reserved.</p>
+                <p>&copy; 2026 Natural Gallery. All rights reserved.</p>
             </div>
         </div>
     </footer>

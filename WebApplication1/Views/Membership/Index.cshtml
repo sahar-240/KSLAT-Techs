@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Membership";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/membership.css" />
+
+<!-- MEMBERSHIP PAGE -->
+<div class="page-container">
+
+    <!-- Hero Section -->
+    <div class="membership-hero">
+        <img src="~/images/Picture4.png" alt="Membership Hero" class="hero-image" />
+        <div class="hero-content">
+            <h1 class="hero-title">MEMBERSHIP</h1>
+        </div>
+    </div>
+
+    <!-- Sign Up and Login Buttons -->
+    <section class="signup-section">
+        <button class="signup-btn" onclick="window.location.href='@Url.Action("SignUp", "SignUp")'">
+            <span class="arrow">→</span>
+            <span class="text">SIGN UP</span>
+        </button>
+        <button class="login-btn" onclick="window.location.href='@Url.Action("Index", "Login")'">
+            <span class="arrow">→</span>
+            <span class="text">LOGIN</span>
+        </button>
+    </section>
+
+    <!-- Benefits Introduction -->
+    <section class="benefits-intro">
+        <h2 class="intro-title">JOIN OUR MEMBERS SCHEME FOR FREE</h2>
+        <p class="intro-text">RECEIVE EMAILS FOR OUR MEMBER ONLY EVENTS &amp; DISCOUNTS</p>
+    </section>
+
+    <!-- Benefits Grid -->
+    <section class="benefits-grid">
+        <!-- Benefit 1: portrait image, text bottom-right -->
+        <div class="benefit-card benefit-1">
+            <div class="benefit-image">
+                <img src="~/images/Picture25.png" alt="View and Modify Your Likes" />
+            </div>
+            <div class="benefit-text">
+                <h3 class="benefit-title">BE ABLE TO VIEW &amp; MODIFY YOUR LIKES</h3>
+            </div>
+        </div>
+
+        <!-- Benefit 2: eye image, text bottom-left -->
+        <div class="benefit-card benefit-2">
+            <div class="benefit-image">
+                <img src="~/images/Picture26.png" alt="View and Modify Your Tickets" />
+            </div>
+            <div class="benefit-text">
+                <h3 class="benefit-title">BE ABLE TO VIEW &amp; MODIFY YOUR TICKETS</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Benefits -->
+    <section class="additional-benefits">
+        <div class="benefit-item">
+            <h3>EXCLUSIVE ACCESS</h3>
+            <p>Get early access to new exhibitions and special events reserved for members only.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>SPECIAL DISCOUNTS</h3>
+            <p>Enjoy discounts on membership renewals, gift shop purchases, and dining at our restaurants.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>MEMBER NEWSLETTER</h3>
+            <p>Stay updated with curated content, behind-the-scenes stories, and exclusive member highlights.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>PRIORITY SUPPORT</h3>
+            <p>Receive priority customer service and assistance with member-related inquiries.</p>
+        </div>
+    </section>
+
+</div><!-- end .page-container -->

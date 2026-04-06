@@ -1,23 +1,30 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
+    [Table("OpeningHours")]
     public class OpeningHour
     {
         [Key]
-        public int HourId { get; set; }
+        [Column("HourId")]
+        public int Id { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [StringLength(20)]
         public string DayOfWeek { get; set; } = string.Empty;
 
-        public TimeSpan? OpenTime { get; set; }
+        [Column("OpenTime")]
+        public TimeSpan? OpeningTime { get; set; }
 
-        public TimeSpan? CloseTime { get; set; }
+        [Column("CloseTime")]
+        public TimeSpan? ClosingTime { get; set; }
 
-        public bool IsClosed { get; set; } = false;
+        [Column("IsClosed")]
+        public bool IsClosed { get; set; }
 
-        [MaxLength(255)]
-        public string? SpecialNote { get; set; }
+        [Column("SpecialNote")]
+        [StringLength(255)]
+        public string? Notes { get; set; }
     }
 }

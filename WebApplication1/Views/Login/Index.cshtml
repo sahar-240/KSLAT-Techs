@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/signup.css" />
+
+<div class="signup-page">
+
+    <!-- LOGIN SECTION -->
+    <div class="form-section-box">
+        <div class="section-title-banner">
+            <h1>LOGIN</h1>
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" style="padding: 15px; margin-bottom: 20px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px;">
+                    <strong>✓ Success!</strong> @TempData["SuccessMessage"]
+                </div>
+            }
+        </div>
+
+        <form class="login-form" method="POST" action="@Url.Action("Index", "Login")">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label class="form-label">USERNAME:</label>
+                <input type="text" class="form-control form-control-full" name="username" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">PASSWORD:</label>
+                <input type="password" class="form-control form-control-full" name="password" required />
+            </div>
+
+            <button type="submit" class="login-btn">LOGIN</button>
+        </form>
+    </div>
+
+    <!-- SIGN UP LINK SECTION -->
+    <div class="form-section-box">
+        <div class="section-title-banner">
+            <h2>NEW TO OUR MEMBERS SCHEME?</h2>
+        </div>
+
+        <div class="signup-link-container">
+            <p class="signup-link-text">Create an account to become a member and enjoy exclusive benefits.</p>
+            <a href="@Url.Action("SignUp", "SignUp")" class="signup-link-button">
+                <span class="arrow">→</span>
+                <span class="text">SIGN UP</span>
+            </a>
+        </div>
+    </div>
+
+</div>
