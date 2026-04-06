@@ -1,4 +1,5 @@
 <Solution>
   <Folder Name="/Solution Items/" />
+  <Project Path="WebApplication1.Tests/WebApplication1.Tests.csproj" Id="1cd7beef-ee40-44e4-8ad9-0b5d683043be" />
   <Project Path="WebApplication1/WebApplication1.csproj" />
 </Solution>

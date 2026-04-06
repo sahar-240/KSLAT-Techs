@@ -3,7 +3,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Data
 {
-    // Central database context that registers all entity tables with the Entity Framework Core.
+    // Central database context that registers all entity tables with Entity Framework Core.
     // Used by controllers to read from and write to the Azure SQL database.
     public class MuseumDbContext : DbContext
     {
@@ -18,16 +18,10 @@ namespace WebApplication1.Data
         public DbSet<Favourite> Favourites { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<OpeningHour> OpeningHours { get; set; }
-        public DbSet<FAQ> FAQs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // FAQ rows get a default timestamp on insert
-            modelBuilder.Entity<FAQ>()
-                .Property(f => f.CreatedAt)
-                .HasDefaultValueSql("GETDATE()");
 
             // Each EventBooking belongs to one Event (cascade delete)
             modelBuilder.Entity<EventBooking>()

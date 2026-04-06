@@ -33,7 +33,7 @@ BEGIN
 END;
 
 
-TABLE: EventBooking
+-- TABLE: EventBooking
 -- Each row is one ticket booking made by a visitor.
 -- Links to an Event via the EventId foreign key.
 -- UserId is nullable because guests can book without logging in.
