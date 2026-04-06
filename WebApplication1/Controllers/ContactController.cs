@@ -4,6 +4,8 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    // Handles the Contact Us form submission.
+    // Validates input, saves to the Contacts table, and redirects to a success or error page.
     public class ContactController : Controller
     {
         private readonly MuseumDbContext _db;
@@ -15,36 +17,54 @@ namespace WebApplication1.Controllers
             _logger = logger;
         }
 
+        // POST: Receives form data, validates, and saves to the database
         [HttpPost]
-        public async Task<IActionResult> SendMessage(ContactViewModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SendMessage(
+            string Name, string Email, string? Phone,
+            string Department, string Subject, string Message,
+            bool SubscribeNewsletter = false)
         {
             try
             {
-                if (ModelState.IsValid)
+                // -- Server side input validation --
+                if (string.IsNullOrWhiteSpace(Name) ||
+                    string.IsNullOrWhiteSpace(Email) ||
+                    string.IsNullOrWhiteSpace(Subject) ||
+                    string.IsNullOrWhiteSpace(Message))
                 {
-                    var contact = new Contact
-                    {
-                        Name = model.Name,
-                        Email = model.Email,
-                        Phone = model.Phone ?? "",
-                        Subject = model.Subject,
-                        Message = model.Message,
-                        Department = model.Department,
-                        SubscribeNewsletter = model.SubscribeNewsletter,
-                        CreatedAt = DateTime.UtcNow
-                    };
-
-                    _db.Contacts.Add(contact);
-                    await _db.SaveChangesAsync();
-
-                    return RedirectToAction("ContactSuccess", "Home");
+                    TempData["ContactError"] = "Please fill in all required fields.";
+                    return RedirectToAction("Contact", "Home");
                 }
 
-                return RedirectToAction("Contact", "Home");
+                if (!Email.Contains("@") || !Email.Contains("."))
+                {
+                    TempData["ContactError"] = "Please enter a valid email address.";
+                    return RedirectToAction("Contact", "Home");
+                }
+
+                // Build the Contact entity and save
+                var contact = new Contact
+                {
+                    Name = Name.Trim(),
+                    Email = Email.Trim(),
+                    Phone = string.IsNullOrWhiteSpace(Phone) ? null : Phone.Trim(),
+                    Subject = Subject.Trim(),
+                    Message = Message.Trim(),
+                    Department = Department ?? "",
+                    SubscribeNewsletter = SubscribeNewsletter,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                _db.Contacts.Add(contact);
+                await _db.SaveChangesAsync();
+
+                return RedirectToAction("ContactSuccess", "Home");
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Error: {ex.Message}");
+                _logger.LogError(ex, "Failed to save contact form submission");
+                TempData["ContactError"] = "Something went wrong. Please try again.";
                 return RedirectToAction("Contact", "Home");
             }
         }

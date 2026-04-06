@@ -3,10 +3,10 @@ using WebApplication1.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Register MVC controllers and Razor views
 builder.Services.AddControllersWithViews();
 
-// ✅ ADD SESSION SERVICES
+// Session configuration for login state
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -16,10 +16,10 @@ builder.Services.AddSession(options =>
     options.Cookie.SameSite = SameSiteMode.Lax;
 });
 
-// Front-end only data provider
+// In-memory data provider for FAQs and opening hours fallback
 builder.Services.AddSingleton<IMuseumData, InMemoryMuseumData>();
 
-// ✅ CONNECT TO AZURE SQL DATABASE
+// Azure SQL database connection via Entity Framework Core
 builder.Services.AddDbContext<MuseumDbContext>(options =>
     options.UseSqlServer(
         "Server=tcp:kslat-museum-server.database.windows.net,1433;" +
@@ -40,7 +40,7 @@ builder.Services.AddDbContext<MuseumDbContext>(options =>
 
 var app = builder.Build();
 
-// Seed the database with events if empty
+// Seed the database with initial event and opening hour data
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MuseumDbContext>();
@@ -48,7 +48,7 @@ using (var scope = app.Services.CreateScope())
     DbSeeder.Seed(db);
 }
 
-// Configure the HTTP request pipeline.
+// HTTP pipeline configuration
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

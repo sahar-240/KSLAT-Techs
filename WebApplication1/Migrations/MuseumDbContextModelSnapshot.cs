@@ -22,47 +22,47 @@ namespace WebApplication1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WebApplication1.Models.Booking", b =>
+            modelBuilder.Entity("WebApplication1.Models.Contact", b =>
                 {
-                    b.Property<int>("BookingId")
+                    b.Property<int>("ContactId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookingId"));
-
-                    b.Property<string>("BookingDate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BookingTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactId"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TicketCode")
+                    b.Property<string>("Message")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BookingId");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("EventId");
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Bookings");
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SubscribeNewsletter")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ContactId");
+
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Event", b =>
@@ -103,6 +103,9 @@ namespace WebApplication1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SpotsPerSlot")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
@@ -121,6 +124,52 @@ namespace WebApplication1.Migrations
                     b.HasKey("EventId");
 
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.EventBooking", b =>
+                {
+                    b.Property<int>("EventBookingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventBookingId"));
+
+                    b.Property<string>("BookingDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BookingTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TicketCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EventBookingId");
+
+                    b.HasIndex("EventId");
+
+                    b.ToTable("EventBooking");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.FAQ", b =>
@@ -162,14 +211,16 @@ namespace WebApplication1.Migrations
 
             modelBuilder.Entity("WebApplication1.Models.OpeningHour", b =>
                 {
-                    b.Property<int>("HourId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("HourId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HourId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<TimeSpan?>("CloseTime")
-                        .HasColumnType("time");
+                    b.Property<TimeSpan?>("ClosingTime")
+                        .HasColumnType("time")
+                        .HasColumnName("CloseTime");
 
                     b.Property<string>("DayOfWeek")
                         .IsRequired()
@@ -177,21 +228,24 @@ namespace WebApplication1.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("IsClosed")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("IsClosed");
 
-                    b.Property<TimeSpan?>("OpenTime")
-                        .HasColumnType("time");
-
-                    b.Property<string>("SpecialNote")
+                    b.Property<string>("Notes")
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("SpecialNote");
 
-                    b.HasKey("HourId");
+                    b.Property<TimeSpan?>("OpeningTime")
+                        .HasColumnType("time")
+                        .HasColumnName("OpenTime");
+
+                    b.HasKey("Id");
 
                     b.ToTable("OpeningHours");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Booking", b =>
+            modelBuilder.Entity("WebApplication1.Models.EventBooking", b =>
                 {
                     b.HasOne("WebApplication1.Models.Event", "Event")
                         .WithMany()

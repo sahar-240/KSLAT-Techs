@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="~/css/contact.css" />
 
-<!-- Hero/Title Section -->
+<!-- Hero -->
 <section class="contact-hero">
     <div class="container">
         <h1>CONTACT US</h1>
@@ -13,16 +13,20 @@
     </div>
 </section>
 
-<!-- Contact Section -->
 <section class="contact">
     <div class="container">
-        <!-- Get In Touch -->
+
+        @if (TempData["ContactError"] != null)
+        {
+            <div style="background: #ff4444; color: #fff; padding: 14px 24px; margin-bottom: 24px; border-radius: 6px; text-align: center; font-weight: 600;">
+                @TempData["ContactError"]
+            </div>
+        }
+
+        <!-- Contact Information -->
         <div class="get-in-touch">
             <h2>GET IN TOUCH</h2>
-            
-            <!-- Contact Info Grid -->
             <div class="contact-info-grid">
-                <!-- Phone -->
                 <div class="contact-info-item">
                     <h3>PHONE</h3>
                     <p>
@@ -30,8 +34,6 @@
                         Monday - Sunday: 9:00 AM - 6:00 PM
                     </p>
                 </div>
-
-                <!-- Email -->
                 <div class="contact-info-item">
                     <h3>EMAIL</h3>
                     <p>
@@ -39,8 +41,6 @@
                         We'll respond within 24 hours
                     </p>
                 </div>
-
-                <!-- Address -->
                 <div class="contact-info-item">
                     <h3>ADDRESS</h3>
                     <p>
@@ -53,16 +53,16 @@
             </div>
         </div>
 
-        <!-- Send Message Section -->
+        <!-- Contact Form -->
         <div class="send-message">
             <h2>SEND US A MESSAGE</h2>
-            
             <form class="contact-form" method="post" action="@Url.Action("SendMessage", "Contact")">
-                <!-- Full Name and Email -->
+                @Html.AntiForgeryToken()
+
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="Name">Full Name *</label>
-                        <input type="text" id="Name" name="Name" class="form-control" required />
+                        <input type="text" id="Name" name="Name" class="form-control" required maxlength="100" />
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="Email">Email Address *</label>
@@ -70,15 +70,13 @@
                     </div>
                 </div>
 
-                <!-- Phone Number -->
                 <div class="form-row full">
                     <div class="form-group">
                         <label class="form-label" for="Phone">Phone Number</label>
-                        <input type="tel" id="Phone" name="Phone" class="form-control" />
+                        <input type="tel" id="Phone" name="Phone" class="form-control" maxlength="15" />
                     </div>
                 </div>
 
-                <!-- Department Dropdown -->
                 <div class="form-row full">
                     <div class="form-group">
                         <label class="form-label" for="Department">Department *</label>
@@ -94,23 +92,20 @@
                     </div>
                 </div>
 
-                <!-- Subject -->
                 <div class="form-row full">
                     <div class="form-group">
                         <label class="form-label" for="Subject">Subject *</label>
-                        <input type="text" id="Subject" name="Subject" class="form-control" required />
+                        <input type="text" id="Subject" name="Subject" class="form-control" required maxlength="200" />
                     </div>
                 </div>
 
-                <!-- Message -->
                 <div class="form-row full">
                     <div class="form-group">
                         <label class="form-label" for="Message">Message *</label>
-                        <textarea id="Message" name="Message" class="form-control form-control-textarea" required></textarea>
+                        <textarea id="Message" name="Message" class="form-control form-control-textarea" required maxlength="2000"></textarea>
                     </div>
                 </div>
 
-                <!-- Checkbox -->
                 <div class="form-row full">
                     <div class="form-group">
                         <label class="form-checkbox">
@@ -120,7 +115,6 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
                 <button type="submit" class="submit-btn">SEND MESSAGE</button>
             </form>
         </div>
