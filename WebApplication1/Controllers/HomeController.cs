@@ -38,24 +38,6 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        public IActionResult Donation()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult ProcessDonation()
-        {
-            // Handle payment processing here
-            // Integrate with payment gateway (Stripe, PayPal, etc.)
-
-            return RedirectToAction("DonationConfirmation");
-        }
-
-        public IActionResult DonationConfirmation()
-        {
-            return View();
-        }
 
         public IActionResult Error()
         {

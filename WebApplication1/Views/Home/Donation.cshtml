@@ -25,7 +25,7 @@
             </p>
         </div>
 
-        <form id="donationForm" method="post" action="@Url.Action("ProcessDonation", "Donation")">
+        <form id="donationForm" method="post" action="@Url.Action("Donation", "Donation")">
             <!-- Amount Selection -->
             <div class="amount-section">
                 <div class="amount-buttons">
@@ -44,7 +44,7 @@
                 </div>
 
                 <p class="select-amount-text">SELECT AN AMOUNT</p>
-                <input type="hidden" id="donationAmount" name="amount" value="" />
+                <input type="hidden" id="donationAmount" name="Amount" value="" />
             </div>
 
             <!-- Info Box -->
@@ -58,7 +58,7 @@
             <!-- Comment Section -->
             <div class="comment-section">
                 <label class="comment-title">LEAVE A COMMENT (OPTIONAL)</label>
-                <textarea class="comment-textarea" name="comment" placeholder="Your message..."></textarea>
+                <textarea class="comment-textarea" name="Message" placeholder="Your message..."></textarea>
             </div>
 
             <!-- Billing Address -->
@@ -68,45 +68,48 @@
                 <div class="form-group">
                     <label class="form-label">NAME *</label>
                     <div class="form-row">
-                        <input type="text" class="form-control" name="firstName" placeholder="First Name" required />
-                        <input type="text" class="form-control" name="lastName" placeholder="Last Name" required />
+                        <input type="text" class="form-control" name="FirstName" placeholder="First Name" required />
+                        <input type="text" class="form-control" name="LastName" placeholder="Last Name" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">EMAIL *</label>
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required />
+                    <input type="email" class="form-control" name="Email" placeholder="Your Email" required />
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">PHONE (OPTIONAL)</label>
-                    <input type="tel" class="form-control" name="phone" placeholder="Your Phone" />
+                    <input type="tel" class="form-control" name="Phone" placeholder="Your Phone" />
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">ADDRESS *</label>
-                    <input type="text" class="form-control" name="address" placeholder="Street Address" required />
+                    <input type="text" class="form-control" name="Address" placeholder="Street Address" required />
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">CITY & COUNTRY</label>
+                    <label class="form-label">CITY & COUNTRY *</label>
                     <div class="form-row">
-                        <input type="text" class="form-control" name="city" placeholder="City" />
-                        <input type="text" class="form-control" name="country" placeholder="Country (Optional)" />
+                        <input type="text" class="form-control" name="City" placeholder="City" required />
+                        <input type="text" class="form-control" name="Country" placeholder="Country" />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">POSTCODE</label>
-                    <input type="text" class="form-control" name="postcode" placeholder="Postcode" />
+                    <input type="text" class="form-control" name="Postcode" placeholder="Postcode" />
                 </div>
             </div>
 
-            <!-- Agreement -->
+            <!-- Agreement & Newsletter -->
             <div class="agreement-section">
-                <p class="agreement-text">
-                    I WISH TO RECEIVE THE NATURAL GALLERY'S MONTHLY NEWSLETTER. BY PROVIDING YOUR EMAIL ADDRESS, YOU AGREE TO RECEIVE COMMUNICATIONS FROM NATURAL GALLERY. WE WILL HANDLE YOUR DATA IN ACCORDANCE WITH OUR PRIVACY POLICY.
-                </p>
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" name="SubscribeNewsletter" />
+                    <span>
+                        I WISH TO RECEIVE THE NATURAL GALLERY'S MONTHLY NEWSLETTER. BY PROVIDING YOUR EMAIL ADDRESS, YOU AGREE TO RECEIVE COMMUNICATIONS FROM NATURAL GALLERY. WE WILL HANDLE YOUR DATA IN ACCORDANCE WITH OUR PRIVACY POLICY.
+                    </span>
+                </label>
             </div>
 
             <!-- Submit Button -->
@@ -137,7 +140,7 @@
                     customWrapper.classList.add('active');
                     customInput.focus();
                     amountInput.value = '';
-                
+            
                     // Update amount when user types
                     customInput.addEventListener('input', function() {
                         if (this.value) {

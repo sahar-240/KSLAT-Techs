@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Services;  
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddSession(options =>
 
 // Front-end only data provider (for opening hours, FAQs etc)
 builder.Services.AddSingleton<IMuseumData, InMemoryMuseumData>();
+
+
+builder.Services.AddScoped<IPaymentService, MockPaymentService>();
 
 // SQL Database connection for Events and Bookings
 builder.Services.AddDbContext<MuseumDbContext>(options =>
@@ -59,7 +63,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// ✅ ADD SESSION MIDDLEWARE (MUST BE BEFORE UseAuthorization)
+// ✅ADD SESSION MIDDLEWARE (MUST BE BEFORE UseAuthorization)
 app.UseSession();
 
 app.UseAuthorization();

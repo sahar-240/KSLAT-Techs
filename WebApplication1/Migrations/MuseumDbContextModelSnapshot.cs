@@ -269,6 +269,7 @@ namespace WebApplication1.Migrations
                         .HasColumnName("IsClosed");
 
                     b.Property<string>("Notes")
+<<<<<<< HEAD
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("SpecialNote");
@@ -295,13 +296,24 @@ namespace WebApplication1.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
+=======
+>>>>>>> 771770612fd49aa97d4c5701647357b214827861
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("SpecialNote");
 
+<<<<<<< HEAD
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+=======
+                    b.Property<TimeSpan?>("OpeningTime")
+                        .HasColumnType("time")
+                        .HasColumnName("OpenTime");
+
+                    b.HasKey("Id");
+>>>>>>> 771770612fd49aa97d4c5701647357b214827861
 
                     b.Property<string>("LastName")
                         .IsRequired()

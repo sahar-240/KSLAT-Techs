@@ -14,7 +14,10 @@ namespace WebApplication1.Data
         public DbSet<Event> Events { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Donation> Donations { get; set; }
+<<<<<<< HEAD
         public DbSet<User> Users { get; set; }
+=======
+>>>>>>> 771770612fd49aa97d4c5701647357b214827861
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
