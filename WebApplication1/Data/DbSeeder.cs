@@ -6,106 +6,14 @@ namespace WebApplication1.Data
     {
         public static void Seed(MuseumDbContext db)
         {
-            if (db.Events.Any())
+            // Events seeding - COMMENTED OUT until team member merges their Events changes
+            // The Azure Events table has a SpotsPerSlot column that our model doesn't have yet
+            /*
+            if (!db.Events.Any())
             {
-
-                var events = new List<Event>
-            {
-                new Event
-                {
-                    Title = "Iris Van Herpen",
-                    EventType = "Exhibition",
-                    Genre = "Fashion",
-                    Description = "Dutch fashion designer Iris Van Herpen merges couture with nature through biomimetic inspiration. Her work explores the intersection of organic forms and innovative technology.",
-                    FullDescription = "Dutch fashion designer Iris Van Herpen merges couture with nature through biomimetic inspiration. Her work explores the intersection of organic forms and innovative technology, drawing ideas from the natural world to create wearable art.",
-                    ImagePath = "~/images/Picture11.png",
-                    Location = "Elizabeth Gallery, Floor 1",
-                    StartDate = new DateTime(2026, 4, 16),
-                    EndDate = new DateTime(2026, 5, 31),
-                    TimeInfo = "Mon-Fri 9:00 AM - 5:00 PM, Sat 10:00 AM - 6:00 PM",
-                    ThemeColour = "#B6827C",
-                    IsFreeEntry = true
-                },
-                new Event
-                {
-                    Title = "One Earth",
-                    EventType = "Exhibition",
-                    Genre = "Photography",
-                    Description = "This photography exhibition documents the effects of global warming across the world's most vulnerable landscapes, capturing the impact of climate change through powerful images.",
-                    FullDescription = "This photography exhibition documents the effects of global warming across the world's most vulnerable landscapes. Featuring work by environmental photographers, the collection captures communities and ecosystems at a tipping point.",
-                    ImagePath = "~/images/Picture12.png",
-                    Location = "Churchill Wing, Floor 2",
-                    StartDate = new DateTime(2026, 7, 7),
-                    EndDate = new DateTime(2026, 9, 15),
-                    TimeInfo = "Mon-Fri 9:00 AM - 5:00 PM, Sat 10:00 AM - 6:00 PM",
-                    ThemeColour = "#38ADC6",
-                    IsFreeEntry = true
-                },
-                new Event
-                {
-                    Title = "Daniel Schuller",
-                    EventType = "Exhibition",
-                    Genre = "Paintings/Drawings",
-                    Description = "Born 1731, Swedish botanist Daniel Schuller was a student of Carl Linnaeus who spent decades cataloguing and naming over 1000 plant species.",
-                    FullDescription = "Born 1731, Swedish botanist Daniel Schuller was a student of Carl Linnaeus who spent decades cataloguing and naming over 1000 plant species. His detailed botanical drawings combine scientific precision with artistic beauty.",
-                    ImagePath = "~/images/Picture9.png",
-                    Location = "Napoleon Wing, Ground Floor",
-                    StartDate = new DateTime(2026, 4, 15),
-                    EndDate = new DateTime(2026, 6, 30),
-                    TimeInfo = "Mon-Fri 10:00 AM - 4:00 PM, Sat 10:00 AM - 5:00 PM",
-                    ThemeColour = "#9EAEBE",
-                    IsFreeEntry = true
-                },
-                new Event
-                {
-                    Title = "Thierry Mugler",
-                    EventType = "Exhibition",
-                    Genre = "Fashion",
-                    Description = "French fashion designer Thierry Mugler is celebrated for bold futuristic design and nature-inspired silhouettes, featuring sculptural animal-inspired forms.",
-                    FullDescription = "French fashion designer Thierry Mugler is celebrated for bold futuristic design and nature-inspired silhouettes. His iconic collections feature sculptural animal-inspired forms that blur the line between fashion and art.",
-                    ImagePath = "~/images/Picture13.png",
-                    Location = "Augustus Room, Floor 3",
-                    StartDate = new DateTime(2026, 6, 22),
-                    EndDate = new DateTime(2026, 8, 4),
-                    TimeInfo = "Mon-Fri 11:00 AM - 5:00 PM, Sat 11:00 AM - 6:00 PM",
-                    ThemeColour = "#8CB16C",
-                    IsFreeEntry = true
-                },
-                new Event
-                {
-                    Title = "Craft Mania",
-                    EventType = "Workshop",
-                    Genre = "Workshop",
-                    Description = "A fun hands-on workshop where children learn to care for the planet through upcycled crafts. Discover how simple eco-friendly actions can make a big difference.",
-                    FullDescription = "A fun hands-on workshop where children learn to care for the planet through upcycled crafts and activities. Discover how simple eco-friendly actions can make a big difference for the environment.",
-                    ImagePath = "~/images/Picture14.png",
-                    Location = "Victoria Plaza, 26 - Floor 2",
-                    StartDate = new DateTime(2026, 4, 12),
-                    EndDate = new DateTime(2026, 4, 14),
-                    TimeInfo = "Mon-Fri 2:00 PM - 5:00 PM",
-                    ThemeColour = "#D45D40",
-                    IsFreeEntry = true
-                },
-                new Event
-                {
-                    Title = "Extinction Event",
-                    EventType = "Exhibition",
-                    Genre = "Paintings/Drawings",
-                    Description = "A series of paintings and drawings documenting the passenger pigeon, once a flourishing species across the Americas.",
-                    FullDescription = "A series of paintings and drawings documenting the passenger pigeon, once a flourishing species across the Americas. This exhibition explores what we have lost through human action and what we can still protect.",
-                    ImagePath = "~/images/Picture15.png",
-                    Location = "Marco Polo Hall, All Floors",
-                    StartDate = new DateTime(2026, 8, 5),
-                    EndDate = new DateTime(2026, 10, 20),
-                    TimeInfo = "Mon-Fri 9:00 AM - 5:00 PM, Sat 10:00 AM - 6:00 PM",
-                    ThemeColour = "#8C6A51",
-                    IsFreeEntry = true
-                }
-            };
-
-                db.Events.AddRange(events);
-                db.SaveChanges();
+                // ... events code ...
             }
+            */
 
             if (!db.OpeningHours.Any())
             {
@@ -174,7 +82,10 @@ namespace WebApplication1.Data
                     FirstName = "Admin",
                     LastName = "User",
                     Email = "admin@museum.com",
-                    Password = "admin123" // simple for school project
+                    Username = "admin",
+                    PasswordHash = Convert.ToBase64String(
+                        System.Security.Cryptography.SHA256.HashData(
+                            System.Text.Encoding.UTF8.GetBytes("admin123")))
                 });
 
                 db.SaveChanges();
