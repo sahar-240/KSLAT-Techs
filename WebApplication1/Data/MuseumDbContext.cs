@@ -13,7 +13,8 @@ namespace WebApplication1.Data
         public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<Donation> Donations { get; set; }  // ADD THIS LINE
+        public DbSet<Donation> Donations { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,6 +40,10 @@ namespace WebApplication1.Data
             modelBuilder.Entity<Donation>()
                 .Property(d => d.Status)
                 .HasDefaultValue("Completed");
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
         }
     }
 }

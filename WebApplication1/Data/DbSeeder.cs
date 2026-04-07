@@ -165,6 +165,20 @@ namespace WebApplication1.Data
                 db.OpeningHours.AddRange(hours);
                 db.SaveChanges();
             }
+
+            // Seed a default user if none exist
+            if (!db.Users.Any())
+            {
+                db.Users.Add(new User
+                {
+                    FirstName = "Admin",
+                    LastName = "User",
+                    Email = "admin@museum.com",
+                    Password = "admin123" // simple for school project
+                });
+
+                db.SaveChanges();
+            }
         }
     }
 }
