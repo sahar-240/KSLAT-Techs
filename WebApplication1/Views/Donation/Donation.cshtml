@@ -25,6 +25,7 @@
             </p>
         </div>
 
+        <!-- FIXED: Changed action to Donation controller -->
         <form id="donationForm" method="post" action="@Url.Action("Donation", "Donation")">
             <!-- Amount Selection -->
             <div class="amount-section">
@@ -105,7 +106,7 @@
             <!-- Agreement & Newsletter -->
             <div class="agreement-section">
                 <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                    <input type="checkbox" name="SubscribeNewsletter" />
+                    <input type="checkbox" name="SubscribeNewsletter" value="true" />
                     <span>
                         I WISH TO RECEIVE THE NATURAL GALLERY'S MONTHLY NEWSLETTER. BY PROVIDING YOUR EMAIL ADDRESS, YOU AGREE TO RECEIVE COMMUNICATIONS FROM NATURAL GALLERY. WE WILL HANDLE YOUR DATA IN ACCORDANCE WITH OUR PRIVACY POLICY.
                     </span>

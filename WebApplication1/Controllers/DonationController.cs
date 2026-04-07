@@ -17,32 +17,47 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public async Task<IActionResult> Donation(DonationViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
             try
             {
-                // Map ViewModel to Donation model FIRST
+                // Log validation errors if any
+                if (!ModelState.IsValid)
+                {
+                    var errors = ModelState.Values.SelectMany(v => v.Errors);
+                    foreach (var error in errors)
+                    {
+                        logger.LogError($"Model validation error: {error.ErrorMessage}");
+                    }
+                }
+
+                // Create donation - use null coalescing for safety
                 var donation = new Donation
                 {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email,
-                    Phone = model.Phone,
-                    Address = model.Address,
-                    City = model.City,
-                    Country = model.Country,
-                    Postcode = model.Postcode,
-                    Amount = model.Amount,
-                    Message = model.Message,
-                    SubscribeNewsletter = model.SubscribeNewsletter,
+                    FirstName = model.FirstName ?? string.Empty,
+                    LastName = model.LastName ?? string.Empty,
+                    Email = model.Email ?? string.Empty,
+                    Phone = model.Phone ?? string.Empty,
+                    Address = model.Address ?? string.Empty,
+                    City = model.City ?? string.Empty,
+                    Country = model.Country ?? string.Empty,
+                    Postcode = model.Postcode ?? string.Empty,
+                    Amount = model.Amount > 0 ? model.Amount : 0,
+                    Message = model.Message ?? string.Empty,
+                    SubscribeNewsletter = model.SubscribeNewsletter,  // Checkbox binding
                     Status = "Pending",
                     DonationDate = DateTime.Now
                 };
 
-                // Pass Donation model to payment service
+                // Validate critical fields
+                if (string.IsNullOrEmpty(donation.FirstName) ||
+                    string.IsNullOrEmpty(donation.LastName) ||
+                    string.IsNullOrEmpty(donation.Email) ||
+                    donation.Amount <= 0)
+                {
+                    ModelState.AddModelError("", "Please fill in all required fields correctly.");
+                    return View(model);
+                }
+
+                // Process payment
                 var paymentResult = await paymentService.ProcessPaymentAsync(donation);
 
                 if (!paymentResult.Success)
@@ -51,18 +66,22 @@ namespace WebApplication1.Controllers
                     return View(model);
                 }
 
+                // Update donation with transaction details
                 donation.TransactionId = paymentResult.TransactionId;
                 donation.Status = "Completed";
 
+                // Save to database
                 dbContext.Donations.Add(donation);
                 await dbContext.SaveChangesAsync();
+
+                logger.LogInformation($"Donation saved successfully. ID: {donation.Id}, Amount: £{donation.Amount}, Newsletter: {donation.SubscribeNewsletter}");
 
                 return RedirectToAction("DonationConfirmation", new { id = donation.Id });
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Error processing donation");
-                ModelState.AddModelError("", "An error occurred. Please try again.");
+                ModelState.AddModelError("", $"An error occurred: {ex.Message}");
                 return View(model);
             }
         }

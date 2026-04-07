@@ -39,6 +39,12 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        // ADD THIS METHOD FOR DONATIONS PAGE
+        public IActionResult Donation()
+        {
+            return View(new DonationViewModel());
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
