@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Controllers
 {
-    public class DonationController(MuseumDbContext dbContext, ILogger<DonationController> logger, IPaymentService paymentService) : Controller
+    public class DonationController : Controller
     {
+        private readonly MuseumDbContext _dbContext;
+        private readonly ILogger<DonationController> _logger;
+        private readonly IPaymentService _paymentService;
+
+        public DonationController(MuseumDbContext dbContext, ILogger<DonationController> logger, IPaymentService paymentService)
+        {
+            _dbContext = dbContext;
+            _logger = logger;
+            _paymentService = paymentService;
+        }
+
         [HttpGet]
         public IActionResult Donation()
         {
@@ -15,85 +26,73 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Donation(DonationViewModel model)
         {
             try
             {
-                // Log validation errors if any
-                if (!ModelState.IsValid)
+                // Server-side validation of critical fields
+                if (string.IsNullOrWhiteSpace(model.FirstName) ||
+                    string.IsNullOrWhiteSpace(model.LastName) ||
+                    string.IsNullOrWhiteSpace(model.Email) ||
+                    string.IsNullOrWhiteSpace(model.Address) ||
+                    string.IsNullOrWhiteSpace(model.City) ||
+                    model.Amount <= 0)
                 {
-                    var errors = ModelState.Values.SelectMany(v => v.Errors);
-                    foreach (var error in errors)
-                    {
-                        logger.LogError($"Model validation error: {error.ErrorMessage}");
-                    }
+                    TempData["Error"] = "Please fill in all required fields and select an amount.";
+                    return View(model);
                 }
 
-                // Create donation - use null coalescing for safety
+                // Map ViewModel to Donation entity
                 var donation = new Donation
                 {
-                    FirstName = model.FirstName ?? string.Empty,
-                    LastName = model.LastName ?? string.Empty,
-                    Email = model.Email ?? string.Empty,
+                    FirstName = model.FirstName.Trim(),
+                    LastName = model.LastName.Trim(),
+                    Email = model.Email.Trim(),
                     Phone = model.Phone ?? string.Empty,
-                    Address = model.Address ?? string.Empty,
-                    City = model.City ?? string.Empty,
+                    Address = model.Address.Trim(),
+                    City = model.City.Trim(),
                     Country = model.Country ?? string.Empty,
                     Postcode = model.Postcode ?? string.Empty,
-                    Amount = model.Amount > 0 ? model.Amount : 0,
+                    Amount = model.Amount,
                     Message = model.Message ?? string.Empty,
-                    SubscribeNewsletter = model.SubscribeNewsletter,  // Checkbox binding
+                    SubscribeNewsletter = model.SubscribeNewsletter,
                     Status = "Pending",
                     DonationDate = DateTime.Now
                 };
 
-                // Validate critical fields
-                if (string.IsNullOrEmpty(donation.FirstName) ||
-                    string.IsNullOrEmpty(donation.LastName) ||
-                    string.IsNullOrEmpty(donation.Email) ||
-                    donation.Amount <= 0)
-                {
-                    ModelState.AddModelError("", "Please fill in all required fields correctly.");
-                    return View(model);
-                }
-
-                // Process payment
-                var paymentResult = await paymentService.ProcessPaymentAsync(donation);
+                // Process payment through mock service
+                var paymentResult = await _paymentService.ProcessPaymentAsync(donation);
 
                 if (!paymentResult.Success)
                 {
-                    ModelState.AddModelError("", paymentResult.Message);
+                    TempData["Error"] = paymentResult.Message;
                     return View(model);
                 }
 
-                // Update donation with transaction details
+                // Update with transaction details and save
                 donation.TransactionId = paymentResult.TransactionId;
                 donation.Status = "Completed";
 
-                // Save to database
-                dbContext.Donations.Add(donation);
-                await dbContext.SaveChangesAsync();
+                _dbContext.Donations.Add(donation);
+                await _dbContext.SaveChangesAsync();
 
-                logger.LogInformation($"Donation saved successfully. ID: {donation.Id}, Amount: £{donation.Amount}, Newsletter: {donation.SubscribeNewsletter}");
+                _logger.LogInformation($"Donation saved. ID: {donation.Id}, Amount: £{donation.Amount}");
 
                 return RedirectToAction("DonationConfirmation", new { id = donation.Id });
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Error processing donation");
-                ModelState.AddModelError("", $"An error occurred: {ex.Message}");
+                _logger.LogError(ex, "Error processing donation");
+                TempData["Error"] = "An error occurred processing your donation. Please try again.";
                 return View(model);
             }
         }
 
         public async Task<IActionResult> DonationConfirmation(int id)
         {
-            var donation = await dbContext.Donations.FindAsync(id);
-            if (donation == null)
-            {
-                return NotFound();
-            }
-
+            var donation = await _dbContext.Donations.FindAsync(id);
+            if (donation == null) return NotFound();
             return View(donation);
         }
     }

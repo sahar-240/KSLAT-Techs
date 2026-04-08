@@ -27,6 +27,7 @@
 
         <!-- FIXED: Changed action to Donation controller -->
         <form id="donationForm" method="post" action="@Url.Action("Donation", "Donation")">
+                @Html.AntiForgeryToken()
             <!-- Amount Selection -->
             <div class="amount-section">
                 <div class="amount-buttons">

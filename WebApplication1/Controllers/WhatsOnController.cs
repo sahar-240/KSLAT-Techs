@@ -15,21 +15,12 @@ namespace WebApplication1.Controllers
             _db = db;
         }
 
-        // Landing page for the "What's On" section
         public IActionResult Index() => View();
-
-        // Tour listing page
         public IActionResult Tours() => View();
-
-        // Static booking info page
         public IActionResult Booking() => View();
-
-        // Static ticket info page
         public IActionResult Ticket() => View();
 
-
-        // EVENTS LISTING
-        // Loads all events from the database, sorted newest first
+        // EVENTS LISTING — loads all events sorted newest first
         public async Task<IActionResult> Events()
         {
             var events = await _db.Events
@@ -39,9 +30,7 @@ namespace WebApplication1.Controllers
             return View("~/Views/Events/Events.cshtml", events);
         }
 
-
-        // EVENT DETAIL
-        // Shows full information for a single event
+        // EVENT DETAIL — shows full info for one event
         public async Task<IActionResult> EventDetail(int id)
         {
             var ev = await _db.Events.FindAsync(id);
@@ -49,9 +38,7 @@ namespace WebApplication1.Controllers
             return View("~/Views/Events/EventDetail.cshtml", ev);
         }
 
-
         // BOOKING FORM (GET)
-        // Displays the booking form pre-filled with event info
         public async Task<IActionResult> EventBook(int id)
         {
             var ev = await _db.Events.FindAsync(id);
@@ -59,9 +46,7 @@ namespace WebApplication1.Controllers
             return View("~/Views/Events/EventBook.cshtml", ev);
         }
 
-
-        // BOOKING FORM (POST)
-        // Validates input, checks availability, generates a ticket code, and saves the booking to the EventBooking table.
+        // BOOKING FORM (POST) — validates, checks availability, saves booking + ticket
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EventBook(
@@ -71,7 +56,6 @@ namespace WebApplication1.Controllers
             var ev = await _db.Events.FindAsync(id);
             if (ev == null) return NotFound();
 
-            // -- Server-side validation --
             if (string.IsNullOrWhiteSpace(bookingDate) || string.IsNullOrWhiteSpace(bookingTime))
             {
                 TempData["Error"] = "Please select a date and time.";
@@ -90,7 +74,6 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("EventBook", new { id });
             }
 
-            // Check how many spots are already booked for this time slot
             var alreadyBooked = await _db.EventBookings
                 .Where(b => b.EventId == id
                          && b.BookingDate == bookingDate
@@ -105,7 +88,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("EventBook", new { id });
             }
 
-            // Generate a unique ticket code (format: NG-XXXX-XXXX-XXXX)
+            // Generate unique ticket code (format: NG-XXXX-XXXX-XXXX)
             var chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
             var random = new Random();
             var code = "NG-";
@@ -115,10 +98,14 @@ namespace WebApplication1.Controllers
                 code += chars[random.Next(chars.Length)];
             }
 
-            // Save the booking to the database
+            // Get logged-in user's ID (null if guest)
+            int? userId = HttpContext.Session.GetInt32("UserId");
+
+            // Save the booking
             var booking = new EventBooking
             {
                 EventId = id,
+                UserId = userId,
                 TicketCode = code,
                 BookingDate = bookingDate,
                 BookingTime = bookingTime,
@@ -131,13 +118,75 @@ namespace WebApplication1.Controllers
             _db.EventBookings.Add(booking);
             await _db.SaveChangesAsync();
 
+            // If logged in, also create a Ticket record so it shows on Membership page
+            if (userId.HasValue)
+            {
+                var ticket = new Ticket
+                {
+                    UserId = userId.Value,
+                    EventBookingId = booking.EventBookingId,
+                    CreatedAt = DateTime.UtcNow
+                };
+                _db.Tickets.Add(ticket);
+                await _db.SaveChangesAsync();
+            }
+
             return RedirectToAction("EventTicket", new { bookingId = booking.EventBookingId });
         }
 
+        // TOGGLE FAVOURITE (POST) — adds or removes a saved event for logged-in users
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ToggleFavourite(int eventId)
+        {
+            int? userId = HttpContext.Session.GetInt32("UserId");
 
-        // AVAILABLE SPOTS API (GET)
-        // Called by the booking form JavaScript to show remaining spots for a given event + date + time combination.
-        // Returns JSON: { spots: 12, total: 15 }
+            if (!userId.HasValue)
+            {
+                TempData["Error"] = "Please log in to save favourites.";
+                return RedirectToAction("EventDetail", new { id = eventId });
+            }
+
+            // Check if already favourited
+            var existing = await _db.Favourites
+                .FirstOrDefaultAsync(f => f.UserId == userId.Value && f.EventId == eventId);
+
+            if (existing != null)
+            {
+                // Remove favourite (un-heart)
+                _db.Favourites.Remove(existing);
+                TempData["Success"] = "Removed from favourites.";
+            }
+            else
+            {
+                // Add favourite (heart)
+                _db.Favourites.Add(new Favourite
+                {
+                    UserId = userId.Value,
+                    EventId = eventId,
+                    CreatedAt = DateTime.UtcNow
+                });
+                TempData["Success"] = "Added to favourites!";
+            }
+
+            await _db.SaveChangesAsync();
+            return RedirectToAction("EventDetail", new { id = eventId });
+        }
+
+        // CHECK IF FAVOURITED (for views to show filled/empty heart)
+        [HttpGet]
+        public async Task<IActionResult> IsFavourited(int eventId)
+        {
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (!userId.HasValue) return Json(new { favourited = false });
+
+            var exists = await _db.Favourites
+                .AnyAsync(f => f.UserId == userId.Value && f.EventId == eventId);
+
+            return Json(new { favourited = exists });
+        }
+
+        // AVAILABLE SPOTS API
         [HttpGet]
         public async Task<IActionResult> GetAvailableSpots(int eventId, string date, string time)
         {
@@ -153,9 +202,7 @@ namespace WebApplication1.Controllers
             return Json(new { spots = ev.SpotsPerSlot - booked, total = ev.SpotsPerSlot });
         }
 
-
         // TICKET CONFIRMATION
-        // Displays the generated ticket after a successful booking
         public async Task<IActionResult> EventTicket(int bookingId)
         {
             var booking = await _db.EventBookings
@@ -166,11 +213,7 @@ namespace WebApplication1.Controllers
             return View("~/Views/Events/EventTicket.cshtml", booking);
         }
 
-
-        // SEARCH API (GET)
-        // Called by the navbar search bar.
-        // Matches the query against event titles, descriptions, genres, locations, and types.
-        // Returns up to 6 results as JSON.
+        // SEARCH API
         [HttpGet]
         public async Task<IActionResult> SearchEvents(string query)
         {
@@ -201,8 +244,7 @@ namespace WebApplication1.Controllers
             return Json(results);
         }
 
-
-        // Legacy route aliases = old URLs like /WhatsOn/Event1 still work
+        // Legacy route aliases
         public async Task<IActionResult> Event1() => await EventDetail(1);
         public async Task<IActionResult> Event2() => await EventDetail(2);
         public async Task<IActionResult> Event3() => await EventDetail(3);
