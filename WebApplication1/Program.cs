@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddSession(options =>
 
 // In-memory data provider for FAQs and opening hours fallback
 builder.Services.AddSingleton<IMuseumData, InMemoryMuseumData>();
+
+// Mock payment service for donations (Tanzira)
+builder.Services.AddScoped<IPaymentService, MockPaymentService>();
 
 // Azure SQL database connection via Entity Framework Core
 builder.Services.AddDbContext<MuseumDbContext>(options =>
@@ -40,7 +44,7 @@ builder.Services.AddDbContext<MuseumDbContext>(options =>
 
 var app = builder.Build();
 
-// Seed the database with initial event and opening hour data
+// Seed the database with initial data when tables are empty
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MuseumDbContext>();

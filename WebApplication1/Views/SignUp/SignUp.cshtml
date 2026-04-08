@@ -11,6 +11,20 @@
     <div class="form-section-box">
         <div class="section-title-banner">
             <h1>SIGN UP</h1>
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger" id="alertMessage" style="padding: 15px; margin-top: 15px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px; transition: opacity 0.5s;">
+                    <strong>✗ Error:</strong> @TempData["ErrorMessage"]
+                </div>
+            }
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" id="alertMessage" style="padding: 15px; margin-top: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; transition: opacity 0.5s;">
+                    <strong>✓ Success!</strong> @TempData["SuccessMessage"]
+                </div>
+            }
         </div>
 
         <form class="signup-form" id="signupForm" method="POST" action="@Url.Action("SignUp", "SignUp")">
@@ -44,6 +58,18 @@
             <div class="form-group">
                 <label class="form-label">USERNAME:</label>
                 <input type="text" class="form-control form-control-full" name="Username" required />
+            </div>
+
+            <!--PASSWORD-->
+            <div class="form-group">
+                <label class="form-label">PASSWORD:</label>
+                <input type="password" class="form-control form-control-full" name="Password" required />
+            </div>
+
+            <!--CONFIRM PASSWORD-->
+            <div class="form-group">
+                <label class="form-label">CONFIRM PASSWORD:</label>
+                <input type="password" class="form-control form-control-full" name="ConfirmPassword" required />
             </div>
 
             <div class="form-group">
@@ -89,3 +115,16 @@
     </div>
 
 </div>
+
+@section Scripts {
+    <script>
+        // Auto-hide alert messages after 4 seconds
+        const alert = document.getElementById('alertMessage');
+        if (alert) {
+            setTimeout(() => {
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            }, 4000);
+        }
+    </script>
+}

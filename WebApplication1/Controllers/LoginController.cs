@@ -1,9 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Data;
 
 namespace WebApplication1.Controllers
 {
+    // Handles user login and logout.
+    // Checks credentials against the Users table and sets session variables.
     public class LoginController : Controller
     {
+        private readonly MuseumDbContext _db;
+
+        public LoginController(MuseumDbContext db)
+        {
+            _db = db;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -11,54 +22,47 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string username, string password)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(string username, string password)
         {
-            // Add your login logic here
-            // For now, this is a placeholder
-            if (ValidateCredentials(username, password))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                HttpContext.Session.SetString("Username", username);
-                HttpContext.Session.SetString("IsLoggedIn", "true");
-
-                // Set success message
-                TempData["SuccessMessage"] = $"Welcome back, {username}!";
-
-                return RedirectToAction("Account", "Account");
-             
+                TempData["ErrorMessage"] = "Please enter both username and password.";
+                return View();
             }
 
-            TempData["ErrorMessage"] = "Invalid username or password. Please try again.";
-            ModelState.AddModelError("", "Invalid username or password");
-            return View();
+            // Hash the entered password the same way SignUp does
+            var hash = Convert.ToBase64String(
+                System.Security.Cryptography.SHA256.HashData(
+                    System.Text.Encoding.UTF8.GetBytes(password)));
+
+            // Look up the user by username AND password hash
+            var user = await _db.Users
+                .FirstOrDefaultAsync(u => u.Username == username && u.PasswordHash == hash);
+
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "Invalid username or password. Please try again.";
+                return View();
+            }
+
+            // Set session variables so the rest of the site knows who is logged in
+            HttpContext.Session.SetString("IsLoggedIn", "true");
+            HttpContext.Session.SetString("Username", user.Username);
+            HttpContext.Session.SetInt32("UserId", user.UserId);
+            HttpContext.Session.SetString("FirstName", user.FirstName);
+
+            TempData["SuccessMessage"] = $"Welcome back, {user.FirstName}!";
+            return RedirectToAction("Account", "Account");
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Logout()
         {
-            // Clear session
             HttpContext.Session.Clear();
-
-            // Set logout message
             TempData["SuccessMessage"] = "You have been logged out successfully.";
-
             return RedirectToAction("Index", "Home");
-        }
-
-        private static bool ValidateCredentials(string username, string password)
-        {
-            // Add your authentication logic here
-            // This is a placeholder - replace with actual database validation
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                return false;
-
-            // TODO: Replace with your actual user validation from database
-            // Example:
-            // var user = _userRepository.GetUser(username);
-            // return user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash);
-
-            // For demonstration purposes
-            return !string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password);
         }
     }
 }

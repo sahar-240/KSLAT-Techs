@@ -11,7 +11,6 @@ namespace WebApplication1.Controllers
         {
             logger.LogInformation("Home page accessed");
 
-            // Get opening hours from SQL database (ordered by day)
             var openingHoursFromDb = dbContext.OpeningHours
                 .ToList()
                 .OrderBy(oh => GetDayOrder(oh.DayOfWeek))
@@ -19,7 +18,6 @@ namespace WebApplication1.Controllers
 
             var viewModel = new HomeViewModel
             {
-                // Use database opening hours if available, otherwise fall back to in-memory data
                 OpeningHours = openingHoursFromDb.Count > 0 ? openingHoursFromDb : [.. data.GetOpeningHours()],
                 FAQs = [.. data.GetActiveFaqs()]
             };
@@ -28,37 +26,17 @@ namespace WebApplication1.Controllers
 
         public IActionResult Privacy() => View();
         public IActionResult Visit() => View();
-        public IActionResult Contact()
-        {
-            return View();
-        }
-        public IActionResult ContactSuccess()
-        {
-            return View();
-        }
+        public IActionResult Contact() => View();
+        public IActionResult ContactSuccess() => View();
         public IActionResult About() => View();
         public IActionResult Terms() => View();
-        public IActionResult Support()
-        {
-            return View();
-        }
+        public IActionResult Support() => View();
+
+        // Donations are now handled by DonationController (Tanzira)
+        // This redirect keeps old links working
         public IActionResult Donation()
         {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult ProcessDonation()
-        {
-            // Handle payment processing here
-            // Integrate with payment gateway (Stripe, PayPal, etc.)
-
-            return RedirectToAction("DonationConfirmation");
-        }
-
-        public IActionResult DonationConfirmation()
-        {
-            return View();
+            return RedirectToAction("Donation", "Donation");
         }
 
         public IActionResult Error()
@@ -66,7 +44,6 @@ namespace WebApplication1.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        // Helper method to order days
         private static int GetDayOrder(string day)
         {
             return day.ToLower() switch

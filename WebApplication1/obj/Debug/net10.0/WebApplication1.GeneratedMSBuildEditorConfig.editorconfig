@@ -46,6 +46,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/LTKar/Desktop/GROUP/WebApplication1/Views/Donation/Donation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cRG9uYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LTKar/Desktop/GROUP/WebApplication1/Views/Donation/DonationConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cRG9uYXRpb25Db25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/LTKar/Desktop/GROUP/WebApplication1/Views/Events/EventBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50Qm9vay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -68,10 +76,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/LTKar/Desktop/GROUP/WebApplication1/Views/Home/ContactSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0U3VjY2Vzcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/LTKar/Desktop/GROUP/WebApplication1/Views/Home/Donation.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb25hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/LTKar/Desktop/GROUP/WebApplication1/Views/Home/Index.cshtml]

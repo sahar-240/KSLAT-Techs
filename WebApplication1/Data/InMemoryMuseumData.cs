@@ -9,7 +9,7 @@ public sealed class InMemoryMuseumData : IMuseumData
     new OpeningHour { Id = 1, DayOfWeek = "Monday",    IsClosed = false, OpeningTime = new TimeSpan(10, 0, 0), ClosingTime = new TimeSpan(17, 0, 0) },
     new OpeningHour { Id = 2, DayOfWeek = "Tuesday",   IsClosed = false, OpeningTime = new TimeSpan(10, 0, 0), ClosingTime = new TimeSpan(17, 0, 0) },
     new OpeningHour { Id = 3, DayOfWeek = "Wednesday", IsClosed = false, OpeningTime = new TimeSpan(10, 0, 0), ClosingTime = new TimeSpan(17, 0, 0) },
-    new OpeningHour { Id = 4, DayOfWeek = "Thursday",  IsClosed = false, OpeningTime = new TimeSpan(10, 0, 0), ClosingTime = new TimeSpan(20, 0, 0), Notes = "Extended hours" },
+    new OpeningHour { Id = 4, DayOfWeek = "Thursday",  IsClosed = false, OpeningTime = new TimeSpan(10, 0, 0), ClosingTime = new TimeSpan(20, 0, 0) },
     new OpeningHour { Id = 5, DayOfWeek = "Friday",    IsClosed = false, OpeningTime = new TimeSpan(10, 0, 0), ClosingTime = new TimeSpan(17, 0, 0) },
     new OpeningHour { Id = 6, DayOfWeek = "Saturday",  IsClosed = false, OpeningTime = new TimeSpan(11, 0, 0), ClosingTime = new TimeSpan(18, 0, 0) },
     new OpeningHour { Id = 7, DayOfWeek = "Sunday",    IsClosed = false, OpeningTime = new TimeSpan(12, 0, 0), ClosingTime = new TimeSpan(17, 0, 0) },
