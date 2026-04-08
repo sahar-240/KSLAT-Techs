@@ -94,7 +94,7 @@ namespace WebApplication1.Controllers
             _db.Users.Add(user);
             await _db.SaveChangesAsync();
 
-            TempData["SuccessMessage"] = $"Welcome {firstName}! Sign up successful. Please log in.";
+            TempData["SignUpSuccess"] = $"Welcome {firstName}! Sign up successful. Please log in.";
             return RedirectToAction("Index", "Login");
         }
     }

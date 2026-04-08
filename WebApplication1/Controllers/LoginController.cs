@@ -58,7 +58,6 @@ namespace WebApplication1.Controllers
             HttpContext.Session.SetString("FirstName", user.FirstName);
             HttpContext.Session.SetString("UserEmail", user.Email);
 
-            TempData["SuccessMessage"] = $"Welcome back, {user.FirstName}!";
             return RedirectToAction("Account", "Account");
         }
 

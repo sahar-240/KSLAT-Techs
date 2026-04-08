@@ -28,9 +28,9 @@
             </select>
         </div>
 
-        <button class="events-btn-primary" onclick="goToFavorites()">
+        <a href="/Account/Saved" class="events-btn-primary">
             <i class="fas fa-heart"></i> FAVOURITES
-        </button>
+        </a>
 
         <div class="events-filter-group">
             <label>SORT:</label>
@@ -97,12 +97,18 @@
                     <!-- Book button and heart -->
                     <div style="display: flex; align-items: center; justify-content: center; gap: 18px; padding-top: 12px; padding-bottom: 6px;">
                         <a asp-action="EventDetail" asp-route-id="@ev.EventId"
-                           style="background-color: #fff; color: #222; padding: 8px 30px; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; border: none; transition: all 0.2s;"
+                           style="background-color: #fff; color: #222; padding: 8px 30px; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; border: none; transition: all 0.3s;"
                            onmouseover="this.style.backgroundColor='#2d5f3f'; this.style.color='#fff';"
                            onmouseout="this.style.backgroundColor='#fff'; this.style.color='#222';">BOOK</a>
-                        <button class="events-btn-heart" onclick="toggleFavorite(event)" title="Save to favourites">
-                            <i class="far fa-heart"></i>
-                        </button>
+
+                        <!-- Real form that POSTs to the server -->
+                        <form method="post" action="@Url.Action("ToggleFavourite", "WhatsOn")" style="display:inline; margin:0;">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="eventId" value="@ev.EventId" />
+                            <button type="submit" class="events-btn-heart heart-btn-@ev.EventId" title="Save to favourites">
+                                <i class="far fa-heart" id="heart-icon-@ev.EventId"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -145,16 +151,22 @@
             }
         }
 
-        // Toggles the heart icon between outline and filled
-        function toggleFavorite(event) {
-            event.stopPropagation();
-            var button = event.target.closest('.events-btn-heart');
-            button.classList.toggle('active');
-            var icon = button.querySelector('i');
-            icon.classList.toggle('far');
-            icon.classList.toggle('fas');
-        }
-
-        function goToFavorites() { window.location.href = '/Membership/Favourites'; }
+        // On page load, check which events are already favourited and fill those hearts
+        document.querySelectorAll('.events-card').forEach(function(card) {
+            var eventId = card.getAttribute('data-event-id');
+            fetch('/WhatsOn/IsFavourited?eventId=' + eventId)
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (data.favourited) {
+                        var icon = document.getElementById('heart-icon-' + eventId);
+                        if (icon) {
+                            icon.classList.remove('far');
+                            icon.classList.add('fas');
+                        }
+                        var btn = document.querySelector('.heart-btn-' + eventId);
+                        if (btn) btn.classList.add('active');
+                    }
+                });
+        });
     </script>
 }
