@@ -10,11 +10,11 @@ A web application for the Natural Gallery museum, built with ASP.NET Core MVC an
 - Access to the Azure SQL database (connection string is in `Program.cs`)
 
 ### Steps
-1. Clone the repository and switch to the `Louisa` branch:
+1. Clone the repository:
    ```
    git clone https://github.com/sahar-240/KSLAT-Techs.git
    cd KSLAT-Techs
-   git checkout Louisa
+   git checkout master
    ```
 2. Open `WebApplication1.sln` in Visual Studio.
 3. Restore NuGet packages (Visual Studio does this automatically on open).
