@@ -173,6 +173,42 @@ namespace WebApplication1.Controllers
             return RedirectToAction("EventDetail", new { id = eventId });
         }
 
+        // TOGGLE FAVOURITE via AJAX — returns JSON so the page doesn't redirect
+        [HttpPost]
+        public async Task<IActionResult> ToggleFavouriteAjax([FromBody] FavouriteRequest request)
+        {
+            int? userId = HttpContext.Session.GetInt32("UserId");
+
+            if (!userId.HasValue)
+            {
+                return Json(new { success = false, message = "Please log in to save favourites." });
+            }
+
+            var existing = await _db.Favourites
+                .FirstOrDefaultAsync(f => f.UserId == userId.Value && f.EventId == request.EventId);
+
+            bool isFavourited;
+
+            if (existing != null)
+            {
+                _db.Favourites.Remove(existing);
+                isFavourited = false;
+            }
+            else
+            {
+                _db.Favourites.Add(new Favourite
+                {
+                    UserId = userId.Value,
+                    EventId = request.EventId,
+                    CreatedAt = DateTime.UtcNow
+                });
+                isFavourited = true;
+            }
+
+            await _db.SaveChangesAsync();
+            return Json(new { success = true, favourited = isFavourited });
+        }
+
         // CHECK IF FAVOURITED (for views to show filled/empty heart)
         [HttpGet]
         public async Task<IActionResult> IsFavourited(int eventId)
@@ -251,5 +287,9 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Event4() => await EventDetail(4);
         public async Task<IActionResult> Event5() => await EventDetail(5);
         public async Task<IActionResult> Event6() => await EventDetail(6);
+    }
+    public class FavouriteRequest
+    {
+        public int EventId { get; set; }
     }
 }

@@ -101,14 +101,10 @@
                            onmouseover="this.style.backgroundColor='#2d5f3f'; this.style.color='#fff';"
                            onmouseout="this.style.backgroundColor='#fff'; this.style.color='#222';">BOOK</a>
 
-                        <!-- Real form that POSTs to the server -->
-                        <form method="post" action="@Url.Action("ToggleFavourite", "WhatsOn")" style="display:inline; margin:0;">
-                            @Html.AntiForgeryToken()
-                            <input type="hidden" name="eventId" value="@ev.EventId" />
-                            <button type="submit" class="events-btn-heart heart-btn-@ev.EventId" title="Save to favourites">
-                                <i class="far fa-heart" id="heart-icon-@ev.EventId"></i>
-                            </button>
-                        </form>
+                        <button type="button" class="events-btn-heart heart-btn-@ev.EventId"
+                                onclick="toggleFavourite(@ev.EventId)" title="Save to favourites">
+                            <i class="far fa-heart" id="heart-icon-@ev.EventId"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -124,13 +120,11 @@
             var sortFilter = document.getElementById('sort-filter').value;
             var cards = document.querySelectorAll('.events-card');
 
-            // Show or hide cards based on genre
             cards.forEach(function (card) {
                 var genre = card.getAttribute('data-genre');
                 card.style.display = (genreFilter === '' || genre === genreFilter) ? 'flex' : 'none';
             });
 
-            // Sort visible cards
             var visibleCards = Array.from(cards).filter(function (card) {
                 return card.style.display !== 'none';
             });
@@ -140,7 +134,6 @@
             visibleCards.forEach(function (card) { grid.appendChild(card); });
         }
 
-        // Returns a comparison value for two cards based on sort type
         function getSortValue(a, b, sortType) {
             switch (sortType) {
                 case 'a-z':    return a.dataset.sortTitle.localeCompare(b.dataset.sortTitle);
@@ -151,7 +144,34 @@
             }
         }
 
-        // On page load, check which events are already favourited and fill those hearts
+        // Toggle favourite via AJAX — stays on the Events page
+        function toggleFavourite(eventId) {
+            fetch('/WhatsOn/ToggleFavouriteAjax', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ eventId: eventId })
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (!data.success) {
+                    alert(data.message);
+                    return;
+                }
+                var icon = document.getElementById('heart-icon-' + eventId);
+                var btn = document.querySelector('.heart-btn-' + eventId);
+                if (data.favourited) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    btn.classList.add('active');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // On page load, check which events are already favourited
         document.querySelectorAll('.events-card').forEach(function(card) {
             var eventId = card.getAttribute('data-event-id');
             fetch('/WhatsOn/IsFavourited?eventId=' + eventId)
