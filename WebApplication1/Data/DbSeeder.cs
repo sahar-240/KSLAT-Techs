@@ -123,7 +123,7 @@ namespace WebApplication1.Data
                     new() { DayOfWeek = "Monday",    OpeningTime = TimeSpan.Parse("10:00"), ClosingTime = TimeSpan.Parse("17:00"), IsClosed = false },
                     new() { DayOfWeek = "Tuesday",   OpeningTime = TimeSpan.Parse("10:00"), ClosingTime = TimeSpan.Parse("17:00"), IsClosed = false },
                     new() { DayOfWeek = "Wednesday", OpeningTime = TimeSpan.Parse("10:00"), ClosingTime = TimeSpan.Parse("17:00"), IsClosed = false },
-                    new() { DayOfWeek = "Thursday",  OpeningTime = TimeSpan.Parse("10:00"), ClosingTime = TimeSpan.Parse("20:00"), IsClosed = false, Notes = "Extended hours" },
+                    new() { DayOfWeek = "Thursday",  OpeningTime = TimeSpan.Parse("10:00"), ClosingTime = TimeSpan.Parse("20:00"), IsClosed = false },
                     new() { DayOfWeek = "Friday",    OpeningTime = TimeSpan.Parse("10:00"), ClosingTime = TimeSpan.Parse("17:00"), IsClosed = false },
                     new() { DayOfWeek = "Saturday",  OpeningTime = TimeSpan.Parse("11:00"), ClosingTime = TimeSpan.Parse("18:00"), IsClosed = false },
                     new() { DayOfWeek = "Sunday",    OpeningTime = TimeSpan.Parse("12:00"), ClosingTime = TimeSpan.Parse("17:00"), IsClosed = false }
