@@ -55,7 +55,8 @@
 
         <div class="booking-field">
             <label for="email">EMAIL:</label>
-            <input type="email" name="email" id="event-email" placeholder="email address" required>
+            <input type="email" name="email" id="event-email" placeholder="email address" required
+                   value="@(Context.Session.GetString("UserEmail") ?? "")">
         </div>
         <span class="booking-error" id="email-error">Please enter a valid email address</span>
 

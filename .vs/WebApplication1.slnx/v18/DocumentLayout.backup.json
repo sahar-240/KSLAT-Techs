@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\LTKar\\Desktop\\GROUP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\views\\donation\\donation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\donation\\donation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\controllers\\donationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\donationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\controllers\\whatsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\whatsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\sql\\databasesetup.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\sql\\databasesetup.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
@@ -49,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\views\\events\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\events\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\controllers\\whatsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\whatsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\ltkar\\desktop\\group\\webapplication1\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,8 +154,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Donation.cshtml",
+              "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Donation\\Donation.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Donation\\Donation.cshtml",
+              "ToolTip": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Donation\\Donation.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Donation\\Donation.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABwAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-08T07:29:07.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DonationController.cs",
+              "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\DonationController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DonationController.cs",
+              "ToolTip": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\DonationController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\DonationController.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T07:28:03.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T07:27:08.878Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -178,19 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T12:37:15.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "DbSeeder.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Data\\DbSeeder.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Data\\DbSeeder.cs",
@@ -202,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
@@ -214,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "DatabaseSetup.sql ",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\SQL\\DatabaseSetup.sql",
               "RelativeDocumentMoniker": "WebApplication1\\SQL\\DatabaseSetup.sql",
@@ -226,7 +265,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "WhatsOnController.cs",
+              "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\WhatsOnController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WhatsOnController.cs",
+              "ToolTip": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\WhatsOnController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\WhatsOnController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T05:42:23.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:37:15.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "MuseumDbContext.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Data\\MuseumDbContext.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Data\\MuseumDbContext.cs",
@@ -238,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "WebApplication1.csproj",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\WebApplication1.csproj",
               "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
@@ -250,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "FAQ.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Models\\FAQ.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\FAQ.cs",
@@ -262,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "EventBook.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Events\\EventBook.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Events\\EventBook.cshtml",
@@ -274,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Contact.cshtml",
@@ -286,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
@@ -298,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ReadMe.md",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\ReadMe.md",
               "RelativeDocumentMoniker": "WebApplication1\\ReadMe.md",
@@ -310,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Events.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Events\\Events.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Events\\Events.cshtml",
@@ -322,19 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "WhatsOnController.cs",
-              "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\WhatsOnController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WhatsOnController.cs",
-              "ToolTip": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\WhatsOnController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\WhatsOnController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T05:42:23.773Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "ContactController.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ContactController.cs",
@@ -346,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Ticket.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Models\\Ticket.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Ticket.cs",
@@ -358,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Favourite.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Models\\Favourite.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Favourite.cs",
@@ -370,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Contact.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Models\\Contact.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Contact.cs",
@@ -382,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "EventBooking.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Models\\EventBooking.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\EventBooking.cs",
@@ -394,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Events.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Models\\Events.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Events.cs",
@@ -406,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "WhatsOn.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Home\\WhatsOn.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\WhatsOn.cshtml",
@@ -418,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "ContactSuccess.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Home\\ContactSuccess.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\ContactSuccess.cshtml",
@@ -430,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "MembershipController.cs",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Controllers\\MembershipController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\MembershipController.cs",
@@ -442,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\appsettings.json",
               "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
@@ -454,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Favourites.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Membership\\Favourites.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Membership\\Favourites.cshtml",
@@ -466,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "Tickets.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Membership\\Tickets.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Membership\\Tickets.cshtml",
@@ -478,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "EventTicket.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Events\\EventTicket.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Events\\EventTicket.cshtml",
@@ -490,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "EventDetail.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Events\\EventDetail.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Events\\EventDetail.cshtml",
@@ -502,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\WhatsOn\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\WhatsOn\\Index.cshtml",
@@ -514,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml.css",
@@ -526,7 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
@@ -538,7 +590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\site.css",
@@ -550,7 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\LTKar\\Desktop\\GROUP\\WebApplication1\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\site.js",
