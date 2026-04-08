@@ -17,6 +17,11 @@ namespace WebApplication1.Controllers
         // Account/Membership Page
         public IActionResult Account()
         {
+            // If not logged in, redirect to login
+            if (HttpContext.Session.GetString("IsLoggedIn") != "true")
+            {
+                return RedirectToAction("Index", "Login");
+            }
             return View("~/Views/Account/Account.cshtml");
         }
 
@@ -64,7 +69,7 @@ namespace WebApplication1.Controllers
                     .ThenInclude(eb => eb.Event)
                 .Select(t => new TicketViewModel
                 {
-                    Id = t.TicketId,
+                    Id = t.EventBookingId!.Value,
                     Title = t.EventBooking!.Event!.Title,
                     Description = t.EventBooking.Event.Location,
                     Date = t.EventBooking.BookingDate + " at " + t.EventBooking.BookingTime,
@@ -97,6 +102,35 @@ namespace WebApplication1.Controllers
             }
 
             return RedirectToAction("Saved");
+        }
+
+        // CANCEL TICKET
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CancelTicket(int ticketId)
+        {
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (!userId.HasValue) return RedirectToAction("Index", "Login");
+
+            // Find the ticket and its associated booking
+            var ticket = await _db.Tickets
+                .Include(t => t.EventBooking)
+                .FirstOrDefaultAsync(t => t.EventBookingId == ticketId && t.UserId == userId.Value);
+
+            if (ticket != null)
+            {
+                // Remove the booking itself (frees up the spot)
+                if (ticket.EventBooking != null)
+                {
+                    _db.EventBookings.Remove(ticket.EventBooking);
+                }
+                // Remove the ticket record
+                _db.Tickets.Remove(ticket);
+                await _db.SaveChangesAsync();
+                TempData["Success"] = "Booking cancelled successfully.";
+            }
+
+            return RedirectToAction("Tickets");
         }
     }
 }

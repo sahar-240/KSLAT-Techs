@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 
 namespace WebApplication1.Controllers
@@ -15,6 +14,11 @@ namespace WebApplication1.Controllers
 
         public IActionResult Index()
         {
+            // If already logged in, skip Sign Up/Login page and go straight to Account
+            if (HttpContext.Session.GetString("IsLoggedIn") == "true")
+            {
+                return RedirectToAction("Account", "Account");
+            }
             return View();
         }
 

@@ -21,7 +21,13 @@
         <!-- Tickets Items Section -->
         <div class="tickets-items-container">
             <div class="tickets-items">
-                <!-- Tickets items will be displayed here -->
+                @if (TempData["Success"] != null)
+                {
+                    <div style="background: #d4edda; color: #155724; padding: 12px 20px; margin-bottom: 20px; border-radius: 6px; text-align: center;">
+                        @TempData["Success"]
+                    </div>
+                }
+
                 @if (Model != null && Model.Count > 0)
                 {
                     @foreach (var ticket in Model)
@@ -44,13 +50,24 @@
                                     <span class="detail-value">@ticket.Quantity</span>
                                 </div>
                                 <div class="detail-group">
+                                    <span class="detail-label">TICKET CODE:</span>
+                                    <span class="detail-value" style="font-family: monospace;">@ticket.TicketCode</span>
+                                </div>
+                                <div class="detail-group">
                                     <span class="detail-label">PRICE:</span>
-                                    <span class="detail-value">£@ticket.Price</span>
+                                    <span class="detail-value">FREE</span>
                                 </div>
                             </div>
                             <div class="ticket-actions">
-                                <button class="view-btn" data-id="@ticket.Id">View Details</button>
-                                <button class="cancel-btn" data-id="@ticket.Id">Cancel</button>
+                                <a href="/WhatsOn/EventTicket?bookingId=@ticket.Id" class="view-btn">View Details</a>
+                                <form method="post" action="/Account/CancelTicket" style="display:inline;">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="ticketId" value="@ticket.Id" />
+                                    <button type="submit" class="cancel-btn"
+                                            onclick="return confirm('Are you sure you want to cancel this booking?');">
+                                        Cancel
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     }
@@ -65,23 +82,3 @@
             </div>
         </div>
     </div>
-
-    @section Scripts {
-        <script>
-            document.querySelectorAll('.view-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-                    console.log('View ticket:', id);
-                });
-            });
-
-            document.querySelectorAll('.cancel-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-                    if (confirm('Are you sure you want to cancel this booking?')) {
-                        console.log('Cancel ticket:', id);
-                    }
-                });
-            });
-        </script>
-    }

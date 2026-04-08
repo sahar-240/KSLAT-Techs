@@ -53,9 +53,21 @@
                 @Model.FullDescription
             </div>
             <div class="event-detail-footer">
-                <button class="event-detail-heart" onclick="toggleHeart(this)" title="Save to favorites">
-                    <i class="far fa-heart"></i>
-                </button>
+                @if (TempData["Success"] != null)
+                {
+                    <span style="color: #fff; font-weight: 600; font-size: 0.85rem; margin-right: 10px;">@TempData["Success"]</span>
+                }
+                @if (TempData["Error"] != null)
+                {
+                    <span style="color: #ffcccc; font-weight: 600; font-size: 0.85rem; margin-right: 10px;">@TempData["Error"]</span>
+                }
+                <form method="post" asp-controller="WhatsOn" asp-action="ToggleFavourite" style="display:inline;">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="eventId" value="@Model.EventId" />
+                    <button type="submit" class="event-detail-heart" id="heart-btn" title="Save to favourites">
+                        <i class="far fa-heart" id="heart-icon"></i>
+                    </button>
+                </form>
                 <a asp-action="EventBook" asp-route-id="@Model.EventId" class="event-detail-book-btn">BOOK</a>
             </div>
         </div>
@@ -63,10 +75,15 @@
 </div>
 
 <script>
-    function toggleHeart(element) {
-        var icon = element.querySelector('i');
-        element.classList.toggle('active');
-        icon.classList.toggle('far');
-        icon.classList.toggle('fas');
-    }
+    // Check if this event is already favourited and fill the heart
+    fetch('/WhatsOn/IsFavourited?eventId=@Model.EventId')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.favourited) {
+                var icon = document.getElementById('heart-icon');
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                document.getElementById('heart-btn').classList.add('active');
+            }
+        });
 </script>
