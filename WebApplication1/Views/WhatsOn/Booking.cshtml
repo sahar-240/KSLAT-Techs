@@ -1,11 +1,9 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Tour Booking";
     Layout = "_Layout";
     string? tourName = Context.Request.Query["tour"];
 }
 
-<!-- In _Layout.cshtml (main layout) -->
 <link rel="stylesheet" href="~/css/whatson.css" />
 
 <!-- Back Button -->
@@ -55,7 +53,7 @@
             <!-- Quantity -->
             <div class="form-group">
                 <label for="quantity">QUANTITY:</label>
-                <select id="quantity" name="quantity" required>
+                <select id="quantity" name="quantity" required onchange="updateTotal()">
                     <option value="">Select quantity</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -87,14 +85,112 @@
                 <input type="tel" id="phone" name="phone" placeholder="Optional" />
             </div>
 
+            <!-- Booking Summary Section -->
+            <div class="booking-summary-section">
+                <h3>ORDER SUMMARY</h3>
+                <div class="summary-row">
+                    <span class="summary-label">Price per ticket:</span>
+                    <span class="summary-value" id="pricePerTicket">£0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Quantity:</span>
+                    <span class="summary-value" id="quantityDisplay">0</span>
+                </div>
+                <div class="summary-row total">
+                    <span class="summary-label">Total Price:</span>
+                    <span class="summary-value" id="totalPrice">£0.00</span>
+                </div>
+            </div>
+
+            <!-- Payment Details Section -->
+            <div class="payment-section">
+                <h3>PAYMENT DETAILS</h3>
+
+                <!-- Cardholder Name -->
+                <div class="form-group">
+                    <label for="cardholderName">CARDHOLDER NAME:</label>
+                    <input type="text" id="cardholderName" name="cardholderName" placeholder="Full name on card" required />
+                </div>
+
+                <!-- Card Number -->
+                <div class="form-group">
+                    <label for="cardNumber">CARD NUMBER:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required />
+                </div>
+
+                <!-- Expiry and CVC -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryDate">EXPIRY DATE:</label>
+                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cvc">CVC:</label>
+                        <input type="text" id="cvc" name="cvc" placeholder="123" maxlength="4" required />
+                    </div>
+                </div>
+
+                <!-- Billing Address -->
+                <div class="form-group">
+                    <label for="billingAddress">BILLING ADDRESS:</label>
+                    <input type="text" id="billingAddress" name="billingAddress" placeholder="Street address" required />
+                </div>
+
+                <!-- City and Postcode -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="billingCity">CITY:</label>
+                        <input type="text" id="billingCity" name="billingCity" placeholder="City" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="billingPostcode">POSTCODE:</label>
+                        <input type="text" id="billingPostcode" name="billingPostcode" placeholder="Postcode" required />
+                    </div>
+                </div>
+            </div>
+
             <!-- Pay Button -->
-            <button type="submit" class="pay-button">PAY</button>
+            <button type="submit" class="pay-button">PAY £<span id="payButtonTotal">0.00</span></button>
 
         </form>
     </div>
 </section>
 
 <script>
+    // Price per ticket (set this based on your tour pricing)
+    const TICKET_PRICE = 25.00; // £25 per ticket
+
+    function updateTotal() {
+        const quantity = parseInt(document.getElementById('quantity').value) || 0;
+        const total = quantity * TICKET_PRICE;
+
+        document.getElementById('quantityDisplay').textContent = quantity;
+        document.getElementById('pricePerTicket').textContent = '£' + TICKET_PRICE.toFixed(2);
+        document.getElementById('totalPrice').textContent = '£' + total.toFixed(2);
+        document.getElementById('payButtonTotal').textContent = total.toFixed(2);
+    }
+
+    // Format card number with spaces
+    document.getElementById('cardNumber').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\s/g, '');
+        let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+        e.target.value = formattedValue;
+    });
+
+    // Format expiry date
+    document.getElementById('expiryDate').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length >= 2) {
+            value = value.slice(0, 2) + '/' + value.slice(2, 4);
+        }
+        e.target.value = value;
+    });
+
+    // Only allow numbers for CVC
+    document.getElementById('cvc').addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/\D/g, '');
+    });
+
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -106,10 +202,33 @@
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
         const companion = document.getElementById('companion').checked;
+        const total = (parseInt(quantity) * TICKET_PRICE).toFixed(2);
 
         // Validate form
         if (!tour || !date || !time || !quantity || !email) {
             alert('Please fill in all required fields');
+            return;
+        }
+
+        // Validate card details
+        const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
+        const expiryDate = document.getElementById('expiryDate').value;
+        const cvc = document.getElementById('cvc').value;
+        const cardholderName = document.getElementById('cardholderName').value;
+
+        if (!cardholderName || !cardNumber || !expiryDate || !cvc) {
+            alert('Please fill in all card details');
+            return;
+        }
+
+        // Basic card validation
+        if (cardNumber.length !== 16) {
+            alert('Card number must be 16 digits');
+            return;
+        }
+
+        if (cvc.length < 3) {
+            alert('CVC must be 3 or 4 digits');
             return;
         }
 
@@ -122,12 +241,20 @@
             email: email,
             phone: phone,
             companion: companion,
+            total: total,
             ticketNumber: 'TKT' + Math.random().toString().substr(2, 16).padEnd(16, '0'),
-            bookingDate: new Date().toISOString()
+            bookingDate: new Date().toISOString(),
+            cardholderName: cardholderName,
+            // Note: Never store full card details client-side in production
+            // This is for demo purposes only
+            cardLast4: cardNumber.slice(-4)
         };
 
         // Store in session storage and redirect to ticket
         sessionStorage.setItem('lastBooking', JSON.stringify(booking));
         window.location.href = '/WhatsOn/Ticket';
     });
+
+    // Initialize totals on page load
+    window.addEventListener('load', updateTotal);
 </script>

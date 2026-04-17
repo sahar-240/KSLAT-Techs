@@ -79,6 +79,10 @@
             </div>
             <a href="/WhatsOn/Tours" class="return-link">← Return to Tours</a>
         </div>
+        <div class="summary-item">
+            <span class="summary-label">Total Price:</span>
+            <span id="summaryTotal" class="summary-value">£0.00</span>
+        </div>
 
     </div>
 </section>
@@ -110,6 +114,7 @@
         document.getElementById('summaryQuantity').textContent = bookingData.quantity || 'N/A';
         document.getElementById('summaryEmail').textContent = bookingData.email || 'N/A';
         document.getElementById('summaryCompanion').textContent = bookingData.companion ? 'Yes' : 'No';
+        document.getElementById('summaryTotal').textContent = '£' + bookingData.total;
     } else {
         alert('No booking found. Redirecting...');
         window.location.href = '/WhatsOn/Tours';

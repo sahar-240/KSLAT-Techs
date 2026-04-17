@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.EntityFrameworkCore
+@using WebApplication1.Data
+@using WebApplication1.Models
+@{
     ViewData["Title"] = "My Tickets";
     Layout = "_Layout";
 }
@@ -11,13 +14,157 @@
         <p style="color: #aaa; margin-top: 10px;">Your event and tour bookings</p>
     </div>
 
-    <section style="padding: 60px; text-align: center;">
-        <p style="color: #999; font-size: 1.1rem;">
-            <i class="fas fa-ticket-alt" style="color: #2d5f3f; margin-right: 8px;"></i>
-            Sign in to view your booked tickets.
-        </p>
-        <a href="/Login" style="display: inline-block; margin-top: 20px; background: #2d5f3f; color: #fff; padding: 12px 30px; text-decoration: none; font-weight: 700; letter-spacing: 1px;">
-            LOGIN
-        </a>
-    </section>
+    @{
+        int? userId = Context.Session.GetInt32("UserId");
+
+        if (!userId.HasValue)
+        {
+            <!-- NOT LOGGED IN -->
+            <section style="padding: 60px; text-align: center;">
+                <p style="color: #999; font-size: 1.1rem;">
+                    <i class="fas fa-ticket-alt" style="color: #2d5f3f; margin-right: 8px;"></i>
+                    Sign in to view your booked tickets.
+                </p>
+                <a href="/Account/Login" style="display: inline-block; margin-top: 20px; background: #2d5f3f; color: #fff; padding: 12px 30px; text-decoration: none; font-weight: 700; letter-spacing: 1px;">
+                    LOGIN
+                </a>
+            </section>
+        }
+        else
+        {
+            <!-- LOGGED IN - Show tickets -->
+            <section style="padding: 60px 40px;">
+                <div style="max-width: 1000px; margin: 0 auto;">
+
+                    <!-- EVENTS SECTION -->
+                    <div style="margin-bottom: 50px;">
+                        <h2 style="color: #2d5f3f; font-size: 1.8rem; margin-bottom: 30px; border-bottom: 2px solid #2d5f3f; padding-bottom: 10px;">
+                            📅 EVENT TICKETS
+                        </h2>
+
+                        @{
+                            var db = Context.RequestServices.GetService(typeof(MuseumDbContext)) as MuseumDbContext;
+                            var userEventTickets = db?.Tickets
+                            .Where(t => t.UserId == userId.Value && t.EventBookingId.HasValue)
+                            .Include(t => t.EventBooking)
+                            .ThenInclude(b => b!.Event)
+                            .ToList() ?? new List<Ticket>();
+                        }
+
+                        @if (userEventTickets.Count > 0)
+                        {
+                            @foreach (var ticket in userEventTickets)
+                            {
+                                var booking = ticket.EventBooking;
+                                var ev = booking?.Event;
+
+                                <div style="background: #f9f9f9; border-left: 5px solid #2d5f3f; padding: 20px; margin-bottom: 15px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h3 style="margin: 0 0 10px 0; color: #333;">@(ev?.Title ?? "Event")</h3>
+                                        <p style="margin: 5px 0; color: #666; font-size: 14px;">
+                                            <strong>📍 Location:</strong> @(ev?.Location ?? "Not specified")
+                                        </p>
+                                        <p style="margin: 5px 0; color: #666; font-size: 14px;">
+                                            <strong>📅 Booking:</strong> @(booking?.BookingDate ?? "N/A") at @(booking?.BookingTime ?? "N/A")
+                                        </p>
+                                        <p style="margin: 5px 0; color: #666; font-size: 14px;">
+                                            <strong>🎫 Tickets:</strong> @(booking?.Quantity ?? 0) | <strong>Code:</strong> <span style="font-family: monospace; background: #e8e8e8; padding: 2px 6px; border-radius: 3px;">@(booking?.TicketCode ?? "N/A")</span>
+                                        </p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        @if (!string.IsNullOrEmpty(ev?.ImagePath))
+                                        {
+                                            <img src="@ev.ImagePath" alt="@(ev?.Title ?? "Event")" style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;" />
+                                        }
+                                        <p style="color: #2d5f3f; font-weight: bold; font-size: 12px; text-transform: uppercase; margin: 0;">
+                                            Booked on @ticket.CreatedAt.ToString("MMM dd, yyyy")
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div style="background: #f0f0f0; padding: 30px; text-align: center; border-radius: 4px;">
+                                <p style="color: #999; font-size: 16px;">
+                                    <i class="fas fa-calendar-times" style="margin-right: 10px;"></i>
+                                    No event tickets yet.
+                                </p>
+                                <a href="/WhatsOn/Events" style="display: inline-block; margin-top: 15px; background: #2d5f3f; color: white; padding: 10px 25px; text-decoration: none; border-radius: 4px;">
+                                    Explore Events
+                                </a>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- TOURS SECTION -->
+                    <div>
+                        <h2 style="color: #2d5f3f; font-size: 1.8rem; margin-bottom: 30px; border-bottom: 2px solid #2d5f3f; padding-bottom: 10px;">
+                            🎫 TOUR TICKETS
+                        </h2>
+
+                        @{
+                            var userTourTickets = db?.Tickets
+                            .Where(t => t.UserId == userId.Value && t.TourBookingId.HasValue)
+                            .Include(t => t.TourBooking)
+                            .ThenInclude(b => b!.Tour)
+                            .ToList() ?? new List<Ticket>();
+                        }
+
+                        @if (userTourTickets.Count > 0)
+                        {
+                            @foreach (var ticket in userTourTickets)
+                            {
+                                var booking = ticket.TourBooking;
+                                var tour = booking?.Tour;
+
+                                <div style="background: #f9f9f9; border-left: 5px solid #d9534f; padding: 20px; margin-bottom: 15px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h3 style="margin: 0 0 10px 0; color: #333;">@(tour?.Title ?? "Tour")</h3>
+                                        <p style="margin: 5px 0; color: #666; font-size: 14px;">
+                                            <strong>📍 Location:</strong> @(tour?.Location ?? "Not specified")
+                                        </p>
+                                        <p style="margin: 5px 0; color: #666; font-size: 14px;">
+                                            <strong>⏱️ Duration:</strong> @(tour?.Duration ?? "N/A")
+                                        </p>
+                                        <p style="margin: 5px 0; color: #666; font-size: 14px;">
+                                            <strong>📅 Booking:</strong> @(booking?.BookingDate ?? "N/A") at @(booking?.BookingTime ?? "N/A")
+                                        </p>
+                                        <p style="margin: 5px 0; color: #666; font-size: 14px;">
+                                            <strong>🎫 Tickets:</strong> @(booking?.Quantity ?? 0) | <strong>Code:</strong> <span style="font-family: monospace; background: #e8e8e8; padding: 2px 6px; border-radius: 3px;">@(booking?.TicketCode ?? "N/A")</span>
+                                        </p>
+                                        <p style="margin: 5px 0; color: #d9534f; font-weight: bold; font-size: 14px;">
+                                            💰 Total: £@(booking?.TotalPrice.ToString("0.00") ?? "0.00")
+                                        </p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        @if (!string.IsNullOrEmpty(tour?.ImagePath))
+                                        {
+                                            <img src="@tour.ImagePath" alt="@(tour?.Title ?? "Tour")" style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;" />
+                                        }
+                                        <p style="color: #d9534f; font-weight: bold; font-size: 12px; text-transform: uppercase; margin: 0;">
+                                            Booked on @ticket.CreatedAt.ToString("MMM dd, yyyy")
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div style="background: #f0f0f0; padding: 30px; text-align: center; border-radius: 4px;">
+                                <p style="color: #999; font-size: 16px;">
+                                    <i class="fas fa-map" style="margin-right: 10px;"></i>
+                                    No tour tickets yet.
+                                </p>
+                                <a href="/WhatsOn/ToursList" style="display: inline-block; margin-top: 15px; background: #2d5f3f; color: white; padding: 10px 25px; text-decoration: none; border-radius: 4px;">
+                                    Explore Tours
+                                </a>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </section>
+        }
+    }
 </div>

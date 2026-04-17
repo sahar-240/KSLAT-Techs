@@ -186,6 +186,64 @@ BEGIN
     );
 END;
 
+-- TABLE: Tours  (New - for tour bookings)
+-- Stores all tour listings displayed on the Tours page.
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Tours')
+BEGIN
+    CREATE TABLE Tours (
+        TourId          INT IDENTITY(1,1) PRIMARY KEY,
+        Title           NVARCHAR(200)   NOT NULL,
+        Description     NVARCHAR(MAX)   NOT NULL DEFAULT '',
+        FullDescription NVARCHAR(MAX)   NOT NULL DEFAULT '',
+        ImagePath       NVARCHAR(500)   NOT NULL DEFAULT '',
+        Location        NVARCHAR(200)   NOT NULL DEFAULT '',
+        Duration        NVARCHAR(50)    NOT NULL DEFAULT '',
+        Price           DECIMAL(10,2)   NOT NULL DEFAULT 25.00,
+        SpotsPerSlot    INT             NOT NULL DEFAULT 15,
+        StartDate       DATETIME2       NOT NULL,
+        EndDate         DATETIME2       NOT NULL,
+        TimeInfo        NVARCHAR(200)   NOT NULL DEFAULT '',
+        ThemeColour     NVARCHAR(10)    NOT NULL DEFAULT '',
+
+        CONSTRAINT CHK_Tours_DateRange CHECK (EndDate >= StartDate),
+        CONSTRAINT CHK_Tours_Spots     CHECK (SpotsPerSlot BETWEEN 1 AND 100),
+        CONSTRAINT CHK_Tours_Price     CHECK (Price > 0)
+    );
+END;
+
+
+-- TABLE: TourBooking  (New - for tour reservations)
+-- Each row is one tour ticket booking made by a visitor.
+-- UserId is nullable because guests can book without logging in.
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'TourBooking')
+BEGIN
+    CREATE TABLE TourBooking (
+        TourBookingId   INT IDENTITY(1,1) PRIMARY KEY,
+        TourId          INT             NOT NULL,
+        UserId          INT             NULL,
+        TicketCode      NVARCHAR(30)    NOT NULL DEFAULT '',
+        BookingDate     NVARCHAR(100)   NOT NULL DEFAULT '',
+        BookingTime     NVARCHAR(20)    NOT NULL DEFAULT '',
+        Quantity        INT             NOT NULL DEFAULT 1,
+        Price           DECIMAL(10,2)   NOT NULL DEFAULT 25.00,
+        TotalPrice      DECIMAL(10,2)   NOT NULL DEFAULT 0,
+        Email           NVARCHAR(200)   NOT NULL,
+        Phone           NVARCHAR(20)    NULL,
+        CardholderName  NVARCHAR(100)   NULL,
+        CreatedAt       DATETIME2       NOT NULL DEFAULT GETDATE(),
+
+        CONSTRAINT CHK_TourBooking_Quantity CHECK (Quantity BETWEEN 1 AND 10),
+        CONSTRAINT CHK_TourBooking_Price    CHECK (TotalPrice > 0),
+
+        CONSTRAINT FK_TourBooking_Tours
+            FOREIGN KEY (TourId) REFERENCES Tours(TourId)
+            ON DELETE CASCADE
+    );
+
+    CREATE INDEX IX_TourBooking_TourId ON TourBooking(TourId);
+    CREATE INDEX IX_TourBooking_Slot   ON TourBooking(TourId, BookingDate, BookingTime);
+END;
+
 
 -- ============================================================
 -- SAMPLE DML QUERIES  (Data Manipulation Language)

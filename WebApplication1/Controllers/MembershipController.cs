@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 
 namespace WebApplication1.Controllers
@@ -29,7 +30,24 @@ namespace WebApplication1.Controllers
 
         public IActionResult Tickets()
         {
-            return View();
+            int? userId = HttpContext.Session.GetInt32("UserId");
+
+            if (!userId.HasValue)
+            {
+                return View(); // Show login prompt
+            }
+
+            // Get all tickets for this user (both events and tours)
+            var tickets = _db.Tickets
+                .Where(t => t.UserId == userId.Value)
+                .Include(t => t.EventBooking)
+                .ThenInclude(b => b!.Event)  // Add ! to indicate it's not null
+                .Include(t => t.TourBooking)
+                .ThenInclude(b => b!.Tour)   // Add ! to indicate it's not null
+                .OrderByDescending(t => t.CreatedAt)
+                .ToList();
+
+            return View(tickets);
         }
     }
 }

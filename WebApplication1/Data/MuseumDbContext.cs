@@ -25,6 +25,10 @@ namespace WebApplication1.Data
         // -- Tanzira's table --
         public DbSet<Donation> Donations { get; set; }
 
+        // -- Tour booking tables --
+        public DbSet<Tour> Tours { get; set; }
+        public DbSet<TourBooking> TourBookings { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -69,6 +73,21 @@ namespace WebApplication1.Data
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
+
+            // -- Tour relationships --
+            // Each TourBooking belongs to one Tour (cascade delete)
+            modelBuilder.Entity<TourBooking>()
+                .HasOne(b => b.Tour)
+                .WithMany()
+                .HasForeignKey(b => b.TourId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Each Ticket optionally links to one TourBooking
+            modelBuilder.Entity<Ticket>()
+                .HasOne(t => t.TourBooking)
+                .WithMany()
+                .HasForeignKey(t => t.TourBookingId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }
