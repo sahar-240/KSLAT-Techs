@@ -406,6 +406,7 @@ namespace WebApplication1.Controllers
 
             _db.TourBookings.Add(booking);
             await _db.SaveChangesAsync();
+            System.Diagnostics.Debug.WriteLine("Booking ID just saved: " + booking.TourBookingId);
 
             // If logged in, also create a Ticket record so it shows on Membership page
             if (userId.HasValue)
@@ -424,6 +425,7 @@ namespace WebApplication1.Controllers
         }
 
         // TOUR TICKET CONFIRMATION
+        // TOUR TICKET CONFIRMATION
         public async Task<IActionResult> TourTicket(int bookingId)
         {
             var booking = await _db.TourBookings
@@ -431,7 +433,27 @@ namespace WebApplication1.Controllers
                 .FirstOrDefaultAsync(b => b.TourBookingId == bookingId);
 
             if (booking == null) return NotFound();
-            return View("~/Views/Whatson/Ticket.cshtml", booking);
+
+            // Map TourBooking to TicketViewModel
+            var ticketVm = new TicketViewModel
+            {
+                Id = booking.TourBookingId,
+                Title = booking.Tour?.Title ?? "",
+                Description = booking.Tour?.Description ?? "",
+                Date = booking.BookingDate,
+                Status = "Paid",
+                Quantity = booking.Quantity,
+                Price = booking.Price,
+                TotalPrice = booking.TotalPrice,
+                TicketCode = booking.TicketCode,
+                // Optional fields:
+                // BookingTime = booking.BookingTime,
+                // Email = booking.Email,
+                // CardholderName = booking.CardholderName
+            };
+
+            // Pass the view model to the ticket view
+            return View("~/Views/Whatson/Ticket.cshtml", ticketVm);
         }
 
         // TOGGLE TOUR FAVOURITE (POST) — adds or removes a saved tour for logged-in users

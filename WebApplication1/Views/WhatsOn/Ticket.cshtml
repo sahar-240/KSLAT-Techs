@@ -4,7 +4,6 @@
     Layout = "_Layout";
 }
 
-<!-- In _Layout.cshtml (main layout) -->
 <link rel="stylesheet" href="~/css/whatson.css" />
 
 <!-- Back Button -->
@@ -18,36 +17,34 @@
 
         <!-- Ticket Box -->
         <div class="ticket-box">
-
-            <!-- Ticket Header -->
             <div class="ticket-header">
                 <h1 class="ticket-label">TICKET</h1>
             </div>
-
-            <!-- Ticket Info -->
             <div class="ticket-info">
                 <div class="ticket-row">
-                    <span class="ticket-field-name" id="ticketTourInfo">TOUR NAME - QUANTITY</span>
+                    <span class="ticket-field-name">@Model.Title.ToUpper() - @Model.Quantity TICKET(S)</span>
                 </div>
             </div>
-
-            <!-- Ticket Number -->
             <div class="ticket-number-section">
                 <p class="ticket-number-label">NUM:</p>
-                <p id="ticketNumber" class="ticket-number">00023143200123</p>
+                <p class="ticket-number">@Model.TicketCode</p>
             </div>
-
-            <!-- Ticket Footer -->
             <div class="ticket-footer">
                 <div class="ticket-row">
-                    <span class="ticket-field-name" id="ticketDateTimeInfo">DATE - TIME</span>
+                    <span class="ticket-field-name">
+                        @Model.Date
+                        @if (!string.IsNullOrEmpty(Model.BookingTime))
+                        {
+                            <text>- @Model.BookingTime</text>
+                            ;
+                        }
+                    </span>
                 </div>
                 <p class="ticket-message">A COPY OF THIS TICKET HAS BEEN</p>
                 <p class="ticket-message">EMAILED TO YOU</p>
                 <p class="ticket-message">MEMBERS CAN VIEW THIS</p>
                 <p class="ticket-message">TICKET ON THEIR ACCOUNT</p>
             </div>
-
         </div>
 
         <!-- Booking Summary -->
@@ -55,68 +52,33 @@
             <h3>BOOKING CONFIRMATION</h3>
             <div class="summary-item">
                 <span class="summary-label">Tour:</span>
-                <span id="summaryTour" class="summary-value">-</span>
+                <span class="summary-value">@Model.Title</span>
             </div>
             <div class="summary-item">
                 <span class="summary-label">Date:</span>
-                <span id="summaryDate" class="summary-value">-</span>
+                <span class="summary-value">@Model.Date</span>
             </div>
             <div class="summary-item">
                 <span class="summary-label">Time:</span>
-                <span id="summaryTime" class="summary-value">-</span>
+                <span class="summary-value">@Model.BookingTime</span>
             </div>
             <div class="summary-item">
                 <span class="summary-label">Quantity:</span>
-                <span id="summaryQuantity" class="summary-value">-</span>
+                <span class="summary-value">@Model.Quantity</span>
             </div>
             <div class="summary-item">
                 <span class="summary-label">Email:</span>
-                <span id="summaryEmail" class="summary-value">-</span>
+                <span class="summary-value">@Model.Email</span>
             </div>
             <div class="summary-item">
-                <span class="summary-label">Companion Required:</span>
-                <span id="summaryCompanion" class="summary-value">-</span>
+                <span class="summary-label">Cardholder Name:</span>
+                <span class="summary-value">@Model.CardholderName</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Total Price:</span>
+                <span class="summary-value">£@Model.TotalPrice.ToString("F2")</span>
             </div>
             <a href="/WhatsOn/Tours" class="return-link">← Return to Tours</a>
         </div>
-        <div class="summary-item">
-            <span class="summary-label">Total Price:</span>
-            <span id="summaryTotal" class="summary-value">£0.00</span>
-        </div>
-
     </div>
 </section>
-
-<script>
-    // Retrieve booking data from session storage
-    const bookingData = JSON.parse(sessionStorage.getItem('lastBooking') || '{}');
-
-    if (bookingData && Object.keys(bookingData).length > 0) {
-        // Format date
-        const dateObj = new Date(bookingData.date);
-        const formattedDate = dateObj.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-
-        // Populate ticket
-        document.getElementById('ticketNumber').textContent = bookingData.ticketNumber;
-        document.getElementById('ticketTourInfo').textContent =
-            `${bookingData.tour.toUpperCase()} - ${bookingData.quantity} TICKET(S)`;
-        document.getElementById('ticketDateTimeInfo').textContent =
-            `${formattedDate} - ${bookingData.time}`;
-
-        // Populate summary
-        document.getElementById('summaryTour').textContent = bookingData.tour || 'N/A';
-        document.getElementById('summaryDate').textContent = formattedDate || 'N/A';
-        document.getElementById('summaryTime').textContent = bookingData.time || 'N/A';
-        document.getElementById('summaryQuantity').textContent = bookingData.quantity || 'N/A';
-        document.getElementById('summaryEmail').textContent = bookingData.email || 'N/A';
-        document.getElementById('summaryCompanion').textContent = bookingData.companion ? 'Yes' : 'No';
-        document.getElementById('summaryTotal').textContent = '£' + bookingData.total;
-    } else {
-        alert('No booking found. Redirecting...');
-        window.location.href = '/WhatsOn/Tours';
-    }
-</script>

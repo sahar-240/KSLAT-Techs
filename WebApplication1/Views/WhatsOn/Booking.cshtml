@@ -16,18 +16,20 @@
     <div class="booking-container">
         <h2 class="booking-title">Tour - Booking</h2>
 
-        <form id="bookingForm" class="booking-form">
+        <<form id="bookingForm" class="booking-form" asp-action="TourBook" asp-controller="WhatsOn" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.TourId" />
 
             <!-- Tour Name -->
             <div class="form-group">
                 <label for="tour">TOUR:</label>
-                <input type="text" id="tour" name="tour" value="@(tourName ?? "")" placeholder="Select tour" required />
+                <input type="text" id="tour" name="tour" value="@Model.Title" readonly required />
             </div>
 
             <!-- Date -->
             <div class="form-group">
                 <label for="date">DATE:</label>
-                <select id="date" name="date" required>
+                <select id="bookingDate" name="bookingDate" required>
                     <option value="">Select a date</option>
                     <option value="2026-04-15">April 15, 2026</option>
                     <option value="2026-04-20">April 20, 2026</option>
@@ -40,7 +42,7 @@
             <!-- Time -->
             <div class="form-group">
                 <label for="time">TIME:</label>
-                <select id="time" name="time" required>
+                <select id="bookingTime" name="bookingTime" required>
                     <option value="">Select a time</option>
                     <option value="10:00">10:00 AM</option>
                     <option value="11:30">11:30 AM</option>
@@ -191,69 +193,7 @@
         e.target.value = e.target.value.replace(/\D/g, '');
     });
 
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Collect form data
-        const tour = document.getElementById('tour').value;
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
-        const quantity = document.getElementById('quantity').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const companion = document.getElementById('companion').checked;
-        const total = (parseInt(quantity) * TICKET_PRICE).toFixed(2);
-
-        // Validate form
-        if (!tour || !date || !time || !quantity || !email) {
-            alert('Please fill in all required fields');
-            return;
-        }
-
-        // Validate card details
-        const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
-        const expiryDate = document.getElementById('expiryDate').value;
-        const cvc = document.getElementById('cvc').value;
-        const cardholderName = document.getElementById('cardholderName').value;
-
-        if (!cardholderName || !cardNumber || !expiryDate || !cvc) {
-            alert('Please fill in all card details');
-            return;
-        }
-
-        // Basic card validation
-        if (cardNumber.length !== 16) {
-            alert('Card number must be 16 digits');
-            return;
-        }
-
-        if (cvc.length < 3) {
-            alert('CVC must be 3 or 4 digits');
-            return;
-        }
-
-        // Create booking object
-        const booking = {
-            tour: tour,
-            date: date,
-            time: time,
-            quantity: quantity,
-            email: email,
-            phone: phone,
-            companion: companion,
-            total: total,
-            ticketNumber: 'TKT' + Math.random().toString().substr(2, 16).padEnd(16, '0'),
-            bookingDate: new Date().toISOString(),
-            cardholderName: cardholderName,
-            // Note: Never store full card details client-side in production
-            // This is for demo purposes only
-            cardLast4: cardNumber.slice(-4)
-        };
-
-        // Store in session storage and redirect to ticket
-        sessionStorage.setItem('lastBooking', JSON.stringify(booking));
-        window.location.href = '/WhatsOn/Ticket';
-    });
+   
 
     // Initialize totals on page load
     window.addEventListener('load', updateTotal);
