@@ -20,8 +20,10 @@ namespace WebApplication1.Models
         [ForeignKey("EventBookingId")]
         public EventBooking? EventBooking { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         [ForeignKey("TourBookingId")]
-        public TourBooking? TourBooking { get; set; }
+        public TourBooking? TourBooking { get; set;  }
+        
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+       
     }
 }

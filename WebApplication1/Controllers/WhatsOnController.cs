@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
         }
 
         public IActionResult Index() => View();
-        public IActionResult Tours() => View();
+     
         public IActionResult Booking() => View();
         public IActionResult Ticket() => View();
 
@@ -301,7 +301,7 @@ namespace WebApplication1.Controllers
                 .OrderByDescending(t => t.StartDate)
                 .ToListAsync();
 
-            return View("~/Views/Whatson/Index.cshtml", tours);
+            return View("~/Views/Whatson/Tours.cshtml", tours);
         }
 
         // TOUR DETAIL — shows full info for one tour

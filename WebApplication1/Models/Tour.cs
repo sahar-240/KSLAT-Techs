@@ -41,6 +41,12 @@ namespace WebApplication1.Models
         [StringLength(10)]
         public string ThemeColour { get; set; } = "";
 
+        [StringLength(100)]
+        public string Genre { get; set; } = "";
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+
     }
-}
+
+    }

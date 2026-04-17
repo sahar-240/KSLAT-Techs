@@ -244,6 +244,24 @@ BEGIN
     CREATE INDEX IX_TourBooking_Slot   ON TourBooking(TourId, BookingDate, BookingTime);
 END;
 
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
+               WHERE CONSTRAINT_NAME = 'FK_Favourites_Tours')
+
+               BEGIN 
+                    ALTER TABLE Favourites
+                    ADD CONSTRAINT FK_Favourites_Tours
+                    FOREIGN KEY (TourId) REFERENCES Tours(TourId)
+                    ON DELETE SET NULL;
+                    END;
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
+               WHERE CONSTRAINT_NAME = 'FK_Tickets_TourBooking')
+               BEGIN 
+                    ALTER TABLE Tickets
+                    ADD CONSTRAINT FK_Tickets_TourBooking
+                    FOREIGN KEY (TourBookingId) REFERENCES TourBooking(TourBookingId)
+                    ON DELETE SET NULL;
+                    END;
+
 
 -- ============================================================
 -- SAMPLE DML QUERIES  (Data Manipulation Language)

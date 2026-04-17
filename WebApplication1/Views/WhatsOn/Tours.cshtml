@@ -1,15 +1,14 @@
-﻿@{
+﻿@model List<WebApplication1.Models.Tour>
+@{
     ViewData["Title"] = "Tours";
     Layout = "_Layout";
 }
 
-<!-- In _Layout.cshtml (main layout) -->
-<link rel="stylesheet" href="~/css/whatson.css" />
 <link rel="stylesheet" href="~/css/whatson.css" />
 
 <!-- Hero Banner -->
 <section class="hero-banner">
-    <img src="~/images/Picture27.png" alt="Gallery Tapestry Collection" class="banner-image" />
+    <img src="~/images/Picture27.png" alt="Gallery Tours" class="banner-image" />
     <div class="banner-overlay">
         <h1 class="banner-title">TOURS</h1>
         <p class="banner-subtitle">EXPLORE OUR GALLERY EXPERIENCES</p>
@@ -21,115 +20,103 @@
     <p>FOR CUSTOM SCHOOL & BUSINESS TOURS PLEASE ENQUIRE AT +44 (0)20 8811 8000</p>
 </section>
 
-<!-- Tours List -->
+<!-- Tours List - LOOPS THROUGH DATABASE -->
 <section class="tours-list-section">
     <div class="tours-container">
 
-        <!-- Tour 1: Ancient Alchemy -->
-        <div class="tour-card-detailed">
-            <div class="tour-card-left">
-                <img src="~/images/Picture22.png" alt="Ancient Alchemy Tour" class="tour-image-large" />
-            </div>
-            <div class="tour-card-right tour-dark">
-                <h3 class="tour-title">ANCIENT ALCHEMY</h3>
-                <p class="tour-meta">FEATURED | MAHMOUD | FLAMEN | PHARAOHS</p>
-                <p class="tour-description">
-                    EXPLORE THE MYSTICAL PROPERTIES OF ANCIENT EGYPTIAN ARTIFACTS AND THEIR INFLUENCE ON MODERN SPIRITUAL PRACTICES. DISCOVER HOW ALCHEMISTS THROUGHOUT HISTORY HAVE INTERPRETED THESE SACRED OBJECTS AND THEIR TRANSFORMATIVE POWER.
-                </p>
-                <ul class="tour-details">
-                    <li>DURATION: 90 MINUTES</li>
-                    <li>GROUP SIZE: UP TO 20 PEOPLE</li>
-                    <li>LANGUAGES: ENGLISH, FRENCH</li>
-                    <li>AVAILABILITY: TUESDAY - SUNDAY</li>
-                </ul>
-                <div class="tour-actions">
-                    <a href="/WhatsOn/Booking?tour=ancient-alchemy" class="tour-book-btn">BOOK</a>
-                    <button class="tour-heart-icon" aria-label="Add to favorites">♡</button>
-                </div>
-            </div>
-        </div>
+        @if (Model != null && Model.Count > 0)
+        {
+            @foreach (var tour in Model)
+            {
+                <!-- Alternating light/dark background -->
+                <div class="tour-card-detailed @(Model.IndexOf(tour) % 2 == 0 ? "" : "tour-light-bg")">
+                    <div class="tour-card-left">
+                        <img src="@Url.Content(tour.ImagePath)" alt="@tour.Title" class="tour-image-large" />
+                    </div>
+                    <div class="tour-card-right @(Model.IndexOf(tour) % 2 == 0 ? "tour-dark" : "")">
+                        <h3 class="tour-title @(Model.IndexOf(tour) % 2 == 0 ? "" : "-light")">@tour.Title.ToUpper()</h3>
+                        <p class="tour-meta @(Model.IndexOf(tour) % 2 == 0 ? "" : "-light")">@tour.Genre</p>
+                        <p class="tour-description @(Model.IndexOf(tour) % 2 == 0 ? "" : "-light")">
+                            @tour.Description
+                        </p>
+                        <ul class="tour-details @(Model.IndexOf(tour) % 2 == 0 ? "" : "-light")">
+                            <li>DURATION: @tour.Duration</li>
+                            <li>LOCATION: @tour.Location</li>
+                            <li>GROUP SIZE: UP TO @tour.SpotsPerSlot PEOPLE</li>
+                            @if (!string.IsNullOrEmpty(tour.TimeInfo))
+                            {
+                                <li>AVAILABILITY: @tour.TimeInfo</li>
+                            }
+                        </ul>
+                        <div class="tour-actions">
+                            <!-- BOOK button links to TourBook action with TourId -->
+                            <a asp-action="TourBook" asp-route-id="@tour.TourId"
+                               class="tour-book-btn @(Model.IndexOf(tour) % 2 == 0 ? "" : "-light")">BOOK</a>
 
-        <!-- Tour 2: Identity in Desire -->
-        <div class="tour-card-detailed tour-light-bg">
-            <div class="tour-card-left">
-                <img src="~/images/Picture10.png" alt="Identity in Desire Tour" class="tour-image-large" />
-            </div>
-            <div class="tour-card-right">
-                <h3 class="tour-title-light">IDENTITY IN DESIRE</h3>
-                <p class="tour-meta-light">CONTEMPORARY | PHOTOGRAPHIC | DOCUMENTARY | FASHION CULTURE</p>
-                <p class="tour-description-light">
-                    CONTEMPORARY PORTRAITURE EXPLORING HOW DESIRE AND IDENTITY INTERSECT IN MODERN VISUAL CULTURE. EXAMINING FASHION, GENDER, AND THE WAYS ARTISTS CHALLENGE CONVENTIONAL REPRESENTATIONS OF THE HUMAN FORM. DISCOVER WHAT IT MEANS TO PRESENT ONESELF IN TODAY'S IMAGE-SATURATED WORLD.
-                </p>
-                <ul class="tour-details-light">
-                    <li>DURATION: 75 MINUTES</li>
-                    <li>GROUP SIZE: UP TO 15 PEOPLE</li>
-                    <li>LANGUAGES: ENGLISH, SPANISH, GERMAN</li>
-                    <li>AVAILABILITY: WEDNESDAY - SATURDAY</li>
-                </ul>
-                <div class="tour-actions">
-                    <a href="/WhatsOn/Booking?tour=identity-desire" class="tour-book-btn-light">BOOK</a>
-                    <button class="tour-heart-icon-light" aria-label="Add to favorites">♡</button>
+                            <!-- Heart button for favourites -->
+                            <button type="button"
+                                    class="tour-heart-icon @(Model.IndexOf(tour) % 2 == 0 ? "" : "-light") heart-btn-@tour.TourId"
+                                    onclick="toggleTourFavourite(@tour.TourId)"
+                                    title="Save to favourites">
+                                ♡
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Tour 3: Literary Legacies -->
-        <div class="tour-card-detailed">
-            <div class="tour-card-left">
-                <img src="~/images/Picture23.png" alt="Literary Legacies Tour" class="tour-image-large" />
-            </div>
-            <div class="tour-card-right tour-dark">
-                <h3 class="tour-title">LITERARY LEGACIES</h3>
-                <p class="tour-meta">POET | WILLIAM SHAKESPEARE | BEATRICE | DANTE ALIGHIERI</p>
-                <p class="tour-description">
-                    JOURNEY THROUGH CENTURIES OF LITERATURE AND THE ARTISTS WHO BROUGHT WORDS TO LIFE. FROM ANCIENT TEXTS TO MODERN INTERPRETATIONS, EXPLORE HOW LITERARY THEMES HAVE INSPIRED VISUAL ARTISTS AND SHAPED CULTURAL CONVERSATIONS ACROSS GENERATIONS.
-                </p>
-                <ul class="tour-details">
-                    <li>DURATION: 60 MINUTES</li>
-                    <li>GROUP SIZE: UP TO 25 PEOPLE</li>
-                    <li>LANGUAGES: ENGLISH, ITALIAN</li>
-                    <li>AVAILABILITY: THURSDAY - SUNDAY</li>
-                </ul>
-                <div class="tour-actions">
-                    <a href="/WhatsOn/Booking?tour=literary-legacies" class="tour-book-btn">BOOK</a>
-                    <button class="tour-heart-icon" aria-label="Add to favorites">♡</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tour 4: Architecture Greece -->
-        <div class="tour-card-detailed tour-light-bg">
-            <div class="tour-card-left">
-                <img src="~/images/Picture24.png" alt="Architecture: Greece Tour" class="tour-image-large" />
-            </div>
-            <div class="tour-card-right">
-                <h3 class="tour-title-light">ARCHITECTURE: GREECE</h3>
-                <p class="tour-meta-light">DISCOURSE | COLUMNS | SYNTAX | CLASSICISM</p>
-                <p class="tour-description-light">
-                    EXPLORE THE TIMELESS PRINCIPLES OF ANCIENT GREEK ARCHITECTURE AND THEIR PROFOUND INFLUENCE ON WESTERN DESIGN. FROM CLASSICAL ORDERS TO MODERN INTERPRETATIONS, DISCOVER HOW GREEK ARCHITECTURAL CONCEPTS CONTINUE TO SHAPE BUILDINGS, PUBLIC SPACES, AND ARTISTIC EXPRESSION TODAY.
-                </p>
-                <ul class="tour-details-light">
-                    <li>DURATION: 85 MINUTES</li>
-                    <li>GROUP SIZE: UP TO 20 PEOPLE</li>
-                    <li>LANGUAGES: ENGLISH, GREEK</li>
-                    <li>AVAILABILITY: MONDAY - FRIDAY</li>
-                </ul>
-                <div class="tour-actions">
-                    <a href="/WhatsOn/Booking?tour=architecture-greece" class="tour-book-btn-light">BOOK</a>
-                    <button class="tour-heart-icon-light" aria-label="Add to favorites">♡</button>
-                </div>
-            </div>
-        </div>
+            }
+        }
+        else
+        {
+            <p style="text-align: center; color: #999; padding: 40px;">No tours available at this time.</p>
+        }
 
     </div>
 </section>
 
 <script>
-    // Heart button functionality
-    document.querySelectorAll('.tour-heart-icon, .tour-heart-icon-light').forEach(button => {
-        button.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.textContent = this.classList.contains('active') ? '♥' : '♡';
+    // Toggle tour favourite via AJAX
+    function toggleTourFavourite(tourId) {
+        fetch('/WhatsOn/ToggleTourFavouriteAjax', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ tourId: tourId })
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (!data.success) {
+                alert(data.message);
+                return;
+            }
+            var btn = document.querySelector('.heart-btn-' + tourId);
+            if (data.favourited) {
+                btn.classList.add('active');
+                btn.textContent = '♥';
+            } else {
+                btn.classList.remove('active');
+                btn.textContent = '♡';
+            }
         });
+    }
+
+    // On page load, check which tours are already favourited
+    document.querySelectorAll('.tour-card-detailed').forEach(function(card) {
+        var buttons = card.querySelectorAll('[class*="heart-btn-"]');
+        if (buttons.length > 0) {
+            var btn = buttons[0];
+            var classes = btn.className.split(' ');
+            var heartBtnClass = classes.find(c => c.startsWith('heart-btn-'));
+            var tourId = heartBtnClass ? heartBtnClass.split('-')[2] : null;
+
+            if (tourId) {
+                fetch('/WhatsOn/IsTourFavourited?tourId=' + tourId)
+                    .then(function(r) { return r.json(); })
+                    .then(function(data) {
+                        if (data.favourited) {
+                            btn.classList.add('active');
+                            btn.textContent = '♥';
+                        }
+                    });
+            }
+        }
     });
 </script>
