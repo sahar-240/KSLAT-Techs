@@ -293,13 +293,19 @@ namespace WebApplication1.Controllers
         #endregion
 
         #region TOURS
-
+        public async Task<IActionResult> Tours()
+            {
+            var tours = await _db.Tours
+                .OrderByDescending(t => t.StartDate)
+                .ToListAsync();
+            return View(tours);
+        }
         // TOURS LISTING — loads all tours sorted newest first
         public async Task<IActionResult> ToursList()
         {
             var tours = await _db.Tours
                 .OrderByDescending(t => t.StartDate)
-                .ToListAsync();
+                .ToListAsync(); 
 
             return View("~/Views/Whatson/Tours.cshtml", tours);
         }

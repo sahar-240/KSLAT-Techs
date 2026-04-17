@@ -17,7 +17,7 @@ namespace WebApplication1.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.2")
+                .HasAnnotation("ProductVersion", "10.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -300,6 +300,8 @@ namespace WebApplication1.Migrations
 
                     b.HasIndex("EventId");
 
+                    b.HasIndex("TourId");
+
                     b.ToTable("Favourites");
                 });
 
@@ -363,7 +365,142 @@ namespace WebApplication1.Migrations
 
                     b.HasIndex("EventBookingId");
 
+                    b.HasIndex("TourBookingId");
+
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Tour", b =>
+                {
+                    b.Property<int>("TourId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TourId"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("Duration")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FullDescription")
+                        .IsRequired()
+                        .HasMaxLength(5000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Genre")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("SpotsPerSlot")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ThemeColour")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("TimeInfo")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("TourId");
+
+                    b.ToTable("Tours");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.TourBooking", b =>
+                {
+                    b.Property<int>("TourBookingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TourBookingId"));
+
+                    b.Property<string>("BookingDate")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BookingTime")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("CardholderName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TicketCode")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TourBookingId");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("TourBooking");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.User", b =>
@@ -452,7 +589,13 @@ namespace WebApplication1.Migrations
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.SetNull);
 
+                    b.HasOne("WebApplication1.Models.Tour", "Tour")
+                        .WithMany()
+                        .HasForeignKey("TourId");
+
                     b.Navigation("Event");
+
+                    b.Navigation("Tour");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Ticket", b =>
@@ -462,7 +605,25 @@ namespace WebApplication1.Migrations
                         .HasForeignKey("EventBookingId")
                         .OnDelete(DeleteBehavior.SetNull);
 
+                    b.HasOne("WebApplication1.Models.TourBooking", "TourBooking")
+                        .WithMany()
+                        .HasForeignKey("TourBookingId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.Navigation("EventBooking");
+
+                    b.Navigation("TourBooking");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.TourBooking", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Tour", "Tour")
+                        .WithMany()
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tour");
                 });
 #pragma warning restore 612, 618
         }

@@ -52,6 +52,7 @@
                             <!-- BOOK button links to TourBook action with TourId -->
                             <a asp-action="TourBook" asp-route-id="@tour.TourId"
                                class="tour-book-btn @(Model.IndexOf(tour) % 2 == 0 ? "" : "-light")">BOOK</a>
+                            <a href="/WhatsOn/TourDetail/@tour.TourId" class=" =" tour-view-btn>VIEW</a>
 
                             <!-- Heart button for favourites -->
                             <button type="button"

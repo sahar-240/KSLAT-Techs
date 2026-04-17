@@ -1,0 +1,19 @@
+﻿@model WebApplication1.Models.Tour
+@{
+    ViewData["Title"] = Model.Title + " - Tour Details";
+    Layout = "_Layout";
+}
+
+<section class="tour-detail-card">
+    <img src="@Model.ImagePath" alt="@Model.Title" class="tour-detail-image" />
+    <h1 class="tour-detail-title">@Model.Title</h1>
+    <div>@Model.Description</div>
+    <div><b>Location</b> @Model.Location</div>
+    <div><b>Duration</b> @Model.Duration</div>
+    <div><b>Spots Per Slot:</b> @Model.SpotsPerSlot</div>
+    <div><b>Start Date:</b> @Model.StartDate.ToShortDateString()</div>
+    <div><b>End Date:</b> @Model.EndDate.ToShortDateString()</div>
+    <div><b>Time info:</b> @Model.TimeInfo</div>
+    <!-- Add a booking/favourite button of appropriate-->
+
+</section>
