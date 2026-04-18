@@ -60,6 +60,11 @@ Open the Azure portal → SQL Database → Query Editor, paste the script, and e
 - **Favourites** – Save events to a favourites list (requires login)
 - **Tickets** – View booking history on the membership page (requires login)
 - **Search** – Navbar search bar to find events by keyword
+- **Tours** - Browse, Like, Book different Tours
+- **Tour Booking** - Select a Date & Time; Quantity; option to have a companion if needed for people who need accessibilty assistance; email; phone number; Card details: Name, card number, expiry date, cvc, billing address, city, postcode.
+- **Favourites** - Save tours to favourites list (requires login)
+- **Tickets** - View tickets after booking made as well as in ticket section in membership tab for logged in user.
+- **Search** - Navbar search bar to find tours by keyword
 
 ## Technologies Used
 
