@@ -37,17 +37,21 @@ namespace WebApplication1.Controllers
             }
 
             var savedItems = await _db.Favourites
-                .Where(f => f.UserId == userId.Value && f.EventId != null)
-                .Include(f => f.Event)
-                .Select(f => new SavedItemViewModel
-                {
-                    Id = f.FavouriteId,
-                    Title = f.Event!.Title,
-                    Description = f.Event.Description,
-                    Date = f.Event.StartDate.ToString("dd MMM yyyy") + " – " + f.Event.EndDate.ToString("dd MMM yyyy"),
-                    ImagePath = f.Event.ImagePath
-                })
-                .ToListAsync();
+       .Where(f => f.UserId == userId.Value &&
+                   (f.EventId != null || f.TourId != null))
+       .Include(f => f.Event)
+       .Include(f => f.Tour)
+       .Select(f => new SavedItemViewModel
+       {
+           Id = f.FavouriteId,
+           Title = f.Event != null ? f.Event.Title : (f.Tour != null ? f.Tour.Title : ""),
+           Description = f.Event != null ? f.Event.Description : (f.Tour != null ? f.Tour.Description : ""),
+           Date = f.Event != null
+               ? $"{f.Event.StartDate:dd MMM yyyy} – {f.Event.EndDate:dd MMM yyyy}"
+               : (f.Tour != null ? $"{f.Tour.StartDate:dd MMM yyyy} – {f.Tour.EndDate:dd MMM yyyy}" : ""),
+           ImagePath = f.Event != null ? f.Event.ImagePath : (f.Tour != null ? f.Tour.ImagePath : "")
+       })
+       .ToListAsync();
 
             return View("~/Views/Account/Saved.cshtml", savedItems);
         }
@@ -63,10 +67,10 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Index", "Login");
             }
 
-            var tickets = await _db.Tickets
+            // --- Event tickets ---
+            var eventTickets = await _db.Tickets
                 .Where(t => t.UserId == userId.Value && t.EventBookingId != null)
-                .Include(t => t.EventBooking!)
-                    .ThenInclude(eb => eb.Event)
+                .Include(t => t.EventBooking!).ThenInclude(eb => eb.Event)
                 .Select(t => new TicketViewModel
                 {
                     Id = t.EventBookingId!.Value,
@@ -76,13 +80,42 @@ namespace WebApplication1.Controllers
                     Status = "Confirmed",
                     Quantity = t.EventBooking.Quantity,
                     Price = 0,
-                    TicketCode = t.EventBooking.TicketCode
+                    TotalPrice = 0,
+                    TicketCode = t.EventBooking.TicketCode,
+                    BookingTime = t.EventBooking.BookingTime,
+                    Email = t.EventBooking.Email,
+                    
                 })
                 .ToListAsync();
 
-            return View("~/Views/Account/Tickets.cshtml", tickets);
-        }
+            // --- Tour tickets ---
+            var tourTickets = await _db.Tickets
+                .Where(t => t.UserId == userId.Value && t.TourBookingId != null)
+                .Include(t => t.TourBooking!).ThenInclude(tb => tb.Tour)
+                .Select(t => new TicketViewModel
+                {
+                    Id = t.TourBookingId!.Value,
+                    Title = t.TourBooking!.Tour!.Title,
+                    Description = t.TourBooking.Tour.Location,
+                    Date = t.TourBooking.BookingDate + " at " + t.TourBooking.BookingTime,
+                    Status = "Confirmed",
+                    Quantity = t.TourBooking.Quantity,
+                    Price = t.TourBooking.Price,
+                    TotalPrice = t.TourBooking.TotalPrice,
+                    TicketCode = t.TourBooking.TicketCode,
+                    BookingTime = t.TourBooking.BookingTime,
+                    Email = t.TourBooking.Email,
+                    CardholderName = t.TourBooking.CardholderName
+                })
+                .ToListAsync();
 
+            // --- Combine both ---
+            var allTickets = eventTickets.Concat(tourTickets)
+                .OrderByDescending(t => t.Date)
+                .ToList();
+
+            return View("~/Views/Account/Tickets.cshtml", allTickets);
+        }
         // REMOVE FAVOURITE
         [HttpPost]
         [ValidateAntiForgeryToken]

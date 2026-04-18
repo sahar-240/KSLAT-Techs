@@ -100,70 +100,95 @@
                 }
             }
 
-            // Debounce timer so the API is not called on every single keystroke
-            var searchTimer = null;
+                    // Debounce timer so the API is not called on every single keystroke
+        var searchTimer = null;
 
-            document.addEventListener('DOMContentLoaded', function () {
-                var input = document.getElementById('search-input');
-                var resultsDiv = document.getElementById('search-results');
+        document.addEventListener('DOMContentLoaded', function () {
+            var input = document.getElementById('search-input');
+            var resultsDiv = document.getElementById('search-results');
 
-                input.addEventListener('input', function () {
-                    clearTimeout(searchTimer);
-                    var query = input.value.trim();
+            input.addEventListener('input', function () {
+                clearTimeout(searchTimer);
+                var query = input.value.trim();
 
-                    // Need at least 2 characters before searching
-                    if (query.length < 2) {
-                        resultsDiv.style.display = 'none';
-                        return;
-                    }
+                // Need at least 2 characters before searching
+                if (query.length < 2) {
+                    resultsDiv.style.display = 'none';
+                    return;
+                }
 
-                    // Wait 300ms after the user stops typing, then search
-                    searchTimer = setTimeout(function () {
+                // Wait 300ms after the user stops typing, then search
+                searchTimer = setTimeout(function () {
+                    // Fetch both events and tours then combine
+                    Promise.all([
                         fetch('/WhatsOn/SearchEvents?query=' + encodeURIComponent(query))
-                            .then(function (r) { return r.json(); })
-                            .then(function (data) {
-                                resultsDiv.innerHTML = '';
+                            .then(r => r.json()),
+                        fetch('/WhatsOn/SearchTours?query=' + encodeURIComponent(query))
+                            .then(r => r.json())
+                    ]).then(function ([events, tours]) {
+                        resultsDiv.innerHTML = '';
 
-                                if (data.length === 0) {
-                                    resultsDiv.innerHTML = '<div style="padding:14px 16px; color:#999; font-size:0.9rem;">No results found</div>';
-                                    resultsDiv.style.display = 'block';
-                                    return;
-                                }
+                        // Tag type for rendering
+                        events.forEach(ev => { ev._type = 'Event'; });
+                        tours.forEach(tr => { tr._type = 'Tour'; });
 
-                                // Build a clickable row for each matching event
-                                data.forEach(function (ev) {
-                                    var link = document.createElement('a');
-                                    link.href = '/WhatsOn/EventDetail/' + ev.eventId;
-                                    link.style.cssText = 'display:flex; align-items:center; gap:12px; padding:10px 16px; text-decoration:none; color:#fff; border-bottom:1px solid #333; transition:background 0.15s;';
-                                    link.onmouseover = function () { this.style.background = '#333'; };
-                                    link.onmouseout = function () { this.style.background = 'none'; };
+                        var all = [...events, ...tours];
 
-                                    link.innerHTML =
-                                        '<div style="flex:1;">' +
-                                            '<div style="font-weight:700; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.5px;">' + ev.eventType + ': ' + ev.title + '</div>' +
-                                            '<div style="color:#999; font-size:0.75rem; margin-top:2px;">' + ev.genre + ' &bull; ' + ev.location + '</div>' +
-                                        '</div>' +
-                                        '<i class="fas fa-chevron-right" style="color:#666; font-size:0.75rem;"></i>';
+                        if (all.length === 0) {
+                            resultsDiv.innerHTML = '<div style="padding:14px 16px; color:#999; font-size:0.9rem;">No results found</div>';
+                            resultsDiv.style.display = 'block';
+                            return;
+                        }
 
-                                    resultsDiv.appendChild(link);
-                                });
+                        // Optionally, sort by title:
+                        all.sort(function(a, b){
+                            return a.title.localeCompare(b.title);
+                        });
 
-                                resultsDiv.style.display = 'block';
-                            });
-                    }, 300);
-                });
+                        all.forEach(function (item) {
+                            var link = document.createElement('a');
+                            if (item._type === 'Event') {
+                                link.href = '/WhatsOn/EventDetail/' + item.eventId;
+                            } else {
+                                link.href = '/WhatsOn/TourDetail/' + item.tourId;
+                            }
+                            link.style.cssText = 'display:flex; align-items:center; gap:12px; padding:10px 16px; text-decoration:none; color:#fff; border-bottom:1px solid #333; transition:background 0.15s;';
+                            link.onmouseover = function () { this.style.background = '#333'; };
+                            link.onmouseout = function () { this.style.background = 'none'; };
 
-                // Close search when clicking outside
-                document.addEventListener('click', function (e) {
-                    var overlay = document.getElementById('search-overlay');
-                    var toggle = document.getElementById('search-toggle');
-                    if (overlay.style.display === 'block' && !overlay.contains(e.target) && !toggle.contains(e.target)) {
-                        overlay.style.display = 'none';
-                        input.value = '';
-                        resultsDiv.style.display = 'none';
-                    }
-                });
+                            // Display eventType for events and duration for tours
+                            let subtitle = (item._type === 'Event')
+                                ? (item.genre || '') + ' • ' + (item.location || '')
+                                : (item.duration || '') + (item.location ? ' • ' + item.location : '');
+
+                            link.innerHTML =
+                                '<div style="flex:1;">' +
+                                    '<div style="font-weight:700; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.5px;">' +
+                                        item._type + ': ' + item.title +
+                                    '</div>' +
+                                    '<div style="color:#999; font-size:0.75rem; margin-top:2px;">' + subtitle + '</div>' +
+                                '</div>' +
+                                '<i class="fas fa-chevron-right" style="color:#666; font-size:0.75rem;"></i>';
+
+                            resultsDiv.appendChild(link);
+                        });
+
+                        resultsDiv.style.display = 'block';
+                    });
+                }, 300);
             });
+
+            // Close search when clicking outside
+            document.addEventListener('click', function (e) {
+                var overlay = document.getElementById('search-overlay');
+                var toggle = document.getElementById('search-toggle');
+                if (overlay.style.display === 'block' && !overlay.contains(e.target) && !toggle.contains(e.target)) {
+                    overlay.style.display = 'none';
+                    input.value = '';
+                    resultsDiv.style.display = 'none';
+                }
+            });
+        });
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)

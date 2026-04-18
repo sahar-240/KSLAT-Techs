@@ -109,6 +109,8 @@
                             .Include(t => t.TourBooking)
                             .ThenInclude(b => b!.Tour)
                             .ToList() ?? new List<Ticket>();
+
+                            @foreach (var ticket in userTourTickets)
                         }
 
                         @if (userTourTickets.Count > 0)

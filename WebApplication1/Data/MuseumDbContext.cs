@@ -88,6 +88,12 @@ namespace WebApplication1.Data
                 .WithMany()
                 .HasForeignKey(t => t.TourBookingId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<Favourite>()
+    .HasOne(f => f.Tour)
+    .WithMany()
+    .HasForeignKey(f => f.TourId)
+    .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

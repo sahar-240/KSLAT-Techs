@@ -315,7 +315,7 @@ namespace WebApplication1.Controllers
         {
             var tour = await _db.Tours.FindAsync(id);
             if (tour == null) return NotFound();
-            return View("~/Views/Whatson/Tours.cshtml", tour);
+            return View("~/Views/Whatson/TourDetail.cshtml", tour);
         }
 
         // TOUR BOOKING FORM (GET)
