@@ -16,7 +16,7 @@
     <div class="booking-container">
         <h2 class="booking-title">Tour - Booking</h2>
 
-        <<form id="bookingForm" class="booking-form" asp-action="TourBook" asp-controller="WhatsOn" method="post">
+        <form id="bookingForm" class="booking-form" asp-action="TourBook" asp-controller="WhatsOn" method="post">
             @Html.AntiForgeryToken()
             <input type="hidden" name="id" value="@Model.TourId" />
 
@@ -31,11 +31,11 @@
                 <label for="date">DATE:</label>
                 <select id="bookingDate" name="bookingDate" required>
                     <option value="">Select a date</option>
-                    <option value="2026-04-15">April 15, 2026</option>
-                    <option value="2026-04-20">April 20, 2026</option>
-                    <option value="2026-04-25">April 25, 2026</option>
-                    <option value="2026-05-01">May 1, 2026</option>
-                    <option value="2026-05-10">May 10, 2026</option>
+                    <option value="2026-04-15">May 15, 2026</option>
+                    <option value="2026-04-20">May 20, 2026</option>
+                    <option value="2026-04-25">June 25, 2026</option>
+                    <option value="2026-05-01">June 30, 2026</option>
+                    <option value="2026-05-10">July 10, 2026</option>
                 </select>
             </div>
 

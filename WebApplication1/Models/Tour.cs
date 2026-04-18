@@ -44,6 +44,9 @@ namespace WebApplication1.Models
         [StringLength(100)]
         public string? Genre { get; set; } = "";
 
+        [StringLength(100)]
+    
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
 

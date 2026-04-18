@@ -53,10 +53,12 @@
                                     <span class="detail-label">TICKET CODE:</span>
                                     <span class="detail-value" style="font-family: monospace;">@ticket.TicketCode</span>
                                 </div>
-                                <div class="detail-group">
-                                    <span class="detail-label">PRICE:</span>
-                                    <span class="detail-value">FREE</span>
-                                </div>
+                            <div class="detail-group">
+                                <span class="detail-label">PRICE:</span>
+                                <span class="detail-value">
+                                    @(ticket.TotalPrice > 0 ? $"£{ticket.TotalPrice:F2}" : "FREE")
+                                </span>
+                            </div>
                             </div>
                             <div class="ticket-actions">
                                 <a href="/WhatsOn/EventTicket?bookingId=@ticket.Id" class="view-btn">View Details</a>

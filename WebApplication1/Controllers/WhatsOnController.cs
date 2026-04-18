@@ -319,12 +319,14 @@ namespace WebApplication1.Controllers
         }
 
         // TOUR BOOKING FORM (GET)
+        // TOUR BOOKING FORM (GET)
         public async Task<IActionResult> TourBook(int id)
         {
             var tour = await _db.Tours.FindAsync(id);
             if (tour == null) return NotFound();
             return View("~/Views/Whatson/Booking.cshtml", tour);
         }
+        
 
         // TOUR BOOKING FORM (POST) — validates, checks availability, saves booking + ticket
         [HttpPost]
@@ -441,15 +443,14 @@ namespace WebApplication1.Controllers
                 Title = booking.Tour?.Title ?? "",
                 Description = booking.Tour?.Description ?? "",
                 Date = booking.BookingDate,
+                BookingTime = booking.BookingTime,                   // <-- Make sure this property exists in your TicketViewModel
+                Email = booking.Email,                        // <-- And this!
+                CardholderName = booking.CardholderName,      // <-- And this!
                 Status = "Paid",
                 Quantity = booking.Quantity,
                 Price = booking.Price,
                 TotalPrice = booking.TotalPrice,
                 TicketCode = booking.TicketCode,
-                // Optional fields:
-                // BookingTime = booking.BookingTime,
-                // Email = booking.Email,
-                // CardholderName = booking.CardholderName
             };
 
             // Pass the view model to the ticket view

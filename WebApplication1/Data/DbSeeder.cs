@@ -115,6 +115,8 @@ namespace WebApplication1.Data
                 db.SaveChanges();
             }
 
+            
+
             // -- Seed opening hours only if the table is empty --
             if (!db.OpeningHours.Any())
             {

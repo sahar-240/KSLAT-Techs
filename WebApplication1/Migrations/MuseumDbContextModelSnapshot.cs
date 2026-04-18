@@ -378,6 +378,11 @@ namespace WebApplication1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TourId"));
 
+                    b.Property<string>("AvailableDays")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -591,7 +596,8 @@ namespace WebApplication1.Migrations
 
                     b.HasOne("WebApplication1.Models.Tour", "Tour")
                         .WithMany()
-                        .HasForeignKey("TourId");
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Event");
 

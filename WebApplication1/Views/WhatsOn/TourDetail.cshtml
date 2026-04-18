@@ -3,17 +3,72 @@
     ViewData["Title"] = Model.Title + " - Tour Details";
     Layout = "_Layout";
 }
+<link rel="stylesheet" href="~/css/whatson.css" />
 
-<section class="tour-detail-card">
-    <img src="@Model.ImagePath" alt="@Model.Title" class="tour-detail-image" />
-    <h1 class="tour-detail-title">@Model.Title</h1>
-    <div>@Model.Description</div>
-    <div><b>Location</b> @Model.Location</div>
-    <div><b>Duration</b> @Model.Duration</div>
-    <div><b>Spots Per Slot:</b> @Model.SpotsPerSlot</div>
-    <div><b>Start Date:</b> @Model.StartDate.ToShortDateString()</div>
-    <div><b>End Date:</b> @Model.EndDate.ToShortDateString()</div>
-    <div><b>Time info:</b> @Model.TimeInfo</div>
-    <!-- Add a booking/favourite button of appropriate-->
-
+<section class="tour-card-detailed" style="margin:40px auto 0;max-width:900px;">
+    <div class="tour-card-left">
+        <img src="@Url.Content(Model.ImagePath)" alt="@Model.Title" class="tour-image-large" />
+    </div>
+    <div class="tour-card-right tour-dark">
+        <h3 class="tour-title">@Model.Title.ToUpper()</h3>
+        <p class="tour-meta">@Model.Genre</p>
+        <p class="tour-description">@Model.Description</p>
+        <ul class="tour-details">
+            <li>DURATION: @Model.Duration</li>
+            <li>LOCATION: @Model.Location</li>
+            <li>GROUP SIZE: UP TO @Model.SpotsPerSlot PEOPLE</li>
+            @if (!string.IsNullOrEmpty(Model.TimeInfo))
+            {
+                <li>AVAILABILITY: @Model.TimeInfo</li>
+            }
+        </ul>
+        <div class="tour-actions">
+            <a asp-action="TourBook" asp-route-id="@Model.TourId" class="tour-book-btn">BOOK</a>
+            <button type="button"
+                    class="tour-heart-icon heart-btn-@Model.TourId"
+                    onclick="toggleTourFavourite(@Model.TourId)"
+                    title="Save to favourites">
+                ♡
+            </button>
+        </div>
+    </div>
 </section>
+
+<script>
+    // Toggle tour favourite via AJAX (same as your tours list)
+    function toggleTourFavourite(tourId) {
+        fetch('/WhatsOn/ToggleTourFavouriteAjax', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ tourId: tourId })
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (!data.success) {
+                alert(data.message);
+                return;
+            }
+            var btn = document.querySelector('.heart-btn-' + tourId);
+            if (data.favourited) {
+                btn.classList.add('active');
+                btn.textContent = '♥';
+            } else {
+                btn.classList.remove('active');
+                btn.textContent = '♡';
+            }
+        });
+    }
+
+    // On page load, check if already favourited
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.querySelector('.heart-btn-@Model.TourId');
+        fetch('/WhatsOn/IsTourFavourited?tourId=@Model.TourId')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.favourited) {
+                    btn.classList.add('active');
+                    btn.textContent = '♥';
+                }
+            });
+    });
+</script>
