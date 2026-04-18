@@ -59,7 +59,7 @@ Open the Azure portal → SQL Database → Query Editor, paste the script, and e
 - **Contact** – Submit enquiries with newsletter opt-in, saved to SQL
 - **Favourites** – Save events to a favourites list (requires login)
 - **Tickets** – View booking history on the membership page (requires login)
-- **Search** – Navbar search bar to find events by keyword
+- **Search** – Navbar search bar to find events and tours by keyword
 - **Tours** - Browse, Like, Book different Tours
 - **Tour Booking** - Select a Date & Time, Quantity, option to have a companion if needed, email, phone number, Card details
 - **Visit us** - home page, support us, map, FAQ
