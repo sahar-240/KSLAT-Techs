@@ -109,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\sahar\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\views\\account\\saved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\saved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\sahar\\source\\repos\\sahar-240\\kslat-techs\\webapplication1\\sql\\databasesetup.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\sql\\databasesetup.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -136,7 +132,7 @@
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\MembershipController.cs",
               "ToolTip": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\Controllers\\MembershipController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\MembershipController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwDQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T14:38:05.332Z",
               "EditorCaption": ""
@@ -151,8 +147,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAkwIgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T10:22:02.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T10:22:02.148Z"
             },
             {
               "$type": "Document",
@@ -164,8 +159,7 @@
               "RelativeToolTip": "WebApplication1\\Data\\MuseumDbContext.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAiwGIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T14:09:37.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:09:37.142Z"
             },
             {
               "$type": "Document",
@@ -177,8 +171,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\Membership\\Favourites.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-18T09:57:01.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T09:57:01.545Z"
             },
             {
               "$type": "Document",
@@ -190,8 +183,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\Favourite.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T17:28:15.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T17:28:15.805Z"
             },
             {
               "$type": "Document",
@@ -203,8 +195,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\WhatsOn\\Tours.cshtml",
               "ViewState": "AgIAAEYAAAAAAAAAAAAAAF0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-17T14:56:21.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:56:21.213Z"
             },
             {
               "$type": "Document",
@@ -216,8 +207,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\Tour.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAwC8AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T14:08:50.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:08:50.065Z"
             },
             {
               "$type": "Document",
@@ -229,8 +219,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\TicketViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T21:12:38.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T21:12:38.258Z"
             },
             {
               "$type": "Document",
@@ -242,8 +231,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\Ticket.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T14:11:26.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:11:26.151Z"
             },
             {
               "$type": "Document",
@@ -255,8 +243,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\SupportViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T10:39:02.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T10:39:02.808Z"
             },
             {
               "$type": "Document",
@@ -268,8 +255,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\TourBooking.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAADwvzIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T14:09:25.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:09:25.381Z"
             },
             {
               "$type": "Document",
@@ -281,8 +267,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\WhatsOn\\Booking.cshtml",
               "ViewState": "AgIAALoAAAAAAAAAAAAAACQAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-17T13:28:17.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T13:28:17.19Z"
             },
             {
               "$type": "Document",
@@ -294,8 +279,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\WhatsOn\\Ticket.cshtml",
               "ViewState": "AgIAAFMAAAAAAAAAAAAAAFMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-17T13:29:18.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T13:29:18.736Z"
             },
             {
               "$type": "Document",
@@ -307,8 +291,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\WhatsOn\\TourDetail.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAEkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-17T18:33:02.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T18:33:02.674Z"
             },
             {
               "$type": "Document",
@@ -320,8 +303,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\HomeViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T10:42:14.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T10:42:14.215Z"
             },
             {
               "$type": "Document",
@@ -333,20 +315,18 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\WhatsOnController.cs",
               "ViewState": "AgIAAMsBAAAAAAAAAAAIwLsBAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T14:33:11.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-06T14:33:11.473Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "DatabaseSetup.sql ",
+              "Title": "DatabaseSetup.sql",
               "DocumentMoniker": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\SQL\\DatabaseSetup.sql",
               "RelativeDocumentMoniker": "WebApplication1\\SQL\\DatabaseSetup.sql",
               "ToolTip": "C:\\Users\\sahar\\source\\repos\\sahar-240\\KSLAT-Techs\\WebApplication1\\SQL\\DatabaseSetup.sql",
               "RelativeToolTip": "WebApplication1\\SQL\\DatabaseSetup.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-04-11T19:32:44.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-11T19:32:44.841Z"
             },
             {
               "$type": "Document",
@@ -358,8 +338,7 @@
               "RelativeToolTip": "WebApplication1\\Data\\DbSeeder.cs",
               "ViewState": "AgIAAJsAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T20:00:23.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T20:00:23.789Z"
             },
             {
               "$type": "Document",
@@ -371,8 +350,7 @@
               "RelativeToolTip": "WebApplication1\\wwwroot\\css\\whatson.css",
               "ViewState": "AgIAAD4DAAAAAAAAAAAAAEwDAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-04-17T13:28:45.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T13:28:45.325Z"
             },
             {
               "$type": "Document",
@@ -384,8 +362,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAL4AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-18T10:56:33.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T10:56:33.13Z"
             },
             {
               "$type": "Document",
@@ -397,8 +374,7 @@
               "RelativeToolTip": "WebApplication1\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-17T20:37:07.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T20:37:07.177Z"
             },
             {
               "$type": "Document",
@@ -410,8 +386,7 @@
               "RelativeToolTip": "WebApplication1\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-17T20:37:15.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T20:37:15.33Z"
             },
             {
               "$type": "Document",
@@ -482,10 +457,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
