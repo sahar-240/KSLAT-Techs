@@ -1,4 +1,5 @@
 is_global = true
+build_property.IsMSTestTestAdapterReferenced = true
 build_property.TargetFramework = net10.0
 build_property.TargetFramework = net10.0
 build_property.TargetPlatformMinVersion = 
@@ -19,137 +20,137 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
 build_property.RootNamespace = WebApplication1
 build_property.RootNamespace = WebApplication1
-build_property.ProjectDir = C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1\
+build_property.ProjectDir = C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\sahar\source\repos\sahar-240\KSLAT-Techs\WebApplication1
+build_property.MSBuildProjectDirectory = C:\Users\amine\source\repos\sahar-240\KSLAT-Techs\WebApplication1
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Account/Account.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Account/Account.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Account/Saved.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Account/Saved.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTYXZlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Account/Tickets.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Account/Tickets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxUaWNrZXRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Amenities/Index.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Amenities/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Donation/Donation.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Donation/Donation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cRG9uYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Donation/DonationConfirmation.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Donation/DonationConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cRG9uYXRpb25Db25maXJtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventBook.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50Qm9vay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventDetail.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50RGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Events.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/Events.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventTicket.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Events/EventTicket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50VGlja2V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Contact.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/ContactSuccess.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/ContactSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0U3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Index.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Privacy.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Support.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/Support.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdXBwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/WhatsOn.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Home/WhatsOn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxXaGF0c09uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Login/Index.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Membership/Favourites.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Membership/Favourites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxGYXZvdXJpdGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Membership/Index.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Membership/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Membership/Tickets.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Membership/Tickets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxUaWNrZXRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Shared/Error.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/SignUp/SignUp.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/SignUp/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnblVwXFNpZ25VcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Booking.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Booking.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2hhdHNPblxCb29raW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Index.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2hhdHNPblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Ticket.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Ticket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2hhdHNPblxUaWNrZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/TourDetail.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/TourDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2hhdHNPblxUb3VyRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Tours.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/WhatsOn/Tours.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2hhdHNPblxUb3Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/_ViewImports.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/_ViewStart.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahar/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Shared/_Layout.cshtml]
+[C:/Users/amine/source/repos/sahar-240/KSLAT-Techs/WebApplication1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bddmc6yalx
