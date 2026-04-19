@@ -11,7 +11,7 @@
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }   // <-- add for total
         public string TicketCode { get; set; } = "";
-        public string BookingTime { get; set; } = ""; // Add if you want to display time
+        public string BookingTime { get; set; } = ""; 
         public string? Email { get; set; }
         public string? CardholderName { get; set; }
     }

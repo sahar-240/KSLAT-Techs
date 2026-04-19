@@ -41,9 +41,9 @@ namespace WebApplication1.Controllers
             var tickets = _db.Tickets
                 .Where(t => t.UserId == userId.Value)
                 .Include(t => t.EventBooking)
-                .ThenInclude(b => b!.Event)  // Add ! to indicate it's not null
+                .ThenInclude(b => b!.Event)  
                 .Include(t => t.TourBooking)
-                .ThenInclude(b => b!.Tour)   // Add ! to indicate it's not null
+                .ThenInclude(b => b!.Tour)   
                 .OrderByDescending(t => t.CreatedAt)
                 .ToList();
 

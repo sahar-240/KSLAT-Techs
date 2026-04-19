@@ -186,7 +186,7 @@ BEGIN
     );
 END;
 
--- TABLE: Tours  (New - for tour bookings)
+-- TABLE: Tours  (New - for tour bookings) (Sahar)
 -- Stores all tour listings displayed on the Tours page.
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Tours')
 BEGIN
@@ -212,7 +212,7 @@ BEGIN
 END;
 
 
--- TABLE: TourBooking  (New - for tour reservations)
+-- TABLE: TourBooking  (New - for tour reservations) (Sahar)
 -- Each row is one tour ticket booking made by a visitor.
 -- UserId is nullable because guests can book without logging in.
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'TourBooking')

@@ -319,7 +319,6 @@ namespace WebApplication1.Controllers
         }
 
         // TOUR BOOKING FORM (GET)
-        // TOUR BOOKING FORM (GET)
         public async Task<IActionResult> TourBook(int id)
         {
             var tour = await _db.Tours.FindAsync(id);
@@ -427,7 +426,6 @@ namespace WebApplication1.Controllers
         }
 
         // TOUR TICKET CONFIRMATION
-        // TOUR TICKET CONFIRMATION
         public async Task<IActionResult> TourTicket(int bookingId)
         {
             var booking = await _db.TourBookings
@@ -443,9 +441,9 @@ namespace WebApplication1.Controllers
                 Title = booking.Tour?.Title ?? "",
                 Description = booking.Tour?.Description ?? "",
                 Date = booking.BookingDate,
-                BookingTime = booking.BookingTime,                   // <-- Make sure this property exists in your TicketViewModel
-                Email = booking.Email,                        // <-- And this!
-                CardholderName = booking.CardholderName,      // <-- And this!
+                BookingTime = booking.BookingTime,                   
+                Email = booking.Email,                        
+                CardholderName = booking.CardholderName,      
                 Status = "Paid",
                 Quantity = booking.Quantity,
                 Price = booking.Price,
