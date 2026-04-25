@@ -15,6 +15,7 @@ A web application for the Natural Gallery museum, built with ASP.NET Core MVC an
 - Visual Studio 2022 (or later) with the **ASP.NET and web development** workload
 - .NET 10 SDK
 - Access to the Azure SQL database (connection string is in `Program.cs`)
+- Made backup of SQL database tables in 'museum sql script.bacpac' file in case it can't be accessed
 
 ### Steps
 1. Clone the repository:
